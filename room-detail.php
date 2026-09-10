@@ -1,16 +1,62 @@
 <?php 
 $pageTitle = 'Room Details';
+
+// Get room type from URL
+$roomType = isset($_GET['room']) ? $_GET['room'] : 'premium';
+
+// Room data
+$rooms = [
+    'premium' => [
+        'name' => 'Premium Rooms',
+        'image' => 'assets/images/rooms/premium-rooms--Room.jpg',
+        'images' => ['assets/images/rooms/premium-rooms--Room.jpg', 'assets/images/rooms/premium-rooms--Room (1).jpg', 'assets/images/rooms/premium-executive-rooms--Room.jpg'],
+        'price' => '₹5,899',
+        'size' => '350 sq ft',
+        'guests' => '2 Guests',
+        'bed' => 'King Bed'
+    ],
+    'premium-executive' => [
+        'name' => 'Premium Executive Rooms',
+        'image' => 'assets/images/rooms/premium-executive-rooms--Room.jpg',
+        'images' => ['assets/images/rooms/premium-executive-rooms--Room.jpg', 'assets/images/rooms/premium-rooms--Room.jpg', 'assets/images/rooms/premium-rooms--Room (1).jpg'],
+        'price' => '₹6,350',
+        'size' => '400 sq ft',
+        'guests' => '2 Guests',
+        'bed' => 'King Bed'
+    ],
+    'premium-junior-suite' => [
+        'name' => 'Premium Junior Suite Rooms',
+        'image' => 'assets/images/rooms/Premium-Junior-Suites-rooms--Room.jpg',
+        'images' => ['assets/images/rooms/Premium-Junior-Suites-rooms--Room.jpg', 'assets/images/rooms/Premium-Suites--Room.jpg', 'assets/images/rooms/premium-rooms--Room.jpg'],
+        'price' => '₹7,070',
+        'size' => '500 sq ft',
+        'guests' => '3 Guests',
+        'bed' => 'King Bed + Sofa'
+    ],
+    'premium-suite' => [
+        'name' => 'Premium Suites',
+        'image' => 'assets/images/rooms/Premium-Suites--Room.jpg',
+        'images' => ['assets/images/rooms/Premium-Suites--Room.jpg', 'assets/images/rooms/Premium-Junior-Suites-rooms--Room.jpg', 'assets/images/rooms/premium-rooms--Room.jpg'],
+        'price' => '₹7,249',
+        'size' => '600 sq ft',
+        'guests' => '4 Guests',
+        'bed' => 'King Bed + Living Area'
+    ]
+];
+
+$room = isset($rooms[$roomType]) ? $rooms[$roomType] : $rooms['premium'];
+
 require_once 'includes/header.php'; 
 require_once 'includes/navbar.php'; 
 ?>
 
 <!-- Page Hero -->
-<section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1920&q=80');">
+<section class="page-hero" style="background-image: url('<?php echo $room['image']; ?>');">
     <div class="hero-overlay"></div>
     <div class="container">
         <div class="page-hero-content">
             <span class="section-subtitle">Accommodation</span>
-            <h1 class="page-title">Deluxe Room</h1>
+            <h1 class="page-title"><?php echo $room['name']; ?></h1>
             <p class="page-text">Spacious comfort with modern amenities</p>
         </div>
     </div>
@@ -22,16 +68,16 @@ require_once 'includes/navbar.php';
         <div class="row g-5">
             <!-- Room Gallery -->
             <div class="col-lg-7">
-                <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80" alt="Deluxe Room" class="img-fluid rounded mb-4" loading="lazy">
+                <img src="<?php echo $room['images'][0]; ?>" alt="<?php echo $room['name']; ?>" class="img-fluid rounded mb-4" loading="lazy">
                 <div class="row g-3">
                     <div class="col-4">
-                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&q=80" alt="Room View" class="img-fluid rounded" loading="lazy">
+                        <img src="<?php echo $room['images'][1]; ?>" alt="Room View" class="img-fluid rounded" loading="lazy">
                     </div>
                     <div class="col-4">
-                        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&q=80" alt="Bathroom" class="img-fluid rounded" loading="lazy">
+                        <img src="<?php echo $room['images'][2]; ?>" alt="Bathroom" class="img-fluid rounded" loading="lazy">
                     </div>
                     <div class="col-4">
-                        <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=400&q=80" alt="Amenities" class="img-fluid rounded" loading="lazy">
+                        <img src="<?php echo $room['images'][0]; ?>" alt="Amenities" class="img-fluid rounded" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -39,25 +85,25 @@ require_once 'includes/navbar.php';
             <!-- Room Info -->
             <div class="col-lg-5">
                 <span class="section-subtitle">Room Category</span>
-                <h2 class="section-title">Deluxe Room</h2>
+                <h2 class="section-title"><?php echo $room['name']; ?></h2>
                 
                 <div class="d-flex align-items-center mb-4">
-                    <span class="room-price me-3" style="position: static; font-size: 1.3rem;">₹8,999</span>
+                    <span class="room-price me-3" style="position: static; font-size: 1.3rem;"><?php echo $room['price']; ?></span>
                     <span class="text-muted">per night</span>
                 </div>
                 
-                <p>Experience luxury and comfort in our elegantly designed Deluxe Rooms. Spanning 350 sq ft, these rooms feature modern amenities and stunning city views.</p>
+                <p>Experience luxury and comfort in our elegantly designed <?php echo $room['name']; ?>. Spanning <?php echo $room['size']; ?>, these rooms feature modern amenities and stunning views.</p>
                 
                 <h5 class="mt-4 mb-3">Room Features</h5>
                 <div class="row mb-4">
                     <div class="col-6">
-                        <p><i class="bi bi-arrows-fullscreen text-gold me-2"></i> 350 sq ft</p>
+                        <p><i class="bi bi-arrows-fullscreen text-gold me-2"></i> <?php echo $room['size']; ?></p>
                     </div>
                     <div class="col-6">
-                        <p><i class="bi bi-person text-gold me-2"></i> 2 Guests</p>
+                        <p><i class="bi bi-person text-gold me-2"></i> <?php echo $room['guests']; ?></p>
                     </div>
                     <div class="col-6">
-                        <p><i class="bi bi-bed text-gold me-2"></i> King Bed</p>
+                        <p><i class="bi bi-bed text-gold me-2"></i> <?php echo $room['bed']; ?></p>
                     </div>
                     <div class="col-6">
                         <p><i class="bi bi-wifi text-gold me-2"></i> Free Wi-Fi</p>
