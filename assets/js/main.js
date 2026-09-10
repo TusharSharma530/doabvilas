@@ -74,17 +74,175 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // ===================================
-    // Hero Background Parallax
+    // Hero Video Autoplay Assurance & Booking Bar Dates
     // ===================================
-    const heroSection = document.querySelector('.hero-section');
-    if (heroSection) {
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * 0.3;
-            heroSection.style.backgroundPositionY = rate + 'px';
+    const heroVideo = document.getElementById('video-bg');
+    if (heroVideo) {
+        // Ensure muted & inline for mobile autoplay
+        heroVideo.muted = true;
+        heroVideo.defaultMuted = true;
+        heroVideo.playsInline = true;
+        
+        const playPromise = heroVideo.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(() => {
+                // Autoplay was prevented, add click listener to play on interaction
+                document.addEventListener('click', function playOnFirstClick() {
+                    heroVideo.play();
+                    document.removeEventListener('click', playOnFirstClick);
+                }, { once: true });
+            });
+        }
+    }
+
+    // ===================================
+    // Hero Booking Bar - Dropdown & Date Picker (Bravura Style)
+    // ===================================
+    const roomDropdown = document.getElementById('roomDropdown');
+    const roomSelectedText = document.getElementById('roomSelectedText');
+    const roomDropdownOptions = document.getElementById('roomDropdownOptions');
+    const hdnRoomType = document.getElementById('hdnRoomType');
+
+    if (roomDropdown && roomSelectedText && roomDropdownOptions) {
+        roomSelectedText.addEventListener('click', function(e) {
+            e.stopPropagation();
+            roomDropdownOptions.classList.toggle('active');
+        });
+
+        const options = roomDropdownOptions.querySelectorAll('li');
+        options.forEach(option => {
+            option.addEventListener('click', function(e) {
+                e.stopPropagation();
+                options.forEach(opt => opt.classList.remove('current'));
+                this.classList.add('current');
+                
+                const val = this.getAttribute('data-value');
+                const text = this.querySelector('label') ? this.querySelector('label').textContent : this.textContent;
+                
+                roomSelectedText.textContent = text;
+                if (hdnRoomType) hdnRoomType.value = val;
+                roomDropdownOptions.classList.remove('active');
+            });
+        });
+
+        document.addEventListener('click', function() {
+            roomDropdownOptions.classList.remove('active');
         });
     }
+
+    // Date Pickers for Bravura Style Form
+    const txtCheckIn = document.getElementById('txtCheckIn');
+    const txtCheckOut = document.getElementById('txtCheckOut');
+
+    if (txtCheckIn && txtCheckOut) {
+        const today = new Date();
+        const tomorrow = new Date();
+        tomorrow.setDate(today.getDate() + 1);
+
+        const formatDisplayDate = (d) => {
+            const day = String(d.getDate()).padStart(2, '0');
+            const month = String(d.getMonth() + 1).padStart(2, '0');
+            const year = d.getFullYear();
+            return `${day}/${month}/${year}`;
+        };
+
+        // Click to open date picker
+        const openDatePicker = (inputElem, isCheckOut = false) => {
+            const tempDate = document.createElement('input');
+            tempDate.type = 'date';
+            tempDate.style.position = 'fixed';
+            tempDate.style.opacity = '0';
+            tempDate.style.pointerEvents = 'none';
+            document.body.appendChild(tempDate);
+
+            const now = new Date();
+            const minDate = new Date();
+            if (isCheckOut) minDate.setDate(now.getDate() + 1);
+            tempDate.min = minDate.toISOString().split('T')[0];
+
+            tempDate.addEventListener('change', function() {
+                if (this.value) {
+                    const picked = new Date(this.value);
+                    inputElem.value = formatDisplayDate(picked);
+                }
+                document.body.removeChild(tempDate);
+            });
+
+            if (tempDate.showPicker) {
+                tempDate.showPicker();
+            } else {
+                tempDate.click();
+            }
+        };
+
+        txtCheckIn.addEventListener('click', () => openDatePicker(txtCheckIn, false));
+        txtCheckOut.addEventListener('click', () => openDatePicker(txtCheckOut, true));
+    }
+
+    // Hero Booking Bar Date Pickers (Fallback for Standard Form)
+    const heroCheckIn = document.getElementById('heroCheckIn');
+    const heroCheckOut = document.getElementById('heroCheckOut');
     
+    if (heroCheckIn && heroCheckOut) {
+        const today = new Date();
+        const tomorrow = new Date();
+        tomorrow.setDate(today.getDate() + 1);
+
+        const formatDate = (date) => {
+            const yyyy = date.getFullYear();
+            const mm = String(date.getMonth() + 1).padStart(2, '0');
+            const dd = String(date.getDate()).padStart(2, '0');
+            return `${yyyy}-${mm}-${dd}`;
+        };
+
+        const todayStr = formatDate(today);
+        const tomorrowStr = formatDate(tomorrow);
+
+        heroCheckIn.min = todayStr;
+        heroCheckIn.value = todayStr;
+        heroCheckOut.min = tomorrowStr;
+        heroCheckOut.value = tomorrowStr;
+
+        heroCheckIn.addEventListener('change', function() {
+            if (this.value) {
+                const selectedIn = new Date(this.value);
+                const nextDay = new Date(selectedIn);
+                nextDay.setDate(selectedIn.getDate() + 1);
+                const nextDayStr = formatDate(nextDay);
+                
+                heroCheckOut.min = nextDayStr;
+                if (heroCheckOut.value <= this.value) {
+                    heroCheckOut.value = nextDayStr;
+                }
+            }
+        });
+    }
+
+    // ===================================
+    // Counter Animation
+    // ===================================
+    function animateCounters() {
+        const counters = document.querySelectorAll('.stat-number, .hero-stat-number');
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-count');
+            if (!target) return;
+            
+            let count = 0;
+            const speed = target > 100 ? 20 : 60;
+            const step = Math.ceil(target / 40);
+
+            const timer = setInterval(() => {
+                count += step;
+                if (count >= target) {
+                    counter.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    counter.textContent = count;
+                }
+            }, speed);
+        });
+    }
+
     // ===================================
     // Intersection Observer for Animations
     // ===================================
@@ -94,10 +252,15 @@ document.addEventListener('DOMContentLoaded', function() {
         threshold: 0.1
     };
     
+    let counterAnimated = false;
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animated');
+                if (!counterAnimated && (entry.target.classList.contains('hero-stats-wrapper') || entry.target.querySelector('.stat-number'))) {
+                    counterAnimated = true;
+                    animateCounters();
+                }
                 observer.unobserve(entry.target);
             }
         });

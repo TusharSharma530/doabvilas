@@ -4,61 +4,116 @@ require_once 'includes/header.php';
 require_once 'includes/navbar.php'; 
 ?>
 
-<!-- Hero Section with Animation -->
-<section class="hero-section hero-animated" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&q=80');">
-    <div class="hero-overlay"></div>
-    <div class="hero-particles" id="heroParticles"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 mx-auto text-center">
-                <div class="hero-content">
-                    <div class="hero-logo-wrapper mb-4" data-animate="fadeInDown">
-                        <img src="assets/images/logo/doab-villas-logo.avif" 
-                             alt="Doab Vilas Logo" class="hero-logo">
+<?php 
+$pageTitle = 'Home';
+require_once 'includes/header.php'; 
+require_once 'includes/navbar.php'; 
+?>
+
+<!-- Hero Video Banner Section (Exact Bravura Resort Style) -->
+<div class="banner Home_banner">
+    <!-- Background Video with Gradient Overlays -->
+    <div class="bg overlay-top overlay-bottom">
+        <video class="video1" autoplay muted loop playsinline id="video-bg" preload="auto" poster="assets/images/rooms/premium-rooms--Room.jpg">
+            <source src="assets/videos/hero-video.mp4" type="video/mp4">
+            <source src="https://bravuraresort.com/assets/videos/Reception-Video.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Banner Container -->
+    <div class="banner-container">
+        <div class="container">
+            <div class="content">
+                <!-- Main Bravura Heading -->
+                <h1 data-animate="fadeInUp">
+                    Looking for Room Booking?
+                    <span>BOOK YOUR ROOM<br>ONLINE HERE!</span>
+                </h1>
+
+                <!-- Mobile Only Book Button -->
+                <div class="only_mob">
+                    <div class="banner_btn">
+                        <a href="booking.php">Book Now</a>
                     </div>
-                    <span class="hero-subtitle" data-animate="fadeInUp" data-delay="0.2">Welcome to</span>
-                    <h1 class="hero-title" data-animate="fadeInUp" data-delay="0.4">
-                        <span class="hero-title-line">DOAB</span>
-                        <span class="hero-title-line hero-title-accent">VILAS</span>
-                    </h1>
-                    <p class="hero-text" data-animate="fadeInUp" data-delay="0.6">
-                        A Premium Luxury Destination Where Indian Hospitality Meets Modern Sophistication
-                    </p>
-                    <div class="hero-buttons" data-animate="fadeInUp" data-delay="0.8">
-                        <a href="booking.php" class="btn btn-gold px-4 py-2">
-                            <i class="bi bi-calendar-check me-2"></i>Book Your Stay
-                        </a>
-                        <a href="gallery.php" class="btn btn-outline-white px-4 py-2">
-                            <i class="bi bi-play-circle me-2"></i>Virtual Tour
-                        </a>
-                    </div>
-                    <div class="hero-stats" data-animate="fadeInUp" data-delay="1">
-                        <div class="hero-stat">
-                            <span class="hero-stat-number" data-count="500">0</span>+
-                            <span class="hero-stat-label">Happy Guests</span>
+                </div>
+
+                <!-- Sleek Minimal Line-Based Booking Form (Exact Match to Image) -->
+                <div class="banner-form Chcek_Now" data-animate="fadeInUp">
+                    <form action="booking.php" method="GET" class="form" id="bravuraBookingForm">
+                        <div class="flex form-line-row">
+                            <!-- Select Room (Column 1) -->
+                            <div class="col col1">
+                                <div class="form-group">
+                                    <div class="dropdown room-dropdown" id="roomDropdown">
+                                        <input type="hidden" name="room" id="hdnRoomType" value="premium-rooms">
+                                        <div class="selected" id="roomSelectedText">Select Room</div>
+                                        <div class="icondoro">
+                                            <i class="bi bi-chevron-down"></i>
+                                        </div>
+                                        <ul class="dropdown-options" id="roomDropdownOptions">
+                                            <li data-value="premium-rooms" class="current">
+                                                <label>Premium Rooms</label>
+                                            </li>
+                                            <li data-value="premium-executive-rooms">
+                                                <label>Premium Executive Rooms</label>
+                                            </li>
+                                            <li data-value="Premium-Junior-Suites-rooms">
+                                                <label>Premium Junior Suite Rooms</label>
+                                            </li>
+                                            <li data-value="Premium-Suites">
+                                                <label>Premium Suites</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Check In (Column 2) -->
+                            <div class="col col2">
+                                <div class="form-group line-date-group">
+                                    <input type="text" name="check_in" id="txtCheckIn" class="form-control checin" value="Check In" readonly>
+                                    <div class="icon icondoro">
+                                        <i class="bi bi-calendar4-event"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Check Out (Column 3) -->
+                            <div class="col col3">
+                                <div class="form-group line-date-group">
+                                    <input type="text" name="check_out" id="txtCheckOut" class="form-control checout" value="Check Out" readonly>
+                                    <div class="icon icondoro">
+                                        <i class="bi bi-calendar-check"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Book Now (Column 4 - Gold Text Link) -->
+                            <div class="col col4">
+                                <div class="btn-form">
+                                    <button type="submit" class="btn-book-now-gold">
+                                        BOOK NOW
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="hero-stat-divider"></div>
-                        <div class="hero-stat">
-                            <span class="hero-stat-number" data-count="50">0</span>+
-                            <span class="hero-stat-label">Luxury Rooms</span>
-                        </div>
-                        <div class="hero-stat-divider"></div>
-                        <div class="hero-stat">
-                            <span class="hero-stat-number" data-count="15">0</span>+
-                            <span class="hero-stat-label">Years Legacy</span>
-                        </div>
-                    </div>
-                    <div class="hero-scroll">
-                        <a href="#features" class="scroll-indicator">
-                            <span>Scroll to Explore</span>
-                            <div class="scroll-line"></div>
-                        </a>
-                    </div>
+                    </form>
+                </div>
+
+                <!-- 360 Tour Circular Badge (Exact Match to Image) -->
+                <div class="banner_360" data-animate="fadeInRight">
+                    <a href="gallery.php" title="360° Virtual Tour">
+                        <span class="dot"></span>
+                        <p>
+                            360°
+                            <span>Tour</span>
+                        </p>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>
 
 <!-- Rooms & Suites Section -->
 <section id="features" class="rooms-suites-section section-padding">
