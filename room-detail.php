@@ -50,14 +50,41 @@ require_once 'includes/header.php';
 require_once 'includes/navbar.php'; 
 ?>
 
-<!-- Page Hero -->
-<section class="page-hero" style="background-image: url('<?php echo $room['image']; ?>');">
-    <div class="hero-overlay"></div>
+<!-- Page Hero - Full Width Room Banner -->
+<section class="room-detail-hero" style="background-image: url('<?php echo $room['image']; ?>');">
+    <div class="room-detail-overlay"></div>
     <div class="container">
-        <div class="page-hero-content">
-            <span class="section-subtitle">Accommodation</span>
-            <h1 class="page-title"><?php echo $room['name']; ?></h1>
-            <p class="page-text">Spacious comfort with modern amenities</p>
+        <div class="room-detail-hero-content">
+            <div class="room-detail-left">
+                <h1 class="room-detail-title"><?php echo $room['name']; ?></h1>
+            </div>
+            <div class="room-detail-center">
+                <a href="#" class="room-gallery-btn">
+                    <i class="bi bi-grid-3x3-gap"></i>
+                    <span>Room Gallery</span>
+                </a>
+            </div>
+            <div class="room-detail-right">
+                <div class="room-rates-box">
+                    <h4 class="rates-title">RATES PER NIGHT</h4>
+                    <div class="rates-deal">
+                        <span class="deal-dot"></span>
+                        <span>HotDeal</span>
+                    </div>
+                </div>
+                <div class="room-occupancy">
+                    <div class="occupancy-item">
+                        <span class="occupancy-label">Single Occupancy</span>
+                        <span class="occupancy-price"><?php echo $room['price']; ?></span>
+                        <span class="occupancy-note">Excluding Taxes</span>
+                    </div>
+                    <div class="occupancy-item">
+                        <span class="occupancy-label">Double Occupancy</span>
+                        <span class="occupancy-price"><?php echo $room['price']; ?></span>
+                        <span class="occupancy-note">Excluding Taxes</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
