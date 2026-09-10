@@ -142,7 +142,7 @@ require_once 'includes/navbar.php';
                 <div class="wedding-carousel-item">
                     <a href="diamond.php">
                         <div class="wedding-carousel-img">
-                            <img src="assets/images/weddings/festival-events.jpg" alt="Corporate Events">
+                            <img src="assets/images/experiences/corporate-events-and-meetings.jpg" alt="Corporate Events">
                         </div>
                         <div class="wedding-carousel-content">
                             <h3 class="wedding-carousel-title">Corporate Events</h3>
@@ -206,7 +206,7 @@ require_once 'includes/navbar.php';
         </div>
         
         <div class="row g-3" data-animate="fadeInUp" data-delay="0.2">
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="offer-card-exclusive">
                     <a href="offers.php">
                         <div class="offer-card-img">
@@ -216,13 +216,23 @@ require_once 'includes/navbar.php';
                     </a>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="offer-card-exclusive">
                     <a href="offers.php">
                         <div class="offer-card-img">
                             <img src="assets/images/experiences/feast-on-flavors-this-holi-at-frigo-s-gourmet-offer.jpg" alt="Feast on Flavors this Holi">
                         </div>
                         <h4 class="offer-card-title">Feast on Flavors this Holi at Frigo's Gourmet.</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="offer-card-exclusive">
+                    <a href="offers.php">
+                        <div class="offer-card-img">
+                            <img src="assets/images/experiences/images (2).jfif" alt="Special Offer">
+                        </div>
+                        <h4 class="offer-card-title">Doab Vilas Special Weekend Getaway</h4>
                     </a>
                 </div>
             </div>
@@ -436,7 +446,23 @@ require_once 'includes/navbar.php';
     </div>
 </section>
 
-<!-- CTA Section -->
+<!-- Membership Plans Section -->
+<section class="membership-section" style="background-color: #e9e9e9; padding: 40px 0;">
+    <div class="container">
+        <div class="membership-wrapper" data-animate="fadeInUp">
+            <div class="membership-content">
+                <h3 class="membership-title">Membership Plans</h3>
+                <p class="membership-text">Join the Doab Vilas family today</p>
+            </div>
+            <div class="membership-buttons">
+                <a href="booking.php" class="btn btn-gold membership-btn">JOIN NOW</a>
+                <a href="#" class="btn btn-outline-gold membership-btn">LOGIN</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section
 <section class="cta-section cta-animated">
     <div class="cta-bg-pattern"></div>
     <div class="container">
@@ -457,7 +483,7 @@ require_once 'includes/navbar.php';
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <?php require_once 'includes/whatsapp-button.php'; ?>
 <?php require_once 'includes/footer.php'; ?>

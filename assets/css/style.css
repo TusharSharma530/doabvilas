@@ -903,6 +903,7 @@ img {
     min-width: calc(50% - 13px);
     flex-shrink: 0;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .wedding-carousel-item a {
@@ -920,8 +921,8 @@ img {
 }
 
 .wedding-carousel-img {
-    width: 50%;
-    height: 300px;
+    width: 45%;
+    height: 250px;
     overflow: hidden;
     flex-shrink: 0;
 }
@@ -939,7 +940,8 @@ img {
 
 .wedding-carousel-content {
     width: 50%;
-    padding: 20px 0;
+    padding: 20px;
+    overflow: hidden;
 }
 
 .wedding-carousel-title {
@@ -1258,68 +1260,26 @@ img {
    Footer
    =================================== */
 .site-footer {
-    background-color: var(--dv-dark);
+    background-color: #222;
     color: var(--dv-white);
-    padding: 80px 0 30px;
+    padding: 60px 0 25px;
 }
 
-.footer-brand {
-    font-family: var(--font-heading);
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: var(--dv-white);
-    letter-spacing: 3px;
-    display: inline-block;
-    margin-bottom: 20px;
+.footer-logo {
+    display: block;
 }
 
-.footer-about {
-    color: rgba(255,255,255,0.7);
-    line-height: 1.8;
-    margin-bottom: 25px;
-}
-
-.footer-social {
-    display: flex;
-    gap: 12px;
-}
-
-.social-link {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(255,255,255,0.1);
-    border-radius: 50%;
-    color: var(--dv-white);
-    font-size: 1rem;
-    transition: var(--transition);
-}
-
-.social-link:hover {
-    background-color: var(--dv-gold);
-    color: var(--dv-white);
-    transform: translateY(-3px);
+.footer-logo img {
+    height: 80px;
+    width: auto;
 }
 
 .footer-title {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     color: var(--dv-white);
-    margin-bottom: 25px;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.footer-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40px;
-    height: 2px;
-    background-color: var(--dv-gold);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
 }
 
 .footer-links {
@@ -1329,71 +1289,114 @@ img {
 }
 
 .footer-links li {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .footer-links a {
     color: rgba(255,255,255,0.7);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     transition: var(--transition);
 }
 
 .footer-links a:hover {
     color: var(--dv-gold);
-    padding-left: 5px;
 }
 
-.footer-contact {
+.footer-address {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.footer-contact-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.footer-contact li {
+.footer-contact-list li {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+}
+
+.footer-contact-list li i {
+    color: var(--dv-gold);
+    font-size: 0.9rem;
+    width: 16px;
+}
+
+.footer-contact-list a {
+    color: rgba(255,255,255,0.7);
+}
+
+.footer-contact-list a:hover {
+    color: var(--dv-gold);
+}
+
+.footer-social-top {
+    display: flex;
     gap: 12px;
-    margin-bottom: 18px;
-    color: rgba(255,255,255,0.7);
+    margin-bottom: 25px;
+    flex-wrap: wrap;
 }
 
-.footer-contact li i {
-    color: var(--dv-gold);
+.social-link-sm {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.7);
     font-size: 1rem;
-    margin-top: 4px;
+    transition: var(--transition);
 }
 
-.footer-contact a {
-    color: rgba(255,255,255,0.7);
-}
-
-.footer-contact a:hover {
+.social-link-sm:hover {
     color: var(--dv-gold);
+}
+
+.footer-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-gold-outline {
+    padding: 10px 20px;
+    border: 1px solid var(--dv-gold);
+    color: var(--dv-gold);
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: transparent;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.btn-gold-outline:hover {
+    background: var(--dv-gold);
+    color: var(--dv-white);
 }
 
 .footer-divider {
     border-color: rgba(255,255,255,0.1);
-    margin: 40px 0 25px;
+    margin: 30px 0 20px;
 }
 
 .footer-copyright {
     color: rgba(255,255,255,0.5);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     margin: 0;
 }
 
-.footer-legal {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
-    justify-content: flex-end;
-}
-
-.footer-legal a {
+.footer-credit {
     color: rgba(255,255,255,0.5);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    margin: 0;
 }
 
 .footer-legal a:hover {
@@ -2044,6 +2047,61 @@ img {
     background: var(--dv-gold);
     color: var(--dv-white);
     border-color: var(--dv-gold);
+}
+
+/* ===================================
+   Membership Plans Section
+   =================================== */
+.membership-section {
+    background-color: #e9e9e9;
+    padding: 40px 0;
+}
+
+.membership-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.membership-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--dv-dark);
+    margin-bottom: 5px;
+}
+
+.membership-text {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 0;
+}
+
+.membership-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.membership-btn {
+    min-width: 150px;
+    padding: 12px 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+
+.btn-outline-gold {
+    background: transparent;
+    border: 2px solid var(--dv-gold);
+    color: var(--dv-gold);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-gold:hover {
+    background: var(--dv-gold);
+    color: var(--dv-white);
 }
 
 /* ===================================
@@ -2839,6 +2897,12 @@ img {
     
     .guest-image-item {
         min-width: calc(50% - 10px);
+    }
+    
+    .membership-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
     }
 }
 
