@@ -1,109 +1,122 @@
-<!-- Top Bar -->
-<div class="top-bar">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <div class="top-bar-left">
-                    <a href="tel:<?php echo SITE_PHONE; ?>" class="top-bar-item">
-                        <i class="bi bi-telephone-fill"></i>
-                        <?php echo SITE_PHONE; ?>
-                    </a>
-                    <a href="mailto:<?php echo SITE_EMAIL; ?>" class="top-bar-item d-none d-md-inline">
-                        <i class="bi bi-envelope-fill"></i>
-                        <?php echo SITE_EMAIL; ?>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="top-bar-right">
-                    <a href="#" class="top-bar-item"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="top-bar-item"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="top-bar-item"><i class="bi bi-twitter-x"></i></a>
-                    <a href="#" class="top-bar-item"><i class="bi bi-youtube"></i></a>
-                </div>
+<!-- Top Bar + Header - Bravura Resort Style -->
+<header class="site-header <?php echo (getCurrentPage() === 'home') ? 'header-transparent' : 'header-solid'; ?>" id="siteHeader">
+    <!-- Top Bar -->
+    <div class="header-top-bar">
+        <div class="header-top-container">
+            <div class="header-top-right">
+                <a href="tel:<?php echo SITE_PHONE; ?>" class="header-phone">
+                    <i class="bi bi-telephone-fill"></i>
+                    <?php echo SITE_PHONE; ?>
+                </a>
+                <a href="booking.php" class="btn-quick-enquiry">Quick Enquiry</a>
+                <a href="#" class="header-login">
+                    <i class="bi bi-person"></i> Login
+                </a>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </div>
-</div>
-
-<!-- Main Navigation -->
-<nav class="navbar navbar-expand-lg <?php echo (getCurrentPage() === 'home') ? 'navbar-home' : 'navbar-inner'; ?>" id="mainNav">
-    <div class="container">
-        <a class="navbar-brand" href="index.php">
-            <img src="https://static.wixstatic.com/media/3fe8cd_b9d2633ac9a64ea0a29c36e67a951f01~mv2.png/v1/fill/w_200,h_70,al_c,q_85,usm_0.66_1.00_0.01/3fe8cd_b9d2633ac9a64ea0a29c36e67a951f01~mv2.png" 
-                 alt="Doab Vilas Logo" class="navbar-logo" style="height: 50px; width: auto;">
-        </a>
-        
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-                <!-- Stay -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle <?php echo isActivePage('rooms'); ?> <?php echo isActivePage('suites'); ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Stay
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item <?php echo isActivePage('rooms'); ?>" href="rooms.php">Rooms</a></li>
-                        <li><a class="dropdown-item <?php echo isActivePage('suites'); ?>" href="suites.php">Suites</a></li>
-                    </ul>
-                </li>
-                
-                <!-- Dine -->
-                <li class="nav-item">
-                    <a class="nav-link <?php echo isActivePage('dining'); ?>" href="dining.php">Dine</a>
-                </li>
-                
-                <!-- Weddings & Events -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle <?php echo isActivePage('weddings'); ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Weddings & Events
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item <?php echo isActivePage('diamond'); ?>" href="diamond.php">Diamond</a></li>
-                        <li><a class="dropdown-item <?php echo isActivePage('jashan-party-lawn'); ?>" href="jashan-party-lawn.php">Jashan Party Lawn</a></li>
-                        <li><a class="dropdown-item <?php echo isActivePage('aquarius-pool'); ?>" href="aquarius-pool.php">Aquarius Pool</a></li>
-                        <li><a class="dropdown-item <?php echo isActivePage('sapphire'); ?>" href="sapphire.php">Sapphire</a></li>
-                    </ul>
-                </li>
-                
-                <!-- Experiences -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle <?php echo isActivePage('experiences'); ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Experiences
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item <?php echo isActivePage('pool'); ?>" href="pool.php">Pool</a></li>
-                        <li><a class="dropdown-item <?php echo isActivePage('garden'); ?>" href="garden.php">Garden</a></li>
-                        <li><a class="dropdown-item <?php echo isActivePage('dining-experience'); ?>" href="dining.php#experience">Dining</a></li>
-                        <li><a class="dropdown-item <?php echo isActivePage('services'); ?>" href="services.php">Services</a></li>
-                    </ul>
-                </li>
-                
-                <!-- Gallery -->
-                <li class="nav-item">
-                    <a class="nav-link <?php echo isActivePage('gallery'); ?>" href="gallery.php">Gallery</a>
-                </li>
-                
-                <!-- Offers -->
-                <li class="nav-item">
-                    <a class="nav-link <?php echo isActivePage('offers'); ?>" href="offers.php">Offers</a>
-                </li>
-                
-                <!-- About -->
-                <li class="nav-item">
-                    <a class="nav-link <?php echo isActivePage('about'); ?>" href="about.php">About</a>
-                </li>
-                
-                <!-- Contact -->
-                <li class="nav-item">
-                    <a class="nav-link <?php echo isActivePage('contact'); ?>" href="contact.php">Contact</a>
-                </li>
-            </ul>
+    
+    <!-- Main Navigation -->
+    <div class="header-main">
+        <div class="header-main-container">
+            <a class="header-logo" href="index.php">
+                <img src="https://static.wixstatic.com/media/3fe8cd_b9d2633ac9a64ea0a29c36e67a951f01~mv2.png/v1/fill/w_200,h_70,al_c,q_85,usm_0.66_1.00_0.01/3fe8cd_b9d2633ac9a64ea0a29c36e67a951f01~mv2.png" 
+                     alt="Doab Vilas Logo" class="header-logo-img">
+            </a>
             
-            <a href="booking.php" class="btn btn-gold">BOOK NOW</a>
+            <nav class="header-nav" id="headerNav">
+                <ul class="nav-list">
+                    <li class="nav-item has-mega-menu">
+                        <a href="rooms.php" class="nav-link">Stay</a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-col">
+                                    <div class="mega-menu-title">Rooms & Suites</div>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="rooms.php">Rooms</a></li>
+                                        <li><a href="suites.php">Suites</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-col">
+                                    <div class="mega-menu-images">
+                                        <a href="rooms.php" class="mega-menu-img-link">
+                                            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=300&q=80" alt="Rooms">
+                                            <span>Rooms</span>
+                                        </a>
+                                        <a href="suites.php" class="mega-menu-img-link">
+                                            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=300&q=80" alt="Suites">
+                                            <span>Suites</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="dining.php" class="nav-link">Dine</a>
+                    </li>
+                    <li class="nav-item has-mega-menu">
+                        <a href="weddings.php" class="nav-link">Weddings & Events</a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-col">
+                                    <div class="mega-menu-title">Venues</div>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="diamond.php">Diamond Hall</a></li>
+                                        <li><a href="jashan-party-lawn.php">Jashan Party Lawn</a></li>
+                                        <li><a href="aquarius-pool.php">Aquarius Pool</a></li>
+                                        <li><a href="sapphire.php">Sapphire</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-col">
+                                    <div class="mega-menu-images">
+                                        <a href="diamond.php" class="mega-menu-img-link">
+                                            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=300&q=80" alt="Diamond Hall">
+                                            <span>Diamond Hall</span>
+                                        </a>
+                                        <a href="jashan-party-lawn.php" class="mega-menu-img-link">
+                                            <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=300&q=80" alt="Jashan Lawn">
+                                            <span>Jashan Lawn</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item has-mega-menu">
+                        <a href="experiences.php" class="nav-link">Experiences</a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-col">
+                                    <div class="mega-menu-title">Experiences</div>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="pool.php">Pool</a></li>
+                                        <li><a href="garden.php">Garden</a></li>
+                                        <li><a href="services.php">Services</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="gallery.php" class="nav-link">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="offers.php" class="nav-link">Offers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.php" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.php" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
-</nav>
+</header>

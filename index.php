@@ -73,55 +73,55 @@ require_once 'includes/navbar.php';
         
         <div class="row g-4">
             <div class="col-lg-3 col-md-6" data-animate="fadeInUp" data-delay="0.1">
-                <div class="feature-card feature-card-luxury">
-                    <div class="feature-icon-wrapper">
-                        <div class="feature-icon">
+                <div class="feature-card-image" style="background-image: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80');">
+                    <div class="feature-card-overlay"></div>
+                    <div class="feature-card-content">
+                        <div class="feature-icon-small">
                             <i class="bi bi-house-door"></i>
                         </div>
-                        <div class="feature-icon-ring"></div>
+                        <h4>Luxury Rooms</h4>
+                        <p>Elegantly appointed rooms with modern amenities and stunning views</p>
+                        <a href="rooms.php" class="feature-link">Explore Rooms <i class="bi bi-arrow-right"></i></a>
                     </div>
-                    <h4>Luxury Rooms</h4>
-                    <p>Elegantly appointed rooms with modern amenities and stunning views</p>
-                    <a href="rooms.php" class="feature-link">Explore Rooms <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6" data-animate="fadeInUp" data-delay="0.2">
-                <div class="feature-card feature-card-luxury">
-                    <div class="feature-icon-wrapper">
-                        <div class="feature-icon">
+                <div class="feature-card-image" style="background-image: url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&q=80');">
+                    <div class="feature-card-overlay"></div>
+                    <div class="feature-card-content">
+                        <div class="feature-icon-small">
                             <i class="bi bi-gem"></i>
                         </div>
-                        <div class="feature-icon-ring"></div>
+                        <h4>Grand Weddings</h4>
+                        <p>Magnificent venues for your dream celebration</p>
+                        <a href="weddings.php" class="feature-link">View Venues <i class="bi bi-arrow-right"></i></a>
                     </div>
-                    <h4>Grand Weddings</h4>
-                    <p>Magnificent venues for your dream celebration</p>
-                    <a href="weddings.php" class="feature-link">View Venues <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6" data-animate="fadeInUp" data-delay="0.3">
-                <div class="feature-card feature-card-luxury">
-                    <div class="feature-icon-wrapper">
-                        <div class="feature-icon">
+                <div class="feature-card-image" style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80');">
+                    <div class="feature-card-overlay"></div>
+                    <div class="feature-card-content">
+                        <div class="feature-icon-small">
                             <i class="bi bi-cup-hot"></i>
                         </div>
-                        <div class="feature-icon-ring"></div>
+                        <h4>Fine Dining</h4>
+                        <p>Exquisite culinary experiences crafted by expert chefs</p>
+                        <a href="dining.php" class="feature-link">View Menu <i class="bi bi-arrow-right"></i></a>
                     </div>
-                    <h4>Fine Dining</h4>
-                    <p>Exquisite culinary experiences crafted by expert chefs</p>
-                    <a href="dining.php" class="feature-link">View Menu <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6" data-animate="fadeInUp" data-delay="0.4">
-                <div class="feature-card feature-card-luxury">
-                    <div class="feature-icon-wrapper">
-                        <div class="feature-icon">
+                <div class="feature-card-image" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80');">
+                    <div class="feature-card-overlay"></div>
+                    <div class="feature-card-content">
+                        <div class="feature-icon-small">
                             <i class="bi bi-heart-pulse"></i>
                         </div>
-                        <div class="feature-icon-ring"></div>
+                        <h4>Wellness & Spa</h4>
+                        <p>Rejuvenate your body and soul at our spa</p>
+                        <a href="services.php" class="feature-link">Discover More <i class="bi bi-arrow-right"></i></a>
                     </div>
-                    <h4>Wellness & Spa</h4>
-                    <p>Rejuvenate your body and soul at our spa</p>
-                    <a href="services.php" class="feature-link">Discover More <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </div>

@@ -5,20 +5,49 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     // ===================================
-    // Navbar Scroll Effect
+    // Header Scroll Effect
     // ===================================
-    const navbar = document.getElementById('mainNav');
-    const isHome = navbar.classList.contains('navbar-home');
+    const header = document.getElementById('siteHeader');
     
-    if (isHome) {
+    if (header) {
         window.addEventListener('scroll', function() {
             if (window.scrollY > 100) {
-                navbar.classList.remove('navbar-home');
-                navbar.classList.add('navbar-scrolled');
+                header.classList.add('scrolled');
             } else {
-                navbar.classList.add('navbar-home');
-                navbar.classList.remove('navbar-scrolled');
+                header.classList.remove('scrolled');
             }
+        });
+    }
+    
+    // ===================================
+    // Mobile Menu Toggle
+    // ===================================
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const headerNav = document.getElementById('headerNav');
+    
+    if (mobileMenuToggle && headerNav) {
+        mobileMenuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            headerNav.classList.toggle('active');
+            document.body.style.overflow = headerNav.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = headerNav.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (window.innerWidth <= 991) {
+                    const parentItem = this.closest('.nav-item');
+                    if (parentItem && parentItem.classList.contains('has-mega-menu')) {
+                        e.preventDefault();
+                        parentItem.classList.toggle('active');
+                    } else {
+                        mobileMenuToggle.classList.remove('active');
+                        headerNav.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                }
+            });
         });
     }
     
@@ -32,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.preventDefault();
                 const target = document.querySelector(href);
                 if (target) {
-                    const headerHeight = navbar.offsetHeight;
+                    const headerHeight = header ? header.offsetHeight : 0;
                     const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
                     
                     window.scrollTo({
@@ -68,15 +97,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animate-fadeInUp');
+                entry.target.classList.add('animated');
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
     
-    const animateElements = document.querySelectorAll('.feature-card, .room-card, .venue-card, .offer-card');
+    const animateElements = document.querySelectorAll('[data-animate]');
     animateElements.forEach(el => {
-        el.style.opacity = '0';
         observer.observe(el);
     });
     
