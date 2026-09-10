@@ -21,7 +21,7 @@ require_once 'includes/navbar.php';
     <div class="container">
         <div class="row align-items-center g-5">
             <div class="col-lg-6">
-                <img src="assets/images/about-detail.jpg" alt="About Doab Vilas" class="img-fluid rounded" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80" alt="About Doab Vilas" class="img-fluid rounded" loading="lazy">
             </div>
             <div class="col-lg-6">
                 <span class="section-subtitle">Our Heritage</span>

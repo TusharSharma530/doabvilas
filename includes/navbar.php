@@ -30,7 +30,8 @@
 <nav class="navbar navbar-expand-lg <?php echo (getCurrentPage() === 'home') ? 'navbar-home' : 'navbar-inner'; ?>" id="mainNav">
     <div class="container">
         <a class="navbar-brand" href="index.php">
-            <span class="brand-text">DOAB VILAS</span>
+            <img src="https://static.wixstatic.com/media/3fe8cd_b9d2633ac9a64ea0a29c36e67a951f01~mv2.png/v1/fill/w_200,h_70,al_c,q_85,usm_0.66_1.00_0.01/3fe8cd_b9d2633ac9a64ea0a29c36e67a951f01~mv2.png" 
+                 alt="Doab Vilas Logo" class="navbar-logo" style="height: 50px; width: auto;">
         </a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

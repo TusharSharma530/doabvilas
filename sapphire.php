@@ -5,7 +5,7 @@ require_once 'includes/navbar.php';
 ?>
 
 <!-- Page Hero -->
-<section class="page-hero" style="background-image: url('assets/images/weddings/sapphire-hero.jpg');">
+<section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1478146059778-26028b07395a?w=1920&q=80');">
     <div class="hero-overlay"></div>
     <div class="container">
         <div class="page-hero-content">
@@ -21,7 +21,7 @@ require_once 'includes/navbar.php';
     <div class="container">
         <div class="row align-items-center g-5">
             <div class="col-lg-6">
-                <img src="assets/images/weddings/sapphire-detail.jpg" alt="Sapphire" class="img-fluid rounded" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=800&q=80" alt="Sapphire" class="img-fluid rounded" loading="lazy">
             </div>
             <div class="col-lg-6">
                 <span class="section-subtitle">Exclusive Space</span>

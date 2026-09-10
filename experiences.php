@@ -22,7 +22,7 @@ require_once 'includes/navbar.php';
         <div class="row g-4">
             <div class="col-lg-3 col-md-6">
                 <a href="pool.php" class="venue-card">
-                    <img src="assets/images/experiences/pool.jpg" alt="Pool" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=600&q=80" alt="Pool" loading="lazy">
                     <div class="venue-overlay">
                         <h4>Pool</h4>
                         <p>Relax by our pristine swimming pool</p>
@@ -31,7 +31,7 @@ require_once 'includes/navbar.php';
             </div>
             <div class="col-lg-3 col-md-6">
                 <a href="garden.php" class="venue-card">
-                    <img src="assets/images/experiences/garden.jpg" alt="Garden" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600&q=80" alt="Garden" loading="lazy">
                     <div class="venue-overlay">
                         <h4>Garden</h4>
                         <p>Tranquil green spaces for peaceful moments</p>
@@ -40,7 +40,7 @@ require_once 'includes/navbar.php';
             </div>
             <div class="col-lg-3 col-md-6">
                 <a href="dining.php" class="venue-card">
-                    <img src="assets/images/experiences/dining.jpg" alt="Dining" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Dining" loading="lazy">
                     <div class="venue-overlay">
                         <h4>Dining</h4>
                         <p>Culinary journeys for the senses</p>
@@ -49,7 +49,7 @@ require_once 'includes/navbar.php';
             </div>
             <div class="col-lg-3 col-md-6">
                 <a href="services.php" class="venue-card">
-                    <img src="assets/images/experiences/services.jpg" alt="Services" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80" alt="Services" loading="lazy">
                     <div class="venue-overlay">
                         <h4>Services</h4>
                         <p>Premium amenities and personalized service</p>

@@ -999,3 +999,759 @@ img {
         font-size: 1.8rem;
     }
 }
+
+/* ===================================
+   Animations (Like Bravura Resort)
+   =================================== */
+
+/* Base Animation Styles */
+[data-animate] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+[data-animate].animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+[data-animate="fadeInLeft"] {
+    transform: translateX(-50px);
+}
+
+[data-animate="fadeInLeft"].animated {
+    transform: translateX(0);
+}
+
+[data-animate="fadeInRight"] {
+    transform: translateX(50px);
+}
+
+[data-animate="fadeInRight"].animated {
+    transform: translateX(0);
+}
+
+[data-animate="fadeInDown"] {
+    transform: translateY(-30px);
+}
+
+[data-animate="fadeInDown"].animated {
+    transform: translateY(0);
+}
+
+/* Hero Animated Styles */
+.hero-animated {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-animated::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 70%, rgba(201, 169, 106, 0.1) 0%, transparent 50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.hero-logo-wrapper {
+    margin-bottom: 20px;
+}
+
+.hero-logo {
+    max-width: 280px;
+    height: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0;
+    animation: fadeInDown 1s ease forwards;
+}
+
+.hero-title {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hero-title-line {
+    display: block;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 600;
+    letter-spacing: 8px;
+    line-height: 1.1;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards 0.3s;
+}
+
+.hero-title-accent {
+    color: var(--dv-gold);
+    animation-delay: 0.5s;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--dv-gold);
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards 0.2s;
+}
+
+.hero-text {
+    font-size: 1.2rem;
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards 0.7s;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards 0.9s;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards 1.1s;
+}
+
+.hero-stat {
+    text-align: center;
+    color: var(--dv-white);
+}
+
+.hero-stat-number {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--dv-gold);
+    display: block;
+    line-height: 1;
+}
+
+.hero-stat-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.8;
+    display: block;
+    margin-top: 5px;
+}
+
+.hero-stat-divider {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, transparent, var(--dv-gold), transparent);
+}
+
+/* Feature Cards Luxury */
+.feature-card-luxury {
+    position: relative;
+    padding: 40px 30px;
+    background: var(--dv-white);
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.feature-card-luxury::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--dv-gold), var(--dv-gold-dark));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.feature-card-luxury:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-card-luxury:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.feature-icon-wrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--dv-ivory), var(--dv-beige));
+    border-radius: 50%;
+    color: var(--dv-gold);
+    font-size: 2rem;
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s ease;
+}
+
+.feature-icon-ring {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid var(--dv-gold);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.4s ease;
+}
+
+.feature-card-luxury:hover .feature-icon-ring {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.feature-card-luxury:hover .feature-icon {
+    background: var(--dv-gold);
+    color: var(--dv-white);
+}
+
+.feature-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--dv-gold);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.feature-card-luxury:hover .feature-link {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.feature-link i {
+    transition: transform 0.3s ease;
+}
+
+.feature-link:hover i {
+    transform: translateX(5px);
+}
+
+/* About Preview Parallax */
+.about-preview-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.about-parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.about-preview-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.about-main-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+}
+
+.about-image-wrapper {
+    position: relative;
+}
+
+.about-image-accent {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 200px;
+    height: 200px;
+    border: 3px solid var(--dv-gold);
+    border-radius: 8px;
+    z-index: -1;
+}
+
+.about-experience-badge {
+    position: absolute;
+    bottom: 30px;
+    left: -30px;
+    background: var(--dv-gold);
+    color: var(--dv-white);
+    padding: 20px 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+}
+
+.experience-number {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: block;
+    line-height: 1;
+}
+
+.experience-text {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.about-lead {
+    font-size: 1.15rem;
+    color: var(--dv-text);
+    line-height: 1.8;
+}
+
+.about-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.about-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-feature i {
+    color: var(--dv-gold);
+    font-size: 1.1rem;
+}
+
+/* Room Cards Premium */
+.room-card-premium {
+    position: relative;
+    background: var(--dv-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.4s ease;
+}
+
+.room-card-premium:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.room-card-premium .room-image {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+}
+
+.room-card-premium .room-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.room-card-premium:hover .room-image img {
+    transform: scale(1.1);
+}
+
+.room-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(23, 53, 45, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.room-card-premium:hover .room-overlay {
+    opacity: 1;
+}
+
+.btn-white {
+    background: var(--dv-white);
+    color: var(--dv-dark);
+    padding: 12px 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-white:hover {
+    background: var(--dv-gold);
+    color: var(--dv-white);
+    transform: translateY(-2px);
+}
+
+.room-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--dv-gold);
+    color: var(--dv-white);
+    padding: 5px 15px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 3px;
+}
+
+.room-badge-luxury {
+    background: var(--dv-green);
+}
+
+.room-badge-exclusive {
+    background: linear-gradient(135deg, #b8860b, #daa520);
+}
+
+.room-amenities {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--dv-border);
+}
+
+.room-amenities span {
+    color: var(--dv-text-muted);
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.room-amenities span:hover {
+    color: var(--dv-gold);
+}
+
+/* Venue Cards Elegant */
+.venue-card-elegant {
+    position: relative;
+    height: 350px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: block;
+}
+
+.venue-card-elegant img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.venue-card-elegant:hover img {
+    transform: scale(1.1);
+}
+
+.venue-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    color: var(--dv-white);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.venue-card-elegant:hover .venue-overlay {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.venue-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--dv-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.venue-overlay h4 {
+    color: var(--dv-white);
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.venue-overlay p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+.venue-capacity {
+    font-size: 0.85rem;
+    color: var(--dv-gold);
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(201,169,106,0.1)"/></svg>');
+    background-size: 30px 30px;
+    opacity: 0.5;
+}
+
+.testimonial-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 35px;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+}
+
+.testimonial-card:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-5px);
+}
+
+.testimonial-rating {
+    color: var(--dv-gold);
+    font-size: 1rem;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 3px;
+}
+
+.testimonial-text {
+    color: var(--dv-white);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    font-style: italic;
+    opacity: 0.95;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.author-avatar {
+    font-size: 2.5rem;
+    color: var(--dv-gold);
+}
+
+.author-info h5 {
+    color: var(--dv-white);
+    font-size: 1rem;
+    margin-bottom: 3px;
+}
+
+.author-info span {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.85rem;
+}
+
+/* Offer Cards Premium */
+.offer-card-premium {
+    display: flex;
+    background: var(--dv-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.4s ease;
+    height: 100%;
+}
+
+.offer-card-premium:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.offer-image {
+    width: 40%;
+    position: relative;
+}
+
+.offer-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.offer-content {
+    width: 60%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.offer-content h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--dv-dark);
+}
+
+.offer-content p {
+    color: var(--dv-text-light);
+    margin-bottom: 15px;
+}
+
+.offer-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--dv-gold);
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* CTA Animated */
+.cta-animated {
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0 50 Q25 25 50 50 T100 50" stroke="rgba(201,169,106,0.1)" fill="none" stroke-width="2"/></svg>');
+    background-size: 100px 100px;
+    animation: patternMove 20s linear infinite;
+}
+
+@keyframes patternMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+}
+
+.cta-title {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: var(--dv-white);
+    margin-bottom: 15px;
+}
+
+.cta-text {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 991.98px) {
+    .hero-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .hero-stat-divider {
+        width: 50px;
+        height: 1px;
+    }
+    
+    .about-experience-badge {
+        left: 15px;
+        bottom: 15px;
+    }
+    
+    .offer-card-premium {
+        flex-direction: column;
+    }
+    
+    .offer-image,
+    .offer-content {
+        width: 100%;
+    }
+    
+    .offer-image {
+        height: 200px;
+    }
+    
+    .cta-buttons {
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-logo {
+        max-width: 200px;
+    }
+    
+    .hero-title-line {
+        font-size: 2.5rem;
+        letter-spacing: 4px;
+    }
+    
+    .about-features {
+        grid-template-columns: 1fr;
+    }
+}

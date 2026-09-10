@@ -27,7 +27,7 @@ require_once 'includes/navbar.php';
         <div class="row g-4">
             <div class="col-lg-3 col-md-6">
                 <a href="diamond.php" class="venue-card">
-                    <img src="assets/images/weddings/diamond-hall.jpg" alt="Diamond Hall" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&q=80" alt="Diamond Hall" loading="lazy">
                     <div class="venue-overlay">
                         <h4>Diamond Hall</h4>
                         <p>Grand ballroom for magnificent celebrations</p>
@@ -36,7 +36,7 @@ require_once 'includes/navbar.php';
             </div>
             <div class="col-lg-3 col-md-6">
                 <a href="jashan-party-lawn.php" class="venue-card">
-                    <img src="assets/images/weddings/jashan-lawn.jpg" alt="Jashan Party Lawn" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600&q=80" alt="Jashan Party Lawn" loading="lazy">
                     <div class="venue-overlay">
                         <h4>Jashan Party Lawn</h4>
                         <p>Expansive outdoor space for lavish events</p>
@@ -45,7 +45,7 @@ require_once 'includes/navbar.php';
             </div>
             <div class="col-lg-3 col-md-6">
                 <a href="aquarius-pool.php" class="venue-card">
-                    <img src="assets/images/weddings/aquarius-pool.jpg" alt="Aquarius Pool" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=600&q=80" alt="Aquarius Pool" loading="lazy">
                     <div class="venue-overlay">
                         <h4>Aquarius Pool</h4>
                         <p>Stunning poolside venue for cocktail events</p>
@@ -54,7 +54,7 @@ require_once 'includes/navbar.php';
             </div>
             <div class="col-lg-3 col-md-6">
                 <a href="sapphire.php" class="venue-card">
-                    <img src="assets/images/weddings/sapphire.jpg" alt="Sapphire" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=600&q=80" alt="Sapphire" loading="lazy">
                     <div class="venue-overlay">
                         <h4>Sapphire</h4>
                         <p>Intimate venue for exclusive gatherings</p>

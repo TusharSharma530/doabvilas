@@ -5,7 +5,7 @@ require_once 'includes/navbar.php';
 ?>
 
 <!-- Page Hero -->
-<section class="page-hero" style="background-image: url('assets/images/weddings/diamond-hero.jpg');">
+<section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&q=80');">
     <div class="hero-overlay"></div>
     <div class="container">
         <div class="page-hero-content">
@@ -21,7 +21,7 @@ require_once 'includes/navbar.php';
     <div class="container">
         <div class="row align-items-center g-5">
             <div class="col-lg-6">
-                <img src="assets/images/weddings/diamond-detail.jpg" alt="Diamond Hall" class="img-fluid rounded" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&q=80" alt="Diamond Hall" class="img-fluid rounded" loading="lazy">
             </div>
             <div class="col-lg-6">
                 <span class="section-subtitle">Grand Ballroom</span>

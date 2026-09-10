@@ -5,7 +5,7 @@ require_once 'includes/navbar.php';
 ?>
 
 <!-- Page Hero -->
-<section class="page-hero" style="background-image: url('assets/images/experiences/pool-hero.jpg');">
+<section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=1920&q=80');">
     <div class="hero-overlay"></div>
     <div class="container">
         <div class="page-hero-content">
@@ -21,7 +21,7 @@ require_once 'includes/navbar.php';
     <div class="container">
         <div class="row align-items-center g-5">
             <div class="col-lg-6">
-                <img src="assets/images/experiences/pool-detail.jpg" alt="Pool" class="img-fluid rounded" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=800&q=80" alt="Pool" class="img-fluid rounded" loading="lazy">
             </div>
             <div class="col-lg-6">
                 <span class="section-subtitle">Leisure</span>

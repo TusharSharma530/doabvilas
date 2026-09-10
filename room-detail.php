@@ -5,7 +5,7 @@ require_once 'includes/navbar.php';
 ?>
 
 <!-- Page Hero -->
-<section class="page-hero" style="background-image: url('assets/images/rooms/room-detail-hero.jpg');">
+<section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1920&q=80');">
     <div class="hero-overlay"></div>
     <div class="container">
         <div class="page-hero-content">
@@ -22,16 +22,16 @@ require_once 'includes/navbar.php';
         <div class="row g-5">
             <!-- Room Gallery -->
             <div class="col-lg-7">
-                <img src="assets/images/rooms/deluxe-main.jpg" alt="Deluxe Room" class="img-fluid rounded mb-4" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80" alt="Deluxe Room" class="img-fluid rounded mb-4" loading="lazy">
                 <div class="row g-3">
                     <div class="col-4">
-                        <img src="assets/images/rooms/deluxe-thumb1.jpg" alt="Room View" class="img-fluid rounded" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&q=80" alt="Room View" class="img-fluid rounded" loading="lazy">
                     </div>
                     <div class="col-4">
-                        <img src="assets/images/rooms/deluxe-thumb2.jpg" alt="Bathroom" class="img-fluid rounded" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&q=80" alt="Bathroom" class="img-fluid rounded" loading="lazy">
                     </div>
                     <div class="col-4">
-                        <img src="assets/images/rooms/deluxe-thumb3.jpg" alt="Amenities" class="img-fluid rounded" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=400&q=80" alt="Amenities" class="img-fluid rounded" loading="lazy">
                     </div>
                 </div>
             </div>
