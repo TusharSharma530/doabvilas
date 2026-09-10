@@ -219,4 +219,156 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     }
     
+    // ===================================
+    // Rooms Carousel (Owl-like)
+    // ===================================
+    const roomsCarousel = document.getElementById('roomsCarousel');
+    const roomsPrev = document.getElementById('roomsPrev');
+    const roomsNext = document.getElementById('roomsNext');
+    
+    if (roomsCarousel && roomsPrev && roomsNext) {
+        const scrollAmount = roomsCarousel.querySelector('.room-carousel-item').offsetWidth + 25;
+        
+        roomsPrev.addEventListener('click', () => {
+            roomsCarousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+        
+        roomsNext.addEventListener('click', () => {
+            roomsCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+        
+        // Autoplay like Owl Carousel
+        let autoplayInterval = setInterval(() => {
+            if (roomsCarousel.scrollLeft + roomsCarousel.clientWidth >= roomsCarousel.scrollWidth) {
+                roomsCarousel.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                roomsCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }, 4000);
+        
+        // Pause on hover
+        roomsCarousel.addEventListener('mouseenter', () => {
+            clearInterval(autoplayInterval);
+        });
+        
+        roomsCarousel.addEventListener('mouseleave', () => {
+            autoplayInterval = setInterval(() => {
+                if (roomsCarousel.scrollLeft + roomsCarousel.clientWidth >= roomsCarousel.scrollWidth) {
+                    roomsCarousel.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    roomsCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                }
+            }, 4000);
+        });
+    }
+    
+    // ===================================
+    // Weddings Carousel
+    // ===================================
+    const weddingsCarousel = document.getElementById('weddingsCarousel');
+    const weddingsPrev = document.getElementById('weddingsPrev');
+    const weddingsNext = document.getElementById('weddingsNext');
+    
+    if (weddingsCarousel && weddingsPrev && weddingsNext) {
+        const scrollAmountW = weddingsCarousel.querySelector('.wedding-carousel-item').offsetWidth + 25;
+        
+        weddingsPrev.addEventListener('click', () => {
+            weddingsCarousel.scrollBy({ left: -scrollAmountW, behavior: 'smooth' });
+        });
+        
+        weddingsNext.addEventListener('click', () => {
+            weddingsCarousel.scrollBy({ left: scrollAmountW, behavior: 'smooth' });
+        });
+        
+        // Autoplay
+        let autoplayW = setInterval(() => {
+            if (weddingsCarousel.scrollLeft + weddingsCarousel.clientWidth >= weddingsCarousel.scrollWidth) {
+                weddingsCarousel.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                weddingsCarousel.scrollBy({ left: scrollAmountW, behavior: 'smooth' });
+            }
+        }, 5000);
+        
+        weddingsCarousel.addEventListener('mouseenter', () => {
+            clearInterval(autoplayW);
+        });
+        
+        weddingsCarousel.addEventListener('mouseleave', () => {
+            autoplayW = setInterval(() => {
+                if (weddingsCarousel.scrollLeft + weddingsCarousel.clientWidth >= weddingsCarousel.scrollWidth) {
+                    weddingsCarousel.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    weddingsCarousel.scrollBy({ left: scrollAmountW, behavior: 'smooth' });
+                }
+            }, 5000);
+        });
+    }
+    
+    // ===================================
+    // Guest Comments Carousel
+    // ===================================
+    const guests = [
+        { name: 'Khayali', designation: 'Comedian', quote: 'Good, Ek Andaz, Ek Awaaz, Ek Aghaz. Bravura Gold Resort.', image: 'assets/images/experiences/Khayali-Guest.jpg' },
+        { name: 'Rajeev Shukla', designation: 'Senior Journalist', quote: 'Amazing hospitality and world-class facilities. A truly remarkable destination for luxury seekers.', image: 'assets/images/experiences/Rajeev Shukla-Guest.jpg' },
+        { name: 'Mahima Chaudhary', designation: 'Actress', quote: 'Beautiful property with exceptional service. Every moment spent here was absolutely wonderful.', image: 'assets/images/experiences/Mahima Chaudhary-Guest.jpg' },
+        { name: 'Mika Singh', designation: 'Singer & Performer', quote: 'Outstanding venue with premium amenities. The perfect place for celebrations and events.', image: 'assets/images/experiences/Mika Singh-Guest.jpg' }
+    ];
+    
+    let currentGuest = 0;
+    const guestItems = document.querySelectorAll('.guest-image-item');
+    const guestQuoteText = document.getElementById('guestQuoteText');
+    const guestName = document.getElementById('guestName');
+    const guestDesignation = document.getElementById('guestDesignation');
+    const guestPrev = document.getElementById('guestPrev');
+    const guestNext = document.getElementById('guestNext');
+    
+    function updateGuest(index) {
+        // Update quote with fade
+        guestQuoteText.style.opacity = '0';
+        guestName.style.opacity = '0';
+        guestDesignation.style.opacity = '0';
+        
+        setTimeout(() => {
+            guestQuoteText.textContent = guests[index].quote;
+            guestName.textContent = guests[index].name;
+            guestDesignation.textContent = guests[index].designation;
+            guestQuoteText.style.opacity = '1';
+            guestName.style.opacity = '1';
+            guestDesignation.style.opacity = '1';
+        }, 300);
+        
+        // Update active image
+        guestItems.forEach((item, i) => {
+            item.classList.remove('active');
+            if (i === index) item.classList.add('active');
+        });
+        
+        // Reorder images - active guest comes first
+        const track = document.getElementById('guestImagesTrack');
+        const items = Array.from(guestItems);
+        const reordered = items.slice(index).concat(items.slice(0, index));
+        reordered.forEach(item => track.appendChild(item));
+        
+        // Reset position
+        track.style.transform = 'translateX(0)';
+    }
+    
+    if (guestPrev && guestNext) {
+        guestPrev.addEventListener('click', () => {
+            currentGuest = (currentGuest - 1 + guests.length) % guests.length;
+            updateGuest(currentGuest);
+        });
+        
+        guestNext.addEventListener('click', () => {
+            currentGuest = (currentGuest + 1) % guests.length;
+            updateGuest(currentGuest);
+        });
+    }
+    
+    // Autoplay guest comments
+    setInterval(() => {
+        currentGuest = (currentGuest + 1) % guests.length;
+        updateGuest(currentGuest);
+    }, 5000);
+    
 });

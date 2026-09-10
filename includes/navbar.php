@@ -25,7 +25,7 @@
     <div class="header-main">
         <div class="header-main-container">
             <a class="header-logo" href="index.php">
-                <img src="https://static.wixstatic.com/media/3fe8cd_b9d2633ac9a64ea0a29c36e67a951f01~mv2.png/v1/fill/w_200,h_70,al_c,q_85,usm_0.66_1.00_0.01/3fe8cd_b9d2633ac9a64ea0a29c36e67a951f01~mv2.png" 
+                <img src="assets/images/logo/doab-villas-logo.avif" 
                      alt="Doab Vilas Logo" class="header-logo-img">
             </a>
             

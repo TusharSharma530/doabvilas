@@ -13,7 +13,7 @@ require_once 'includes/navbar.php';
             <div class="col-lg-10 mx-auto text-center">
                 <div class="hero-content">
                     <div class="hero-logo-wrapper mb-4" data-animate="fadeInDown">
-                        <img src="https://static.wixstatic.com/media/3fe8cd_b9d2633ac9a64ea0a29c36e67a951f01~mv2.png/v1/fill/w_300,h_100,al_c,q_85,usm_0.66_1.00_0.01/3fe8cd_b9d2633ac9a64ea0a29c36e67a951f01~mv2.png" 
+                        <img src="assets/images/logo/doab-villas-logo.avif" 
                              alt="Doab Vilas Logo" class="hero-logo">
                     </div>
                     <span class="hero-subtitle" data-animate="fadeInUp" data-delay="0.2">Welcome to</span>
@@ -25,14 +25,14 @@ require_once 'includes/navbar.php';
                         A Premium Luxury Destination Where Indian Hospitality Meets Modern Sophistication
                     </p>
                     <div class="hero-buttons" data-animate="fadeInUp" data-delay="0.8">
-                        <a href="booking.php" class="btn btn-gold btn-lg px-5 py-3">
+                        <a href="booking.php" class="btn btn-gold px-4 py-2">
                             <i class="bi bi-calendar-check me-2"></i>Book Your Stay
                         </a>
-                        <a href="gallery.php" class="btn btn-outline-white btn-lg px-5 py-3">
+                        <a href="gallery.php" class="btn btn-outline-white px-4 py-2">
                             <i class="bi bi-play-circle me-2"></i>Virtual Tour
                         </a>
                     </div>
-                    <div class="hero-stats mt-5" data-animate="fadeInUp" data-delay="1">
+                    <div class="hero-stats" data-animate="fadeInUp" data-delay="1">
                         <div class="hero-stat">
                             <span class="hero-stat-number" data-count="500">0</span>+
                             <span class="hero-stat-label">Happy Guests</span>
@@ -48,136 +48,181 @@ require_once 'includes/navbar.php';
                             <span class="hero-stat-label">Years Legacy</span>
                         </div>
                     </div>
+                    <div class="hero-scroll">
+                        <a href="#features" class="scroll-indicator">
+                            <span>Scroll to Explore</span>
+                            <div class="scroll-line"></div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="hero-scroll">
-        <a href="#features" class="scroll-indicator">
-            <span>Scroll to Explore</span>
-            <div class="scroll-line"></div>
-        </a>
-    </div>
 </section>
 
-<!-- Features Section with Parallax -->
-<section id="features" class="features-section section-padding">
+<!-- Rooms & Suites Section -->
+<section id="features" class="rooms-suites-section section-padding">
     <div class="container">
         <div class="section-header" data-animate="fadeInUp">
-            <span class="section-subtitle">Why Choose Us</span>
-            <h2 class="section-title">Experience Excellence at Doab Vilas</h2>
-            <p class="section-text">
-                Discover what makes us the preferred destination for discerning travelers seeking luxury and comfort.
-            </p>
+            <span class="section-subtitle">Exclusive</span>
+            <h2 class="section-title">ROOMS & SUITES</h2>
         </div>
         
-        <div class="row g-4">
-            <div class="col-lg-3 col-md-6" data-animate="fadeInUp" data-delay="0.1">
-                <div class="feature-card-image" style="background-image: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80');">
-                    <div class="feature-card-overlay"></div>
-                    <div class="feature-card-content">
-                        <div class="feature-icon-small">
-                            <i class="bi bi-house-door"></i>
+        <div class="rooms-carousel-wrapper" data-animate="fadeInUp" data-delay="0.2">
+            <button class="rooms-carousel-prev" id="roomsPrev">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+            <div class="rooms-carousel" id="roomsCarousel">
+                <div class="room-carousel-item">
+                    <a href="room-detail.php">
+                        <div class="room-carousel-img">
+                            <img src="assets/images/rooms/Premium-Junior-Suites-rooms--Room.jpg" alt="Premium Junior Suite Rooms">
                         </div>
-                        <h4>Luxury Rooms</h4>
-                        <p>Elegantly appointed rooms with modern amenities and stunning views</p>
-                        <a href="rooms.php" class="feature-link">Explore Rooms <i class="bi bi-arrow-right"></i></a>
-                    </div>
+                        <h4 class="room-carousel-title">Premium Junior Suite Rooms</h4>
+                    </a>
+                </div>
+                <div class="room-carousel-item">
+                    <a href="room-detail.php">
+                        <div class="room-carousel-img">
+                            <img src="assets/images/rooms/Premium-Suites--Room.jpg" alt="Premium Suites">
+                        </div>
+                        <h4 class="room-carousel-title">Premium Suites</h4>
+                    </a>
+                </div>
+                <div class="room-carousel-item">
+                    <a href="room-detail.php">
+                        <div class="room-carousel-img">
+                            <img src="assets/images/rooms/premium-rooms--Room.jpg" alt="Premium Rooms">
+                        </div>
+                        <h4 class="room-carousel-title">Premium Rooms</h4>
+                    </a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6" data-animate="fadeInUp" data-delay="0.2">
-                <div class="feature-card-image" style="background-image: url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&q=80');">
-                    <div class="feature-card-overlay"></div>
-                    <div class="feature-card-content">
-                        <div class="feature-icon-small">
-                            <i class="bi bi-gem"></i>
+            <button class="rooms-carousel-next" id="roomsNext">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Weddings & Events Section -->
+<section class="weddings-events-section section-padding" style="background-color: var(--dv-white);">
+    <div class="container">
+        <div class="section-header" data-animate="fadeInUp">
+            <span class="section-subtitle">Wedding & Events</span>
+            <h2 class="section-title">START PLANNING</h2>
+        </div>
+        
+        <div class="weddings-carousel-wrapper" data-animate="fadeInUp" data-delay="0.2">
+            <div class="weddings-carousel" id="weddingsCarousel">
+                <div class="wedding-carousel-item">
+                    <a href="weddings.php">
+                        <div class="wedding-carousel-img">
+                            <img src="assets/images/weddings/festival-events.jpg" alt="Wedding Venues / Lawn">
                         </div>
-                        <h4>Grand Weddings</h4>
-                        <p>Magnificent venues for your dream celebration</p>
-                        <a href="weddings.php" class="feature-link">View Venues <i class="bi bi-arrow-right"></i></a>
-                    </div>
+                        <div class="wedding-carousel-content">
+                            <h3 class="wedding-carousel-title">Wedding Venues / Lawn</h3>
+                            <p class="wedding-carousel-text">We at Doab Vilas consider each and every event of yours as one of the most important events for us.</p>
+                            <span class="wedding-carousel-link">EXPLORE MORE <i class="bi bi-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="wedding-carousel-item">
+                    <a href="jashan-party-lawn.php">
+                        <div class="wedding-carousel-img">
+                            <img src="assets/images/weddings/festival-events.jpg" alt="Festival Events">
+                        </div>
+                        <div class="wedding-carousel-content">
+                            <h3 class="wedding-carousel-title">Festival Events</h3>
+                            <p class="wedding-carousel-text">Celebrate your special festivals with us in a grand way with our premium event spaces and services.</p>
+                            <span class="wedding-carousel-link">EXPLORE MORE <i class="bi bi-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="wedding-carousel-item">
+                    <a href="diamond.php">
+                        <div class="wedding-carousel-img">
+                            <img src="assets/images/weddings/festival-events.jpg" alt="Corporate Events">
+                        </div>
+                        <div class="wedding-carousel-content">
+                            <h3 class="wedding-carousel-title">Corporate Events</h3>
+                            <p class="wedding-carousel-text">Professional spaces for your business meetings, conferences and corporate gatherings.</p>
+                            <span class="wedding-carousel-link">EXPLORE MORE <i class="bi bi-arrow-right"></i></span>
+                        </div>
+                    </a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6" data-animate="fadeInUp" data-delay="0.3">
-                <div class="feature-card-image" style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80');">
-                    <div class="feature-card-overlay"></div>
-                    <div class="feature-card-content">
-                        <div class="feature-icon-small">
-                            <i class="bi bi-cup-hot"></i>
-                        </div>
-                        <h4>Fine Dining</h4>
-                        <p>Exquisite culinary experiences crafted by expert chefs</p>
-                        <a href="dining.php" class="feature-link">View Menu <i class="bi bi-arrow-right"></i></a>
-                    </div>
+            <button class="weddings-carousel-prev" id="weddingsPrev">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+            <button class="weddings-carousel-next" id="weddingsNext">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Discover Section with YouTube Video -->
+<section class="discover-section section-padding" style="background-color: var(--dv-white);">
+    <div class="container">
+        <div class="section-header" data-animate="fadeInUp">
+            <span class="section-subtitle">Discover</span>
+            <h2 class="section-title">LUXURY HOTELS IN MEERUT</h2>
+        </div>
+        
+        <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
+            <div class="col-lg-6">
+                <div class="discover-content">
+                    <h3 class="discover-heading">FACILITIES AT DOAB VILAS</h3>
+                    <p class="discover-text">
+                        <strong>DOAB VILAS</strong> is an exclusive luxury hotel at Meerut, offering a vast range of facilities at one place. Experience the warmth of nature at Doab Vilas. You will be surrounded by the beauty &amp; grace of this resort, which is intelligently designed to revive you. At <strong>Doab Vilas</strong>, we offer you our world class hospitality services....
+                    </p>
+                    <a href="about.php" class="discover-link">
+                        EXPLORE MORE <i class="bi bi-arrow-right"></i>
+                    </a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6" data-animate="fadeInUp" data-delay="0.4">
-                <div class="feature-card-image" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80');">
-                    <div class="feature-card-overlay"></div>
-                    <div class="feature-card-content">
-                        <div class="feature-icon-small">
-                            <i class="bi bi-heart-pulse"></i>
-                        </div>
-                        <h4>Wellness & Spa</h4>
-                        <p>Rejuvenate your body and soul at our spa</p>
-                        <a href="services.php" class="feature-link">Discover More <i class="bi bi-arrow-right"></i></a>
-                    </div>
+            <div class="col-lg-6">
+                <div class="discover-video">
+                    <iframe 
+                        src="https://www.youtube.com/embed/umNVgILZh-0" 
+                        title="Doab Vilas Resort Video"
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- About Preview with Parallax Image -->
-<section class="about-preview-section section-padding">
-    <div class="about-parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1920&q=80');"></div>
+<!-- Exclusive Offers Section -->
+<section class="exclusive-offers-section section-padding" style="background-color: var(--dv-white);">
     <div class="container">
-        <div class="row align-items-center g-5">
-            <div class="col-lg-6" data-animate="fadeInLeft">
-                <div class="about-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80" alt="Doab Vilas Property" class="about-main-image">
-                    <div class="about-image-accent"></div>
-                    <div class="about-experience-badge">
-                        <span class="experience-number">15+</span>
-                        <span class="experience-text">Years of Excellence</span>
-                    </div>
+        <div class="section-header" data-animate="fadeInUp">
+            <span class="section-subtitle">Discover</span>
+            <h2 class="section-title">EXCLUSIVE OFFERS</h2>
+        </div>
+        
+        <div class="row g-3" data-animate="fadeInUp" data-delay="0.2">
+            <div class="col-lg-6">
+                <div class="offer-card-exclusive">
+                    <a href="offers.php">
+                        <div class="offer-card-img">
+                            <img src="assets/images/experiences/best-hotels-in-meeru-offer.jpg" alt="Best Hotels in Meerut">
+                        </div>
+                        <h4 class="offer-card-title">Best Hotels in Meerut</h4>
+                    </a>
                 </div>
             </div>
-            <div class="col-lg-6" data-animate="fadeInRight">
-                <div class="about-content">
-                    <span class="section-subtitle">Our Heritage</span>
-                    <h2 class="section-title">A Legacy of Warm Hospitality</h2>
-                    <p class="about-lead">
-                        Nestled in the heart of the city, Doab Vilas stands as a beacon 
-                        of luxury and refined taste. Our heritage of warm hospitality spans 
-                        decades, creating unforgettable experiences for every guest.
-                    </p>
-                    <p>
-                        From our meticulously designed rooms to our world-class dining and 
-                        event spaces, every detail has been thoughtfully curated to offer 
-                        you an experience beyond compare. We believe in blending traditional 
-                        Indian warmth with modern sophistication.
-                    </p>
-                    <div class="about-features">
-                        <div class="about-feature">
-                            <i class="bi bi-check-circle-fill"></i>
-                            <span>Premium Accommodations</span>
+            <div class="col-lg-6">
+                <div class="offer-card-exclusive">
+                    <a href="offers.php">
+                        <div class="offer-card-img">
+                            <img src="assets/images/experiences/feast-on-flavors-this-holi-at-frigo-s-gourmet-offer.jpg" alt="Feast on Flavors this Holi">
                         </div>
-                        <div class="about-feature">
-                            <i class="bi bi-check-circle-fill"></i>
-                            <span>World-Class Dining</span>
-                        </div>
-                        <div class="about-feature">
-                            <i class="bi bi-check-circle-fill"></i>
-                            <span>Grand Event Venues</span>
-                        </div>
-                        <div class="about-feature">
-                            <i class="bi bi-check-circle-fill"></i>
-                            <span>24/7 Concierge Service</span>
-                        </div>
-                    </div>
-                    <a href="about.php" class="btn btn-gold mt-4">
-                        Discover Our Story <i class="bi bi-arrow-right ms-2"></i>
+                        <h4 class="offer-card-title">Feast on Flavors this Holi at Frigo's Gourmet.</h4>
                     </a>
                 </div>
             </div>
@@ -342,117 +387,49 @@ require_once 'includes/navbar.php';
     </div>
 </section>
 
-<!-- Testimonials Section -->
-<section class="testimonials-section section-padding" style="background: linear-gradient(135deg, var(--dv-green) 0%, var(--dv-dark) 100%);">
+<!-- Guest Comments Section -->
+<section class="guest-comments-section section-padding" style="background-color: var(--dv-white);">
     <div class="container">
         <div class="section-header" data-animate="fadeInUp">
-            <span class="section-subtitle" style="color: var(--dv-gold);">Testimonials</span>
-            <h2 class="section-title" style="color: var(--dv-white);">What Our Guests Say</h2>
+            <span class="section-subtitle">Happy Moments</span>
+            <h2 class="section-title">GUEST COMMENTS</h2>
         </div>
         
-        <div class="row g-4">
-            <div class="col-lg-4" data-animate="fadeInUp" data-delay="0.1">
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
+        <div class="guest-comments-wrapper" data-animate="fadeInUp" data-delay="0.2">
+            <div class="guest-comment-active" id="guestCommentActive">
+                <div class="guest-quote">
+                    <span class="quote-mark">"</span>
+                    <p class="guest-quote-text" id="guestQuoteText">Good, Ek Andaz, Ek Awaaz, Ek Aghaz. Bravura Gold Resort.</p>
+                </div>
+                <h4 class="guest-name" id="guestName">Khayali</h4>
+                <span class="guest-designation" id="guestDesignation">Comedian</span>
+                <a href="gallery.php" class="guest-view-link">
+                    VIEW COMMENT CARD <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="guest-images-carousel">
+                <div class="guest-images-track" id="guestImagesTrack">
+                    <div class="guest-image-item active" data-index="0">
+                        <img src="assets/images/experiences/Khayali-Guest.jpg" alt="Khayali">
+                        <span class="guest-image-name">Khayali</span>
                     </div>
-                    <p class="testimonial-text">"An exceptional experience! The rooms were pristine, the staff was incredibly warm, and the dining was world-class. Doab Vilas truly understands luxury hospitality."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="bi bi-person-circle"></i>
-                        </div>
-                        <div class="author-info">
-                            <h5>Rajesh Kumar</h5>
-                            <span>Business Traveler</span>
-                        </div>
+                    <div class="guest-image-item" data-index="1">
+                        <img src="assets/images/experiences/Rajeev Shukla-Guest.jpg" alt="Rajeev Shukla">
+                        <span class="guest-image-name">Rajeev Shukla</span>
+                    </div>
+                    <div class="guest-image-item" data-index="2">
+                        <img src="assets/images/experiences/Mahima Chaudhary-Guest.jpg" alt="Mahima Chaudhary">
+                        <span class="guest-image-name">Mahima Chaudhary</span>
+                    </div>
+                    <div class="guest-image-item" data-index="3">
+                        <img src="assets/images/experiences/Mika Singh-Guest.jpg" alt="Mika Singh">
+                        <span class="guest-image-name">Mika Singh</span>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4" data-animate="fadeInUp" data-delay="0.2">
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <p class="testimonial-text">"We hosted our wedding at Diamond Hall and it was absolutely magical! The event team took care of every detail. Our guests are still talking about it!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="bi bi-person-circle"></i>
-                        </div>
-                        <div class="author-info">
-                            <h5>Priya & Amit Sharma</h5>
-                            <span>Wedding Celebration</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4" data-animate="fadeInUp" data-delay="0.3">
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <p class="testimonial-text">"The perfect weekend getaway! Beautiful property, amazing food, and the pool area was spectacular. Will definitely be coming back soon."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="bi bi-person-circle"></i>
-                        </div>
-                        <div class="author-info">
-                            <h5>Anita Verma</h5>
-                            <span>Leisure Traveler</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Offers Section -->
-<section class="offers-section section-padding" style="background-color: var(--dv-ivory);">
-    <div class="container">
-        <div class="section-header" data-animate="fadeInUp">
-            <span class="section-subtitle">Special</span>
-            <h2 class="section-title">Exclusive Offers</h2>
-        </div>
-        
-        <div class="row g-4">
-            <div class="col-lg-6" data-animate="fadeInLeft">
-                <div class="offer-card offer-card-premium">
-                    <div class="offer-image">
-                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=80" alt="Honeymoon Package" loading="lazy">
-                        <span class="offer-badge">Limited Time</span>
-                    </div>
-                    <div class="offer-content">
-                        <h4>Honeymoon Package</h4>
-                        <p>Romantic getaway with complimentary spa and candlelight dinner</p>
-                        <span class="offer-price">Starting ₹24,999</span>
-                        <a href="offers.php" class="btn btn-gold">Book Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6" data-animate="fadeInRight">
-                <div class="offer-card offer-card-premium">
-                    <div class="offer-image">
-                        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80" alt="Weekend Retreat" loading="lazy">
-                        <span class="offer-badge">Weekend Special</span>
-                    </div>
-                    <div class="offer-content">
-                        <h4>Weekend Retreat</h4>
-                        <p>2 nights stay with breakfast and airport transfers included</p>
-                        <span class="offer-price">Starting ₹18,999</span>
-                        <a href="offers.php" class="btn btn-gold">Book Now</a>
-                    </div>
+                <div class="guest-images-nav">
+                    <button class="guest-nav-prev" id="guestPrev"><i class="bi bi-chevron-left"></i></button>
+                    <button class="guest-nav-next" id="guestNext"><i class="bi bi-chevron-right"></i></button>
                 </div>
             </div>
         </div>

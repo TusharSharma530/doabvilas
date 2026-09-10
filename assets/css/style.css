@@ -289,7 +289,7 @@ img {
 
 /* Main Navigation */
 .header-main {
-    padding: 15px 0;
+    padding: 8px 0;
     transition: all 0.3s ease;
 }
 
@@ -315,7 +315,7 @@ img {
 }
 
 .header-transparent .header-logo-img {
-    filter: brightness(0) invert(1);
+    /* logo shows original colors */
 }
 
 /* Navigation */
@@ -555,8 +555,7 @@ img {
 }
 
 .site-header.scrolled .header-logo-img {
-    filter: brightness(0) invert(1);
-    height: 55px;
+    height: 60px;
 }
 
 .site-header.scrolled .mobile-menu-toggle span {
@@ -593,6 +592,7 @@ img {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    overflow: hidden;
 }
 
 .hero-overlay {
@@ -608,50 +608,52 @@ img {
     position: relative;
     z-index: 2;
     color: var(--dv-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
 }
 
 .hero-subtitle {
     font-family: var(--font-body);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 300;
     letter-spacing: 5px;
     text-transform: uppercase;
     color: var(--dv-gold);
-    margin-bottom: 15px;
     display: block;
 }
 
 .hero-title {
-    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight: 600;
     color: var(--dv-white);
     letter-spacing: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     line-height: 1.1;
 }
 
 .hero-text {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 300;
     max-width: 600px;
-    margin-bottom: 40px;
+    margin-bottom: 15px;
     opacity: 0.9;
-    line-height: 1.8;
+    line-height: 1.6;
 }
 
 .hero-buttons {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
+    margin-bottom: 10px;
 }
 
 .hero-scroll {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
     z-index: 2;
     text-align: center;
+    margin-top: 15px;
 }
 
 .scroll-indicator {
@@ -667,7 +669,7 @@ img {
 
 .scroll-line {
     width: 1px;
-    height: 50px;
+    height: 30px;
     background: linear-gradient(to bottom, var(--dv-gold), transparent);
     animation: scrollPulse 2s ease infinite;
 }
@@ -681,13 +683,17 @@ img {
    Section Styles
    =================================== */
 .section-padding {
-    padding: 100px 0;
+    padding: 30px 0;
 }
 
 .section-header {
     text-align: center;
     max-width: 700px;
     margin: 0 auto 60px;
+}
+
+.rooms-suites-section .section-header {
+    margin-bottom: 20px;
 }
 
 .section-subtitle {
@@ -711,6 +717,282 @@ img {
     color: var(--dv-text-light);
     font-size: 1.05rem;
     line-height: 1.8;
+}
+
+/* ===================================
+   Rooms & Suites Carousel
+   =================================== */
+.rooms-suites-section {
+    background-color: var(--dv-white);
+    padding: 50px 0;
+}
+
+.rooms-suites-section .section-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--dv-gold);
+}
+
+.rooms-suites-section .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 400;
+    color: var(--dv-dark);
+    letter-spacing: 2px;
+}
+
+.rooms-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 0 50px;
+}
+
+.rooms-carousel {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    padding: 15px 0;
+    width: 100%;
+}
+
+.room-carousel-item {
+    min-width: calc(33.333% - 14px);
+    flex-shrink: 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.room-carousel-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.room-carousel-img {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+}
+
+.room-carousel-img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.3));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.room-carousel-item:hover .room-carousel-img::after {
+    opacity: 1;
+}
+
+.room-carousel-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.room-carousel-item:hover .room-carousel-img img {
+    transform: scale(1.1);
+}
+
+.room-carousel-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--dv-dark);
+    margin-top: 12px;
+    margin-bottom: 0;
+    transition: color 0.3s ease;
+}
+
+.room-carousel-item:hover .room-carousel-title {
+    color: var(--dv-gold);
+}
+
+.rooms-carousel-prev,
+.rooms-carousel-next {
+    width: 45px;
+    height: 45px;
+    border: none;
+    background: transparent;
+    color: var(--dv-dark);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+}
+
+.rooms-carousel-prev {
+    left: 0;
+}
+
+.rooms-carousel-next {
+    right: 0;
+}
+
+.rooms-carousel-prev:hover,
+.rooms-carousel-next:hover {
+    color: var(--dv-gold);
+}
+
+/* ===================================
+   Weddings & Events Carousel
+   =================================== */
+.weddings-events-section {
+    background-color: var(--dv-white);
+  
+}
+
+.weddings-events-section .section-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--dv-gold);
+}
+
+.weddings-events-section .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 400;
+    color: var(--dv-dark);
+    letter-spacing: 2px;
+}
+
+.weddings-events-section .section-header {
+    margin-bottom: 20px;
+}
+
+.weddings-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.weddings-carousel {
+    display: flex;
+    gap: 25px;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    padding: 15px 0;
+    width: 100%;
+}
+
+.wedding-carousel-item {
+    min-width: calc(50% - 13px);
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.wedding-carousel-item a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    background: var(--dv-white);
+    transition: all 0.4s ease;
+}
+
+.wedding-carousel-item:hover a {
+    transform: translateY(-5px);
+}
+
+.wedding-carousel-img {
+    width: 50%;
+    height: 300px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.wedding-carousel-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.wedding-carousel-item:hover .wedding-carousel-img img {
+    transform: scale(1.05);
+}
+
+.wedding-carousel-content {
+    width: 50%;
+    padding: 20px 0;
+}
+
+.wedding-carousel-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--dv-dark);
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.wedding-carousel-text {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.wedding-carousel-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--dv-gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: gap 0.3s ease;
+}
+
+.wedding-carousel-item:hover .wedding-carousel-link {
+    gap: 15px;
+}
+
+.weddings-carousel-prev,
+.weddings-carousel-next {
+    width: 45px;
+    height: 45px;
+    border: none;
+    background: transparent;
+    color: var(--dv-dark);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+}
+
+.weddings-carousel-prev:hover,
+.weddings-carousel-next:hover {
+    color: var(--dv-gold);
 }
 
 /* ===================================
@@ -1417,13 +1699,12 @@ img {
 }
 
 .hero-logo-wrapper {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .hero-logo {
-    max-width: 280px;
+    max-width: 200px;
     height: auto;
-    filter: brightness(0) invert(1);
     opacity: 0;
     animation: fadeInDown 1s ease forwards;
 }
@@ -1431,7 +1712,7 @@ img {
 .hero-title {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 0;
 }
 
 .hero-title-line {
@@ -1462,7 +1743,7 @@ img {
     font-size: 1.2rem;
     font-weight: 300;
     max-width: 700px;
-    margin: 0 auto 40px;
+  
     opacity: 0;
     animation: fadeInUp 1s ease forwards 0.7s;
     line-height: 1.8;
@@ -1477,7 +1758,8 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 25px;
+    margin-top: 15px;
     opacity: 0;
     animation: fadeInUp 1s ease forwards 1.1s;
 }
@@ -1489,7 +1771,7 @@ img {
 
 .hero-stat-number {
     font-family: var(--font-heading);
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 600;
     color: var(--dv-gold);
     display: block;
@@ -1497,18 +1779,345 @@ img {
 }
 
 .hero-stat-label {
-    font-size: 0.85rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     opacity: 0.8;
     display: block;
-    margin-top: 5px;
+    margin-top: 3px;
 }
 
 .hero-stat-divider {
     width: 1px;
-    height: 50px;
+    height: 30px;
     background: linear-gradient(to bottom, transparent, var(--dv-gold), transparent);
+}
+
+/* ===================================
+   Discover Section with Video
+   =================================== */
+.discover-section {
+    background-color: var(--dv-white);
+    padding: 80px 0;
+}
+
+.discover-section .section-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--dv-gold);
+}
+
+.discover-section .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 400;
+    color: var(--dv-dark);
+    letter-spacing: 2px;
+}
+
+.discover-section .section-header {
+    margin-bottom: 40px;
+}
+
+.discover-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--dv-dark);
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.discover-text {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.discover-text strong {
+    font-weight: 700;
+    color: var(--dv-dark);
+}
+
+.discover-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--dv-gold);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: gap 0.3s ease;
+}
+
+.discover-link:hover {
+    gap: 15px;
+    color: var(--dv-gold);
+}
+
+.discover-video {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+.discover-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+/* ===================================
+   Guest Comments Section
+   =================================== */
+.guest-comments-section {
+    background-color: var(--dv-white);
+    padding: 80px 0;
+}
+
+.guest-comments-section .section-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--dv-gold);
+}
+
+.guest-comments-section .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 400;
+    color: var(--dv-dark);
+    letter-spacing: 2px;
+}
+
+.guest-comments-section .section-header {
+    margin-bottom: 40px;
+}
+
+.guest-comments-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.guest-comment-active {
+    flex: 1;
+    max-width: 400px;
+}
+
+.guest-quote {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    color: var(--dv-gold);
+    line-height: 1;
+    display: block;
+    margin-bottom: -20px;
+}
+
+.guest-quote-text {
+    font-size: 1.2rem;
+    color: var(--dv-dark);
+    line-height: 1.8;
+    margin: 0;
+    font-weight: 400;
+    transition: opacity 0.3s ease;
+}
+
+.guest-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--dv-dark);
+    margin-bottom: 5px;
+    transition: opacity 0.3s ease;
+}
+
+.guest-designation {
+    font-size: 0.9rem;
+    color: #888;
+    display: block;
+    margin-bottom: 25px;
+    transition: opacity 0.3s ease;
+}
+
+.guest-view-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--dv-gold);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--dv-gold);
+    transition: gap 0.3s ease;
+}
+
+.guest-view-link:hover {
+    gap: 15px;
+    color: var(--dv-gold);
+}
+
+.guest-images-carousel {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    padding-left: 10px;
+}
+
+.guest-images-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+    padding: 5px 0;
+}
+
+.guest-image-item {
+    min-width: calc(33.333% - 14px);
+    flex-shrink: 0;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.guest-image-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.guest-image-name {
+    font-size: 0.95rem;
+    color: var(--dv-dark);
+    margin-top: 12px;
+    display: block;
+    font-weight: 500;
+}
+
+.guest-images-nav {
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 5;
+}
+
+.guest-nav-prev,
+.guest-nav-next {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    background: var(--dv-white);
+    color: var(--dv-dark);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.guest-nav-prev:hover,
+.guest-nav-next:hover {
+    background: var(--dv-gold);
+    color: var(--dv-white);
+    border-color: var(--dv-gold);
+}
+
+/* ===================================
+   Exclusive Offers Section
+   =================================== */
+.exclusive-offers-section {
+    background-color: var(--dv-white);
+    padding: 60px 0 40px;
+}
+
+.exclusive-offers-section .section-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--dv-gold);
+}
+
+.exclusive-offers-section .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 400;
+    color: var(--dv-dark);
+    letter-spacing: 2px;
+}
+
+.exclusive-offers-section .section-header {
+    margin-bottom: 20px;
+}
+
+.offer-card-exclusive {
+    text-align: center;
+    cursor: pointer;
+}
+
+.offer-card-exclusive a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.offer-card-img {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.offer-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.offer-card-exclusive:hover .offer-card-img img {
+    transform: scale(1.05);
+}
+
+.offer-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--dv-dark);
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    transition: color 0.3s ease;
+}
+
+.offer-card-exclusive:hover .offer-card-title {
+    color: var(--dv-gold);
 }
 
 /* Feature Cards Luxury */
@@ -2170,6 +2779,67 @@ img {
         justify-content: center;
         margin-top: 20px;
     }
+    
+    .room-carousel-item {
+        min-width: calc(50% - 10px);
+    }
+    
+    .room-carousel-img {
+        height: 220px;
+    }
+    
+    .wedding-carousel-item {
+        min-width: 100%;
+    }
+    
+    .wedding-carousel-img {
+        height: 250px;
+    }
+    
+    .wedding-carousel-content {
+        padding: 15px;
+    }
+    
+    .wedding-carousel-title {
+        font-size: 1.4rem;
+    }
+    
+    .discover-heading {
+        font-size: 1.4rem;
+    }
+    
+    .discover-video {
+        margin-top: 30px;
+    }
+    
+    .offer-card-img {
+        height: 280px;
+    }
+    
+    .offer-card-title {
+        font-size: 1.1rem;
+    }
+    
+    .guest-comments-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .guest-comment-active {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .guest-images-nav {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .guest-image-item {
+        min-width: calc(50% - 10px);
+    }
 }
 
 @media (max-width: 575.98px) {
@@ -2184,5 +2854,20 @@ img {
     
     .about-features {
         grid-template-columns: 1fr;
+    }
+    
+    .room-carousel-item {
+        min-width: 100%;
+    }
+    
+    .room-carousel-img {
+        height: 200px;
+    }
+    
+    .rooms-carousel-prev,
+    .rooms-carousel-next {
+        width: 35px;
+        height: 35px;
+        font-size: 1.5rem;
     }
 }
