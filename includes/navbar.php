@@ -1,5 +1,5 @@
 <!-- Top Bar + Header - Bravura Resort Style -->
-<header class="site-header <?php echo (in_array(getCurrentPage(), ['home', 'rooms', 'room-detail', 'suites', 'dining', 'bar-and-restaurants', 'frigos-gourmet-live-kitchen', 'the-long-island', 'alfresco-pool-side-bar'])) ? 'header-transparent' : 'header-solid'; ?>" id="siteHeader">
+<header class="site-header <?php echo (in_array(getCurrentPage(), ['home', 'rooms', 'room-detail', 'suites', 'dining', 'bar-and-restaurants', 'frigos-gourmet-live-kitchen', 'the-long-island', 'alfresco-pool-side-bar', 'weddings', 'wedding-venues'])) ? 'header-transparent' : 'header-solid'; ?>" id="siteHeader">
     <!-- Top Bar -->
     <div class="header-top-bar">
         <div class="header-top-container">

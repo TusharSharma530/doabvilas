@@ -46,7 +46,7 @@ require_once 'includes/navbar.php';
                         <p>We at DOAB VILAS consider each and every event of yours as one of the most important events for us. With stunning venues and exceptional service, we create magical moments that last a lifetime.</p>
                         <div class="link">
                             <div class="bg golden">
-                                <a href="diamond.php">
+                                <a href="wedding-venues.php">
                                     <span>Explore Details</span>
                                     <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M1 6H20M20 6L15 1M20 6L15 11" stroke="#C9A96A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
