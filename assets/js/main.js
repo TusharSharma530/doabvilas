@@ -148,31 +148,124 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Click to open date picker
         const openDatePicker = (inputElem, isCheckOut = false) => {
-            const tempDate = document.createElement('input');
-            tempDate.type = 'date';
-            tempDate.style.position = 'fixed';
-            tempDate.style.opacity = '0';
-            tempDate.style.pointerEvents = 'none';
-            document.body.appendChild(tempDate);
+            // Remove existing picker if any
+            const existingPicker = document.querySelector('.custom-datepicker');
+            if (existingPicker) existingPicker.remove();
 
-            const now = new Date();
+            // Find the icon
+            const formGroup = inputElem.closest('.form-group');
+            const icon = formGroup ? formGroup.querySelector('.icon') : null;
+
+            // Create custom datepicker
+            const picker = document.createElement('div');
+            picker.className = 'custom-datepicker';
+
+            const today = new Date();
+            let currentMonth = today.getMonth();
+            let currentYear = today.getFullYear();
+
             const minDate = new Date();
-            if (isCheckOut) minDate.setDate(now.getDate() + 1);
-            tempDate.min = minDate.toISOString().split('T')[0];
+            if (isCheckOut) minDate.setDate(today.getDate() + 1);
 
-            tempDate.addEventListener('change', function() {
-                if (this.value) {
-                    const picked = new Date(this.value);
-                    inputElem.value = formatDisplayDate(picked);
+            const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'];
+
+            const renderCalendar = () => {
+                const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+                const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+                let html = `
+                    <div class="dp-header">
+                        <button type="button" class="dp-prev">&lt;</button>
+                        <span class="dp-month-year">${months[currentMonth]} ${currentYear}</span>
+                        <button type="button" class="dp-next">&gt;</button>
+                    </div>
+                    <div class="dp-weekdays">
+                        <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                    </div>
+                    <div class="dp-days">`;
+
+                for (let i = 0; i < firstDay; i++) {
+                    html += `<span class="dp-empty"></span>`;
                 }
-                document.body.removeChild(tempDate);
-            });
+                for (let d = 1; d <= daysInMonth; d++) {
+                    const dateObj = new Date(currentYear, currentMonth, d);
+                    const isDisabled = dateObj < minDate;
+                    const isToday = d === today.getDate() && currentMonth === today.getMonth() && currentYear === today.getFullYear();
+                    html += `<span class="dp-day${isDisabled ? ' disabled' : ''}${isToday ? ' today' : ''}" data-day="${d}">${d}</span>`;
+                }
+                html += `</div>
+                    <div class="dp-footer">
+                        <button type="button" class="dp-today">Today</button>
+                        <button type="button" class="dp-clear">Clear</button>
+                    </div>`;
 
-            if (tempDate.showPicker) {
-                tempDate.showPicker();
-            } else {
-                tempDate.click();
+                picker.innerHTML = html;
+
+                // Bind events
+                picker.querySelector('.dp-prev').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    currentMonth--;
+                    if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+                    renderCalendar();
+                });
+
+                picker.querySelector('.dp-next').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    currentMonth++;
+                    if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+                    renderCalendar();
+                });
+
+                picker.querySelectorAll('.dp-day:not(.disabled)').forEach(day => {
+                    day.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const selected = new Date(currentYear, currentMonth, parseInt(day.dataset.day));
+                        inputElem.value = formatDisplayDate(selected);
+                        picker.remove();
+                    });
+                });
+
+                const todayBtn = picker.querySelector('.dp-today');
+                if (todayBtn) {
+                    todayBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        inputElem.value = formatDisplayDate(today);
+                        picker.remove();
+                    });
+                }
+
+                const clearBtn = picker.querySelector('.dp-clear');
+                if (clearBtn) {
+                    clearBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        inputElem.value = isCheckOut ? 'Check Out' : 'Check In';
+                        picker.remove();
+                    });
+                }
+            };
+
+            document.body.appendChild(picker);
+
+            // Position below icon
+            if (icon) {
+                const iconRect = icon.getBoundingClientRect();
+                picker.style.position = 'fixed';
+                picker.style.top = (iconRect.bottom + 5) + 'px';
+                picker.style.left = (iconRect.left - 80) + 'px';
             }
+
+            renderCalendar();
+
+            // Close on outside click
+            setTimeout(() => {
+                document.addEventListener('click', function closePicker(e) {
+                    if (!picker.contains(e.target) && e.target !== inputElem) {
+                        picker.remove();
+                        document.removeEventListener('click', closePicker);
+                    }
+                });
+            }, 100);
         };
 
         txtCheckIn.addEventListener('click', () => openDatePicker(txtCheckIn, false));

@@ -1,5 +1,5 @@
 <!-- Top Bar + Header -->
-<header class="site-header <?php echo (in_array(getCurrentPage(), ['home', 'rooms', 'room-detail', 'suites'])) ? 'header-transparent' : 'header-solid'; ?>" id="siteHeader">
+<header class="site-header header-solid" id="siteHeader">
     <!-- Top Bar -->
     <div class="header-top-bar">
         <div class="header-top-container">
@@ -56,8 +56,9 @@
                     </li>
                     
                     <!-- 6. EVENTS -->
-                    <li class="nav-item has-mega-menu <?php echo (getCurrentPage() == 'upcoming-events') ? 'active' : ''; ?>">
+                    <li class="nav-item <?php echo (getCurrentPage() == 'upcoming-events') ? 'active' : ''; ?>">
                         <a href="upcoming-events.php" class="nav-link">Events</a>
+                        <!--
                         <div class="mneu-list-full">
                             <div class="bg">
                                 <div class="container">
@@ -107,6 +108,7 @@
                                 </div>
                             </div>
                         </div>
+                        -->
                     </li>
                     
                     <!-- 7. GALLERY -->

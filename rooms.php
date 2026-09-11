@@ -41,7 +41,7 @@ require_once 'includes/navbar.php';
                 <div class="room-card-item img_hover">
                     <figure style="margin: 0; overflow: hidden; border-radius: 8px;">
                         <a href="room-detail.php?room=premium">
-                            <img src="assets/images/rooms/room1.png" alt="Premium Rooms" title="Premium Rooms" class="img-fluid" loading="lazy" style="width: 100%; height: 500px; object-fit: cover; transition: transform 0.5s ease;" />
+                            <img src="assets/images/rooms/room1.png" alt="Premium Rooms" title="Premium Rooms" class="img-fluid" loading="lazy" style="width: 100%; height: 400px; object-fit: cover; transition: transform 0.5s ease;" />
                         </a>
                     </figure>
                     <div class="content" style="padding: 20px; text-align: center;">
@@ -61,7 +61,7 @@ require_once 'includes/navbar.php';
                 <div class="room-card-item img_hover">
                     <figure style="margin: 0; overflow: hidden; border-radius: 8px;">
                         <a href="room-detail.php?room=executive">
-                            <img src="assets/images/rooms/room2.png" alt="Premium Executive Rooms" title="Premium Executive Rooms" class="img-fluid" loading="lazy" style="width: 100%; height: 350px; object-fit: cover; transition: transform 0.5s ease;" />
+                            <img src="assets/images/rooms/room2.png" alt="Premium Executive Rooms" title="Premium Executive Rooms" class="img-fluid" loading="lazy" style="width: 100%; height: 400px; object-fit: cover; transition: transform 0.5s ease;" />
                         </a>
                     </figure>
                     <div class="content" style="padding: 20px; text-align: center;">

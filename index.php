@@ -45,23 +45,14 @@ require_once 'includes/navbar.php';
                             <div class="col col1">
                                 <div class="form-group">
                                     <div class="dropdown room-dropdown" id="roomDropdown">
-                                        <input type="hidden" name="room" id="hdnRoomType" value="premium-rooms">
+                                        <input type="hidden" name="room" id="hdnRoomType" value="luxury-delux-rooms">
                                         <div class="selected" id="roomSelectedText">Select Room</div>
                                         <div class="icondoro">
                                             <i class="bi bi-chevron-down"></i>
                                         </div>
                                         <ul class="dropdown-options" id="roomDropdownOptions">
-                                            <li data-value="premium-rooms" class="current">
-                                                <label>Premium Rooms</label>
-                                            </li>
-                                            <li data-value="premium-executive-rooms">
-                                                <label>Premium Executive Rooms</label>
-                                            </li>
-                                            <li data-value="Premium-Junior-Suites-rooms">
-                                                <label>Premium Junior Suite Rooms</label>
-                                            </li>
-                                            <li data-value="Premium-Suites">
-                                                <label>Premium Suites</label>
+                                            <li data-value="luxury-delux-rooms" class="current">
+                                                <label>Luxury Delux Rooms</label>
                                             </li>
                                         </ul>
                                     </div>
@@ -115,6 +106,34 @@ require_once 'includes/navbar.php';
     </div>
 </div>
 
+<!-- About Us Section -->
+<section class="about-us-section section-padding" style="background-color: var(--dv-white);">
+    <div class="container">
+        <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
+            <div class="col-lg-6">
+                <div class="about-us-image">
+                    <img src="assets/images/rooms/doab villas.png" alt="Doab Vilas" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-us-content">
+                    <span class="section-subtitle">Welcome to</span>
+                    <h2 class="section-title">ABOUT US</h2>
+                    <p class="about-us-text">
+                        <strong>Doab Vilas</strong> is an exclusive luxury resort at Meerut, offering a vast range of facilities at one place. Experience the warmth of nature at Doab Vilas. You will be surrounded by the beauty and grace of this resort, which is intelligently designed to revive you. At Doab Vilas, we offer you world-class hospitality services that make your stay truly memorable.
+                    </p>
+                    <p class="about-us-text">
+                        From luxurious rooms to grand banquet halls, lush green lawns to stunning pools — we have everything you need for a perfect celebration or a relaxing getaway.
+                    </p>
+                    <a href="about.php" class="about-us-btn">
+                        READ MORE <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Rooms & Suites Section -->
 <section id="features" class="rooms-suites-section section-padding">
     <div class="container">
@@ -123,32 +142,31 @@ require_once 'includes/navbar.php';
             <h2 class="section-title">ROOMS & SUITES</h2>
         </div>
         
-        <div class="rooms-carousel-wrapper" data-animate="fadeInUp" data-delay="0.2">
-            <button class="rooms-carousel-prev" id="roomsPrev">
-                <i class="bi bi-chevron-left"></i>
-            </button>
-            <div class="rooms-carousel" id="roomsCarousel">
-                <div class="room-carousel-item">
-                    <a href="room-detail.php">
-                        <div class="room-carousel-img">
-                            <img src="assets/images/rooms/room1.png" alt="Premium Junior Suite Rooms">
-                        </div>
-                        <h4 class="room-carousel-title">Premium Junior Suite Rooms</h4>
-                    </a>
-                </div>
-                <div class="room-carousel-item">
-                    <a href="room-detail.php">
-                        <div class="room-carousel-img">
-                            <img src="assets/images/rooms/room2.png" alt="Premium Suites">
-                        </div>
-                        <h4 class="room-carousel-title">Premium Suites</h4>
-                    </a>
-                </div>
-                
+        <div class="row g-4" data-animate="fadeInUp" data-delay="0.2">
+            <!-- Luxury Delux Rooms 1 -->
+            <div class="col-lg-6">
+                <a href="room-detail.php" class="wedding-grid-card">
+                    <div class="wedding-grid-img">
+                        <img src="assets/images/rooms/room1.png" alt="Luxury Delux Rooms" class="img-fluid">
+                    </div>
+                    <div class="wedding-grid-content">
+                        <h3 class="wedding-grid-title">Luxury Delux Rooms</h3>
+                        <p class="wedding-grid-text">Experience luxury and comfort in our elegantly designed Deluxe Rooms with modern amenities, plush interiors, and stunning views for a truly royal stay.</p>
+                    </div>
+                </a>
             </div>
-            <button class="rooms-carousel-next" id="roomsNext">
-                <i class="bi bi-chevron-right"></i>
-            </button>
+            <!-- Luxury Delux Rooms 2 -->
+            <div class="col-lg-6">
+                <a href="room-detail.php" class="wedding-grid-card">
+                    <div class="wedding-grid-img">
+                        <img src="assets/images/rooms/room2.png" alt="Luxury Delux Rooms" class="img-fluid">
+                    </div>
+                    <div class="wedding-grid-content">
+                        <h3 class="wedding-grid-title">Luxury Delux Rooms</h3>
+                        <p class="wedding-grid-text">Experience luxury and comfort in our elegantly designed Deluxe Rooms with modern amenities, plush interiors, and stunning views for a truly royal stay.</p>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </section>
@@ -161,51 +179,55 @@ require_once 'includes/navbar.php';
             <h2 class="section-title">START PLANNING</h2>
         </div>
         
-        <div class="weddings-carousel-wrapper" data-animate="fadeInUp" data-delay="0.2">
-            <div class="weddings-carousel" id="weddingsCarousel">
-                <div class="wedding-carousel-item">
-                    <a href="weddings.php">
-                        <div class="wedding-carousel-img">
-                            <img src="assets/images/weddings/weddings.jpg" alt="Wedding Venues / Lawn">
-                        </div>
-                        <div class="wedding-carousel-content">
-                            <h3 class="wedding-carousel-title">Wedding Venues / Lawn</h3>
-                            <p class="wedding-carousel-text">We at Doab Vilas consider each and every event of yours as one of the most important events for us.</p>
-                            <span class="wedding-carousel-link">EXPLORE MORE <i class="bi bi-arrow-right"></i></span>
-                        </div>
-                    </a>
-                </div>
-                <div class="wedding-carousel-item">
-                    <a href="festival-events.php">
-                        <div class="wedding-carousel-img">
-                            <img src="assets/images/weddings/festival-events.jpg" alt="Festival Events">
-                        </div>
-                        <div class="wedding-carousel-content">
-                            <h3 class="wedding-carousel-title">Festival Events</h3>
-                            <p class="wedding-carousel-text">Celebrate your special festivals with us in a grand way with our premium event spaces and services.</p>
-                            <span class="wedding-carousel-link">EXPLORE MORE <i class="bi bi-arrow-right"></i></span>
-                        </div>
-                    </a>
-                </div>
-                <div class="wedding-carousel-item">
-                    <a href="corporate-events-and-meetings.php">
-                        <div class="wedding-carousel-img">
-                            <img src="assets/images/weddings/corporate-events-and-meetings.jpg" alt="Corporate Events">
-                        </div>
-                        <div class="wedding-carousel-content">
-                            <h3 class="wedding-carousel-title">Corporate Events</h3>
-                            <p class="wedding-carousel-text">Professional spaces for your business meetings, conferences and corporate gatherings.</p>
-                            <span class="wedding-carousel-link">EXPLORE MORE <i class="bi bi-arrow-right"></i></span>
-                        </div>
-                    </a>
-                </div>
+        <div class="row g-4" data-animate="fadeInUp" data-delay="0.2">
+            <!-- Corporate Events -->
+            <div class="col-lg-6">
+                <a href="corporate-events-and-meetings.php" class="wedding-grid-card">
+                    <div class="wedding-grid-img">
+                        <img src="assets/images/weddings/corporate-events-and-meetings.jpg" alt="Corporate Events" class="img-fluid">
+                    </div>
+                    <div class="wedding-grid-content">
+                        <h3 class="wedding-grid-title">Corporate Events</h3>
+                        <p class="wedding-grid-text">Professional spaces for your business meetings, conferences and corporate gatherings.</p>
+                    </div>
+                </a>
             </div>
-            <button class="weddings-carousel-prev" id="weddingsPrev">
-                <i class="bi bi-chevron-left"></i>
-            </button>
-            <button class="weddings-carousel-next" id="weddingsNext">
-                <i class="bi bi-chevron-right"></i>
-            </button>
+            <!-- Festival Events -->
+            <div class="col-lg-6">
+                <a href="festival-events.php" class="wedding-grid-card">
+                    <div class="wedding-grid-img">
+                        <img src="assets/images/weddings/festival-events.jpg" alt="Festival Events" class="img-fluid">
+                    </div>
+                    <div class="wedding-grid-content">
+                        <h3 class="wedding-grid-title">Festival Events</h3>
+                        <p class="wedding-grid-text">Celebrate your special festivals with us in a grand way with our premium event spaces and services.</p>
+                    </div>
+                </a>
+            </div>
+            <!-- Wedding Venues / Lawn -->
+            <div class="col-lg-6">
+                <a href="weddings.php" class="wedding-grid-card">
+                    <div class="wedding-grid-img">
+                        <img src="assets/images/weddings/weddings.jpg" alt="Wedding Venues / Lawn" class="img-fluid">
+                    </div>
+                    <div class="wedding-grid-content">
+                        <h3 class="wedding-grid-title">Wedding Venues / Lawn</h3>
+                        <p class="wedding-grid-text">We at Doab Vilas consider each and every event of yours as one of the most important events for us.</p>
+                    </div>
+                </a>
+            </div>
+            <!-- Birthday Celebration -->
+            <div class="col-lg-6">
+                <a href="celebrations.php" class="wedding-grid-card">
+                    <div class="wedding-grid-img">
+                        <img src="assets/images/weddings/celebrations.jpg" alt="Birthday Celebration" class="img-fluid">
+                    </div>
+                    <div class="wedding-grid-content">
+                        <h3 class="wedding-grid-title">Birthday Celebration</h3>
+                        <p class="wedding-grid-text">Make your birthday unforgettable with our stunning venues, delicious catering, and personalized event planning services.</p>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </section>
@@ -246,7 +268,7 @@ require_once 'includes/navbar.php';
 </section>
 
 <!-- Diamond Hall Section -->
-<section class="discover-section section-padding" style="background-color: var(--dv-ivory);">
+<section class="discover-section section-padding" style="background-color: var(--dv-white);">
     <div class="container">
         <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
             <div class="col-lg-6">
@@ -255,62 +277,12 @@ require_once 'includes/navbar.php';
                     <p class="discover-text">
                         <strong>DIAMOND HALL</strong> at Doab Vilas is a grand ballroom designed for magnificent celebrations. With stunning interiors, state-of-the-art lighting, and spacious seating, it is the perfect venue for weddings, receptions, and grand events. Our dedicated team ensures every detail is taken care of to make your special day truly unforgettable.
                     </p>
-                    <a href="diamond.php" class="discover-link">
-                        EXPLORE MORE <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="discover-image">
-                    <img src="assets/images/rooms/diamand hall.jpeg" alt="Diamond Hall" class="img-fluid" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- Rooms Lobby Section -->
-<section class="discover-section section-padding" style="background-color: var(--dv-white);">
-    <div class="container">
-        <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
-            <div class="col-lg-6">
-                <div class="discover-image">
-                    <img src="assets/images/rooms/rooms lobby.jpeg" alt="Rooms Lobby" class="img-fluid" loading="lazy">
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="discover-content">
-                    <h3 class="discover-heading">ROOMS LOBBY</h3>
-                    <p class="discover-text">
-                        <strong>ROOMS LOBBY</strong> at Doab Vilas is elegantly designed to welcome you with warmth and luxury. As you step in, you are greeted by stunning interiors, plush seating, and a sophisticated ambiance that sets the tone for your stay. Our lobby offers a perfect blend of comfort and style, making it an ideal space to relax and unwind.
-                    </p>
-                    <a href="rooms.php" class="discover-link">
-                        EXPLORE MORE <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Sapphire Hall Section -->
-<section class="discover-section section-padding" style="background-color: var(--dv-ivory);">
-    <div class="container">
-        <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
-            <div class="col-lg-6">
-                <div class="discover-content">
-                    <h3 class="discover-heading">SAPPHIRE HALL</h3>
-                    <p class="discover-text">
-                        <strong>SAPPHIRE HALL</strong> at Doab Vilas is an intimate venue designed for exclusive gatherings. With elegant decor, modern amenities, and a cozy atmosphere, it is perfect for corporate meetings, private parties, and special celebrations. Our team ensures a seamless experience tailored to your needs.
-                    </p>
-                    <a href="sapphire.php" class="discover-link">
-                        EXPLORE MORE <i class="bi bi-arrow-right"></i>
-                    </a>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="discover-image">
-                    <img src="assets/images/rooms/Saphhire hall.jpeg" alt="Sapphire Hall" class="img-fluid" loading="lazy">
+                    <img src="assets/images/rooms/diamond-hall.png" alt="Diamond Hall" class="img-fluid" loading="lazy">
                 </div>
             </div>
         </div>
@@ -318,7 +290,7 @@ require_once 'includes/navbar.php';
 </section>
 
 <!-- Aquarius Pool Section -->
-<section class="discover-section section-padding" style="background-color: var(--dv-white);">
+<section class="discover-section section-padding" style="background-color: var(--dv-ivory);">
     <div class="container">
         <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
             <div class="col-lg-6">
@@ -332,58 +304,204 @@ require_once 'includes/navbar.php';
                     <p class="discover-text">
                         <strong>AQUARIUS POOL</strong> at Doab Vilas is a stunning poolside venue perfect for cocktail events, pool parties, and intimate celebrations. Surrounded by lush greenery and elegant ambiance, it offers a refreshing escape for your special occasions. Enjoy world-class hospitality by the poolside with your loved ones.
                     </p>
-                    <a href="aquarius-pool.php" class="discover-link">
-                        EXPLORE MORE <i class="bi bi-arrow-right"></i>
-                    </a>
+
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Guest Comments Section -->
-<section class="guest-comments-section section-padding" style="background-color: var(--dv-white);">
+<!-- Sapphire Hall Section -->
+<section class="discover-section section-padding" style="background-color: var(--dv-white);">
+    <div class="container">
+        <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
+            <div class="col-lg-6">
+                <div class="discover-content">
+                    <h3 class="discover-heading">SAPPHIRE HALL</h3>
+                    <p class="discover-text">
+                        <strong>SAPPHIRE HALL</strong> at Doab Vilas is an intimate venue designed for exclusive gatherings. With elegant decor, modern amenities, and a cozy atmosphere, it is perfect for corporate meetings, private parties, and special celebrations. Our team ensures a seamless experience tailored to your needs.
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="discover-image">
+                    <img src="assets/images/rooms/Saphhire hall.jpeg" alt="Sapphire Hall" class="img-fluid" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Crystal Ball Room Section -->
+<section class="discover-section section-padding" style="background-color: var(--dv-ivory);">
+    <div class="container">
+        <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
+            <div class="col-lg-6">
+                <div class="discover-content">
+                    <h3 class="discover-heading">CRYSTAL BALL ROOM</h3>
+                    <p class="discover-text">
+                        <strong>CRYSTAL BALL ROOM</strong> at Doab Vilas is a magnificent venue designed for grand celebrations. With dazzling crystal chandeliers, elegant interiors, and a spacious layout, it is the perfect setting for lavish weddings, receptions, and corporate galas. Experience unmatched luxury and world-class hospitality in this stunning ballroom.
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="discover-image">
+                    <img src="assets/images/rooms/room1.png" alt="Crystal Ball Room" class="img-fluid" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Jashan Lawn Section -->
+<section class="discover-section section-padding" style="background-color: var(--dv-white);">
+    <div class="container">
+        <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
+            <div class="col-lg-6">
+                <div class="discover-image">
+                    <img src="assets/images/rooms/rooms lobby.jpeg" alt="Jashan Lawn" class="img-fluid" loading="lazy">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="discover-content">
+                    <h3 class="discover-heading">JASHAN LAWN</h3>
+                    <p class="discover-text">
+                        <strong>JASHAN LAWN</strong> at Doab Vilas is elegantly designed to welcome you with warmth and luxury. As you step in, you are greeted by stunning interiors, plush seating, and a sophisticated ambiance that sets the tone for your stay. Our lobby offers a perfect blend of comfort and style, making it an ideal space to relax and unwind.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bars and Restaurant Section -->
+<section class="discover-section section-padding" style="background-color: var(--dv-ivory);">
     <div class="container">
         <div class="section-header" data-animate="fadeInUp">
-            <span class="section-subtitle">Happy Moments</span>
-            <h2 class="section-title">GUEST COMMENTS</h2>
+            <span class="section-subtitle">Dine & Wine</span>
+            <h2 class="section-title">BARS AND RESTAURANT</h2>
         </div>
-        
-        <div class="guest-comments-wrapper" data-animate="fadeInUp" data-delay="0.2">
-            <div class="guest-comment-active" id="guestCommentActive">
-                <div class="guest-quote">
-                    <span class="quote-mark">"</span>
-                    <p class="guest-quote-text" id="guestQuoteText">Good, Ek Andaz, Ek Awaaz, Ek Aghaz. Bravura Gold Resort.</p>
+        <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
+            <div class="col-lg-6">
+                <div class="discover-content">
+                    <h3 class="discover-heading">BAR & RESTAURANTS</h3>
+                    <p class="discover-text">
+                        <strong>DOAB VILAS</strong> is a great place for dining in Meerut City. As with everything at Doab Vilas's Restaurants (Frigo's Gourmet - First & Only Live Kitchen and Alfresco - Terrace Restaurant) the cuisine is of the highest standard, reflected by the use of only the freshest products and all overseen by our Michelin-Starred Executive Chefs.
+                    </p>
+                    <a href="dining.php" class="discover-link">
+                        EXPLORE MORE <i class="bi bi-arrow-right"></i>
+                    </a>
                 </div>
-                <h4 class="guest-name" id="guestName">Khayali</h4>
-                <span class="guest-designation" id="guestDesignation">Comedian</span>
-                <a href="gallery.php" class="guest-view-link">
-                    VIEW COMMENT CARD <i class="bi bi-arrow-right"></i>
-                </a>
             </div>
-            
-            <div class="guest-images-carousel">
-                <div class="guest-images-track" id="guestImagesTrack">
-                    <div class="guest-image-item active" data-index="0">
+            <div class="col-lg-6">
+                <div class="discover-image">
+                    <img src="assets/images/dining/bar-and-restaurants--DineWine.jpg" alt="Bar & Restaurants" class="img-fluid" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Staff Section -->
+<section class="staff-section section-padding" style="background-color: var(--dv-ivory);">
+    <div class="container">
+        <div class="section-header" data-animate="fadeInUp">
+            <span class="section-subtitle">Dedicated Team</span>
+            <h2 class="section-title">OUR STAFF</h2>
+        </div>
+        <div class="row justify-content-center" data-animate="fadeInUp" data-delay="0.2">
+            <div class="col-lg-8">
+                <div class="staff-image-wrapper">
+                    <img src="assets/images/rooms/our staff.JPG" alt="Our Staff" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Night View Banner Section -->
+<section class="night-banner-section">
+    <div class="container">
+        <div class="section-header" data-animate="fadeInUp">
+            <span class="section-subtitle">Resort Life</span>
+            <h2 class="section-title">DOAB VILAS AT NIGHT</h2>
+            <p class="section-desc">Witness the enchanting beauty of Doab Vilas as it transforms under the night sky. The magical lighting and serene ambiance make it a truly unforgettable experience.</p>
+        </div>
+    </div>
+    <div class="night-banner-image" data-animate="fadeInUp" data-delay="0.2">
+        <img src="assets/images/rooms/doab villas 1.png" alt="Doab Vilas Night View" class="img-fluid">
+    </div>
+</section>
+
+<!-- Testimonial Section -->
+<section class="testimonial-section section-padding" style="background-color: var(--dv-white);">
+    <div class="container">
+        <div class="section-header" data-animate="fadeInUp">
+            <span class="section-subtitle">Testimonials</span>
+            <h2 class="section-title">WHAT OUR GUESTS SAY</h2>
+        </div>
+        <div class="row g-4" data-animate="fadeInUp" data-delay="0.2">
+            <!-- Testimonial 1 -->
+            <div class="col-lg-4">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="testimonial-text">"Doab Vilas is truly a paradise in Meerut! The Diamond Hall where we hosted our reception was stunning. The food, the service, and the attention to detail was remarkable. Will definitely come back again!"</p>
+                    <div class="testimonial-author">
                         <img src="assets/images/experiences/Khayali-Guest.jpg" alt="Khayali">
-                        <span class="guest-image-name">Khayali</span>
-                    </div>
-                    <div class="guest-image-item" data-index="1">
-                        <img src="assets/images/experiences/Rajeev Shukla-Guest.jpg" alt="Rajeev Shukla">
-                        <span class="guest-image-name">Rajeev Shukla</span>
-                    </div>
-                    <div class="guest-image-item" data-index="2">
-                        <img src="assets/images/experiences/Mahima Chaudhary-Guest.jpg" alt="Mahima Chaudhary">
-                        <span class="guest-image-name">Mahima Chaudhary</span>
-                    </div>
-                    <div class="guest-image-item" data-index="3">
-                        <img src="assets/images/experiences/Mika Singh-Guest.jpg" alt="Mika Singh">
-                        <span class="guest-image-name">Mika Singh</span>
+                        <div class="testimonial-author-info">
+                            <h4>Khayali</h4>
+                            <span>Comedian</span>
+                        </div>
                     </div>
                 </div>
-                <div class="guest-images-nav">
-                    <button class="guest-nav-prev" id="guestPrev"><i class="bi bi-chevron-left"></i></button>
-                    <button class="guest-nav-next" id="guestNext"><i class="bi bi-chevron-right"></i></button>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="col-lg-4">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="testimonial-text">"We celebrated our anniversary at Jashan Lawn and it was magical! The decor, the arrangements, and the staff coordination were flawless. Doab Vilas made our special day truly unforgettable."</p>
+                    <div class="testimonial-author">
+                        <img src="assets/images/experiences/Rajeev Shukla-Guest.jpg" alt="Rajeev Shukla">
+                        <div class="testimonial-author-info">
+                            <h4>Rajeev Shukla</h4>
+                            <span>Businessman</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial 3 -->
+            <div class="col-lg-4">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="testimonial-text">"The rooms at Doab Vilas are luxurious and comfortable. We loved the Aquarius Pool area and the dining at Frigo's Gourmet was exceptional. A perfect weekend getaway from Delhi!"</p>
+                    <div class="testimonial-author">
+                        <img src="assets/images/experiences/Mahima Chaudhary-Guest.jpg" alt="Mahima Chaudhary">
+                        <div class="testimonial-author-info">
+                            <h4>Mahima Chaudhary</h4>
+                            <span>Actress</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
