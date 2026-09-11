@@ -4,12 +4,6 @@
     <div class="header-top-bar">
         <div class="header-top-container">
             <div class="header-top-right">
-                <a href="tel:+917455802240" class="header-phone">
-                    <span>+91-7455802240</span>
-                </a>
-                <button type="button" class="btn-quick-enquiry" data-bs-toggle="modal" data-bs-target="#quickEnquiryModal">
-                    Quick Enquiry
-                </button>
                 <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
@@ -119,6 +113,13 @@
                     <!-- 8. CONTACT US -->
                     <li class="nav-item <?php echo (getCurrentPage() == 'contact') ? 'active' : ''; ?>">
                         <a href="contact.php" class="nav-link">Contact Us</a>
+                    </li>
+                    
+                    <!-- Quick Enquiry Button -->
+                    <li class="nav-item">
+                        <button type="button" class="btn-quick-enquiry-nav" data-bs-toggle="modal" data-bs-target="#quickEnquiryModal">
+                            Quick Enquiry
+                        </button>
                     </li>
                     
                 </ul>

@@ -300,6 +300,27 @@ img {
     box-shadow: 0 4px 15px rgba(201, 169, 106, 0.4);
 }
 
+.btn-quick-enquiry-nav {
+    padding: 8px 20px;
+    background: var(--dv-gold);
+    border: none;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.btn-quick-enquiry-nav:hover {
+    background: var(--dv-dark);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
 .header-login {
     background: none;
     border: none;
