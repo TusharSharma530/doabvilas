@@ -4,78 +4,157 @@ require_once 'includes/header.php';
 require_once 'includes/navbar.php'; 
 ?>
 
-<!-- Page Hero -->
-<section class="page-hero" style="background-image: url('assets/images/weddings/weddings-hero.jpg');">
-    <div class="hero-overlay"></div>
-    <div class="container">
-        <div class="page-hero-content">
-            <span class="section-subtitle">Celebrations</span>
-            <h1 class="page-title">Weddings & Events</h1>
-            <p class="page-text">Create timeless memories at our magnificent venues</p>
+<!-- ==========================================
+     HERO BANNER - BRAVURA RESORT STYLE
+     ========================================== -->
+<div class="banner banner-rooms-suites banner_wedding">
+    <div class="bg overlay-top overlay-bottom">
+        <img src="assets/images/weddings/wedding and events.jpg" alt="Weddings & Events" title="Weddings & Events" class="hero-bg-img" />
+    </div>
+    <div class="banner-container">
+        <div class="container">
+            <div class="content text-center">
+                <div class="title">Wedding & Events</div>
+                <h1>Start Planning</h1>
+                <div class="scrdown">
+                    <a href="#weddingSection" aria-label="Scroll Down">
+                        <i class="bi bi-chevron-down"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
-</section>
+</div>
 
-<!-- Venues Overview -->
-<section class="section-padding">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Our Venues</h2>
-            <p class="section-text">Choose from our stunning venues for your special celebration.</p>
-        </div>
+<!-- ==========================================
+     WEDDINGS & EVENTS SECTION
+     ========================================== -->
+<section class="sec-wed-Celebration" id="weddingSection" style="padding-top: 60px;">
+    <div class="container WeddingCard">
         
-        <div class="row g-4">
-            <div class="col-lg-3 col-md-6">
-                <a href="diamond.php" class="venue-card">
-                    <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&q=80" alt="Diamond Hall" loading="lazy">
-                    <div class="venue-overlay">
-                        <h4>Diamond Hall</h4>
-                        <p>Grand ballroom for magnificent celebrations</p>
+        <!-- 1. Wedding Venues / Lawn -->
+        <div class="dine-venue-item">
+            <div class="row align-items-center g-4 g-lg-5">
+                <div class="col-lg-6">
+                    <div class="venue-img-box">
+                        <img src="assets/images/weddings/weddings.jpg" alt="Wedding Venues / Lawn" title="Wedding Venues / Lawn" class="img-fluid" loading="lazy" />
                     </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <a href="jashan-party-lawn.php" class="venue-card">
-                    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600&q=80" alt="Jashan Party Lawn" loading="lazy">
-                    <div class="venue-overlay">
-                        <h4>Jashan Party Lawn</h4>
-                        <p>Expansive outdoor space for lavish events</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="venue-info-content">
+                        <h4>Wedding Venues / Lawn</h4>
+                        <p>We at DOAB VILAS consider each and every event of yours as one of the most important events for us. With stunning venues and exceptional service, we create magical moments that last a lifetime.</p>
+                        <div class="link">
+                            <div class="bg golden">
+                                <a href="diamond.php">
+                                    <span>Explore Details</span>
+                                    <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 6H20M20 6L15 1M20 6L15 11" stroke="#C9A96A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <a href="aquarius-pool.php" class="venue-card">
-                    <img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=600&q=80" alt="Aquarius Pool" loading="lazy">
-                    <div class="venue-overlay">
-                        <h4>Aquarius Pool</h4>
-                        <p>Stunning poolside venue for cocktail events</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <a href="sapphire.php" class="venue-card">
-                    <img src="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=600&q=80" alt="Sapphire" loading="lazy">
-                    <div class="venue-overlay">
-                        <h4>Sapphire</h4>
-                        <p>Intimate venue for exclusive gatherings</p>
-                    </div>
-                </a>
+                </div>
             </div>
         </div>
+
+        <!-- 2. Festival Events -->
+        <div class="dine-venue-item">
+            <div class="row align-items-center g-4 g-lg-5 flex-lg-row-reverse">
+                <div class="col-lg-6">
+                    <div class="venue-img-box">
+                        <img src="assets/images/weddings/festival-events.jpg" alt="Festival Events" title="Festival Events" class="img-fluid" loading="lazy" />
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="venue-info-content">
+                        <h4>Festival Events</h4>
+                        <p>In addition to world-class accommodation, a wealth of recreation and exceptional dining, DOAB VILAS hosts an array of Entertainment and Festival Events to cater the needs of guests.</p>
+                        <div class="link">
+                            <div class="bg golden">
+                                <a href="experiences.php">
+                                    <span>Explore Details</span>
+                                    <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 6H20M20 6L15 1M20 6L15 11" stroke="#C9A96A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Corporate Events & Meetings -->
+        <div class="dine-venue-item">
+            <div class="row align-items-center g-4 g-lg-5">
+                <div class="col-lg-6">
+                    <div class="venue-img-box">
+                        <img src="assets/images/weddings/corporate-events-and-meetings.jpg" alt="Corporate Events & Meetings" title="Corporate Events & Meetings" class="img-fluid" loading="lazy" />
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="venue-info-content">
+                        <h4>Corporate Events & Meetings</h4>
+                        <p>Whether you are planning a board meeting for 20 or an annual conference for 1,000 persons, you will achieve success at DOAB VILAS. Our state-of-the-art facilities ensure productive and memorable corporate events.</p>
+                        <div class="link">
+                            <div class="bg golden">
+                                <a href="experiences.php">
+                                    <span>Explore Details</span>
+                                    <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 6H20M20 6L15 1M20 6L15 11" stroke="#C9A96A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Celebrations -->
+        <div class="dine-venue-item">
+            <div class="row align-items-center g-4 g-lg-5 flex-lg-row-reverse">
+                <div class="col-lg-6">
+                    <div class="venue-img-box">
+                        <img src="assets/images/weddings/celebrations.jpg" alt="Celebrations" title="Celebrations" class="img-fluid" loading="lazy" />
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="venue-info-content">
+                        <h4>Celebrations</h4>
+                        <p>We at DOAB VILAS specialize in the art of organizing Birthday Parties, Wedding Anniversary, Wedding Reception and other special celebrations to make your moments unforgettable.</p>
+                        <div class="link">
+                            <div class="bg golden">
+                                <a href="contact.php">
+                                    <span>Explore Details</span>
+                                    <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 6H20M20 6L15 1M20 6L15 11" stroke="#C9A96A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 
-<!-- CTA Section -->
-<section class="cta-section">
-    <div class="container">
-        <h2>Plan Your Dream Event</h2>
-        <p>Contact our events team to start planning your perfect celebration</p>
-        <div class="d-flex gap-3 justify-content-center flex-wrap">
-            <a href="booking.php" class="btn btn-gold">Enquire Now</a>
-            <a href="contact.php" class="btn btn-outline-white">Contact Us</a>
-        </div>
-    </div>
-</section>
+<style>
+.venue-img-box { overflow: hidden; margin-bottom: 20px; }
+.venue-img-box img { width: 100%; height: 400px; object-fit: cover; transition: transform 0.6s ease; }
+.venue-img-box:hover img { transform: scale(1.05); }
+.venue-info-content { padding: 20px; }
+.venue-info-content h4 { font-family: 'Luxia', serif; font-size: 32px; color: var(--dv-dark); margin-bottom: 20px; }
+.venue-info-content p { font-size: 15px; line-height: 1.9; color: #666; margin-bottom: 15px; }
+.link .bg.golden a { display: inline-flex; align-items: center; gap: 8px; padding: 12px 30px; background: var(--dv-gold); color: #fff; text-decoration: none; border-radius: 30px; font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; }
+.link .bg.golden a:hover { background: var(--dv-dark); color: #fff; }
+@media (max-width: 991px) { .venue-img-box img { height: 300px; } }
+@media (max-width: 575px) { .venue-img-box img { height: 250px; } .venue-info-content h4 { font-size: 26px; } }
+</style>
 
 <?php require_once 'includes/whatsapp-button.php'; ?>
 <?php require_once 'includes/footer.php'; ?>
