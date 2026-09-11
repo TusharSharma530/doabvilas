@@ -73,7 +73,7 @@ require_once 'includes/navbar.php';
                         <p>In addition to world-class accommodation, a wealth of recreation and exceptional dining, DOAB VILAS hosts an array of Entertainment and Festival Events to cater the needs of guests.</p>
                         <div class="link">
                             <div class="bg golden">
-                                <a href="experiences.php">
+                                <a href="festival-events.php">
                                     <span>Explore Details</span>
                                     <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M1 6H20M20 6L15 1M20 6L15 11" stroke="#C9A96A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -100,7 +100,7 @@ require_once 'includes/navbar.php';
                         <p>Whether you are planning a board meeting for 20 or an annual conference for 1,000 persons, you will achieve success at DOAB VILAS. Our state-of-the-art facilities ensure productive and memorable corporate events.</p>
                         <div class="link">
                             <div class="bg golden">
-                                <a href="experiences.php">
+                                <a href="corporate-events-and-meetings.php">
                                     <span>Explore Details</span>
                                     <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M1 6H20M20 6L15 1M20 6L15 11" stroke="#C9A96A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -127,7 +127,7 @@ require_once 'includes/navbar.php';
                         <p>We at DOAB VILAS specialize in the art of organizing Birthday Parties, Wedding Anniversary, Wedding Reception and other special celebrations to make your moments unforgettable.</p>
                         <div class="link">
                             <div class="bg golden">
-                                <a href="contact.php">
+                                <a href="celebrations.php">
                                     <span>Explore Details</span>
                                     <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M1 6H20M20 6L15 1M20 6L15 11" stroke="#C9A96A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

@@ -1,5 +1,5 @@
 <!-- Top Bar + Header - Bravura Resort Style -->
-<header class="site-header <?php echo (in_array(getCurrentPage(), ['home', 'rooms', 'room-detail', 'suites', 'dining', 'bar-and-restaurants', 'frigos-gourmet-live-kitchen', 'the-long-island', 'alfresco-pool-side-bar', 'weddings', 'wedding-venues'])) ? 'header-transparent' : 'header-solid'; ?>" id="siteHeader">
+<header class="site-header <?php echo (in_array(getCurrentPage(), ['home', 'rooms', 'room-detail', 'suites', 'dining', 'bar-and-restaurants', 'frigos-gourmet-live-kitchen', 'the-long-island', 'alfresco-pool-side-bar', 'weddings', 'wedding-venues', 'festival-events', 'corporate-events-and-meetings', 'celebrations'])) ? 'header-transparent' : 'header-solid'; ?>" id="siteHeader">
     <!-- Top Bar -->
     <div class="header-top-bar">
         <div class="header-top-container">
@@ -219,10 +219,10 @@
                                             <div class="subnav_list">
                                                 <div class="title">Event</div>
                                                 <ul>
-                                                    <li><a href="weddings.php">Wedding Venues / Lawn</a></li>
-                                                    <li><a href="weddings.php?event=festival">Festival Events</a></li>
-                                                    <li><a href="experiences.php">Corporate Events & Meetings</a></li>
-                                                    <li><a href="weddings.php?event=celebrations">Celebrations</a></li>
+                                                    <li><a href="wedding-venues.php">Wedding Venues / Lawn</a></li>
+                                                    <li><a href="festival-events.php">Festival Events</a></li>
+                                                    <li><a href="corporate-events-and-meetings.php">Corporate Events & Meetings</a></li>
+                                                    <li><a href="celebrations.php">Celebrations</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -233,48 +233,48 @@
                                                 <div class="col-6">
                                                     <div class="menu-card-item img_hover">
                                                         <figure>
-                                                            <a href="weddings.php">
+                                                            <a href="wedding-venues.php">
                                                                 <img src="assets/images/weddings/weddings.jpg" alt="Wedding Venues / Lawn" title="Wedding Venues / Lawn" />
                                                             </a>
                                                         </figure>
                                                         <div class="content">
-                                                            <div class="catName"><a href="weddings.php">Wedding Venues / Lawn</a></div>
+                                                            <div class="catName"><a href="wedding-venues.php">Wedding Venues / Lawn</a></div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="menu-card-item img_hover">
                                                         <figure>
-                                                            <a href="weddings.php?event=festival">
+                                                            <a href="festival-events.php">
                                                                 <img src="assets/images/weddings/festival-events.jpg" alt="Festival Events" title="Festival Events" />
                                                             </a>
                                                         </figure>
                                                         <div class="content">
-                                                            <div class="catName"><a href="weddings.php?event=festival">Festival Events</a></div>
+                                                            <div class="catName"><a href="festival-events.php">Festival Events</a></div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="menu-card-item img_hover">
                                                         <figure>
-                                                            <a href="experiences.php">
+                                                            <a href="corporate-events-and-meetings.php">
                                                                 <img src="assets/images/weddings/corporate-events-and-meetings.jpg" alt="Corporate Events & Meetings" title="Corporate Events & Meetings" />
                                                             </a>
                                                         </figure>
                                                         <div class="content">
-                                                            <div class="catName"><a href="experiences.php">Corporate Events & Meetings</a></div>
+                                                            <div class="catName"><a href="corporate-events-and-meetings.php">Corporate Events & Meetings</a></div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="menu-card-item img_hover">
                                                         <figure>
-                                                            <a href="weddings.php?event=celebrations">
+                                                            <a href="celebrations.php">
                                                                 <img src="assets/images/weddings/celebrations.jpg" alt="Celebrations" title="Celebrations" />
                                                             </a>
                                                         </figure>
                                                         <div class="content">
-                                                            <div class="catName"><a href="weddings.php?event=celebrations">Celebrations</a></div>
+                                                            <div class="catName"><a href="celebrations.php">Celebrations</a></div>
                                                         </div>
                                                     </div>
                                                 </div>
