@@ -1,5 +1,5 @@
 <!-- Top Bar + Header - Bravura Resort Style -->
-<header class="site-header <?php echo (getCurrentPage() === 'home') ? 'header-transparent' : 'header-solid'; ?>" id="siteHeader">
+<header class="site-header <?php echo (in_array(getCurrentPage(), ['home', 'room-detail'])) ? 'header-transparent' : 'header-solid'; ?>" id="siteHeader">
     <!-- Top Bar -->
     <div class="header-top-bar">
         <div class="header-top-container">

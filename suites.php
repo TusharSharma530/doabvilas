@@ -5,27 +5,80 @@ require_once 'includes/navbar.php';
 ?>
 
 <!-- Page Hero -->
-<section class="page-hero" style="background-image: url('assets/images/suites/suites-hero.jpg');">
+<section class="page-hero" style="background-image: url('assets/images/rooms/Premium-Suites--Room.jpg');">
     <div class="hero-overlay"></div>
     <div class="container">
         <div class="page-hero-content">
             <span class="section-subtitle">Accommodations</span>
-            <h1 class="page-title">Our Suites</h1>
-            <p class="page-text">Indulge in luxury with our expansive suites featuring premium amenities</p>
+            <h1 class="page-title">Our Luxury Suites</h1>
+            <p class="page-text">Indulge in luxury with our expansive suites featuring premium amenities and personalized service</p>
         </div>
     </div>
 </section>
 
 <!-- Suites Content -->
-<section class="section-padding">
+<section class="section-padding" style="background-color: var(--dv-ivory);">
     <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Premium Suites</h2>
-            <p class="section-text">Experience unparalleled luxury in our meticulously designed suites.</p>
+        <div class="section-header text-center mb-5">
+            <span class="section-subtitle">Royal Living</span>
+            <h2 class="section-title">Premium Suites Collection</h2>
+            <p class="section-text">Experience unparalleled luxury, spacious living areas, and bespoke hospitality in our suites.</p>
         </div>
         
-        <div class="row g-4">
-            <!-- Suite items will be added here -->
+        <div class="row g-4 justify-content-center">
+            <!-- Premium Junior Suite Rooms -->
+            <div class="col-md-6 col-lg-4">
+                <div class="related-room-card img_hover">
+                    <figure class="room-card-figure">
+                        <a href="room-detail.php?room=junior-suite">
+                            <img src="assets/images/rooms/Premium-Junior-Suites-rooms--Room.jpg" alt="Premium Junior Suite Rooms" class="img-fluid" loading="lazy">
+                        </a>
+                    </figure>
+                    <div class="room-card-content">
+                        <div class="catName">
+                            <a href="room-detail.php?room=junior-suite">Premium Junior Suite Rooms</a>
+                        </div>
+                        <div class="price">Rs. 7,070</div>
+                        <a href="room-detail.php?room=junior-suite" class="btn-more-rooms">View Details <i class="bi bi-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Premium Suites -->
+            <div class="col-md-6 col-lg-4">
+                <div class="related-room-card img_hover">
+                    <figure class="room-card-figure">
+                        <a href="room-detail.php?room=suite">
+                            <img src="assets/images/rooms/Premium-Suites--Room.jpg" alt="Premium Suites" class="img-fluid" loading="lazy">
+                        </a>
+                    </figure>
+                    <div class="room-card-content">
+                        <div class="catName">
+                            <a href="room-detail.php?room=suite">Premium Suites</a>
+                        </div>
+                        <div class="price">Rs. 7,249</div>
+                        <a href="room-detail.php?room=suite" class="btn-more-rooms">View Details <i class="bi bi-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Premium Executive Rooms -->
+            <div class="col-md-6 col-lg-4">
+                <div class="related-room-card img_hover">
+                    <figure class="room-card-figure">
+                        <a href="room-detail.php?room=executive">
+                            <img src="assets/images/rooms/premium-executive-rooms--Room.jpg" alt="Premium Executive Rooms" class="img-fluid" loading="lazy">
+                        </a>
+                    </figure>
+                    <div class="room-card-content">
+                        <div class="catName">
+                            <a href="room-detail.php?room=executive">Premium Executive Rooms</a>
+                        </div>
+                        <div class="price">Rs. 6,350</div>
+                        <a href="room-detail.php?room=executive" class="btn-more-rooms">View Details <i class="bi bi-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
