@@ -2620,6 +2620,271 @@ img {
 }
 
 /* ===================================
+   Rooms & Suites Listing Page (Exact Bravura Resort Match)
+   =================================== */
+.banner-rooms-suites {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-rooms-suites .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.banner-rooms-suites .bg .hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.banner-rooms-suites .bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(180deg, rgba(0,0,0,0.65) 0%, transparent 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.banner-rooms-suites .bg::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 55%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.banner-rooms-suites .banner-container {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    padding-top: 100px;
+}
+
+.banner-rooms-suites .content .title {
+    font-family: 'Antiga', 'Playfair Display', serif;
+    font-size: 24px;
+    color: var(--dv-gold);
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin-bottom: 8px;
+}
+
+.banner-rooms-suites .content h1 {
+    font-family: 'Luxia', serif;
+    font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    text-shadow: 0 4px 18px rgba(0,0,0,0.6);
+}
+
+.banner-rooms-suites .content .scrdown {
+    margin-bottom: 25px;
+}
+
+.banner-rooms-suites .content .scrdown a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,0.6);
+    color: #ffffff;
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: var(--transition);
+    animation: bounceDown 2s infinite;
+}
+
+.banner-rooms-suites .content .scrdown a:hover {
+    border-color: var(--dv-gold);
+    color: var(--dv-gold);
+    background: rgba(201,169,106,0.15);
+}
+
+@keyframes bounceDown {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(8px); }
+    60% { transform: translateY(4px); }
+}
+
+.banner-rooms-suites .banner_360 a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(23, 53, 45, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--dv-gold);
+    padding: 8px 22px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    transition: var(--transition);
+    border: 1px solid var(--dv-gold);
+}
+
+.banner-rooms-suites .banner_360 a:hover {
+    background: var(--dv-gold);
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+.banner-rooms-suites .banner_360 i {
+    font-size: 1.25rem;
+}
+
+.banner-rooms-suites .banner_360 p {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Rooms & Suites Listing Section */
+.BGR-RooSuit-Section-a {
+    padding: 85px 0 110px;
+    background-color: #FAF8F5;
+}
+
+.room-inn-SuiListing .item {
+    background: #ffffff;
+    border: 1px solid #EAE5DE;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.room-inn-SuiListing .item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.room-inn-SuiListing .item figure {
+    position: relative;
+    overflow: hidden;
+    height: 340px;
+    margin: 0;
+}
+
+.room-inn-SuiListing .item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.room-inn-SuiListing .item:hover figure img {
+    transform: scale(1.08);
+}
+
+.room-inn-SuiListing .item .content {
+    padding: 26px 24px;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.room-inn-SuiListing .item .catName {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.55rem;
+    font-weight: 600;
+    color: var(--dv-green);
+    margin-bottom: 18px;
+    line-height: 1.3;
+}
+
+.room-inn-SuiListing .item .link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.room-inn-SuiListing .item .link .bg {
+    display: inline-block;
+}
+
+.room-inn-SuiListing .item .link .bg a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 28px;
+    background: transparent;
+    border: 1.5px solid var(--dv-gold);
+    border-radius: 30px;
+    color: var(--dv-green);
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.room-inn-SuiListing .item .link .bg a svg path {
+    transition: transform 0.3s ease;
+}
+
+.room-inn-SuiListing .item .link .bg a:hover {
+    background: var(--dv-gold);
+    color: #ffffff;
+    border-color: var(--dv-gold);
+}
+
+.room-inn-SuiListing .item .link .bg a:hover svg path {
+    stroke: #ffffff;
+    transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+    .banner-rooms-suites {
+        min-height: 500px;
+    }
+    .room-inn-SuiListing .item figure {
+        height: 240px;
+    }
+    .room-inn-SuiListing .item .catName {
+        font-size: 1.3rem;
+    }
+}
+
+/* ===================================
    Room Detail - Hero Banner (Exact Bravura Resort Match)
    =================================== */
 .bannerRoomDetails {
