@@ -290,7 +290,7 @@ require_once 'includes/navbar.php';
             <!-- 2. Corporate Events & Meetings -->
             <div class="col-md-6 col-lg-4">
                 <div class="more-dine-card">
-                    <a href="experiences.php">
+                    <a href="upcoming-events.php">
                         <figure class="more-dine-figure">
                             <img src="assets/images/weddings/corporate-events-and-meetings.jpg" alt="Corporate Events & Meetings" title="Corporate Events & Meetings" class="img-fluid" loading="lazy" />
                         </figure>

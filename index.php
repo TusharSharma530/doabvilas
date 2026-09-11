@@ -131,7 +131,7 @@ require_once 'includes/navbar.php';
                 <div class="room-carousel-item">
                     <a href="room-detail.php">
                         <div class="room-carousel-img">
-                            <img src="assets/images/rooms/Premium-Junior-Suites-rooms--Room.jpg" alt="Premium Junior Suite Rooms">
+                            <img src="assets/images/rooms/room1.png" alt="Premium Junior Suite Rooms">
                         </div>
                         <h4 class="room-carousel-title">Premium Junior Suite Rooms</h4>
                     </a>
@@ -139,19 +139,12 @@ require_once 'includes/navbar.php';
                 <div class="room-carousel-item">
                     <a href="room-detail.php">
                         <div class="room-carousel-img">
-                            <img src="assets/images/rooms/Premium-Suites--Room.jpg" alt="Premium Suites">
+                            <img src="assets/images/rooms/room2.png" alt="Premium Suites">
                         </div>
                         <h4 class="room-carousel-title">Premium Suites</h4>
                     </a>
                 </div>
-                <div class="room-carousel-item">
-                    <a href="room-detail.php">
-                        <div class="room-carousel-img">
-                            <img src="assets/images/rooms/premium-rooms--Room.jpg" alt="Premium Rooms">
-                        </div>
-                        <h4 class="room-carousel-title">Premium Rooms</h4>
-                    </a>
-                </div>
+                
             </div>
             <button class="rooms-carousel-next" id="roomsNext">
                 <i class="bi bi-chevron-right"></i>
@@ -173,7 +166,7 @@ require_once 'includes/navbar.php';
                 <div class="wedding-carousel-item">
                     <a href="weddings.php">
                         <div class="wedding-carousel-img">
-                            <img src="assets/images/weddings/festival-events.jpg" alt="Wedding Venues / Lawn">
+                            <img src="assets/images/weddings/weddings.jpg" alt="Wedding Venues / Lawn">
                         </div>
                         <div class="wedding-carousel-content">
                             <h3 class="wedding-carousel-title">Wedding Venues / Lawn</h3>
@@ -183,7 +176,7 @@ require_once 'includes/navbar.php';
                     </a>
                 </div>
                 <div class="wedding-carousel-item">
-                    <a href="jashan-party-lawn.php">
+                    <a href="festival-events.php">
                         <div class="wedding-carousel-img">
                             <img src="assets/images/weddings/festival-events.jpg" alt="Festival Events">
                         </div>
@@ -195,9 +188,9 @@ require_once 'includes/navbar.php';
                     </a>
                 </div>
                 <div class="wedding-carousel-item">
-                    <a href="diamond.php">
+                    <a href="corporate-events-and-meetings.php">
                         <div class="wedding-carousel-img">
-                            <img src="assets/images/experiences/corporate-events-and-meetings.jpg" alt="Corporate Events">
+                            <img src="assets/images/weddings/corporate-events-and-meetings.jpg" alt="Corporate Events">
                         </div>
                         <div class="wedding-carousel-content">
                             <h3 class="wedding-carousel-title">Corporate Events</h3>
@@ -252,42 +245,47 @@ require_once 'includes/navbar.php';
     </div>
 </section>
 
-<!-- Exclusive Offers Section -->
-<section class="exclusive-offers-section section-padding" style="background-color: var(--dv-white);">
+<!-- Diamond Hall Section -->
+<section class="discover-section section-padding" style="background-color: var(--dv-ivory);">
     <div class="container">
-        <div class="section-header" data-animate="fadeInUp">
-            <span class="section-subtitle">Discover</span>
-            <h2 class="section-title">EXCLUSIVE OFFERS</h2>
+        <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
+            <div class="col-lg-6">
+                <div class="discover-content">
+                    <h3 class="discover-heading">DIAMOND HALL</h3>
+                    <p class="discover-text">
+                        <strong>DIAMOND HALL</strong> at Doab Vilas is a grand ballroom designed for magnificent celebrations. With stunning interiors, state-of-the-art lighting, and spacious seating, it is the perfect venue for weddings, receptions, and grand events. Our dedicated team ensures every detail is taken care of to make your special day truly unforgettable.
+                    </p>
+                    <a href="diamond.php" class="discover-link">
+                        EXPLORE MORE <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="discover-image">
+                    <img src="assets/images/rooms/diamand hall.jpeg" alt="Diamond Hall" class="img-fluid" loading="lazy">
+                </div>
+            </div>
         </div>
-        
-        <div class="row g-3" data-animate="fadeInUp" data-delay="0.2">
-            <div class="col-lg-4">
-                <div class="offer-card-exclusive">
-                    <a href="offers.php">
-                        <div class="offer-card-img">
-                            <img src="assets/images/experiences/best-hotels-in-meeru-offer.jpg" alt="Best Hotels in Meerut">
-                        </div>
-                        <h4 class="offer-card-title">Best Hotels in Meerut</h4>
-                    </a>
+    </div>
+</section>
+
+<!-- Rooms Lobby Section -->
+<section class="discover-section section-padding" style="background-color: var(--dv-white);">
+    <div class="container">
+        <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
+            <div class="col-lg-6">
+                <div class="discover-image">
+                    <img src="assets/images/rooms/rooms lobby.jpeg" alt="Rooms Lobby" class="img-fluid" loading="lazy">
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="offer-card-exclusive">
-                    <a href="offers.php">
-                        <div class="offer-card-img">
-                            <img src="assets/images/experiences/feast-on-flavors-this-holi-at-frigo-s-gourmet-offer.jpg" alt="Feast on Flavors this Holi">
-                        </div>
-                        <h4 class="offer-card-title">Feast on Flavors this Holi at Frigo's Gourmet.</h4>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="offer-card-exclusive">
-                    <a href="offers.php">
-                        <div class="offer-card-img">
-                            <img src="assets/images/experiences/images (2).jfif" alt="Special Offer">
-                        </div>
-                        <h4 class="offer-card-title">Doab Vilas Special Weekend Getaway</h4>
+            <div class="col-lg-6">
+                <div class="discover-content">
+                    <h3 class="discover-heading">ROOMS LOBBY</h3>
+                    <p class="discover-text">
+                        <strong>ROOMS LOBBY</strong> at Doab Vilas is elegantly designed to welcome you with warmth and luxury. As you step in, you are greeted by stunning interiors, plush seating, and a sophisticated ambiance that sets the tone for your stay. Our lobby offers a perfect blend of comfort and style, making it an ideal space to relax and unwind.
+                    </p>
+                    <a href="rooms.php" class="discover-link">
+                        EXPLORE MORE <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
             </div>
@@ -295,159 +293,50 @@ require_once 'includes/navbar.php';
     </div>
 </section>
 
-<!-- Rooms Preview with Hover Effects -->
-<section class="rooms-preview-section section-padding" style="background-color: var(--dv-ivory);">
+<!-- Sapphire Hall Section -->
+<section class="discover-section section-padding" style="background-color: var(--dv-ivory);">
     <div class="container">
-        <div class="section-header" data-animate="fadeInUp">
-            <span class="section-subtitle">Accommodations</span>
-            <h2 class="section-title">Luxury Rooms & Suites</h2>
-            <p class="section-text">
-                Discover our collection of elegantly designed rooms and suites, each offering a unique blend of comfort and sophistication.
-            </p>
-        </div>
-        
-        <div class="row g-4">
-            <div class="col-lg-4 col-md-6" data-animate="fadeInUp" data-delay="0.1">
-                <div class="room-card room-card-premium">
-                    <div class="room-image">
-                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80" alt="Deluxe Room" loading="lazy">
-                        <div class="room-overlay">
-                            <a href="rooms.php" class="btn btn-white">View Details</a>
-                        </div>
-                        <span class="room-price">From ₹8,999/night</span>
-                        <span class="room-badge">Popular</span>
-                    </div>
-                    <div class="room-info">
-                        <h4>Deluxe Room</h4>
-                        <p>Spacious rooms with modern amenities and city views</p>
-                        <div class="room-amenities">
-                            <span><i class="bi bi-wifi"></i></span>
-                            <span><i class="bi bi-tv"></i></span>
-                            <span><i class="bi bi-snow"></i></span>
-                            <span><i class="bi bi-cup-hot"></i></span>
-                        </div>
-                    </div>
+        <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
+            <div class="col-lg-6">
+                <div class="discover-content">
+                    <h3 class="discover-heading">SAPPHIRE HALL</h3>
+                    <p class="discover-text">
+                        <strong>SAPPHIRE HALL</strong> at Doab Vilas is an intimate venue designed for exclusive gatherings. With elegant decor, modern amenities, and a cozy atmosphere, it is perfect for corporate meetings, private parties, and special celebrations. Our team ensures a seamless experience tailored to your needs.
+                    </p>
+                    <a href="sapphire.php" class="discover-link">
+                        EXPLORE MORE <i class="bi bi-arrow-right"></i>
+                    </a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6" data-animate="fadeInUp" data-delay="0.2">
-                <div class="room-card room-card-premium">
-                    <div class="room-image">
-                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600&q=80" alt="Premium Suite" loading="lazy">
-                        <div class="room-overlay">
-                            <a href="suites.php" class="btn btn-white">View Details</a>
-                        </div>
-                        <span class="room-price">From ₹14,999/night</span>
-                        <span class="room-badge room-badge-luxury">Luxury</span>
-                    </div>
-                    <div class="room-info">
-                        <h4>Premium Suite</h4>
-                        <p>Expansive suites with separate living area and luxury bath</p>
-                        <div class="room-amenities">
-                            <span><i class="bi bi-wifi"></i></span>
-                            <span><i class="bi bi-tv"></i></span>
-                            <span><i class="bi bi-snow"></i></span>
-                            <span><i class="bi bi-cup-hot"></i></span>
-                            <span><i class="bi bi-water"></i></span>
-                        </div>
-                    </div>
+            <div class="col-lg-6">
+                <div class="discover-image">
+                    <img src="assets/images/rooms/Saphhire hall.jpeg" alt="Sapphire Hall" class="img-fluid" loading="lazy">
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6" data-animate="fadeInUp" data-delay="0.3">
-                <div class="room-card room-card-premium">
-                    <div class="room-image">
-                        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=600&q=80" alt="Presidential Suite" loading="lazy">
-                        <div class="room-overlay">
-                            <a href="suites.php" class="btn btn-white">View Details</a>
-                        </div>
-                        <span class="room-price">From ₹29,999/night</span>
-                        <span class="room-badge room-badge-exclusive">Exclusive</span>
-                    </div>
-                    <div class="room-info">
-                        <h4>Presidential Suite</h4>
-                        <p>The pinnacle of luxury with panoramic views and private butler</p>
-                        <div class="room-amenities">
-                            <span><i class="bi bi-wifi"></i></span>
-                            <span><i class="bi bi-tv"></i></span>
-                            <span><i class="bi bi-snow"></i></span>
-                            <span><i class="bi bi-cup-hot"></i></span>
-                            <span><i class="bi bi-water"></i></span>
-                            <span><i class="bi bi-person-check"></i></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="text-center mt-5" data-animate="fadeInUp">
-            <a href="rooms.php" class="btn btn-gold btn-lg">
-                View All Rooms <i class="bi bi-arrow-right ms-2"></i>
-            </a>
         </div>
     </div>
 </section>
 
-<!-- Weddings Preview with Elegant Cards -->
-<section class="weddings-preview-section section-padding">
+<!-- Aquarius Pool Section -->
+<section class="discover-section section-padding" style="background-color: var(--dv-white);">
     <div class="container">
-        <div class="section-header" data-animate="fadeInUp">
-            <span class="section-subtitle">Celebrations</span>
-            <h2 class="section-title">Weddings & Events</h2>
-            <p class="section-text">
-                Create timeless memories at our exquisite venues, perfect for weddings, receptions, and grand celebrations.
-            </p>
-        </div>
-        
-        <div class="row g-4">
-            <div class="col-lg-3 col-md-6" data-animate="fadeInUp" data-delay="0.1">
-                <a href="diamond.php" class="venue-card venue-card-elegant">
-                    <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&q=80" alt="Diamond Hall" loading="lazy">
-                    <div class="venue-overlay">
-                        <div class="venue-icon"><i class="bi bi-gem"></i></div>
-                        <h4>Diamond Hall</h4>
-                        <p>Grand ballroom for magnificent celebrations</p>
-                        <span class="venue-capacity"><i class="bi bi-people"></i> Up to 1000 guests</span>
-                    </div>
-                </a>
+        <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
+            <div class="col-lg-6">
+                <div class="discover-image">
+                    <img src="assets/images/rooms/Auirious pool.JPG" alt="Aquarius Pool" class="img-fluid" loading="lazy">
+                </div>
             </div>
-            <div class="col-lg-3 col-md-6" data-animate="fadeInUp" data-delay="0.2">
-                <a href="jashan-party-lawn.php" class="venue-card venue-card-elegant">
-                    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600&q=80" alt="Jashan Party Lawn" loading="lazy">
-                    <div class="venue-overlay">
-                        <div class="venue-icon"><i class="bi bi-flower1"></i></div>
-                        <h4>Jashan Party Lawn</h4>
-                        <p>Expansive outdoor space for lavish events</p>
-                        <span class="venue-capacity"><i class="bi bi-people"></i> Up to 1500 guests</span>
-                    </div>
-                </a>
+            <div class="col-lg-6">
+                <div class="discover-content">
+                    <h3 class="discover-heading">AQUARIUS POOL</h3>
+                    <p class="discover-text">
+                        <strong>AQUARIUS POOL</strong> at Doab Vilas is a stunning poolside venue perfect for cocktail events, pool parties, and intimate celebrations. Surrounded by lush greenery and elegant ambiance, it offers a refreshing escape for your special occasions. Enjoy world-class hospitality by the poolside with your loved ones.
+                    </p>
+                    <a href="aquarius-pool.php" class="discover-link">
+                        EXPLORE MORE <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
             </div>
-            <div class="col-lg-3 col-md-6" data-animate="fadeInUp" data-delay="0.3">
-                <a href="aquarius-pool.php" class="venue-card venue-card-elegant">
-                    <img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=600&q=80" alt="Aquarius Pool" loading="lazy">
-                    <div class="venue-overlay">
-                        <div class="venue-icon"><i class="bi bi-water"></i></div>
-                        <h4>Aquarius Pool</h4>
-                        <p>Stunning poolside venue for cocktail events</p>
-                        <span class="venue-capacity"><i class="bi bi-people"></i> Up to 400 guests</span>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-6" data-animate="fadeInUp" data-delay="0.4">
-                <a href="sapphire.php" class="venue-card venue-card-elegant">
-                    <img src="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=600&q=80" alt="Sapphire" loading="lazy">
-                    <div class="venue-overlay">
-                        <div class="venue-icon"><i class="bi bi-star"></i></div>
-                        <h4>Sapphire</h4>
-                        <p>Intimate venue for exclusive gatherings</p>
-                        <span class="venue-capacity"><i class="bi bi-people"></i> Up to 200 guests</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-        
-        <div class="text-center mt-5" data-animate="fadeInUp">
-            <a href="weddings.php" class="btn btn-gold btn-lg">
-                Explore All Venues <i class="bi bi-arrow-right ms-2"></i>
-            </a>
         </div>
     </div>
 </section>
