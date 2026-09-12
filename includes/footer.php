@@ -17,7 +17,7 @@
                         <li><a href="rooms.php">Rooms & Suites</a></li>
                         <li><a href="dining.php">Dine & Wine</a></li>
                         <li><a href="weddings.php">Celebrations</a></li>
-                        <li><a href="jashan-party-lawn.php">Events</a></li>
+                        <li><a href="upcoming-events.php">Events</a></li>
                     </ul>
                 </div>
                 
