@@ -501,6 +501,7 @@ require_once 'includes/navbar.php';
         <div class="membership-wrapper" data-animate="fadeInUp">
             <div class="membership-content">
                 <p class="membership-text">Join the Doab Vilas family today</p>
+                <p class="membership-note" style="font-size: 14px; color: #666; margin-top: 8px;">Note: 24/7 Service Available</p>
             </div>
             <div class="membership-buttons">
                 <a href="booking.php" class="btn btn-gold membership-btn">JOIN NOW</a>
