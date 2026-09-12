@@ -165,7 +165,7 @@ require_once 'includes/navbar.php';
 <section class="weddings-events-section section-padding" style="background-color: var(--dv-white);">
     <div class="container">
         <div class="section-header" data-animate="fadeInUp">
-            <span class="section-subtitle">Wedding & Events</span>
+            <span class="section-subtitle">Events</span>
             <h2 class="section-title" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">START PLANNING</h2>
         </div>
         
