@@ -7,7 +7,7 @@ require_once 'includes/navbar.php';
 <!-- Hero Banner -->
 <div class="banner banner-rooms-suites banner_wedding banner_dining">
     <div class="bg overlay-top overlay-bottom">
-        <img src="assets/images/weddings/festival-events-l.jpg" alt="Upcoming Events" title="Upcoming Events" class="hero-bg-img" />
+        <img src="assets/images/rooms/diamond-hall.png" alt="Upcoming Events" title="Upcoming Events" class="hero-bg-img" />
     </div>
     <div class="banner-container">
         <div class="container">
@@ -38,7 +38,7 @@ require_once 'includes/navbar.php';
                 <div class="event-card img_hover">
                     <figure>
                         <a href="weddings.php">
-                            <img src="assets/images/weddings/wedding and events.jpg" alt="Weddings & Celebrations" title="Weddings & Celebrations" class="img-fluid" loading="lazy" />
+                            <img src="assets/images/weddings/wedding and celebration.jfif" alt="Weddings & Celebrations" title="Weddings & Celebrations" class="img-fluid" loading="lazy" />
                         </a>
                     </figure>
                     <div class="content">
@@ -52,7 +52,7 @@ require_once 'includes/navbar.php';
                 <div class="event-card img_hover">
                     <figure>
                         <a href="corporate-events-and-meetings.php">
-                            <img src="assets/images/weddings/corporate-events-and-meetings.jpg" alt="Corporate Events" title="Corporate Events" class="img-fluid" loading="lazy" />
+                            <img src="assets/images/weddings/corporate events.webp" alt="Corporate Events" title="Corporate Events" class="img-fluid" loading="lazy" />
                         </a>
                     </figure>
                     <div class="content">
@@ -66,7 +66,7 @@ require_once 'includes/navbar.php';
                 <div class="event-card img_hover">
                     <figure>
                         <a href="corporate-events-and-meetings.php">
-                            <img src="assets/images/weddings/corporate-events-and-meetings-l.jpg" alt="Conferences & Meetings" title="Conferences & Meetings" class="img-fluid" loading="lazy" />
+                            <img src="assets/images/weddings/corporate events.webp" alt="Conferences & Meetings" title="Conferences & Meetings" class="img-fluid" loading="lazy" />
                         </a>
                     </figure>
                     <div class="content">
@@ -80,7 +80,7 @@ require_once 'includes/navbar.php';
                 <div class="event-card img_hover">
                     <figure>
                         <a href="celebrations.php">
-                            <img src="assets/images/weddings/celebrations.jpg" alt="Birthday Celebrations" title="Birthday Celebrations" class="img-fluid" loading="lazy" />
+                            <img src="assets/images/weddings/birthday celebration.webp" alt="Birthday Celebrations" title="Birthday Celebrations" class="img-fluid" loading="lazy" />
                         </a>
                     </figure>
                     <div class="content">
@@ -94,7 +94,7 @@ require_once 'includes/navbar.php';
                 <div class="event-card img_hover">
                     <figure>
                         <a href="celebrations.php">
-                            <img src="assets/images/weddings/celebrations-banner.jpg" alt="Engagement Ceremonies" title="Engagement Ceremonies" class="img-fluid" loading="lazy" />
+                            <img src="assets/images/weddings/engagement ceremany.webp" alt="Engagement Ceremonies" title="Engagement Ceremonies" class="img-fluid" loading="lazy" />
                         </a>
                     </figure>
                     <div class="content">
@@ -122,7 +122,7 @@ require_once 'includes/navbar.php';
                 <div class="event-card img_hover">
                     <figure>
                         <a href="weddings.php">
-                            <img src="assets/images/weddings/weddings-l.jpg" alt="Social Gatherings" title="Social Gatherings" class="img-fluid" loading="lazy" />
+                            <img src="assets/images/weddings/social gethering.webp" alt="Social Gatherings" title="Social Gatherings" class="img-fluid" loading="lazy" />
                         </a>
                     </figure>
                     <div class="content">
@@ -150,7 +150,7 @@ require_once 'includes/navbar.php';
                 <div class="event-card img_hover">
                     <figure>
                         <a href="dining.php">
-                            <img src="assets/images/weddings/Capture.PNG" alt="Cocktail Evenings" title="Cocktail Evenings" class="img-fluid" loading="lazy" />
+                            <img src="assets/images/weddings/cocktail evening.webp" alt="Cocktail Evenings" title="Cocktail Evenings" class="img-fluid" loading="lazy" />
                         </a>
                     </figure>
                     <div class="content">
@@ -164,7 +164,7 @@ require_once 'includes/navbar.php';
                 <div class="event-card img_hover">
                     <figure>
                         <a href="weddings.php">
-                            <img src="assets/images/weddings/weddings-banner.jpg" alt="Private Parties" title="Private Parties" class="img-fluid" loading="lazy" />
+                            <img src="assets/images/weddings/download (2).jfif" alt="Private Parties" title="Private Parties" class="img-fluid" loading="lazy" />
                         </a>
                     </figure>
                     <div class="content">
@@ -178,7 +178,7 @@ require_once 'includes/navbar.php';
                 <div class="event-card img_hover">
                     <figure>
                         <a href="corporate-events-and-meetings.php">
-                            <img src="assets/images/weddings/corporate-events-and-meetings-banner.jpg" alt="Business Meetings" title="Business Meetings" class="img-fluid" loading="lazy" />
+                            <img src="assets/images/weddings/corporate events.webp" alt="Business Meetings" title="Business Meetings" class="img-fluid" loading="lazy" />
                         </a>
                     </figure>
                     <div class="content">
@@ -206,7 +206,7 @@ require_once 'includes/navbar.php';
                 <div class="event-card img_hover">
                     <figure>
                         <a href="corporate-events-and-meetings.php">
-                            <img src="assets/images/weddings/corporate-events-and-meetings-l.jpg" alt="Seminars & Workshops" title="Seminars & Workshops" class="img-fluid" loading="lazy" />
+                            <img src="assets/images/rooms/diamond-hall.png" alt="Seminars & Workshops" title="Seminars & Workshops" class="img-fluid" loading="lazy" />
                         </a>
                     </figure>
                     <div class="content">
@@ -262,7 +262,7 @@ require_once 'includes/navbar.php';
                 <div class="event-card img_hover">
                     <figure>
                         <a href="celebrations.php">
-                            <img src="assets/images/weddings/celebrations.jpg" alt="Family Functions" title="Family Functions" class="img-fluid" loading="lazy" />
+                            <img src="assets/images/weddings/family function.jfif" alt="Family Functions" title="Family Functions" class="img-fluid" loading="lazy" />
                         </a>
                     </figure>
                     <div class="content">
@@ -290,7 +290,7 @@ require_once 'includes/navbar.php';
                 <div class="event-card img_hover">
                     <figure>
                         <a href="weddings.php">
-                            <img src="assets/images/weddings/weddings-l.jpg" alt="Banquets & Receptions" title="Banquets & Receptions" class="img-fluid" loading="lazy" />
+                            <img src="assets/images/weddings/Banquest and reception.jfif" alt="Banquets & Receptions" title="Banquets & Receptions" class="img-fluid" loading="lazy" />
                         </a>
                     </figure>
                     <div class="content">
@@ -304,7 +304,7 @@ require_once 'includes/navbar.php';
                 <div class="event-card img_hover">
                     <figure>
                         <a href="weddings.php">
-                            <img src="assets/images/weddings/weddings-banner.jpg" alt="Luxury Events" title="Luxury Events" class="img-fluid" loading="lazy" />
+                            <img src="assets/images/weddings/Luxury and events.jfif" alt="Luxury Events" title="Luxury Events" class="img-fluid" loading="lazy" />
                         </a>
                     </figure>
                     <div class="content">

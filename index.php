@@ -15,7 +15,7 @@ require_once 'includes/navbar.php';
     <!-- Background Video with Gradient Overlays -->
     <div class="bg overlay-top overlay-bottom">
         <video class="video1" autoplay muted loop playsinline id="video-bg" preload="auto" poster="assets/images/rooms/premium-rooms--Room.jpg">
-            <source src="assets/videos/hero-video.mp4" type="video/mp4">
+            <source src="assets/videos/Doab villas.mp4" type="video/mp4">
             <source src="https://bravuraresort.com/assets/videos/Reception-Video.mp4" type="video/mp4">
         </video>
     </div>
@@ -184,7 +184,7 @@ require_once 'includes/navbar.php';
             <div class="col-lg-6">
                 <a href="corporate-events-and-meetings.php" class="wedding-grid-card">
                     <div class="wedding-grid-img">
-                        <img src="assets/images/weddings/corporate-events-and-meetings.jpg" alt="Corporate Events" class="img-fluid">
+                        <img src="assets/images/weddings/corporate events.webp" alt="Corporate Events" class="img-fluid">
                     </div>
                     <div class="wedding-grid-content">
                         <h3 class="wedding-grid-title">Corporate Events</h3>
@@ -220,7 +220,7 @@ require_once 'includes/navbar.php';
             <div class="col-lg-6">
                 <a href="celebrations.php" class="wedding-grid-card">
                     <div class="wedding-grid-img">
-                        <img src="assets/images/weddings/celebrations.jpg" alt="Birthday Celebration" class="img-fluid">
+                        <img src="assets/images/weddings/birthday celebration.webp" alt="Birthday Celebration" class="img-fluid">
                     </div>
                     <div class="wedding-grid-content">
                         <h3 class="wedding-grid-title">Birthday Celebration</h3>

@@ -365,7 +365,6 @@ img {
     height: 55px;
     width: auto;
     transition: all 0.3s ease;
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
 }
 
 /* Navigation */
@@ -819,7 +818,7 @@ img {
 }
 
 .banner.Home_banner .banner-container .content h1 span {
-    font-size: 72px;
+    font-size: 40px;
     line-height: 1.02;
     display: block;
     font-family: 'Luxia', 'Antiga', serif;
@@ -1379,7 +1378,7 @@ img {
 }
 
 .section-title {
-    font-size: clamp(2rem, 4vw, 3rem);
+  
     margin-bottom: 20px;
     color: var(--dv-dark);
 }
@@ -3030,7 +3029,7 @@ img {
     position: relative;
     width: 100%;
     height: 100vh;
-    min-height: 600px;
+    min-height: 750px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -3050,7 +3049,7 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: center 30%;
     display: block;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;

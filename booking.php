@@ -1,23 +1,56 @@
 <?php 
 $pageTitle = 'Book Now';
 require_once 'includes/header.php'; 
-require_once 'includes/navbar.php'; 
+require_once 'includes/navbar.php';
+
+$room = isset($_GET['room']) ? $_GET['room'] : '';
+$check_in = isset($_GET['check_in']) ? $_GET['check_in'] : '';
+$check_out = isset($_GET['check_out']) ? $_GET['check_out'] : '';
+
+function convertDate($date) {
+    if (empty($date)) return '';
+    $parts = explode('/', $date);
+    if (count($parts) === 3) {
+        return $parts[2] . '-' . $parts[1] . '-' . $parts[0];
+    }
+    return $date;
+}
+
+$check_in = convertDate($check_in);
+$check_out = convertDate($check_out);
+
+$roomMap = [
+    'luxury-delux-rooms' => 'deluxe',
+    'premium-rooms' => 'premium-room',
+    'premium-suite' => 'premium-suite',
+    'executive-suite' => 'executive-suite',
+    'presidential-suite' => 'presidential-suite'
+];
+$selectedRoom = isset($roomMap[$room]) ? $roomMap[$room] : '';
 ?>
 
-<!-- Page Hero -->
-<section class="page-hero" style="background-image: url('assets/images/booking-hero.jpg');">
-    <div class="hero-overlay"></div>
-    <div class="container">
-        <div class="page-hero-content">
-            <span class="section-subtitle">Reservations</span>
-            <h1 class="page-title">Book Your Stay</h1>
-            <p class="page-text">Reserve your perfect room or suite today</p>
+<!-- Hero Banner -->
+<div class="banner banner-rooms-suites banner_wedding banner_dining">
+    <div class="bg overlay-top overlay-bottom">
+        <img src="assets/images/rooms/room1.png" alt="Book Your Stay" title="Book Your Stay" class="hero-bg-img" />
+    </div>
+    <div class="banner-container">
+        <div class="container">
+            <div class="content text-center">
+                <div class="title">Reservations</div>
+                <h1>BOOK YOUR STAY</h1>
+                <div class="scrdown">
+                    <a href="#bookingSection" aria-label="Scroll Down">
+                        <i class="bi bi-chevron-down"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
-</section>
+</div>
 
 <!-- Booking Form -->
-<section class="section-padding">
+<section class="section-padding" id="bookingSection">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -29,13 +62,13 @@ require_once 'includes/navbar.php';
                             <!-- Check-in -->
                             <div class="col-md-6">
                                 <label for="checkin" class="form-label">Check-in Date *</label>
-                                <input type="date" class="form-control" id="checkin" name="checkin" required>
+                                <input type="date" class="form-control" id="checkin" name="checkin" value="<?php echo htmlspecialchars($check_in); ?>" required>
                             </div>
                             
                             <!-- Check-out -->
                             <div class="col-md-6">
                                 <label for="checkout" class="form-label">Check-out Date *</label>
-                                <input type="date" class="form-control" id="checkout" name="checkout" required>
+                                <input type="date" class="form-control" id="checkout" name="checkout" value="<?php echo htmlspecialchars($check_out); ?>" required>
                             </div>
                             
                             <!-- Room Type -->
@@ -44,13 +77,13 @@ require_once 'includes/navbar.php';
                                 <select class="form-select" id="room-type" name="room-type" required>
                                     <option value="">Select Room Type</option>
                                     <optgroup label="Rooms">
-                                        <option value="deluxe">Deluxe Room - ₹8,999/night</option>
-                                        <option value="premium-room">Premium Room - ₹11,999/night</option>
+                                        <option value="deluxe" <?php echo ($selectedRoom === 'deluxe') ? 'selected' : ''; ?>>Deluxe Room - ₹8,999/night</option>
+                                        <option value="premium-room" <?php echo ($selectedRoom === 'premium-room') ? 'selected' : ''; ?>>Premium Room - ₹11,999/night</option>
                                     </optgroup>
                                     <optgroup label="Suites">
-                                        <option value="premium-suite">Premium Suite - ₹14,999/night</option>
-                                        <option value="executive-suite">Executive Suite - ₹19,999/night</option>
-                                        <option value="presidential-suite">Presidential Suite - ₹29,999/night</option>
+                                        <option value="premium-suite" <?php echo ($selectedRoom === 'premium-suite') ? 'selected' : ''; ?>>Premium Suite - ₹14,999/night</option>
+                                        <option value="executive-suite" <?php echo ($selectedRoom === 'executive-suite') ? 'selected' : ''; ?>>Executive Suite - ₹19,999/night</option>
+                                        <option value="presidential-suite" <?php echo ($selectedRoom === 'presidential-suite') ? 'selected' : ''; ?>>Presidential Suite - ₹29,999/night</option>
                                     </optgroup>
                                 </select>
                             </div>
