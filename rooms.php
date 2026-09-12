@@ -43,7 +43,6 @@ require_once 'includes/navbar.php';
                         <img src="assets/images/rooms/room1.png" alt="Premium Rooms" title="Premium Rooms" class="img-fluid" loading="lazy" />
                     </div>
                     <div class="wedding-grid-content">
-                        <h3 class="wedding-grid-title">Premium Rooms</h3>
                         <p class="wedding-grid-text">Experience luxury and comfort in our elegantly designed Premium Rooms with modern amenities, plush interiors, and stunning views for a truly royal stay.</p>
                     </div>
                 </a>
@@ -56,7 +55,6 @@ require_once 'includes/navbar.php';
                         <img src="assets/images/rooms/room2.png" alt="Premium Executive Rooms" title="Premium Executive Rooms" class="img-fluid" loading="lazy" />
                     </div>
                     <div class="wedding-grid-content">
-                        <h3 class="wedding-grid-title">Premium Executive Rooms</h3>
                         <p class="wedding-grid-text">Indulge in the finest executive experience with spacious interiors, premium furnishings, and world-class amenities for the discerning traveler.</p>
                     </div>
                 </a>

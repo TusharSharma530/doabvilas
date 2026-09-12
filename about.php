@@ -54,7 +54,7 @@ require_once 'includes/navbar.php';
     <div class="container">
         <div class="section-header" data-animate="fadeInUp">
             <span class="section-subtitle">Our Heritage</span>
-            <h2 class="section-title">A LEGACY OF HOSPITALITY</h2>
+            <h2 class="section-title" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">A LEGACY OF HOSPITALITY</h2>
         </div>
         <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
             <div class="col-lg-6">
