@@ -12,6 +12,14 @@ define('SITE_PHONE', '+91 98765 43210');
 define('SITE_WHATSAPP', '919876543210');
 define('SITE_ADDRESS', 'G.T. Road, Near Kila, Pratapgarh, Uttar Pradesh 230001, India');
 
+// Social Media Links
+define('SOCIAL_FACEBOOK', 'https://www.facebook.com/doabvilas');
+define('SOCIAL_INSTAGRAM', 'https://www.instagram.com/doabvilas');
+define('SOCIAL_YOUTUBE', 'https://www.youtube.com/@doabvilas');
+define('SOCIAL_TWITTER', 'https://twitter.com/doabvilas');
+define('SOCIAL_LINKEDIN', 'https://linkedin.com/company/doab-vilas');
+define('SOCIAL_PINTEREST', 'https://in.pinterest.com/doabvilas/');
+
 // Additional Details
 define('SITE_ADDRESS_LINE1', 'Doab Vilas');
 define('SITE_ADDRESS_LINE2', 'G.T. Road, Near Kila');

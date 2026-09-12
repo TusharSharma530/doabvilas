@@ -500,39 +500,15 @@ require_once 'includes/navbar.php';
     <div class="container">
         <div class="membership-wrapper" data-animate="fadeInUp">
             <div class="membership-content">
-                <h3 class="membership-title">Membership Plans</h3>
                 <p class="membership-text">Join the Doab Vilas family today</p>
             </div>
             <div class="membership-buttons">
                 <a href="booking.php" class="btn btn-gold membership-btn">JOIN NOW</a>
-                <a href="#" class="btn btn-outline-gold membership-btn">LOGIN</a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- CTA Section
-<section class="cta-section cta-animated">
-    <div class="cta-bg-pattern"></div>
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-8" data-animate="fadeInLeft">
-                <h2 class="cta-title">Ready to Experience Luxury?</h2>
-                <p class="cta-text">Book your stay or enquire about our venues for your next celebration. Our team is ready to make your experience unforgettable.</p>
-            </div>
-            <div class="col-lg-4 text-lg-end" data-animate="fadeInRight">
-                <div class="cta-buttons">
-                    <a href="booking.php" class="btn btn-gold btn-lg me-3">
-                        <i class="bi bi-calendar-check me-2"></i>Book Now
-                    </a>
-                    <a href="contact.php" class="btn btn-outline-white btn-lg">
-                        <i class="bi bi-telephone me-2"></i>Contact Us
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
 
 <?php require_once 'includes/whatsapp-button.php'; ?>
 <?php require_once 'includes/footer.php'; ?>

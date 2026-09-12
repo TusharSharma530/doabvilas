@@ -63,16 +63,12 @@
                 <!-- Social & Buttons -->
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-social-top">
-                        <a href="#" class="social-link-sm" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="social-link-sm" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="social-link-sm" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-                        <a href="#" class="social-link-sm" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="social-link-sm" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="social-link-sm" aria-label="RSS"><i class="bi bi-rss"></i></a>
-                        <a href="#" class="social-link-sm" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
-                    </div>
-                    <div class="footer-buttons">
-                        <button type="button" class="btn btn-gold-outline" data-bs-toggle="modal" data-bs-target="#quickEnquiryModal">Quick Enquiry</button>
+                        <a href="<?php echo SOCIAL_FACEBOOK; ?>" class="social-link-sm" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="<?php echo SOCIAL_INSTAGRAM; ?>" class="social-link-sm" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="<?php echo SOCIAL_YOUTUBE; ?>" class="social-link-sm" target="_blank" rel="noopener" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="<?php echo SOCIAL_TWITTER; ?>" class="social-link-sm" target="_blank" rel="noopener" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="<?php echo SOCIAL_LINKEDIN; ?>" class="social-link-sm" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="<?php echo SOCIAL_PINTEREST; ?>" class="social-link-sm" target="_blank" rel="noopener" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
                     </div>
                 </div>
             </div>
@@ -82,13 +78,10 @@
         
         <div class="footer-bottom">
             <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start">
+                <div class="col-md-12 text-center">
                     <p class="footer-copyright">
                         &copy; <?php echo date('Y'); ?> <?php echo SITE_NAME; ?>. All rights reserved.
                     </p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <p class="footer-credit">Designed with love for luxury hospitality</p>
                 </div>
             </div>
         </div>
