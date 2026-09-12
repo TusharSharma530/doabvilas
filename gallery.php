@@ -46,7 +46,7 @@ require_once 'includes/navbar.php';
             
             <!-- Rooms -->
             <div class="col-md-4 col-lg-3 gallery-item" data-category="rooms">
-                <div class="gallery-card">
+                <div class="gallery-card" onclick="openLightbox('assets/images/rooms/room1.png', 'Luxury Room')">
                     <img src="assets/images/rooms/room1.png" alt="Luxury Room" class="img-fluid" loading="lazy">
                     <div class="gallery-overlay">
                         <span>Luxury Room</span>
@@ -55,7 +55,7 @@ require_once 'includes/navbar.php';
             </div>
             
             <div class="col-md-4 col-lg-3 gallery-item" data-category="rooms">
-                <div class="gallery-card">
+                <div class="gallery-card" onclick="openLightbox('assets/images/rooms/room2.png', 'Premium Suite')">
                     <img src="assets/images/rooms/room2.png" alt="Premium Suite" class="img-fluid" loading="lazy">
                     <div class="gallery-overlay">
                         <span>Premium Suite</span>
@@ -64,7 +64,7 @@ require_once 'includes/navbar.php';
             </div>
             
             <div class="col-md-4 col-lg-3 gallery-item" data-category="rooms">
-                <div class="gallery-card">
+                <div class="gallery-card" onclick="openLightbox('assets/images/rooms/rooms lobby.jpeg', 'Rooms Lobby')">
                     <img src="assets/images/rooms/rooms lobby.jpeg" alt="Rooms Lobby" class="img-fluid" loading="lazy">
                     <div class="gallery-overlay">
                         <span>Rooms Lobby</span>
@@ -73,7 +73,7 @@ require_once 'includes/navbar.php';
             </div>
             
             <div class="col-md-4 col-lg-3 gallery-item" data-category="rooms">
-                <div class="gallery-card">
+                <div class="gallery-card" onclick="openLightbox('assets/images/rooms/doab villas.png', 'Doab Vilas')">
                     <img src="assets/images/rooms/doab villas.png" alt="Doab Vilas" class="img-fluid" loading="lazy">
                     <div class="gallery-overlay">
                         <span>Doab Vilas</span>
@@ -83,7 +83,7 @@ require_once 'includes/navbar.php';
             
             <!-- Venues -->
             <div class="col-md-4 col-lg-3 gallery-item" data-category="venues">
-                <div class="gallery-card">
+                <div class="gallery-card" onclick="openLightbox('assets/images/rooms/diamond-hall.png', 'Diamond Hall')">
                     <img src="assets/images/rooms/diamond-hall.png" alt="Diamond Hall" class="img-fluid" loading="lazy">
                     <div class="gallery-overlay">
                         <span>Diamond Hall</span>
@@ -92,7 +92,7 @@ require_once 'includes/navbar.php';
             </div>
             
             <div class="col-md-4 col-lg-3 gallery-item" data-category="venues">
-                <div class="gallery-card">
+                <div class="gallery-card" onclick="openLightbox('assets/images/rooms/Saphhire hall.jpeg', 'Sapphire Hall')">
                     <img src="assets/images/rooms/Saphhire hall.jpeg" alt="Sapphire Hall" class="img-fluid" loading="lazy">
                     <div class="gallery-overlay">
                         <span>Sapphire Hall</span>
@@ -101,7 +101,7 @@ require_once 'includes/navbar.php';
             </div>
             
             <div class="col-md-4 col-lg-3 gallery-item" data-category="venues">
-                <div class="gallery-card">
+                <div class="gallery-card" onclick="openLightbox('assets/images/rooms/Auirious pool.JPG', 'Aquarius Pool')">
                     <img src="assets/images/rooms/Auirious pool.JPG" alt="Aquarius Pool" class="img-fluid" loading="lazy">
                     <div class="gallery-overlay">
                         <span>Aquarius Pool</span>
@@ -110,7 +110,7 @@ require_once 'includes/navbar.php';
             </div>
             
             <div class="col-md-4 col-lg-3 gallery-item" data-category="venues">
-                <div class="gallery-card">
+                <div class="gallery-card" onclick="openLightbox('assets/images/weddings/wedding and events.jpg', 'Wedding Venue')">
                     <img src="assets/images/weddings/wedding and events.jpg" alt="Wedding Venue" class="img-fluid" loading="lazy">
                     <div class="gallery-overlay">
                         <span>Wedding Venue</span>
@@ -120,7 +120,7 @@ require_once 'includes/navbar.php';
             
             <!-- Dining -->
             <div class="col-md-4 col-lg-3 gallery-item" data-category="dining">
-                <div class="gallery-card">
+                <div class="gallery-card" onclick="openLightbox('assets/images/dining/bar-and-restaurants--DineWine.jpg', 'Bar & Restaurant')">
                     <img src="assets/images/dining/bar-and-restaurants--DineWine.jpg" alt="Bar & Restaurant" class="img-fluid" loading="lazy">
                     <div class="gallery-overlay">
                         <span>Bar & Restaurant</span>
@@ -129,7 +129,7 @@ require_once 'includes/navbar.php';
             </div>
             
             <div class="col-md-4 col-lg-3 gallery-item" data-category="dining">
-                <div class="gallery-card">
+                <div class="gallery-card" onclick="openLightbox('assets/images/dining/frigos-gourmet-live-kitchen--DineWine.jpg', 'Frigo\'s Gourmet')">
                     <img src="assets/images/dining/frigos-gourmet-live-kitchen--DineWine.jpg" alt="Frigo's Gourmet" class="img-fluid" loading="lazy">
                     <div class="gallery-overlay">
                         <span>Frigo's Gourmet</span>
@@ -138,7 +138,7 @@ require_once 'includes/navbar.php';
             </div>
             
             <div class="col-md-4 col-lg-3 gallery-item" data-category="dining">
-                <div class="gallery-card">
+                <div class="gallery-card" onclick="openLightbox('assets/images/dining/the-long-Island-pub-bar--DineWine.jpg', 'The Long Island')">
                     <img src="assets/images/dining/the-long-Island-pub-bar--DineWine.jpg" alt="The Long Island" class="img-fluid" loading="lazy">
                     <div class="gallery-overlay">
                         <span>The Long Island</span>
@@ -147,7 +147,7 @@ require_once 'includes/navbar.php';
             </div>
             
             <div class="col-md-4 col-lg-3 gallery-item" data-category="dining">
-                <div class="gallery-card">
+                <div class="gallery-card" onclick="openLightbox('assets/images/dining/alfresco-pool-side-bar--DineWine.jpg', 'Alfresco Pool Bar')">
                     <img src="assets/images/dining/alfresco-pool-side-bar--DineWine.jpg" alt="Alfresco Pool Bar" class="img-fluid" loading="lazy">
                     <div class="gallery-overlay">
                         <span>Alfresco Pool Bar</span>
@@ -157,7 +157,7 @@ require_once 'includes/navbar.php';
             
             <!-- Experiences -->
             <div class="col-md-4 col-lg-3 gallery-item" data-category="experiences">
-                <div class="gallery-card">
+                <div class="gallery-card" onclick="openLightbox('assets/images/weddings/corporate-events-and-meetings.jpg', 'Corporate Events')">
                     <img src="assets/images/weddings/corporate-events-and-meetings.jpg" alt="Corporate Events" class="img-fluid" loading="lazy">
                     <div class="gallery-overlay">
                         <span>Corporate Events</span>
@@ -166,7 +166,7 @@ require_once 'includes/navbar.php';
             </div>
             
             <div class="col-md-4 col-lg-3 gallery-item" data-category="experiences">
-                <div class="gallery-card">
+                <div class="gallery-card" onclick="openLightbox('assets/images/weddings/celebrations.jpg', 'Celebrations')">
                     <img src="assets/images/weddings/celebrations.jpg" alt="Celebrations" class="img-fluid" loading="lazy">
                     <div class="gallery-overlay">
                         <span>Celebrations</span>
@@ -175,7 +175,7 @@ require_once 'includes/navbar.php';
             </div>
             
             <div class="col-md-4 col-lg-3 gallery-item" data-category="experiences">
-                <div class="gallery-card">
+                <div class="gallery-card" onclick="openLightbox('assets/images/weddings/festival-events.jpg', 'Festival Events')">
                     <img src="assets/images/weddings/festival-events.jpg" alt="Festival Events" class="img-fluid" loading="lazy">
                     <div class="gallery-overlay">
                         <span>Festival Events</span>
@@ -184,7 +184,7 @@ require_once 'includes/navbar.php';
             </div>
             
             <div class="col-md-4 col-lg-3 gallery-item" data-category="experiences">
-                <div class="gallery-card">
+                <div class="gallery-card" onclick="openLightbox('assets/images/rooms/our staff.JPG', 'Our Staff')">
                     <img src="assets/images/rooms/our staff.JPG" alt="Our Staff" class="img-fluid" loading="lazy">
                     <div class="gallery-overlay">
                         <span>Our Staff</span>
@@ -271,7 +271,81 @@ require_once 'includes/navbar.php';
 }
 </style>
 
+<!-- Lightbox Modal -->
+<div id="galleryLightbox" class="gallery-lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img id="lightboxImg" src="" alt="">
+    <div id="lightboxCaption" class="lightbox-caption"></div>
+</div>
+
+<style>
+.gallery-lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gallery-lightbox.active {
+    display: flex;
+}
+
+.gallery-lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+    transition: color 0.3s;
+}
+
+.lightbox-close:hover {
+    color: var(--dv-gold);
+}
+
+.lightbox-caption {
+    color: #fff;
+    font-size: 18px;
+    margin-top: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+</style>
+
 <script>
+function openLightbox(src, caption) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxCaption').textContent = caption;
+    document.getElementById('galleryLightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    document.getElementById('galleryLightbox').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');

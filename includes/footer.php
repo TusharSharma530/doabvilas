@@ -18,9 +18,6 @@
                         <li><a href="dining.php">Dine & Wine</a></li>
                         <li><a href="weddings.php">Celebrations</a></li>
                         <li><a href="jashan-party-lawn.php">Events</a></li>
-                        <li><a href="offers.php">Offers</a></li>
-                        <li><a href="diamond.php">Meetings</a></li>
-                        <li><a href="aquarius-pool.php">Banquet</a></li>
                     </ul>
                 </div>
                 
@@ -32,12 +29,6 @@
                         <li><a href="offers.php">Offers</a></li>
                         <li><a href="gallery.php">Gallery</a></li>
                         <li><a href="contact.php">Contact Us</a></li>
-                        <li><a href="#">Guest Comments</a></li>
-                        <li><a href="#">Feedback</a></li>
-                        <li><a href="#">Career With Us</a></li>
-                        <li><a href="#">Sitemap</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
                     </ul>
                 </div>
                 
@@ -81,7 +72,6 @@
                         <a href="#" class="social-link-sm" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
                     </div>
                     <div class="footer-buttons">
-                        <a href="offers.php" class="btn btn-gold-outline">Special Offers</a>
                         <button type="button" class="btn btn-gold-outline" data-bs-toggle="modal" data-bs-target="#quickEnquiryModal">Quick Enquiry</button>
                     </div>
                 </div>

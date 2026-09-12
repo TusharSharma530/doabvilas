@@ -12,8 +12,8 @@ require_once 'includes/navbar.php';
     <div class="banner-container">
         <div class="container">
             <div class="content text-center">
-                <div class="title">Get in Touch</div>
-                <h1>CONTACT US</h1>
+                <div class="title" style="color: #fff;">Get in Touch</div>
+                <h1 style="color: #fff;">CONTACT US</h1>
                 <div class="scrdown">
                     <a href="#contactSection" aria-label="Scroll Down">
                         <i class="bi bi-chevron-down"></i>
