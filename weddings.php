@@ -35,9 +35,6 @@ require_once 'includes/navbar.php';
                     <p class="discover-text">
                         <strong>DIAMOND HALL</strong> at Doab Vilas is a grand ballroom designed for magnificent celebrations. With stunning interiors, state-of-the-art lighting, and spacious seating, it is the perfect venue for weddings, receptions, and grand events. Our dedicated team ensures every detail is taken care of to make your special day truly unforgettable.
                     </p>
-                    <a href="diamond.php" class="discover-link">
-                        EXPLORE MORE <i class="bi bi-arrow-right"></i>
-                    </a>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -65,9 +62,6 @@ require_once 'includes/navbar.php';
                     <p class="discover-text">
                         <strong>AQUARIUS POOL</strong> at Doab Vilas is a stunning poolside venue perfect for cocktail events, pool parties, and intimate celebrations. Surrounded by lush greenery and elegant ambiance, it offers a refreshing escape for your special occasions. Enjoy world-class hospitality by the poolside with your loved ones.
                     </p>
-                    <a href="aquarius-pool.php" class="discover-link">
-                        EXPLORE MORE <i class="bi bi-arrow-right"></i>
-                    </a>
                 </div>
             </div>
         </div>
@@ -85,9 +79,6 @@ require_once 'includes/navbar.php';
                     <p class="discover-text">
                         <strong>SAPPHIRE HALL</strong> at Doab Vilas is an intimate venue designed for exclusive gatherings. With elegant decor, modern amenities, and a cozy atmosphere, it is perfect for corporate meetings, private parties, and special celebrations. Our team ensures a seamless experience tailored to your needs.
                     </p>
-                    <a href="sapphire.php" class="discover-link">
-                        EXPLORE MORE <i class="bi bi-arrow-right"></i>
-                    </a>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -115,9 +106,6 @@ require_once 'includes/navbar.php';
                     <p class="discover-text">
                         <strong>CRYSTAL BALL ROOM</strong> at Doab Vilas is a magnificent venue designed for grand celebrations. With dazzling crystal chandeliers, elegant interiors, and a spacious layout, it is the perfect setting for lavish weddings, receptions, and corporate galas. Experience unmatched luxury and world-class hospitality in this stunning ballroom.
                     </p>
-                    <a href="crystal-ballroom.php" class="discover-link">
-                        EXPLORE MORE <i class="bi bi-arrow-right"></i>
-                    </a>
                 </div>
             </div>
         </div>
@@ -135,9 +123,6 @@ require_once 'includes/navbar.php';
                     <p class="discover-text">
                         <strong>JASHAN LAWN</strong> at Doab Vilas is elegantly designed to welcome you with warmth and luxury. As you step in, you are greeted by stunning interiors, plush seating, and a sophisticated ambiance that sets the tone for your stay. Our lobby offers a perfect blend of comfort and style, making it an ideal space to relax and unwind.
                     </p>
-                    <a href="jashan-lawn.php" class="discover-link">
-                        EXPLORE MORE <i class="bi bi-arrow-right"></i>
-                    </a>
                 </div>
             </div>
             <div class="col-lg-6">

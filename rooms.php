@@ -29,51 +29,37 @@ require_once 'includes/navbar.php';
 <!-- ==========================================
      LUXURY DELUX ROOMS SECTION
      ========================================== -->
-<section class="luxury-rooms-section" id="roomsListingSection" style="padding: 60px 0;">
+<section class="rooms-suites-section section-padding" id="roomsListingSection">
     <div class="container">
         <div class="section-header text-center mb-5">
-            <h2 class="section-title" style="font-family: 'Luxia', serif; font-size: 36px; color: var(--dv-dark);">Luxury Delux Rooms</h2>
+            <h2 class="section-title" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">Luxury Delux Rooms</h2>
         </div>
         
         <div class="row g-4">
-            <!-- 1. Room 1 -->
-            <div class="col-md-6">
-                <div class="room-card-item img_hover">
-                    <figure style="margin: 0; overflow: hidden; border-radius: 8px;">
-                        <a href="room-detail.php?room=premium">
-                            <img src="assets/images/rooms/room1.png" alt="Premium Rooms" title="Premium Rooms" class="img-fluid" loading="lazy" style="width: 100%; height: 400px; object-fit: cover; transition: transform 0.5s ease;" />
-                        </a>
-                    </figure>
-                    <div class="content" style="padding: 20px; text-align: center;">
-                        <h4 style="font-family: 'Luxia', serif; font-size: 22px; color: var(--dv-dark); margin-bottom: 10px;">Premium Rooms</h4>
-                        <a href="room-detail.php?room=premium" class="btn-explore" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 25px; background: var(--dv-gold); color: #fff; text-decoration: none; border-radius: 30px; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">
-                            <span>Explore</span>
-                            <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 6H20M20 6L15 1M20 6L15 11" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
+            <!-- 1. Premium Rooms -->
+            <div class="col-lg-6">
+                <a href="room-detail.php?room=premium" class="wedding-grid-card">
+                    <div class="wedding-grid-img">
+                        <img src="assets/images/rooms/room1.png" alt="Premium Rooms" title="Premium Rooms" class="img-fluid" loading="lazy" />
                     </div>
-                </div>
+                    <div class="wedding-grid-content">
+                        <h3 class="wedding-grid-title">Premium Rooms</h3>
+                        <p class="wedding-grid-text">Experience luxury and comfort in our elegantly designed Premium Rooms with modern amenities, plush interiors, and stunning views for a truly royal stay.</p>
+                    </div>
+                </a>
             </div>
             
-            <!-- 2. Room 2 -->
-            <div class="col-md-6">
-                <div class="room-card-item img_hover">
-                    <figure style="margin: 0; overflow: hidden; border-radius: 8px;">
-                        <a href="room-detail.php?room=executive">
-                            <img src="assets/images/rooms/room2.png" alt="Premium Executive Rooms" title="Premium Executive Rooms" class="img-fluid" loading="lazy" style="width: 100%; height: 400px; object-fit: cover; transition: transform 0.5s ease;" />
-                        </a>
-                    </figure>
-                    <div class="content" style="padding: 20px; text-align: center;">
-                        <h4 style="font-family: 'Luxia', serif; font-size: 22px; color: var(--dv-dark); margin-bottom: 10px;">Premium Executive Rooms</h4>
-                        <a href="room-detail.php?room=executive" class="btn-explore" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 25px; background: var(--dv-gold); color: #fff; text-decoration: none; border-radius: 30px; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">
-                            <span>Explore</span>
-                            <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 6H20M20 6L15 1M20 6L15 11" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
+            <!-- 2. Premium Executive Rooms -->
+            <div class="col-lg-6">
+                <a href="room-detail.php?room=executive" class="wedding-grid-card">
+                    <div class="wedding-grid-img">
+                        <img src="assets/images/rooms/room2.png" alt="Premium Executive Rooms" title="Premium Executive Rooms" class="img-fluid" loading="lazy" />
                     </div>
-                </div>
+                    <div class="wedding-grid-content">
+                        <h3 class="wedding-grid-title">Premium Executive Rooms</h3>
+                        <p class="wedding-grid-text">Indulge in the finest executive experience with spacious interiors, premium furnishings, and world-class amenities for the discerning traveler.</p>
+                    </div>
+                </a>
             </div>
         </div>
     </div>

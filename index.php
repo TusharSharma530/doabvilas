@@ -91,16 +91,6 @@ require_once 'includes/navbar.php';
                     </form>
                 </div>
 
-                <!-- 360 Tour Circular Badge (Exact Match to Image) -->
-                <div class="banner_360" data-animate="fadeInRight">
-                    <a href="gallery.php" title="360° Virtual Tour">
-                        <span class="dot"></span>
-                        <p>
-                            360°
-                            <span>Tour</span>
-                        </p>
-                    </a>
-                </div>
             </div>
         </div>
     </div>
@@ -139,7 +129,7 @@ require_once 'includes/navbar.php';
     <div class="container">
         <div class="section-header" data-animate="fadeInUp">
             <span class="section-subtitle">Exclusive</span>
-            <h2 class="section-title">ROOMS & SUITES</h2>
+            <h2 class="section-title" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">ROOMS & SUITES</h2>
         </div>
         
         <div class="row g-4" data-animate="fadeInUp" data-delay="0.2">
@@ -176,7 +166,7 @@ require_once 'includes/navbar.php';
     <div class="container">
         <div class="section-header" data-animate="fadeInUp">
             <span class="section-subtitle">Wedding & Events</span>
-            <h2 class="section-title">START PLANNING</h2>
+            <h2 class="section-title" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">START PLANNING</h2>
         </div>
         
         <div class="row g-4" data-animate="fadeInUp" data-delay="0.2">
@@ -237,7 +227,7 @@ require_once 'includes/navbar.php';
     <div class="container">
         <div class="section-header" data-animate="fadeInUp">
             <span class="section-subtitle">Discover</span>
-            <h2 class="section-title">LUXURY HOTELS IN MEERUT</h2>
+            <h2 class="section-title" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">LUXURY HOTELS IN MEERUT</h2>
         </div>
         
         <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
@@ -382,7 +372,7 @@ require_once 'includes/navbar.php';
     <div class="container">
         <div class="section-header" data-animate="fadeInUp">
             <span class="section-subtitle">Dine & Wine</span>
-            <h2 class="section-title">BARS AND RESTAURANT</h2>
+            <h2 class="section-title" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">BARS AND RESTAURANT</h2>
         </div>
         <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
             <div class="col-lg-6">
@@ -406,24 +396,21 @@ require_once 'includes/navbar.php';
 </section>
 
 <!-- Our Staff Section -->
-<section class="staff-section section-padding" style="background-color: var(--dv-ivory);">
-    <div class="container">
-        <div class="section-header" data-animate="fadeInUp">
+<section class="staff-section" style="background-color: var(--dv-ivory);">
+    <div class="container-fluid px-0">
+        <div class="section-header text-center pt-5 pb-4" data-animate="fadeInUp">
             <span class="section-subtitle">Dedicated Team</span>
             <h2 class="section-title">OUR STAFF</h2>
+            <p class="section-desc mx-auto" style="max-width: 700px; color: #666; font-size: 1rem; line-height: 1.8;">At Doab Vilas, our dedicated team works tirelessly to ensure every guest experiences unparalleled hospitality. From warm welcomes to flawless service, our staff is committed to making your stay truly memorable.</p>
         </div>
-        <div class="row justify-content-center" data-animate="fadeInUp" data-delay="0.2">
-            <div class="col-lg-8">
-                <div class="staff-image-wrapper">
-                    <img src="assets/images/rooms/our staff.JPG" alt="Our Staff" class="img-fluid">
-                </div>
-            </div>
+        <div class="staff-image-wrapper" data-animate="fadeInUp" data-delay="0.2">
+            <img src="assets/images/rooms/our staff.JPG" alt="Our Staff" class="img-fluid w-100">
         </div>
     </div>
 </section>
 
 <!-- Night View Banner Section -->
-<section class="night-banner-section">
+<section class="night-banner-section" style="padding-top: 80px;">
     <div class="container">
         <div class="section-header" data-animate="fadeInUp">
             <span class="section-subtitle">Resort Life</span>

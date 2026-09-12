@@ -44,16 +44,6 @@ require_once 'includes/navbar.php';
                     <div class="venue-info-content">
                         <h4>Bar & Restaurants</h4>
                         <p>DOAB VILAS is a great place for dining in Meerut City. As with everything at Doab Vilas's Restaurants (Frigo's Gourmet - First & Only Live Kitchen and Alfresco - Terrace Restaurant) the cuisine is of the highest standard, reflected by the use of only the freshest products and all overseen by our Michelin-Starred Executive Chefs.</p>
-                        <div class="link">
-                            <div class="bg golden">
-                                <a href="bar-and-restaurants.php">
-                                    <span>Explore details</span>
-                                    <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1 6H20M20 6L15 1M20 6L15 11" stroke="#C9A96A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -71,16 +61,6 @@ require_once 'includes/navbar.php';
                     <div class="venue-info-content">
                         <h4>Frigo's Gourmet - Live Kitchen</h4>
                         <p>Doab Vilas launched "Frigo's Gourmet - First & Only Live Kitchen". Now enjoy your cuisine being cooked in front of you at "Frigo's Gourmet-Live Kitchen".</p>
-                        <div class="link">
-                            <div class="bg golden">
-                                <a href="frigos-gourmet-live-kitchen.php">
-                                    <span>Explore details</span>
-                                    <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1 6H20M20 6L15 1M20 6L15 11" stroke="#C9A96A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -98,16 +78,6 @@ require_once 'includes/navbar.php';
                     <div class="venue-info-content">
                         <h4>The Long Island (Pub & Bar)</h4>
                         <p>It is believed that the measure of a good Bar is in the quality of its beer, its crowd, or its atmosphere. We, at DOAB VILAS Bar that offers the best quality beer or drinks, perfect ambiance and efficient Bar services to our guests.</p>
-                        <div class="link">
-                            <div class="bg golden">
-                                <a href="the-long-island.php">
-                                    <span>Explore details</span>
-                                    <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1 6H20M20 6L15 1M20 6L15 11" stroke="#C9A96A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -125,16 +95,6 @@ require_once 'includes/navbar.php';
                     <div class="venue-info-content">
                         <h4>Alfresco (Pool-side Bar)</h4>
                         <p>This is a perfect place for your Mehandi, Bachelor Party, Cocktail Events. Enjoy Roof Top Bar with Pool on the Side with complete Privacy. Customized decors suiting the themes, all available under one Umbrella.</p>
-                        <div class="link">
-                            <div class="bg golden">
-                                <a href="alfresco-pool-side-bar.php">
-                                    <span>Explore details</span>
-                                    <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1 6H20M20 6L15 1M20 6L15 11" stroke="#C9A96A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
