@@ -50,14 +50,6 @@ function getCurrentPage() {
     return $page === 'index' ? 'home' : $page;
 }
 
-function isActivePage($page) {
-    return getCurrentPage() === $page ? 'active' : '';
-}
-
-function assetPath($path) {
-    return ASSETS_URL . $path;
-}
-
 function imageUrl($folder, $filename) {
     return IMAGES_URL . $folder . '/' . $filename;
 }

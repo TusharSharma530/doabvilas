@@ -36,7 +36,7 @@ require_once 'includes/navbar.php';
             <!-- 1. Weddings & Celebrations -->
             <div class="col-md-6 col-lg-4">
                 <div class="event-card img_hover">
-                    <figure onclick="openLightbox('assets/images/weddings/wedding and celebration.jfif', 'Weddings & Celebrations')" style="cursor: pointer;">
+                    <figure onclick="openLightbox('assets/images/weddings/wedding and celebration.jfif', 'Weddings & Celebrations')" class="cursor-pointer">
                         <img src="assets/images/weddings/wedding and celebration.jfif" alt="Weddings & Celebrations" title="Weddings & Celebrations" class="img-fluid" loading="lazy" />
                     </figure>
                     <div class="content">
@@ -48,7 +48,7 @@ require_once 'includes/navbar.php';
             <!-- 2. Corporate Events -->
             <div class="col-md-6 col-lg-4">
                 <div class="event-card img_hover">
-                    <figure onclick="openLightbox('assets/images/weddings/corporate events.webp', 'Corporate Events')" style="cursor: pointer;">
+                    <figure onclick="openLightbox('assets/images/weddings/corporate events.webp', 'Corporate Events')" class="cursor-pointer">
                         <img src="assets/images/weddings/corporate events.webp" alt="Corporate Events" title="Corporate Events" class="img-fluid" loading="lazy" />
                     </figure>
                     <div class="content">
@@ -60,7 +60,7 @@ require_once 'includes/navbar.php';
             <!-- 3. Conferences & Meetings -->
             <div class="col-md-6 col-lg-4">
                 <div class="event-card img_hover">
-                    <figure onclick="openLightbox('assets/images/weddings/corporate events.webp', 'Conferences & Meetings')" style="cursor: pointer;">
+                    <figure onclick="openLightbox('assets/images/weddings/corporate events.webp', 'Conferences & Meetings')" class="cursor-pointer">
                         <img src="assets/images/weddings/corporate events.webp" alt="Conferences & Meetings" title="Conferences & Meetings" class="img-fluid" loading="lazy" />
                     </figure>
                     <div class="content">
@@ -72,7 +72,7 @@ require_once 'includes/navbar.php';
             <!-- 4. Birthday Celebrations -->
             <div class="col-md-6 col-lg-4">
                 <div class="event-card img_hover">
-                    <figure onclick="openLightbox('assets/images/weddings/birthday celebration.webp', 'Birthday Celebrations')" style="cursor: pointer;">
+                    <figure onclick="openLightbox('assets/images/weddings/birthday celebration.webp', 'Birthday Celebrations')" class="cursor-pointer">
                         <img src="assets/images/weddings/birthday celebration.webp" alt="Birthday Celebrations" title="Birthday Celebrations" class="img-fluid" loading="lazy" />
                     </figure>
                     <div class="content">
@@ -84,7 +84,7 @@ require_once 'includes/navbar.php';
             <!-- 5. Engagement Ceremonies -->
             <div class="col-md-6 col-lg-4">
                 <div class="event-card img_hover">
-                    <figure onclick="openLightbox('assets/images/weddings/engagement ceremany.webp', 'Engagement Ceremonies')" style="cursor: pointer;">
+                    <figure onclick="openLightbox('assets/images/weddings/engagement ceremany.webp', 'Engagement Ceremonies')" class="cursor-pointer">
                         <img src="assets/images/weddings/engagement ceremany.webp" alt="Engagement Ceremonies" title="Engagement Ceremonies" class="img-fluid" loading="lazy" />
                     </figure>
                     <div class="content">
@@ -96,7 +96,7 @@ require_once 'includes/navbar.php';
             <!-- 6. Anniversary Celebrations -->
             <div class="col-md-6 col-lg-4">
                 <div class="event-card img_hover">
-                    <figure onclick="openLightbox('assets/images/weddings/wedding and celebration.jfif', 'Anniversary Celebrations')" style="cursor: pointer;">
+                    <figure onclick="openLightbox('assets/images/weddings/wedding and celebration.jfif', 'Anniversary Celebrations')" class="cursor-pointer">
                         <img src="assets/images/weddings/wedding and celebration.jfif" alt="Anniversary Celebrations" title="Anniversary Celebrations" class="img-fluid" loading="lazy" />
                     </figure>
                     <div class="content">
@@ -108,7 +108,7 @@ require_once 'includes/navbar.php';
             <!-- 7. Social Gatherings -->
             <div class="col-md-6 col-lg-4">
                 <div class="event-card img_hover">
-                    <figure onclick="openLightbox('assets/images/weddings/social gethering.webp', 'Social Gatherings')" style="cursor: pointer;">
+                    <figure onclick="openLightbox('assets/images/weddings/social gethering.webp', 'Social Gatherings')" class="cursor-pointer">
                         <img src="assets/images/weddings/social gethering.webp" alt="Social Gatherings" title="Social Gatherings" class="img-fluid" loading="lazy" />
                     </figure>
                     <div class="content">
@@ -120,7 +120,7 @@ require_once 'includes/navbar.php';
             <!-- 8. Gala Dinners -->
             <div class="col-md-6 col-lg-4">
                 <div class="event-card img_hover">
-                    <figure onclick="openLightbox('assets/images/dining/highwayrestaurant.webp', 'Gala Dinners')" style="cursor: pointer;">
+                    <figure onclick="openLightbox('assets/images/dining/highwayrestaurant.webp', 'Gala Dinners')" class="cursor-pointer">
                         <img src="assets/images/dining/highwayrestaurant.webp" alt="Gala Dinners" title="Gala Dinners" class="img-fluid" loading="lazy" />
                     </figure>
                     <div class="content">
@@ -132,7 +132,7 @@ require_once 'includes/navbar.php';
             <!-- 9. Cocktail Evenings -->
             <div class="col-md-6 col-lg-4">
                 <div class="event-card img_hover">
-                    <figure onclick="openLightbox('assets/images/weddings/cocktail evening.webp', 'Cocktail Evenings')" style="cursor: pointer;">
+                    <figure onclick="openLightbox('assets/images/weddings/cocktail evening.webp', 'Cocktail Evenings')" class="cursor-pointer">
                         <img src="assets/images/weddings/cocktail evening.webp" alt="Cocktail Evenings" title="Cocktail Evenings" class="img-fluid" loading="lazy" />
                     </figure>
                     <div class="content">
@@ -144,7 +144,7 @@ require_once 'includes/navbar.php';
             <!-- 10. Private Parties -->
             <div class="col-md-6 col-lg-4">
                 <div class="event-card img_hover">
-                    <figure onclick="openLightbox('assets/images/dining/highwayrestaurant.webp', 'Private Parties')" style="cursor: pointer;">
+                    <figure onclick="openLightbox('assets/images/dining/highwayrestaurant.webp', 'Private Parties')" class="cursor-pointer">
                         <img src="assets/images/dining/highwayrestaurant.webp" alt="Private Parties" title="Private Parties" class="img-fluid" loading="lazy" />
                     </figure>
                     <div class="content">
@@ -156,7 +156,7 @@ require_once 'includes/navbar.php';
             <!-- 11. Business Meetings -->
             <div class="col-md-6 col-lg-4">
                 <div class="event-card img_hover">
-                    <figure onclick="openLightbox('assets/images/weddings/corporate events.webp', 'Business Meetings')" style="cursor: pointer;">
+                    <figure onclick="openLightbox('assets/images/weddings/corporate events.webp', 'Business Meetings')" class="cursor-pointer">
                         <img src="assets/images/weddings/corporate events.webp" alt="Business Meetings" title="Business Meetings" class="img-fluid" loading="lazy" />
                     </figure>
                     <div class="content">
@@ -168,7 +168,7 @@ require_once 'includes/navbar.php';
             <!-- 12. Product Launches -->
             <div class="col-md-6 col-lg-4">
                 <div class="event-card img_hover">
-                    <figure onclick="openLightbox('assets/images/dining/highwayrestaurant.webp', 'Product Launches')" style="cursor: pointer;">
+                    <figure onclick="openLightbox('assets/images/dining/highwayrestaurant.webp', 'Product Launches')" class="cursor-pointer">
                         <img src="assets/images/dining/highwayrestaurant.webp" alt="Product Launches" title="Product Launches" class="img-fluid" loading="lazy" />
                     </figure>
                     <div class="content">
@@ -180,7 +180,7 @@ require_once 'includes/navbar.php';
             <!-- 13. Seminars & Workshops -->
             <div class="col-md-6 col-lg-4">
                 <div class="event-card img_hover">
-                    <figure onclick="openLightbox('assets/images/rooms/diamond-hall.png', 'Seminars & Workshops')" style="cursor: pointer;">
+                    <figure onclick="openLightbox('assets/images/rooms/diamond-hall.png', 'Seminars & Workshops')" class="cursor-pointer">
                         <img src="assets/images/rooms/diamond-hall.png" alt="Seminars & Workshops" title="Seminars & Workshops" class="img-fluid" loading="lazy" />
                     </figure>
                     <div class="content">
@@ -192,7 +192,7 @@ require_once 'includes/navbar.php';
             <!-- 14. Award Ceremonies -->
             <div class="col-md-6 col-lg-4">
                 <div class="event-card img_hover">
-                    <figure onclick="openLightbox('assets/images/weddings/cocktail evening.webp', 'Award Ceremonies')" style="cursor: pointer;">
+                    <figure onclick="openLightbox('assets/images/weddings/cocktail evening.webp', 'Award Ceremonies')" class="cursor-pointer">
                         <img src="assets/images/weddings/cocktail evening.webp" alt="Award Ceremonies" title="Award Ceremonies" class="img-fluid" loading="lazy" />
                     </figure>
                     <div class="content">
@@ -204,7 +204,7 @@ require_once 'includes/navbar.php';
             <!-- 15. Festive Celebrations -->
             <div class="col-md-6 col-lg-4">
                 <div class="event-card img_hover">
-                    <figure onclick="openLightbox('assets/images/weddings/Banquest and reception.jfif', 'Festive Celebrations')" style="cursor: pointer;">
+                    <figure onclick="openLightbox('assets/images/weddings/Banquest and reception.jfif', 'Festive Celebrations')" class="cursor-pointer">
                         <img src="assets/images/weddings/Banquest and reception.jfif" alt="Festive Celebrations" title="Festive Celebrations" class="img-fluid" loading="lazy" />
                     </figure>
                     <div class="content">
@@ -216,7 +216,7 @@ require_once 'includes/navbar.php';
             <!-- 16. Cultural Events -->
             <div class="col-md-6 col-lg-4">
                 <div class="event-card img_hover">
-                    <figure onclick="openLightbox('assets/images/weddings/Banquest and reception.jfif', 'Cultural Events')" style="cursor: pointer;">
+                    <figure onclick="openLightbox('assets/images/weddings/Banquest and reception.jfif', 'Cultural Events')" class="cursor-pointer">
                         <img src="assets/images/weddings/Banquest and reception.jfif" alt="Cultural Events" title="Cultural Events" class="img-fluid" loading="lazy" />
                     </figure>
                     <div class="content">
@@ -228,7 +228,7 @@ require_once 'includes/navbar.php';
             <!-- 17. Family Functions -->
             <div class="col-md-6 col-lg-4">
                 <div class="event-card img_hover">
-                    <figure onclick="openLightbox('assets/images/weddings/family function.jfif', 'Family Functions')" style="cursor: pointer;">
+                    <figure onclick="openLightbox('assets/images/weddings/family function.jfif', 'Family Functions')" class="cursor-pointer">
                         <img src="assets/images/weddings/family function.jfif" alt="Family Functions" title="Family Functions" class="img-fluid" loading="lazy" />
                     </figure>
                     <div class="content">
@@ -240,7 +240,7 @@ require_once 'includes/navbar.php';
             <!-- 18. Pre-Wedding Events -->
             <div class="col-md-6 col-lg-4">
                 <div class="event-card img_hover">
-                    <figure onclick="openLightbox('assets/images/weddings/wedding and celebration.jfif', 'Pre-Wedding Events')" style="cursor: pointer;">
+                    <figure onclick="openLightbox('assets/images/weddings/wedding and celebration.jfif', 'Pre-Wedding Events')" class="cursor-pointer">
                         <img src="assets/images/weddings/wedding and celebration.jfif" alt="Pre-Wedding Events" title="Pre-Wedding Events" class="img-fluid" loading="lazy" />
                     </figure>
                     <div class="content">
@@ -252,7 +252,7 @@ require_once 'includes/navbar.php';
             <!-- 19. Banquets & Receptions -->
             <div class="col-md-6 col-lg-4">
                 <div class="event-card img_hover">
-                    <figure onclick="openLightbox('assets/images/weddings/Banquest and reception.jfif', 'Banquets & Receptions')" style="cursor: pointer;">
+                    <figure onclick="openLightbox('assets/images/weddings/Banquest and reception.jfif', 'Banquets & Receptions')" class="cursor-pointer">
                         <img src="assets/images/weddings/Banquest and reception.jfif" alt="Banquets & Receptions" title="Banquets & Receptions" class="img-fluid" loading="lazy" />
                     </figure>
                     <div class="content">
@@ -264,7 +264,7 @@ require_once 'includes/navbar.php';
             <!-- 20. Luxury Events -->
             <div class="col-md-6 col-lg-4">
                 <div class="event-card img_hover">
-                    <figure onclick="openLightbox('assets/images/dining/highwayrestaurant.webp', 'Luxury Events')" style="cursor: pointer;">
+                    <figure onclick="openLightbox('assets/images/dining/highwayrestaurant.webp', 'Luxury Events')" class="cursor-pointer">
                         <img src="assets/images/dining/highwayrestaurant.webp" alt="Luxury Events" title="Luxury Events" class="img-fluid" loading="lazy" />
                     </figure>
                     <div class="content">
@@ -277,75 +277,12 @@ require_once 'includes/navbar.php';
     </div>
 </section>
 
-<style>
-.sec-upcoming-events { padding: 60px 0; }
-.event-card { position: relative; overflow: hidden; background: #fff; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: all 0.4s ease; }
-.event-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
-.event-card figure { margin: 0; overflow: hidden; }
-.event-card figure img { width: 100%; height: 280px; object-fit: cover; transition: transform 0.5s ease; }
-.event-card:hover figure img { transform: scale(1.08); }
-.event-card .content { padding: 20px; }
-.event-card .catName { font-family: 'Luxia', serif; font-size: 18px; color: var(--dv-dark); font-weight: 500; }
-@media (max-width: 767px) { .event-card figure img { height: 220px; } }
-</style>
-
 <!-- Lightbox Modal -->
 <div id="galleryLightbox" class="gallery-lightbox" onclick="closeLightbox()">
     <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
     <img id="lightboxImg" src="" alt="">
     <div id="lightboxCaption" class="lightbox-caption"></div>
 </div>
-
-<style>
-.gallery-lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.9);
-    z-index: 9999;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.gallery-lightbox.active {
-    display: flex;
-}
-
-.gallery-lightbox img {
-    max-width: 90%;
-    max-height: 85vh;
-    object-fit: contain;
-    border-radius: 8px;
-}
-
-.lightbox-close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 10000;
-    transition: color 0.3s;
-}
-
-.lightbox-close:hover {
-    color: var(--dv-gold);
-}
-
-.lightbox-caption {
-    color: #fff;
-    font-size: 18px;
-    margin-top: 15px;
-    font-weight: 500;
-    letter-spacing: 1px;
-}
-</style>
 
 <script>
 function openLightbox(src, caption) {

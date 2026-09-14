@@ -272,70 +272,6 @@ document.addEventListener('DOMContentLoaded', function() {
         txtCheckOut.addEventListener('click', () => openDatePicker(txtCheckOut, true));
     }
 
-    // Hero Booking Bar Date Pickers (Fallback for Standard Form)
-    const heroCheckIn = document.getElementById('heroCheckIn');
-    const heroCheckOut = document.getElementById('heroCheckOut');
-    
-    if (heroCheckIn && heroCheckOut) {
-        const today = new Date();
-        const tomorrow = new Date();
-        tomorrow.setDate(today.getDate() + 1);
-
-        const formatDate = (date) => {
-            const yyyy = date.getFullYear();
-            const mm = String(date.getMonth() + 1).padStart(2, '0');
-            const dd = String(date.getDate()).padStart(2, '0');
-            return `${yyyy}-${mm}-${dd}`;
-        };
-
-        const todayStr = formatDate(today);
-        const tomorrowStr = formatDate(tomorrow);
-
-        heroCheckIn.min = todayStr;
-        heroCheckIn.value = todayStr;
-        heroCheckOut.min = tomorrowStr;
-        heroCheckOut.value = tomorrowStr;
-
-        heroCheckIn.addEventListener('change', function() {
-            if (this.value) {
-                const selectedIn = new Date(this.value);
-                const nextDay = new Date(selectedIn);
-                nextDay.setDate(selectedIn.getDate() + 1);
-                const nextDayStr = formatDate(nextDay);
-                
-                heroCheckOut.min = nextDayStr;
-                if (heroCheckOut.value <= this.value) {
-                    heroCheckOut.value = nextDayStr;
-                }
-            }
-        });
-    }
-
-    // ===================================
-    // Counter Animation
-    // ===================================
-    function animateCounters() {
-        const counters = document.querySelectorAll('.stat-number, .hero-stat-number');
-        counters.forEach(counter => {
-            const target = +counter.getAttribute('data-count');
-            if (!target) return;
-            
-            let count = 0;
-            const speed = target > 100 ? 20 : 60;
-            const step = Math.ceil(target / 40);
-
-            const timer = setInterval(() => {
-                count += step;
-                if (count >= target) {
-                    counter.textContent = target;
-                    clearInterval(timer);
-                } else {
-                    counter.textContent = count;
-                }
-            }, speed);
-        });
-    }
-
     // ===================================
     // Intersection Observer for Animations
     // ===================================
@@ -345,15 +281,10 @@ document.addEventListener('DOMContentLoaded', function() {
         threshold: 0.1
     };
     
-    let counterAnimated = false;
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animated');
-                if (!counterAnimated && (entry.target.classList.contains('hero-stats-wrapper') || entry.target.querySelector('.stat-number'))) {
-                    counterAnimated = true;
-                    animateCounters();
-                }
                 observer.unobserve(entry.target);
             }
         });

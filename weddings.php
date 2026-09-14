@@ -25,7 +25,7 @@ require_once 'includes/navbar.php';
 </div>
 
 <!-- 1. Diamond Hall Section (50-100) -->
-<section id="venuesSection" class="discover-section section-padding" style="background-color: var(--dv-white);">
+<section id="venuesSection" class="discover-section section-padding bg-white">
     <div class="container">
         <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
             <div class="col-lg-6">
@@ -47,7 +47,7 @@ require_once 'includes/navbar.php';
 </section>
 
 <!-- 2. Aquarius Pool Section (100-250) -->
-<section class="discover-section section-padding" style="background-color: var(--dv-ivory);">
+<section class="discover-section section-padding bg-ivory">
     <div class="container">
         <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
             <div class="col-lg-6">
@@ -69,7 +69,7 @@ require_once 'includes/navbar.php';
 </section>
 
 <!-- 3. Sapphire Hall Section (100-250) -->
-<section class="discover-section section-padding" style="background-color: var(--dv-white);">
+<section class="discover-section section-padding bg-white">
     <div class="container">
         <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
             <div class="col-lg-6">
@@ -91,7 +91,7 @@ require_once 'includes/navbar.php';
 </section>
 
 <!-- 4. Crystal Ball Room Section (300-600) -->
-<section class="discover-section section-padding" style="background-color: var(--dv-ivory);">
+<section class="discover-section section-padding bg-ivory">
     <div class="container">
         <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
             <div class="col-lg-6">
@@ -113,7 +113,7 @@ require_once 'includes/navbar.php';
 </section>
 
 <!-- 5. Jashan Lawn Section (500-1500+) -->
-<section class="discover-section section-padding" style="background-color: var(--dv-white);">
+<section class="discover-section section-padding bg-white">
     <div class="container">
         <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
             <div class="col-lg-6">

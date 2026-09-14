@@ -27,17 +27,17 @@ require_once 'includes/navbar.php';
 </div>
 
 <!-- Highway Restaurant Section -->
-<section class="highway-restaurant-section" style="padding: 10px 0; background-color: var(--dv-white);">
+<section class="highway-restaurant-section hwy-section">
     <div class="container">
-        <div class="row justify-content-center" style="margin: 0;">
-            <div class="col-12" style="padding: 0;">
-                <div style="border-radius: 8px; overflow: hidden;">
-                    <img src="assets/images/dining/highwayrestaurant.webp" alt="Highway Restaurant" class="img-fluid" style="width: 100%; height: 1000px; object-fit: cover; display: block;" loading="lazy">
+        <div class="row justify-content-center no-margin">
+            <div class="col-12 no-padding">
+                <div class="border-radius-hidden">
+                    <img src="assets/images/dining/highwayrestaurant.webp" alt="Highway Restaurant" class="img-fluid full-cover-img" loading="lazy">
                 </div>
-                <div style="padding: 25px 10px 0; text-align: center;">
-                    <h2 style="font-family: 'Playfair Display', serif; font-weight: 600; color: var(--dv-dark); letter-spacing: 2px; margin-bottom: 15px;">HIGHWAY RESTAURANT</h2>
-                    <p style="font-family: 'Lato', sans-serif; font-size: 1rem; line-height: 1.9; color: #555;">
-                        <strong style="color: var(--dv-dark);">HIGHWAY RESTAURANT</strong> at Doab Vilas is a premium dining destination offering an exquisite culinary experience. Enjoy a wide range of delicacies prepared by our expert chefs using the freshest ingredients. Whether you are looking for a family meal, a romantic dinner, or a casual outing with friends, our Highway Restaurant promises an unforgettable dining experience with a warm and inviting ambiance.
+                <div class="text-center-pt">
+                    <h2 class="heading-playfair">HIGHWAY RESTAURANT</h2>
+                    <p class="text-lato">
+                        <strong class="text-dark">HIGHWAY RESTAURANT</strong> at Doab Vilas is a premium dining destination offering an exquisite culinary experience. Enjoy a wide range of delicacies prepared by our expert chefs using the freshest ingredients. Whether you are looking for a family meal, a romantic dinner, or a casual outing with friends, our Highway Restaurant promises an unforgettable dining experience with a warm and inviting ambiance.
                     </p>
                 </div>
             </div>
@@ -45,14 +45,7 @@ require_once 'includes/navbar.php';
     </div>
 </section>
 
-<!-- ==========================================
-     DINE & WINE VENUES SECTION
-     ========================================== -->
-<!-- <section class="sec-wed-Celebration devine_section" id="dineWineSection">
-    <div class="container WeddingCard">
-        
-    </div>
-</section> -->
+
 
 <?php require_once 'includes/whatsapp-button.php'; ?>
 <?php require_once 'includes/footer.php'; ?>

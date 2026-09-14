@@ -32,13 +32,13 @@ require_once 'includes/navbar.php';
 <section class="rooms-suites-section section-padding" id="roomsListingSection">
     <div class="container">
         <div class="section-header text-center mb-5">
-            <h2 class="section-title" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">Luxury Delux Rooms</h2>
+            <h2 class="section-title section-title-responsive">Luxury Delux Rooms</h2>
         </div>
         
         <div class="row g-4">
             <!-- 1. Premium Rooms -->
             <div class="col-lg-6">
-                <div class="wedding-grid-card" onclick="openLightbox('assets/images/rooms/room1.png', 'Luxury Delux Rooms')" style="cursor: pointer;">
+                <div class="wedding-grid-card" onclick="openLightbox('assets/images/rooms/room1.png', 'Luxury Delux Rooms')" class="cursor-pointer">
                     <div class="wedding-grid-img">
                         <img src="assets/images/rooms/room1.png" alt="Premium Rooms" title="Luxury Delux Rooms" class="img-fluid" loading="lazy" />
                     </div>
@@ -50,7 +50,7 @@ require_once 'includes/navbar.php';
             
             <!-- 2. Premium Executive Rooms -->
             <div class="col-lg-6">
-                <div class="wedding-grid-card" onclick="openLightbox('assets/images/rooms/room2.png', 'Luxury Delux Rooms')" style="cursor: pointer;">
+                <div class="wedding-grid-card" onclick="openLightbox('assets/images/rooms/room2.png', 'Luxury Delux Rooms')" class="cursor-pointer">
                     <div class="wedding-grid-img">
                         <img src="assets/images/rooms/room2.png" alt="Premium Executive Rooms" title="Luxury Delux Rooms" class="img-fluid" loading="lazy" />
                     </div>
@@ -69,57 +69,6 @@ require_once 'includes/navbar.php';
     <img id="lightboxImg" src="" alt="">
     <div id="lightboxCaption" class="lightbox-caption"></div>
 </div>
-
-<style>
-.gallery-lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.9);
-    z-index: 9999;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.gallery-lightbox.active {
-    display: flex;
-}
-
-.gallery-lightbox img {
-    max-width: 90%;
-    max-height: 85vh;
-    object-fit: contain;
-    border-radius: 8px;
-}
-
-.lightbox-close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 10000;
-    transition: color 0.3s;
-}
-
-.lightbox-close:hover {
-    color: var(--dv-gold);
-}
-
-.lightbox-caption {
-    color: #fff;
-    font-size: 18px;
-    margin-top: 15px;
-    font-weight: 500;
-    letter-spacing: 1px;
-}
-</style>
 
 <script>
 function openLightbox(src, caption) {

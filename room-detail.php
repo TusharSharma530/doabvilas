@@ -786,7 +786,7 @@ require_once 'includes/navbar.php';
                     </div>
                 </div>
                 
-                <div class="cart-room-highlight p-3 rounded mb-3" style="background: rgba(201,169,106,0.1); border-left: 4px solid var(--dv-gold);">
+                <div class="cart-room-highlight p-3 rounded mb-3 bg-gold-light">
                     <h5 class="text-gold mb-1"><?php echo $room['name']; ?></h5>
                     <p class="small text-muted mb-0"><?php echo $room['bed']; ?> &bull; <?php echo $room['size']; ?> &bull; Free In-Room Wi-Fi &bull; Air Conditioned</p>
                 </div>

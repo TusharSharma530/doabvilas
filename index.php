@@ -4,12 +4,6 @@ require_once 'includes/header.php';
 require_once 'includes/navbar.php'; 
 ?>
 
-<?php 
-$pageTitle = 'Home';
-require_once 'includes/header.php'; 
-require_once 'includes/navbar.php'; 
-?>
-
 <!-- Hero Video Banner Section (Exact Bravura Resort Style) -->
 <div class="banner Home_banner">
     <!-- Background Video with Gradient Overlays -->
@@ -96,7 +90,7 @@ require_once 'includes/navbar.php';
 </div>
 
 <!-- About Us Section -->
-<section class="about-us-section section-padding" style="background-color: var(--dv-white);">
+<section class="about-us-section section-padding bg-white">
     <div class="container">
         <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
             <div class="col-lg-6">
@@ -128,7 +122,7 @@ require_once 'includes/navbar.php';
     <div class="container">
         <div class="section-header" data-animate="fadeInUp">
             <span class="section-subtitle">Exclusive</span>
-            <h2 class="section-title" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">ROOMS & SUITES</h2>
+            <h2 class="section-title section-title-responsive">ROOMS & SUITES</h2>
         </div>
         
         <div class="row g-4" data-animate="fadeInUp" data-delay="0.2">
@@ -161,11 +155,11 @@ require_once 'includes/navbar.php';
 </section>
 
 <!-- Weddings & Events Section -->
-<section class="weddings-events-section section-padding" style="background-color: var(--dv-white);">
+<section class="weddings-events-section section-padding bg-white">
     <div class="container">
         <div class="section-header" data-animate="fadeInUp">
             <span class="section-subtitle">Events</span>
-            <h2 class="section-title" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">START PLANNING</h2>
+            <h2 class="section-title section-title-responsive">START PLANNING</h2>
         </div>
         
         <div class="row g-4" data-animate="fadeInUp" data-delay="0.2">
@@ -222,11 +216,11 @@ require_once 'includes/navbar.php';
 </section>
 
 <!-- Discover Section with YouTube Video -->
-<section class="discover-section section-padding" style="background-color: var(--dv-white);">
+<section class="discover-section section-padding bg-white">
     <div class="container">
         <div class="section-header" data-animate="fadeInUp">
             <span class="section-subtitle">Discover</span>
-            <h2 class="section-title" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">LUXURY RESORTS & CLUBS</h2>
+            <h2 class="section-title section-title-responsive">LUXURY RESORTS & CLUBS</h2>
         </div>
         
         <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
@@ -260,7 +254,7 @@ require_once 'includes/navbar.php';
 </section>
 
 <!-- Diamond Hall Section -->
-<section class="discover-section section-padding" style="background-color: var(--dv-white);">
+<section class="discover-section section-padding bg-white">
     <div class="container">
         <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
             <div class="col-lg-6">
@@ -283,7 +277,7 @@ require_once 'includes/navbar.php';
 </section>
 
 <!-- Aquarius Pool Section -->
-<section class="discover-section section-padding" style="background-color: var(--dv-ivory);">
+<section class="discover-section section-padding bg-ivory">
     <div class="container">
         <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
             <div class="col-lg-6">
@@ -306,7 +300,7 @@ require_once 'includes/navbar.php';
 </section>
 
 <!-- Sapphire Hall Section -->
-<section class="discover-section section-padding" style="background-color: var(--dv-white);">
+<section class="discover-section section-padding bg-white">
     <div class="container">
         <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
             <div class="col-lg-6">
@@ -329,7 +323,7 @@ require_once 'includes/navbar.php';
 </section>
 
 <!-- Crystal Ball Room Section -->
-<section class="discover-section section-padding" style="background-color: var(--dv-ivory);">
+<section class="discover-section section-padding bg-ivory">
     <div class="container">
         <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
             
@@ -355,7 +349,7 @@ require_once 'includes/navbar.php';
 </section>
 
 <!-- Jashan Lawn Section -->
-<section class="discover-section section-padding" style="background-color: var(--dv-white);">
+<section class="discover-section section-padding bg-white">
     <div class="container">
         <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
             <div class="col-lg-6">
@@ -379,11 +373,11 @@ require_once 'includes/navbar.php';
 </section>
 
 <!-- Bars and Restaurant Section -->
-<section class="discover-section section-padding" style="background-color: var(--dv-ivory);">
+<section class="discover-section section-padding bg-ivory">
     <div class="container">
         <div class="section-header" data-animate="fadeInUp">
             <span class="section-subtitle">Dining</span>
-            <h2 class="section-title" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">HIGHWAY RESTAURANT</h2>
+            <h2 class="section-title" class="section-title-responsive">HIGHWAY RESTAURANT</h2>
         </div>
         <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
             <div class="col-lg-6">
@@ -407,12 +401,12 @@ require_once 'includes/navbar.php';
 </section>
 
 <!-- Our Staff Section -->
-<section class="staff-section" style="background-color: var(--dv-ivory);">
+<section class="staff-section bg-ivory">
     <div class="container-fluid px-0">
         <div class="section-header text-center pt-5 pb-4" data-animate="fadeInUp">
             <span class="section-subtitle">Dedicated Team</span>
             <h2 class="section-title">OUR STAFF</h2>
-            <p class="section-desc mx-auto" style="max-width: 700px; color: #666; font-size: 1rem; line-height: 1.8;">At Doab Vilas, our dedicated team works tirelessly to ensure every guest experiences unparalleled hospitality. From warm welcomes to flawless service, our staff is committed to making your stay truly memorable.</p>
+            <p class="section-desc mx-auto section-desc-center">At Doab Vilas, our dedicated team works tirelessly to ensure every guest experiences unparalleled hospitality. From warm welcomes to flawless service, our staff is committed to making your stay truly memorable.</p>
         </div>
         <div class="staff-image-wrapper" data-animate="fadeInUp" data-delay="0.2">
             <img src="assets/images/rooms/our staff.JPG" alt="Our Staff" class="img-fluid w-100">
@@ -421,7 +415,7 @@ require_once 'includes/navbar.php';
 </section>
 
 <!-- Night View Banner Section -->
-<section class="night-banner-section" style="padding-top: 80px;">
+<section class="night-banner-section pt-100">
     <div class="container">
         <div class="section-header" data-animate="fadeInUp">
             <span class="section-subtitle">Resort Life</span>
@@ -435,7 +429,7 @@ require_once 'includes/navbar.php';
 </section>
 
 <!-- Testimonial Section -->
-<section class="testimonial-section section-padding" style="background-color: var(--dv-white);">
+<section class="testimonial-section section-padding bg-white">
     <div class="container">
         <div class="section-header" data-animate="fadeInUp">
             <span class="section-subtitle">Testimonials</span>
@@ -507,12 +501,12 @@ require_once 'includes/navbar.php';
 </section>
 
 <!-- Membership Plans Section -->
-<section class="membership-section" style="background-color: #e9e9e9; padding: 40px 0;">
+<section class="membership-section bg-light-gray">
     <div class="container">
         <div class="membership-wrapper" data-animate="fadeInUp">
             <div class="membership-content">
                 <p class="membership-text">Equiry Now about the Doab Vilas </p>
-                <p class="membership-note" style="font-size: 24px;color: #333;font-weight: 600;line-height: 1.2;">Note: 24/7 Service Available</p>
+                <p class="membership-note note-text">Note: 24/7 Service Available</p>
             </div>
             <div class="membership-buttons">
                 <a href="booking.php" class="btn btn-gold membership-btn">EQUIRY NOW</a>
@@ -524,58 +518,3 @@ require_once 'includes/navbar.php';
 
 <?php require_once 'includes/whatsapp-button.php'; ?>
 <?php require_once 'includes/footer.php'; ?>
-
-<!-- Hero Animation Script -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Animate hero elements on load
-    const heroElements = document.querySelectorAll('[data-animate]');
-    
-    heroElements.forEach(el => {
-        const delay = el.getAttribute('data-delay') || 0;
-        setTimeout(() => {
-            el.classList.add('animated');
-        }, delay * 1000);
-    });
-    
-    // Counter animation
-    const counters = document.querySelectorAll('.hero-stat-number');
-    counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-count'));
-        const duration = 2000;
-        const step = target / (duration / 16);
-        let current = 0;
-        
-        const updateCounter = () => {
-            current += step;
-            if (current < target) {
-                counter.textContent = Math.floor(current);
-                requestAnimationFrame(updateCounter);
-            } else {
-                counter.textContent = target;
-            }
-        };
-        
-        // Start counter when visible
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    updateCounter();
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        observer.observe(counter);
-    });
-    
-    // Parallax effect for hero
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const hero = document.querySelector('.hero-section');
-        if (hero) {
-            hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
-        }
-    });
-});
-</script>

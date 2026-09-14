@@ -36,19 +36,14 @@
                     <h5 class="footer-title">CONNECT</h5>
                     <div class="footer-connect">
                         <p class="footer-address">
-                            <i class="bi bi-house" style="color: #C9A96A;"></i>
+                            <i class="bi bi-house color-gold"></i>
                             <?php echo SITE_ADDRESS; ?>
                         </p>
                         <ul class="footer-contact-list">
-                            <!-- <li>
-                                <i class="bi bi-envelope"></i>
-                                <a href="mailto:<?php echo SITE_EMAIL; ?>"><?php echo SITE_EMAIL; ?></a>
-                            </li> -->
                             <li>
                                 <i class="bi bi-telephone"></i>
                                 <span><?php echo SITE_PHONE; ?>,  +91-7078733333</span>
                             </li>
-                           
                         </ul>
                     </div>
                 </div>
@@ -71,9 +66,6 @@
         <div class="footer-bottom">
             <div class="row align-items-center">
                 <div class="col-md-12 text-center">
-                 <!--    <p class="footer-copyright">
-                        &copy; <?php echo date('Y'); ?> <?php echo SITE_NAME; ?>. All rights reserved | Promotion Paradise Pvt. Ltd
-                    </p> -->
                     <p class="footer-copyright">© 2026 | Doab Vilas | Website Conceptualised and Developed by <a href="https://www.promotionparadise.in" target="_blank">Promotion Paradise</a></p>
                 </div>
             </div>

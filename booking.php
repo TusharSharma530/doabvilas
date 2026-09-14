@@ -54,7 +54,7 @@ $selectedRoom = isset($roomMap[$room]) ? $roomMap[$room] : '';
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <div class="booking-form-wrapper p-4 p-md-5 rounded" style="background: var(--dv-white); box-shadow: var(--shadow-lg);">
+                <div class="booking-form-wrapper p-4 p-md-5 rounded bg-white shadow-lg">
                     <h2 class="section-title text-center mb-4">Make a Reservation</h2>
                     
                     <form data-validate>

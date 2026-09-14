@@ -25,7 +25,7 @@ require_once 'includes/navbar.php';
 </div>
 
 <!-- Contact Info Cards -->
-<section class="contact-info-section section-padding" style="background: var(--dv-ivory);">
+<section class="contact-info-section section-padding bg-ivory">
     <div class="container">
         <div class="row g-4">
             <div class="col-lg-4 col-md-6">
@@ -62,7 +62,7 @@ require_once 'includes/navbar.php';
 </section>
 
 <!-- Contact Content -->
-<section class="contact-content-section section-padding" id="contactSection" style="background: var(--dv-white);">
+<section class="contact-content-section section-padding bg-white" id="contactSection">
     <div class="container">
         <div class="row g-5 align-items-start">
             <!-- Contact Form -->
@@ -157,186 +157,11 @@ require_once 'includes/navbar.php';
 </section>
 
 <!-- Google Map -->
-<section class="map-section" style="padding: 0;">
+<section class="map-section no-padding">
     <div class="map-container">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.4979999999996!2d77.7089!3d28.9576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a43173357b%3A0x2c42e82de01011e0!2sDoab%20Vilas!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 </section>
-
-<style>
-/* Contact Info Section */
-.contact-info-section { padding: 60px 0; }
-
-.contact-info-box {
-    background: #fff;
-    padding: 30px 20px;
-    border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    transition: all 0.4s ease;
-}
-
-.contact-info-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-}
-
-.contact-icon {
-    width: 70px;
-    height: 70px;
-    background: var(--dv-gold);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 15px;
-}
-
-.contact-icon i {
-    font-size: 28px;
-    color: #fff;
-}
-
-.contact-info-box h5 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    color: var(--dv-dark);
-    margin-bottom: 10px;
-}
-
-.contact-info-box p {
-    color: #666;
-    font-size: 0.95rem;
-    margin: 0;
-}
-
-.contact-info-box a {
-    color: #666;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.contact-info-box a:hover {
-    color: var(--dv-gold);
-}
-
-/* Contact Form */
-.contact-form .form-group {
-    margin-bottom: 0;
-}
-
-.contact-form .form-control,
-.contact-form .form-select {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 15px;
-    transition: border-color 0.3s;
-    background: #fff;
-}
-
-.contact-form .form-control:focus,
-.contact-form .form-select:focus {
-    border-color: var(--dv-gold);
-    outline: none;
-    box-shadow: none;
-}
-
-.contact-form textarea.form-control {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.btn-gold-submit {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--dv-gold);
-    color: #fff;
-    border: none;
-    padding: 12px 30px;
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn-gold-submit:hover {
-    background: var(--dv-dark);
-    gap: 15px;
-}
-
-/* Contact Info List */
-.contact-info-list {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.contact-info-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-}
-
-.contact-info-icon {
-    width: 50px;
-    height: 50px;
-    min-width: 50px;
-    background: var(--dv-gold);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.contact-info-icon i {
-    font-size: 20px;
-    color: #fff;
-}
-
-.contact-info-text h5 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    color: var(--dv-dark);
-    margin-bottom: 5px;
-}
-
-.contact-info-text p {
-    color: #666;
-    font-size: 0.95rem;
-    margin: 0;
-    line-height: 1.6;
-}
-
-.contact-info-text a {
-    color: #666;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.contact-info-text a:hover {
-    color: var(--dv-gold);
-}
-
-/* Map */
-.map-container {
-    width: 100%;
-}
-
-.map-container iframe {
-    width: 100%;
-    height: 450px;
-    display: block;
-}
-
-@media (max-width: 767px) {
-    .contact-info-section { padding: 40px 0; }
-    .map-container iframe { height: 300px; }
-}
-</style>
 
 <?php require_once 'includes/whatsapp-button.php'; ?>
 <?php require_once 'includes/footer.php'; ?>
