@@ -1,3 +1,4 @@
+</div><!-- .page-content-wrap -->
 <!-- Footer -->
 <footer class="site-footer">
     <div class="container">
