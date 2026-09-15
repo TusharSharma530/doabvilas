@@ -662,6 +662,12 @@
     .discover-section {
         padding: 10px 0;
     }
+    .discover-section .section-header .section-title {
+        font-size: 25px !important;
+    }
+    .discover-section .section-header {
+        margin-bottom: 15px !important;
+    }
     .discover-heading {
         font-size: 1.3rem;
     }
@@ -709,6 +715,7 @@
     .testimonial-text {
         font-size: 0.9rem;
         line-height: 1.6;
+        text-align: justify;
     }
     .testimonial-author-info h4 {
         font-size: 1rem;
