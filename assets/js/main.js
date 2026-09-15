@@ -376,26 +376,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const backToTop = document.createElement('button');
     backToTop.innerHTML = '<i class="bi bi-arrow-up"></i>';
     backToTop.className = 'back-to-top';
-    backToTop.style.cssText = `
-        position: fixed;
-        bottom: 95px;
-        right: 30px;
-        width: 45px;
-        height: 45px;
-        background-color: var(--dv-dark);
-        color: white;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 998;
-        font-size: 1.2rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    `;
     document.body.appendChild(backToTop);
     
     window.addEventListener('scroll', function() {

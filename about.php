@@ -25,9 +25,9 @@ require_once 'includes/navbar.php';
 </div>
 
 <!-- About Content Section -->
-<section id="aboutSection" class="about-us-section section-padding bg-white">
+<section id="aboutSection" class="about-us-section bg-white">
     <div class="container">
-        <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
+        <div class="row align-items-center " data-animate="fadeInUp" data-delay="0.2">
             <div class="col-lg-6">
                 <div class="about-us-image">
                     <img src="assets/images/rooms/doab villas.png" alt="Doab Vilas" class="img-fluid">
@@ -50,7 +50,7 @@ require_once 'includes/navbar.php';
 </section>
 
 <!-- Our Legacy Section -->
-<section class="discover-section section-padding bg-ivory">
+<section class=" section-padding bg-ivory">
     <div class="container">
         <div class="section-header" data-animate="fadeInUp">
             <span class="section-subtitle">Our Heritage</span>

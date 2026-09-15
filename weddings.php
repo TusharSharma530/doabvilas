@@ -27,7 +27,7 @@ require_once 'includes/navbar.php';
 <!-- 1. Diamond Hall Section (50-100) -->
 <section id="venuesSection" class="discover-section section-padding bg-white">
     <div class="container">
-        <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
+        <div class="row align-items-center" data-animate="fadeInUp" data-delay="0.2">
             <div class="col-lg-6">
                 <div class="discover-content">
                     <span class="section-subtitle">50 - 100 Guests</span>
@@ -49,7 +49,7 @@ require_once 'includes/navbar.php';
 <!-- 2. Aquarius Pool Section (100-250) -->
 <section class="discover-section section-padding bg-ivory">
     <div class="container">
-        <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
+        <div class="row align-items-center " data-animate="fadeInUp" data-delay="0.2">
             <div class="col-lg-6">
                 <div class="discover-image">
                     <img src="assets/images/rooms/Auirious pool.JPG" alt="Aquarius Pool" class="img-fluid" loading="lazy">
@@ -71,7 +71,7 @@ require_once 'includes/navbar.php';
 <!-- 3. Sapphire Hall Section (100-250) -->
 <section class="discover-section section-padding bg-white">
     <div class="container">
-        <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
+        <div class="row align-items-center " data-animate="fadeInUp" data-delay="0.2">
             <div class="col-lg-6">
                 <div class="discover-content">
                     <span class="section-subtitle">100 - 250 Guests</span>
@@ -93,7 +93,7 @@ require_once 'includes/navbar.php';
 <!-- 4. Crystal Ball Room Section (300-600) -->
 <section class="discover-section section-padding bg-ivory">
     <div class="container">
-        <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
+        <div class="row align-items-center" data-animate="fadeInUp" data-delay="0.2">
             <div class="col-lg-6">
                 <div class="discover-image">
                     <img src="assets/images/rooms/crystall bal room.webp" alt="Crystal Ball Room" class="img-fluid" loading="lazy">
@@ -115,7 +115,7 @@ require_once 'includes/navbar.php';
 <!-- 5. Jashan Lawn Section (500-1500+) -->
 <section class="discover-section section-padding bg-white">
     <div class="container">
-        <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
+        <div class="row align-items-center" data-animate="fadeInUp" data-delay="0.2">
             <div class="col-lg-6">
                 <div class="discover-content">
                     <span class="section-subtitle">500 - 1500+ Guests</span>
