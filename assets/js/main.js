@@ -20,16 +20,50 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ===================================
-    // Mobile Menu Toggle
+    // Mobile Menu Toggle (Sidebar)
     // ===================================
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const headerNav = document.getElementById('headerNav');
+    const mobileSidebarClose = document.getElementById('mobileSidebarClose');
+    
+    // Create overlay element
+    const sidebarOverlay = document.createElement('div');
+    sidebarOverlay.className = 'mobile-sidebar-overlay';
+    document.body.appendChild(sidebarOverlay);
+
+    function openSidebar() {
+        mobileMenuToggle.classList.add('active');
+        headerNav.classList.add('active');
+        sidebarOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeSidebar() {
+        mobileMenuToggle.classList.remove('active');
+        headerNav.classList.remove('active');
+        sidebarOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
     
     if (mobileMenuToggle && headerNav) {
         mobileMenuToggle.addEventListener('click', function() {
-            this.classList.toggle('active');
-            headerNav.classList.toggle('active');
-            document.body.style.overflow = headerNav.classList.contains('active') ? 'hidden' : '';
+            if (headerNav.classList.contains('active')) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+
+        // Close button inside sidebar
+        if (mobileSidebarClose) {
+            mobileSidebarClose.addEventListener('click', function() {
+                closeSidebar();
+            });
+        }
+
+        // Close on overlay click
+        sidebarOverlay.addEventListener('click', function() {
+            closeSidebar();
         });
 
         // Close mobile menu when clicking on a link
@@ -42,9 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         e.preventDefault();
                         parentItem.classList.toggle('active');
                     } else {
-                        mobileMenuToggle.classList.remove('active');
-                        headerNav.classList.remove('active');
-                        document.body.style.overflow = '';
+                        closeSidebar();
                     }
                 }
             });

@@ -1,14 +1,5 @@
 <!-- Top Bar + Header -->
 <header class="site-header header-solid" id="siteHeader">
-        <div class="header-top-container">
-            <div class="header-top-right">
-                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>  
     <!-- Main Navigation -->
     <div class="header-main">
         <div class="header-main-container">
@@ -18,6 +9,16 @@
             </a>
             
             <nav class="header-nav custom-nav" id="headerNav">
+                <!-- Mobile Sidebar Header (Logo + Close) -->
+                <div class="mobile-sidebar-header">
+                    <a class="mobile-sidebar-logo" href="index.php">
+                        <img src="assets/images/logo/doab-villas-logo.avif" alt="Doab Vilas Logo">
+                    </a>
+                    <button class="mobile-sidebar-close" id="mobileSidebarClose" aria-label="Close menu">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+
                 <ul class="nav-list">
                     
                     <!-- 1. HOME -->
@@ -69,6 +70,13 @@
                     
                 </ul>
             </nav>
+
+            <!-- Hamburger (inside header-main, right side) -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </div>
 </header>

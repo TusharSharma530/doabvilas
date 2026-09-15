@@ -20,5 +20,6 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?php echo CSS_URL; ?>style.css">
+    <link rel="stylesheet" href="<?php echo CSS_URL; ?>responsiveness.css">
 </head>
 <body>
