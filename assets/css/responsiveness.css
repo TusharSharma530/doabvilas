@@ -369,7 +369,7 @@
         text-align: left;
     }
     .footer-links li {
-        margin-bottom: 8px;
+        margin-bottom: 1px;
     }
     .footer-links li a {
         font-size: 0.85rem;
@@ -591,7 +591,7 @@
 /* --- About Us Section (Homepage) --- */
 @media (max-width: 767.98px) {
     .about-us-section {
-        padding-top: 5px;
+        padding-top: 20px;
         padding-bottom: 10px;
     }
     .about-us-section .row {
@@ -618,6 +618,7 @@
     .about-us-text {
         font-size: 0.9rem;
         line-height: 1.7;
+        text-align: justify;
     }
 }
 
@@ -637,6 +638,7 @@
     }
     .wedding-grid-text {
         font-size: 0.85rem;
+        text-align: justify;
     }
 }
 
@@ -809,6 +811,12 @@
    ============================================================ */
 
 @media (max-width: 767.98px) {
+    .rooms-suites-section .section-title {
+        font-size: 30px !important;
+    }
+    .rooms-suites-section .section-header {
+        margin-bottom: 15px !important;
+    }
     .rooms-suites-section .wedding-grid-card {
         margin-bottom: 15px;
     }
@@ -1027,6 +1035,8 @@
         font-size: 0.9rem;
         line-height: 1.7;
         padding: 0 10px;
+        text-align: justify;
+    }
     }
     .full-cover-img {
         max-height: 300px;
@@ -1056,6 +1066,9 @@
 }
 
 @media (max-width: 767.98px) {
+    #venuesSection {
+        padding-top: 30px !important;
+    }
     .weddings .discover-heading,
     .discover-heading {
         font-size: 1.3rem;
@@ -1063,6 +1076,10 @@
     .discover-text {
         font-size: 0.9rem;
         line-height: 1.7;
+        text-align: justify;
+    }
+    .discover-content {
+        text-align: justify;
     }
     .discover-image img {
         max-height: 250px;
@@ -1200,6 +1217,19 @@
    ============================================================ */
 
 @media (max-width: 767.98px) {
+    .sec-upcoming-events {
+        padding: 10px 0 10px;
+    }
+    .sec-upcoming-events .section-header {
+        margin-bottom: 10px !important;
+    }
+    .sec-upcoming-events .section-subtitle {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .sec-upcoming-events .row {
+        gap: 12px !important;
+    }
     .event-card figure img {
         height: 200px;
     }
@@ -1235,9 +1265,19 @@
 }
 
 @media (max-width: 767.98px) {
+    .gallery-section {
+        padding: 10px 0 20px;
+    }
+    .gallery-section .section-header {
+        margin-bottom: 10px !important;
+    }
+    .gallery-section .section-subtitle {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
     .gallery-filter {
         gap: 6px;
-        margin-bottom: 25px;
+        margin-bottom: 15px;
     }
     .filter-btn {
         padding: 6px 12px;
