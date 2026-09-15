@@ -3,10 +3,6 @@ $pageTitle = 'Dine & Wine, Bar and Restaurants in Meerut, Uttar Pradesh, India';
 require_once 'includes/header.php'; 
 require_once 'includes/navbar.php'; 
 ?>
-
-<!-- ==========================================
-     HERO BANNER - EXACT BRAVURA RESORT STYLE
-     ========================================== -->
 <div class="banner banner-rooms-suites banner_wedding banner_dining">
     <div class="bg overlay-top overlay-bottom">
         <img src="assets/images/rooms/doab villas 1.png" alt="Dine & Wine" title="Dine & Wine" class="hero-bg-img" />

@@ -25,10 +25,6 @@ require_once 'includes/navbar.php';
         </div>
     </div>
 </div>
-
-<!-- ==========================================
-     LUXURY DELUX ROOMS SECTION
-     ========================================== -->
 <section class="rooms-suites-section section-padding" id="roomsListingSection">
     <div class="container">
         <div class="section-header text-center mb-5">

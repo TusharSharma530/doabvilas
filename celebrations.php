@@ -3,10 +3,6 @@ $pageTitle = 'Celebration Party Place for Festivals, Sangeet, Mehndi, Birthday i
 require_once 'includes/header.php'; 
 require_once 'includes/navbar.php'; 
 ?>
-
-<!-- ==========================================
-     HERO BANNER - EXACT BRAVURA RESORT STYLE
-     ========================================== -->
 <div class="banner banner-banquetSpace">
     <div class="bg overlay-top overlay-bottom">
         <img src="assets/images/weddings/celebrations-banner.jpg" alt="Celebrations" title="Celebrations" class="hero-bg-img" />
@@ -21,9 +17,6 @@ require_once 'includes/navbar.php';
     </div>
 </div>
 
-<!-- ==========================================
-     CONTENT & ENQUIRY SECTION
-     ========================================== -->
 <section class="specilaOffDetailsSe banquetSpaceDetail">
     <div class="container-fluid px-3 px-lg-5">
         <div class="row g-4 g-xl-5">
@@ -92,10 +85,6 @@ require_once 'includes/navbar.php';
         </div>
     </div>
 </section>
-
-<!-- ==========================================
-     PLACES AND SPACES (BANQUET HALLS & LAWNS)
-     ========================================== -->
 <section class="BGR-H-Section-a moreroomS banquetSpaceSec" id="placesSpacesSection">
     <div class="container-fluid px-3 px-lg-5">
         <div class="heading text-center mb-5">
@@ -120,8 +109,6 @@ require_once 'includes/navbar.php';
                     </div>
                 </div>
             </div>
-            
-            <!-- 2. Grand Imperial Hall -->
             <div class="col-md-6 col-lg-4">
                 <div class="banquet-space-card img_hover">
                     <figure class="banquet-figure">
@@ -137,8 +124,6 @@ require_once 'includes/navbar.php';
                     </div>
                 </div>
             </div>
-            
-            <!-- 3. Grand Platinum Hall -->
             <div class="col-md-6 col-lg-4">
                 <div class="banquet-space-card img_hover">
                     <figure class="banquet-figure">
@@ -154,8 +139,6 @@ require_once 'includes/navbar.php';
                     </div>
                 </div>
             </div>
-            
-            <!-- 4. Grandeur Hall -->
             <div class="col-md-6 col-lg-4">
                 <div class="banquet-space-card img_hover">
                     <figure class="banquet-figure">
@@ -171,8 +154,6 @@ require_once 'includes/navbar.php';
                     </div>
                 </div>
             </div>
-            
-            <!-- 5. Class-e-Dior Hall -->
             <div class="col-md-6 col-lg-4">
                 <div class="banquet-space-card img_hover">
                     <figure class="banquet-figure">
@@ -188,8 +169,6 @@ require_once 'includes/navbar.php';
                     </div>
                 </div>
             </div>
-            
-            <!-- 6. Regent Hall -->
             <div class="col-md-6 col-lg-4">
                 <div class="banquet-space-card img_hover">
                     <figure class="banquet-figure">

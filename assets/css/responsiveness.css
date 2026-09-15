@@ -1457,25 +1457,53 @@
    ============================================================ */
 
 @media (max-width: 767.98px) {
+    .modal {
+        z-index: 10050 !important;
+    }
+    .modal-backdrop {
+        z-index: 10040 !important;
+    }
     .luxury-modal .modal-dialog {
         margin: 10px;
+        max-width: calc(100% - 20px);
     }
     .luxury-modal-content {
         border-radius: 12px;
+        padding: 8px;
     }
     .luxury-modal-content .modal-body {
-        padding: 15px;
+        padding: 12px 10px;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    .luxury-modal-content .modal-title-wrap {
+        text-align: left;
     }
     .luxury-modal-content .modal-title {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+    }
+    .luxury-modal-content .modal-subtitle {
+        font-size: 0.65rem;
     }
     .luxury-modal-content .form-label {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
+        margin-bottom: 4px;
     }
     .luxury-modal-content .form-control,
     .luxury-modal-content .form-select {
-        padding: 10px 12px;
-        font-size: 0.9rem;
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+    .luxury-modal-content .input-group-text {
+        padding: 6px 8px;
+        font-size: 0.85rem;
+    }
+    .luxury-modal-content .mb-3 {
+        margin-bottom: 12px !important;
+    }
+    .luxury-modal-content .btn-gold {
+        padding: 10px 20px;
+        font-size: 0.85rem;
     }
     .summary-mini-card {
         padding: 10px;

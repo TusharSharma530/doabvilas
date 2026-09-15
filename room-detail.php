@@ -1260,10 +1260,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (e.key === 'ArrowRight') setGallerySlide(activeGalleryIdx + 1);
         }
     });
-
-    // -------------------------------------------------------------
-    // 5. SMOOTH SCROLL TO BOOKING FORM CARD
-    // -------------------------------------------------------------
     document.querySelectorAll('a[href="#bookingFormCard"]').forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
