@@ -24,11 +24,11 @@ require_once 'includes/navbar.php';
 
 <!-- Highway Restaurant Section -->
 <section class="highway-restaurant-section hwy-section">
-    <div class="container">
+    <div class="container-fluid p-0">
         <div class="row justify-content-center no-margin">
-            <div class="col-12 no-padding">
+            <div class="col-12 p-0">
                 <div class="border-radius-hidden">
-                    <img src="assets/images/dining/highwayrestaurant.webp" alt="Highway Restaurant" class="img-fluid full-cover-img" loading="lazy">
+                    <img src="assets/images/dining/highwayrestaurant.webp" alt="Highway Restaurant" class="full-cover-img" loading="lazy">
                 </div>
                 <div class="text-center-pt">
                     <h2 class="heading-playfair">HIGHWAY RESTAURANT</h2>
