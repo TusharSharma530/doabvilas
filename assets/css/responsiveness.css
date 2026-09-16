@@ -607,7 +607,7 @@
         padding: 15px 0;
     }
     .about-us-image img {
-        max-height: 300px;
+        height: auto;
         object-fit: cover;
         width: 100%;
         border-radius: 8px;
@@ -628,7 +628,7 @@
         margin-bottom: 15px;
     }
     .wedding-grid-img img {
-        height: 220px;
+        height: auto;
     }
     .wedding-grid-content {
         padding: 15px;
@@ -644,7 +644,7 @@
 
 @media (max-width: 575.98px) {
     .wedding-grid-img img {
-        height: 180px;
+        height: auto;
     }
 }
 
@@ -679,7 +679,7 @@
         font-size: 0.85rem;
     }
     .discover-image img {
-        max-height: 200px;
+        height: auto;
         object-fit: cover;
         width: 100%;
         border-radius: 8px;
@@ -697,7 +697,7 @@
 
 @media (max-width: 575.98px) {
     .discover-image img {
-        max-height: 200px;
+        height: auto;
     }
     .discover-video iframe {
         height: 180px;
@@ -722,7 +722,7 @@
     }
     .testimonial-author img {
         width: 45px;
-        height: 45px;
+        height: auto;
     }
 }
 
@@ -739,7 +739,7 @@
         padding: 0 15px;
     }
     .staff-image-wrapper img {
-        max-height: 350px;
+        height: auto;
         object-fit: cover;
     }
 }
@@ -747,7 +747,7 @@
 /* --- Night Banner (Homepage) --- */
 @media (max-width: 767.98px) {
     .night-banner-image img {
-        max-height: 300px;
+        height: auto;
         object-fit: cover;
         width: 100%;
     }
@@ -779,7 +779,7 @@
 
 @media (max-width: 767.98px) {
     .about-us-section .about-us-image img {
-        max-height: 280px;
+        height: auto;
         object-fit: cover;
         width: 100%;
     }
@@ -828,7 +828,7 @@
         margin-bottom: 15px;
     }
     .rooms-suites-section .wedding-grid-img img {
-        height: 220px;
+        height: auto;
     }
     .rooms-suites-section .wedding-grid-content {
         padding: 15px;
@@ -837,7 +837,7 @@
 
 @media (max-width: 575.98px) {
     .rooms-suites-section .wedding-grid-img img {
-        height: 180px;
+        height: auto;
     }
 }
 
@@ -1030,8 +1030,8 @@
         padding: 40px 0;
     }
     .full-cover-img {
-        height: 600px !important;
-        min-height: 600px !important;
+        height: auto !important;
+      
     }
     .border-radius-hidden {
         height: 600px !important;
@@ -1040,7 +1040,7 @@
 
 @media (max-width: 767.98px) {
     .hwy-section {
-        padding: 20px 0;
+        padding: 20px 5px;
     }
     .heading-playfair {
         font-size: 1.5rem;
@@ -1052,13 +1052,15 @@
         text-align: justify;
     }
     .full-cover-img {
-        height: 400px !important;
-        min-height: 400px !important;
+        /* height: 400px !important;
+        min-height: 400px !important; */
         object-fit: cover;
         width: 100%;
     }
     .border-radius-hidden {
         height: 400px !important;
+        margin: 0 10px;
+        width: calc(100% - 30px);
     }
 }
 
@@ -1067,11 +1069,13 @@
         font-size: 1.3rem;
     }
     .full-cover-img {
-        height: 280px !important;
-        min-height: 280px !important;
+        /* height: 280px !important;
+        min-height: 280px !important; */
     }
     .border-radius-hidden {
         height: 280px !important;
+        margin: 0 10px;
+        width: calc(100% - 30px);
     }
     .text-center-pt {
         padding: 15px 10px 0;
@@ -1106,7 +1110,7 @@
         text-align: justify;
     }
     .discover-image img {
-        max-height: 250px;
+        height: auto;
         object-fit: cover;
         width: 100%;
     }
@@ -1114,7 +1118,7 @@
 
 @media (max-width: 575.98px) {
     .discover-image img {
-        max-height: 200px;
+        height: auto;
     }
 }
 

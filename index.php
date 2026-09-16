@@ -191,7 +191,7 @@ require_once 'includes/navbar.php';
             <div class="col-lg-6">
                 <a href="" class="wedding-grid-card">
                     <div class="wedding-grid-img">
-                        <img src="assets/images/rooms/Auirious pool.JPG" alt="Wedding Venues / Lawn" class="img-fluid">
+                        <img src="assets/images/rooms/diamond-hall.png" alt="Wedding Venues / Lawn" class="img-fluid">
                     </div>
                     <div class="wedding-grid-content">
                         <h3 class="wedding-grid-title">Wedding Venues / Lawn</h3>
@@ -203,7 +203,7 @@ require_once 'includes/navbar.php';
             <div class="col-lg-6">
                 <a href="" class="wedding-grid-card">
                     <div class="wedding-grid-img">
-                        <img src="assets/images/weddings/birthday celebration.webp" alt="Birthday Celebration" class="img-fluid">
+                        <img src="assets/images/weddings/corporate events.webp" alt="Birthday Celebration" class="img-fluid">
                     </div>
                     <div class="wedding-grid-content">
                         <h3 class="wedding-grid-title">Birthday Celebration</h3>
