@@ -96,10 +96,9 @@
 .section-desc-center { max-width: 700px; color: #666; font-size: 1rem; line-height: 1.8; }
 .bg-light-gray { background-color: #e9e9e9; padding: 40px 0; }
 .note-text { font-size: 24px; color: #333; font-weight: 600; line-height: 1.2; }
-.border-radius-hidden { border-radius: 8px; overflow: hidden; }
+.border-radius-hidden { border-radius: 8px; overflow: hidden; height: 1000px; }
 .text-center-pt { padding: 25px 10px 0; text-align: center; }
 .full-cover-img { width: 100% !important; height: 1000px !important; min-height: 1000px !important; object-fit: cover !important; display: block; }
-.border-radius-hidden { border-radius: 8px; overflow: hidden; height: 1000px; }
 .heading-playfair { font-family: 'Playfair Display', serif; font-weight: 600; color: var(--dv-dark); letter-spacing: 2px; margin-bottom: 15px; }
 .text-lato { font-family: 'Lato', sans-serif; font-size: 1rem; line-height: 1.9; color: #555; }
 .text-dark { color: var(--dv-dark); }
