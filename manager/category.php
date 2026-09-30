@@ -65,8 +65,8 @@ if(!isset($_SESSION['username'])){
 		</thead>
 		<tbody>
 		<?php 
-			$typeurl = $_GET['type'] ?? 1;
-			$sqlcat  = mysqli_query($con, "SELECT * FROM category WHERE c_type = $typeurl ORDER BY id ASC");
+			$typeurl = intval($_GET['type'] ?? 1);
+			$sqlcat  = mysqli_query($con, "SELECT * FROM category WHERE c_type = $typeurl OR ($typeurl = 1 AND c_type NOT IN (1,2,3)) ORDER BY id ASC");
 			if(mysqli_num_rows($sqlcat)){
 				$serial = 1;
 				while($rwcat = mysqli_fetch_assoc($sqlcat )){
@@ -82,6 +82,14 @@ if(!isset($_SESSION['username'])){
 						echo 'Bottom Menu';
 					}else if($rwcat['c_type'] == 3){
 						echo 'Other Menu';
+					}else{
+						$sqlparent = mysqli_query($con, "SELECT c_name FROM category WHERE id = '{$rwcat['c_type']}'");
+						if(mysqli_num_rows($sqlparent)){
+							$rwparent = mysqli_fetch_assoc($sqlparent);
+							echo 'Under '.$rwparent['c_name'];
+						}else{
+							echo '-';
+						}
 					}
 
 				?></td>

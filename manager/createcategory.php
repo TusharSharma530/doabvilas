@@ -80,9 +80,11 @@ if(isset($_POST['addRecord'])){
 			<label for="type" class="form-label">Category Type</label>
 			<select class="form-control" id="type" name="ctype" required>
 				<option value=''>-- Select Category Type --</option>
-				<option value="1" selected>Top</option>
-				<option value="2">Bottom</option>
-				<option value="3">Other</option>									
+				<?php $sqlctype = mysqli_query($con, "SELECT id, c_name FROM `category` WHERE `c_type` = 1 ORDER BY `order` ASC");
+				if(mysqli_num_rows($sqlctype)){
+					while($rwctype = mysqli_fetch_assoc($sqlctype)){ ?>
+				<option value="<?=$rwctype['id'];?>"><?=$rwctype['c_name'];?></option>
+				<?php } } ?>
 			</select>							
 		</div>
 

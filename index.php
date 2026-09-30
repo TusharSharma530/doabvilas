@@ -4,12 +4,25 @@ require_once 'includes/header.php';
 require_once 'includes/navbar.php'; 
 ?>
 
-<!-- Hero Video Banner Section (Exact Bravura Resort Style) -->
+<!-- Hero Video Banner Section -->
 <div class="banner Home_banner">
     <!-- Background Video with Gradient Overlays -->
     <div class="bg overlay-top overlay-bottom">
+        <?php
+        $homevideo = "";
+        $sqlhomebanner = mysqli_query($con, "SELECT w.wb_img FROM `web_banner` w JOIN `category` c ON c.id = w.category_id WHERE c.c_name = 'HOME' AND c.c_type = 1 AND w.status = 1 ORDER BY w.wb_order ASC, w.id ASC LIMIT 1");
+        if(!mysqli_num_rows($sqlhomebanner)){
+            $sqlhomebanner = mysqli_query($con, "SELECT wb_img FROM `web_banner` WHERE status = 1 ORDER BY wb_order ASC, id ASC LIMIT 1");
+        }
+        if(mysqli_num_rows($sqlhomebanner)){
+            $rwhomebanner = mysqli_fetch_assoc($sqlhomebanner);
+            if(!empty($rwhomebanner['wb_img'])){
+                $homevideo = $rwhomebanner['wb_img'];
+            }
+        }
+        ?>
         <video class="video1" autoplay muted loop playsinline id="video-bg" preload="auto" poster="assets/images/rooms/premium-rooms--Room.jpg">
-            <source src="assets/videos/doabvilas.mov" type="video/mp4">
+            <source src="<?=$homevideo;?>" type="video/mp4">
         </video>
     </div>
 
@@ -30,11 +43,11 @@ require_once 'includes/navbar.php';
                     </div>
                 </div>
 
-                <!-- Sleek Minimal Line-Based Booking Form (Exact Match to Image) -->
+                <!-- Sleek Minimal Line-Based Booking Form  -->
                 <div class="banner-form Chcek_Now" data-animate="fadeInUp">
                     <form action="booking.php" method="GET" class="form" id="bravuraBookingForm">
                         <div class="flex form-line-row">
-                            <!-- Select Room (Column 1) -->
+                            <!-- Select Room  -->
                             <div class="col col1">
                                 <div class="form-group">
                                     <div class="dropdown room-dropdown" id="roomDropdown">
