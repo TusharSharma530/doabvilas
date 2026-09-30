@@ -1,4 +1,4 @@
-<?php include 'config.php';
+<?php require_once 'database/db.php';
 $pagetitle = 'Courses';
 $title="Courses";
 if(!isset($_SESSION['username'])){

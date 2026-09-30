@@ -1,4 +1,4 @@
-<?php include 'config.php';
+<?php require_once 'database/db.php';
 $title = 'Add Sub Category';
 
 if(!isset($_SESSION['username'])){

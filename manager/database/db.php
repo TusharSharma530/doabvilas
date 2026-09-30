@@ -1,5 +1,5 @@
 <?php session_start();
-error_reporting(0);
+error_reporting(E_ALL); ini_set('display_errors', '1');
 define('BASE_PATH',"//localhost/doabvilas/");
 define('DB_HOST', 'localhost');
 define('DB_NAME','doabvillas');
@@ -15,7 +15,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception; 
 //Load Composer's autoloader
-require 'PHPMailer/vendor/autoload.php';
+require dirname(__DIR__) . '/PHPMailer/vendor/autoload.php';
 
 
 function SendEmailer($senderemail,$subject,$bodydata, $filePath=null){
@@ -73,10 +73,11 @@ try {
 if (mysqli_connect_errno()){ echo "Failed to connect to MySQL: " . mysqli_connect_error(); }
 
   // Actual Link 
-$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . ($_SERVER['HTTP_HOST'] ?? '') . ($_SERVER['REQUEST_URI'] ?? '');
 
 $query_str = parse_url($actual_link, PHP_URL_QUERY);
-parse_str($query_str, $query_params);
+$query_params = [];
+parse_str($query_str ?? '', $query_params);
 $getparam = $query_params;
 
 
@@ -162,6 +163,71 @@ $metatitle = $rwlinks['meta_title'];
 $metakeywords = $rwlinks['meta_keywords'];
 $metadesc = $rwlinks['meta_desc'];
 $logo = $rwlinks['logo'];
+
+
+// ===== site config value with fallback ======
+function __cfg($value, $fallback = ''){
+	$value = trim((string)$value);
+	return ($value === '') ? $fallback : $value;
+}
+
+/*** SITE CONFIGURATION (dynamic from `settings` table) ***/
+if(!defined('SITE_CONFIG_LOADED')){
+	define('SITE_CONFIG_LOADED', true);
+
+	// Site Info
+	define('SITE_NAME', __cfg($websitename, 'Doab Vilas'));
+	define('SITE_TAGline', __cfg($headercenterline, 'Premium Luxury Destination'));
+	define('SITE_EMAIL', __cfg($emailid, 'reservations@doabvilas.com'));
+	define('SITE_PHONE', __cfg($contactno, '+91 9761866666'));
+	define('SITE_WHATSAPP', preg_replace('/[^0-9]/', '', __cfg($whatsapp, '917078733333')));
+	define('SITE_ADDRESS', __cfg($address, "Meerut Bypass Rd, Sector - 3, Ansal's Sushant City, Meerut, Uttar Pradesh 250103, India"));
+	define('SITE_LOGO', $logo);
+	define('SITE_FOOTER_DESC', $footerdesc);
+	define('SITE_MAP_IFRAME', $mapiframe);
+	define('SITE_GOOGLETAG', $googletag);
+	define('SITE_META_TITLE', __cfg($metatitle, SITE_NAME));
+	define('SITE_META_KEYWORDS', $metakeywords);
+	define('SITE_META_DESC', $metadesc);
+
+	// Social Media Links
+	define('SOCIAL_FACEBOOK', __cfg($facebook, 'https://www.facebook.com/doabvilas.meerut/'));
+	define('SOCIAL_INSTAGRAM', __cfg($instagram, 'https://www.instagram.com/doabvilasclub/'));
+	define('SOCIAL_YOUTUBE', __cfg($youtube, 'https://www.youtube.com/@doabvilasclub4923'));
+	define('SOCIAL_TWITTER', __cfg($twitter, 'https://twitter.com/doabvilas'));
+	define('SOCIAL_LINKEDIN', __cfg($linkedin, 'https://linkedin.com/company/doab-vilas'));
+	define('SOCIAL_PINTEREST', 'https://in.pinterest.com/doabvilas/');
+
+	// Additional Details
+	define('SITE_URL', 'https://www.doabvilas.com');
+	define('SITE_ADDRESS_LINE1', 'Doab Vilas');
+	define('SITE_ADDRESS_LINE2', 'Meerut Bypass Rd, Sector - 3');
+	define('SITE_CITY', 'Meerut');
+	define('SITE_STATE', 'Uttar Pradesh');
+	define('SITE_PINCODE', '250103');
+	define('SITE_COUNTRY', 'India');
+	define('SITE_GOOGLE_MAP', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.1234567890!2d82.1234567!3d25.1234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sPratapgarh!5e0!3m2!1sen!2sin!4v1234567890');
+
+	// Asset Paths
+	define('ASSETS_URL', 'assets/');
+	define('CSS_URL', ASSETS_URL . 'css/');
+	define('JS_URL', ASSETS_URL . 'js/');
+	define('IMAGES_URL', ASSETS_URL . 'images/');
+	define('FONTS_URL', ASSETS_URL . 'fonts/');
+}
+
+if(!function_exists('getCurrentPage')){
+	function getCurrentPage() {
+		$page = basename($_SERVER['PHP_SELF'], '.php');
+		return $page === 'index' ? 'home' : $page;
+	}
+}
+
+if(!function_exists('imageUrl')){
+	function imageUrl($folder, $filename) {
+		return IMAGES_URL . $folder . '/' . $filename;
+	}
+}
 
 
 

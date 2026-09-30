@@ -1,4 +1,4 @@
-<?php include 'config.php';
+<?php require_once 'database/db.php';
 $title = 'Add Activities';
 if(!isset($_SESSION['username'])){
 	echo "<script>window.location.href='{$path}manager'</script>";
