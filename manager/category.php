@@ -66,7 +66,7 @@ if(!isset($_SESSION['username'])){
 		<tbody>
 		<?php 
 			$typeurl = intval($_GET['type'] ?? 1);
-			$sqlcat  = mysqli_query($con, "SELECT * FROM category WHERE c_type = $typeurl OR ($typeurl = 1 AND c_type NOT IN (1,2,3)) ORDER BY id ASC");
+			$sqlcat  = mysqli_query($con, "SELECT * FROM category WHERE c_type = $typeurl OR ($typeurl = 3 AND c_type NOT IN (1,2,3)) ORDER BY id ASC");
 			if(mysqli_num_rows($sqlcat)){
 				$serial = 1;
 				while($rwcat = mysqli_fetch_assoc($sqlcat )){
