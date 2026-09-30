@@ -106,7 +106,7 @@ function createImgWebp($fileinputname, $imagepath){
         mkdir($targetdir, 0777, true);
     }
     $file1 = $fileinputname . time().'.'.$ext;
-    if($ext=='webp' || $ext=='png' || $ext=='pdf' || $ext=='avif'){
+    if($ext=='webp' || $ext=='png' || $ext=='pdf' || $ext=='avif' || $ext=='mp4' || $ext=='webm' || $ext=='mov' || $ext=='avi' || $ext=='mkv' || $ext=='3gp'){
         $filenewname = $file1;
         move_uploaded_file($tmp, $targetdir.$file1);
     }else{

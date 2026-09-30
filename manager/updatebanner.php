@@ -69,13 +69,15 @@ $id = $_GET['id'] ?? "";
 	<div class="msgbox"></div>
 	<form method="POST" id="submitForm" class="row">
 		<div class="mb-2 col-md-3">
-		  	<label for="formFile" class="form-label">Image</label>
+		  	<label for="formFile" class="form-label">Image / Video</label>
 		  	<div class="imgquestion other">
 				<?php $active = empty($row['wb_img']) ? "" : "active"; ?>
 				<a href="javascript:" class="imgclose ri-close-circle-line <?=$active;?>"></a>
-				<input hidden class="form-control imgInput" name="img" type="file">
+				<input hidden class="form-control imgInput" name="img" type="file" accept="image/*,video/*,.jpg,.jpeg,.png,.webp,.gif,.avif,.mp4,.mov,.webm,.avi,.mkv,.3gp">
   				<?php if(empty($row['wb_img'])){ ?>
   				<img src="images/preview.jpg" alt="preview" class='preview'>
+  				<?php }else if(preg_match('/\.(mp4|webm|mov|avi|mkv|3gp)$/i', $row['wb_img'])){ ?>
+  				<video src="<?=$path.$row['wb_img'];?>" class='preview' controls autoplay muted playsinline></video>
   				<?php }else{ ?>
   				<img src="<?=$path.$row['wb_img'];?>" alt="<?=$row['wb_img'];?>" class='preview'>
   				<?php } ?>

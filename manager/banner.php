@@ -67,7 +67,7 @@
 			 ?>
 			<tr id="remove<?php echo $rwbanner['id']; ?>">
 				<td style="vertical-align: middle;" class="text-center"><?php echo $serial; ?></td>
-				<td><img src="../<?php echo $rwbanner['wb_img']; ?>" alt="" width="80px;"></td>
+				<td><?php if(!empty($rwbanner['wb_img']) && preg_match('/\.(mp4|webm|mov|avi|mkv|3gp)$/i', $rwbanner['wb_img'])){ ?><video src="../<?=$rwbanner['wb_img'];?>" width="80" muted playsinline preload="metadata"></video><?php }else{ ?><img src="../<?=$rwbanner['wb_img'];?>" alt="" width="80px;"><?php } ?></td>
 				<td>
 					<div class="form-check form-switch">
 						<?php $checked = $rwbanner['status']==1 ? "checked" : ""; ?>

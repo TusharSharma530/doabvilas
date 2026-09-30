@@ -160,7 +160,7 @@
 		
 		
 		
-$(document).on("click", ".preview", function(){
+$(document).on("click", "img.preview", function(){
 	$(this).prev().click();
 	
 })
@@ -169,16 +169,36 @@ $(document).on("change", ".imgInput", function(){
     var inputFiles = this.files;
     if(inputFiles == undefined || inputFiles.length == 0) return;
     var inputFile = inputFiles[0];
-    var reader = new FileReader();
-    reader.onload = function(event) {
-        $input.next().attr("src", event.target.result);
-    };
-    reader.onerror = function(event) {
-        alert("I AM ERROR: " + event.target.error.code);
-    };
-    reader.readAsDataURL(inputFile);
+    var isVideo = inputFile.type.indexOf("video/") === 0;
+    var $preview = $input.next();
 
-   	$(this).prev().addClass('active');
+    if(isVideo){
+        if(!$preview.is("video")){
+            var $video = $("<video>").addClass("preview");
+            $preview.replaceWith($video);
+            $preview = $video;
+        }
+        $preview.attr({
+            src: URL.createObjectURL(inputFile),
+            controls: true, autoplay: true, muted: true, playsinline: true
+        });
+    }else{
+        if(!$preview.is("img")){
+            var $img = $("<img>").addClass("preview").attr("alt", "preview");
+            $preview.replaceWith($img);
+            $preview = $img;
+        }
+        var reader = new FileReader();
+        reader.onload = function(event) {
+            $preview.attr("src", event.target.result);
+        };
+        reader.onerror = function(event) {
+            alert("I AM ERROR: " + event.target.error.code);
+        };
+        reader.readAsDataURL(inputFile);
+    }
+
+   	$input.prev().addClass('active');
 
 })
 
@@ -240,8 +260,15 @@ $(document).on("change", ".imgInput", function(){
 
 // ============= remove image from file input ===================
 $(document).on("click", ".imgclose", function(){
-	$(this).next().val('');
-	$(this).next().next().attr('src', 'images/preview.jpg');
+	var $input = $(this).next();
+	$input.val('');
+	var $preview = $input.next();
+	if($preview.is("video")){
+		$("<img>").addClass("preview").attr({src:"images/preview.jpg", alt:"preview"}).insertAfter($input);
+		$preview.remove();
+	}else{
+		$preview.attr('src', 'images/preview.jpg');
+	}
 	$(this).removeClass('active')
 	
 });
