@@ -1,6 +1,6 @@
 <?php session_start();
 error_reporting(0);
-define('BASE_PATH',"//localhost/Doabvilas");
+define('BASE_PATH',"//localhost/doabvilas/");
 define('DB_HOST', 'localhost');
 define('DB_NAME','doabvillas');
 define('DB_USER','root');
@@ -95,33 +95,37 @@ function isMobile() {
 
 function createImgWebp($fileinputname, $imagepath){
     $filename = $_FILES[$fileinputname]['name'];
-    $ext = pathinfo($filename, PATHINFO_EXTENSION);
+    $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
     $tmp = $_FILES[$fileinputname]['tmp_name'];
-    $filepath = "";
-    if(file_exists("../branch/assets/$imagepath")){
-        $filepath = "../branch/assets/".$imagepath."/";
-    }else{
-        mkdir("../branch/assets/$imagepath", 0777);
-        $filepath = "../branch/assets/".$imagepath."/";
+    if(!isset($_FILES[$fileinputname]['error']) || $_FILES[$fileinputname]['error'] != UPLOAD_ERR_OK || !is_uploaded_file($tmp)){
+        return "";
+    }
+    $targetdir = dirname(__DIR__, 2)."/branch/assets/".$imagepath."/";
+    if(!is_dir($targetdir)){
+        mkdir($targetdir, 0777, true);
     }
     $file1 = $fileinputname . time().'.'.$ext;
-    if($ext=='webp' || $ext=='png' || $ext=='pdf'){
-        $filenewname = $fileinputname . time().'.'.$ext;
-        move_uploaded_file($tmp, $filepath.$file1);
+    if($ext=='webp' || $ext=='png' || $ext=='pdf' || $ext=='avif'){
+        $filenewname = $file1;
+        move_uploaded_file($tmp, $targetdir.$file1);
     }else{
         $filenewname = $fileinputname . time().'.webp';
-        move_uploaded_file($tmp, $filepath.$file1);
-    
-        $file = $filepath. time().'.'.$ext;
-        $imgpath = $filepath.$filenewname;
-        $img = imagecreatefromjpeg($filepath . $file1);
-    
-        imagepalettetotruecolor($img);
-        imagealphablending($img, true);
-        imagesavealpha($img, true);
-        imagewebp($img, $filepath . $filenewname, 80);
-        imagedestroy($img);
-        unlink($filepath.$file1);
+        move_uploaded_file($tmp, $targetdir.$file1);
+
+        $img = @imagecreatefromstring(file_get_contents($targetdir.$file1));
+        if($img !== false){
+            imagepalettetotruecolor($img);
+            imagealphablending($img, true);
+            imagesavealpha($img, true);
+            imagewebp($img, $targetdir . $filenewname, 80);
+            imagedestroy($img);
+            unlink($targetdir.$file1);
+        }else{
+            $filenewname = $file1;
+        }
+    }
+    if(!file_exists($targetdir.$filenewname)){
+        return "";
     }
     return "branch/assets/".$imagepath."/".$filenewname;
 }

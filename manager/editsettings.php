@@ -31,12 +31,15 @@ if(isset($_POST['editRecord'])){
 	$meta_keywords = mysqli_real_escape_string($con, $_POST['meta_keywords']);
 	$meta_desc = mysqli_real_escape_string($con, $_POST['meta_desc']);
 
-	if(empty($_FILES['logoImg']['name'])){
+	if(empty($_FILES['logoImg']['name']) || $_FILES['logoImg']['error'] != UPLOAD_ERR_OK){
 		$image = $rwpinfo['logo'];
 		$imgpath = $image;
 	}else{
 		
 		$imgpath = createImgWebp("logoImg", "logo");
+		if(empty($imgpath)){
+			$imgpath = $rwpinfo['logo'];
+		}
 	}	
 
 	$sqlabout = mysqli_query($con, "UPDATE settings SET 
@@ -96,7 +99,7 @@ if(isset($_POST['editRecord'])){
 <div class="msgbox"></div>
 <div class="col-md-12">
 	<div class="page-content">
-	<form method="POST" id="submitForm">
+	<form method="POST" id="submitForm" enctype="multipart/form-data">
 	<div class="row">
 		<div class="col-md-4 mb-3">
 			<label for="webname" >Website Name</label>
