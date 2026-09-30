@@ -115,12 +115,22 @@ require_once 'includes/navbar.php';
                 <div class="about-us-content">
                     <span class="section-subtitle">Welcome to</span>
                     <h2 class="section-title">ABOUT US</h2>
-                    <p class="about-us-text">
-                        <strong>Doab Vilas</strong> is an exclusive luxury resort at Meerut, offering a vast range of facilities at one place. Experience the warmth of nature at Doab Vilas. You will be surrounded by the beauty and grace of this resort, which is intelligently designed to revive you. At Doab Vilas, we offer you world-class hospitality services that make your stay truly memorable.
-                    </p>
-                    <p class="about-us-text">
-                        From luxurious rooms to grand banquet halls, lush green lawns to stunning pools — we have everything you need for a perfect celebration or a relaxing getaway.
-                    </p>
+                    <?php
+                    $abouttext = '';
+                    $sqlabout = mysqli_query($con, "SELECT sdesc FROM category WHERE id = 76");
+                    if(mysqli_num_rows($sqlabout)){
+                        $rwabout = mysqli_fetch_assoc($sqlabout);
+                        $abouttext = trim($rwabout['sdesc']);
+                    }
+                    if($abouttext !== ''){
+                        foreach(preg_split('/\r?\n\s*\r?\n/', $abouttext) as $aboutpara){
+                            if(trim($aboutpara) !== ''){
+                    ?>
+                    <p class="about-us-text"><?= nl2br(trim($aboutpara)) ?></p>
+                    <?php
+                            }
+                        }
+                    }else ?>
                     <a href="about.php" class="about-us-btn">
                         READ MORE <i class="bi bi-arrow-right"></i>
                     </a>
