@@ -1,6 +1,6 @@
 <?php session_start();
 error_reporting(0);
-define('BASE_PATH',"//localhost/Doabvilas/doabvilas/");
+define('BASE_PATH',"//localhost/Doabvilas");
 define('DB_HOST', 'localhost');
 define('DB_NAME','doabvillas');
 define('DB_USER','root');
