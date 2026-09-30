@@ -24,9 +24,9 @@ if(isset($_POST['addRecord'])){
 	}else{
 	}
 
-	$sqlcheck = mysqli_query($con,"SELECT * FROM category WHERE c_name = '$cname'");
+	$sqlcheck = mysqli_query($con,"SELECT * FROM category WHERE c_type = '$ctype' AND (c_name = '$cname' OR `order` = '$order')");
 	if(mysqli_num_rows($sqlcheck)){
-		echo "<script>swal('Already in Record', 'Click `OK` to try Again', 'warning'); $('#submitForm').show();  </script>";
+		echo "<script>swal('Already in Record', 'Same Name or Order already used in this Category Type', 'warning'); $('#submitForm').show();  </script>";
 		
 	}else{
 		$sqlins = mysqli_query($con,"INSERT INTO category (id, c_name, c_type, c_url, c_desc, sdesc, featured_img, meta_title, meta_keywords, meta_desc, `order`) VALUES (NULL, '$cname', '$ctype', '$url', '$cdesc', '$sdesc', '$uploadpath', '$mtitle', '$mkeywords', '$mdesc', '$order')");
