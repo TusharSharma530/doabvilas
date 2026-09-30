@@ -16,6 +16,7 @@ $id = $_GET['id'] ?? "";
 
 	 if(isset($_POST['editRecord'])){
 		$order = trim(mysqli_real_escape_string($con,$_POST['order']));
+		$category_id = intval($_POST['category_id'] ?? 0);
 
 		if(empty($_FILES['img']['name'])){
 			$image = $row['wb_img'];
@@ -25,7 +26,7 @@ $id = $_GET['id'] ?? "";
 
 		}	
 
-		$sqlins = mysqli_query($con,"UPDATE web_banner SET wb_order = '$order', wb_img = '$imagepath' WHERE id = $id");
+		$sqlins = mysqli_query($con,"UPDATE web_banner SET wb_order = '$order', wb_img = '$imagepath', category_id = '$category_id' WHERE id = $id");
 			
 		if($sqlins){
 			echo "<script>swal('Update Successfully', 'Click `OK` to Close', 'success');  </script>";
@@ -86,6 +87,18 @@ $id = $_GET['id'] ?? "";
 		<div class="mb-3 col-md-9">
 			<label for="order" class="form-label">Order</label>
 			<input type="text" class="form-control" id="order" name="order" value="<?php echo $row['wb_order']; ?>" required>
+		</div>
+
+		<div class="mb-3 col-md-6">
+			<label for="category_id" class="form-label">Category</label>
+			<select class="form-control" id="category_id" name="category_id">
+				<option value="0">Select Category</option>
+				<?php $sqlbanner_cat = mysqli_query($con, "SELECT id, c_name FROM `category` WHERE `c_type` = 1 ORDER BY id ASC");
+				if(mysqli_num_rows($sqlbanner_cat)){
+					while($rwbannercat = mysqli_fetch_assoc($sqlbanner_cat)){ ?>
+				<option value="<?=$rwbannercat['id'];?>" <?php echo ($row['category_id'] == $rwbannercat['id']) ? 'selected' : ''; ?>><?=$rwbannercat['c_name'];?></option>
+				<?php } } ?>
+			</select>
 		</div>
 						
 		<div class="col-md-12">
