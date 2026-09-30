@@ -87,7 +87,7 @@
 <a href="news-events.php" class="submenu-link">News & Events</a>
 </li>
 <li class="submenu-item">
-<a href="addgalleryimages.php" class="submenu-link">Gallery</a>
+<a href="gallery.php" class="submenu-link">Gallery</a>
 </li>
 <li class="submenu-item">
 <a href="addmedia.php" class="submenu-link">Media</a>

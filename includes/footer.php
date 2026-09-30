@@ -7,7 +7,7 @@
                 <!-- Logo -->
                 <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
                     <a href="index.php" class="footer-logo">
-                        <img src="assets/images/logo/doab-villas-logo.avif" alt="Doab Vilas Logo">
+                        <img src="<?= !empty(SITE_LOGO) ? $path.SITE_LOGO : '' ?>" alt="<?= SITE_NAME ?> Logo">
                     </a>
                 </div>
                 
@@ -43,7 +43,8 @@
                         <ul class="footer-contact-list">
                             <li>
                                 <i class="bi bi-telephone"></i>
-                                <span><?php echo SITE_PHONE; ?>,  +91-7078733333</span>
+                                <span><?php echo htmlspecialchars(SITE_PHONE); ?></span>
+                                <span><?php echo htmlspecialchars(SITE_ALTERNATE_PHONE); ?></span>
                             </li>
                         </ul>
                     </div>
@@ -133,35 +134,6 @@
     </div>
 </div>
 
-<!-- Login Modal (Bravura Resort Style) -->
-<div class="modal fade luxury-modal" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content luxury-modal-content">
-            <div class="modal-header border-0 pb-0">
-                <div class="modal-title-wrap">
-                    <span class="modal-subtitle">Doab Vilas Portal</span>
-                    <h4 class="modal-title" id="loginModalLabel">Member Login</h4>
-                </div>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body pt-3">
-                <form action="#" method="POST" id="loginForm" onsubmit="event.preventDefault(); alert('Login OTP sent successfully!');">
-                    <div class="mb-3">
-                        <label class="form-label text-gold small">Mobile Number / Email ID *</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="bi bi-phone"></i></span>
-                            <input type="text" class="form-control" placeholder="Enter Mobile Number / Email" required>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-gold w-100 py-2 fw-bold text-uppercase mb-3">
-                        <i class="bi bi-shield-lock me-2"></i>Get OTP & Continue
-                    </button>
-                    <p class="text-center text-muted small mb-0">By continuing, you agree to our Terms & Conditions and Privacy Policy.</p>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

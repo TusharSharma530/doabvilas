@@ -17,6 +17,7 @@ if(isset($_POST['editRecord'])){
 	$contact_no = mysqli_real_escape_string($con, $_POST['contact_no']);
 	$alternate_no = mysqli_real_escape_string($con, $_POST['alternate_no']);
 	$whatsapp_no = mysqli_real_escape_string($con, $_POST['whatsapp_no']);
+	$reception_time = mysqli_real_escape_string($con, $_POST['reception_time']);
 	$address = mysqli_real_escape_string($con, $_POST['address']);
 	$youtubelink = mysqli_real_escape_string($con, $_POST['youtubelink']);
 	$facebook = mysqli_real_escape_string($con, $_POST['facebook']);
@@ -50,6 +51,7 @@ if(isset($_POST['editRecord'])){
 		contact_no = '$contact_no',
 		alternate_no = '$alternate_no',
 		whatsapp_no = '$whatsapp_no',
+		reception_time = '$reception_time',
 		address = '$address ',
 		youtubelink = '$youtubelink ',
 		facebook = '$facebook',
@@ -133,6 +135,11 @@ if(isset($_POST['editRecord'])){
 		<div class="col-md-6 mb-3">
 			<label for="whatsapp" >Whatsapp</label>
 			<input type="text" id="whatsapp" name='whatsapp_no' class="form-control" value="<?php echo $rwpinfo['whatsapp_no']; ?>">
+		</div>
+
+		<div class="col-md-6 mb-3">
+			<label for="receptiontime" >Reception Time</label>
+			<input type="text" id="receptiontime" name="reception_time" class="form-control" placeholder="e.g. 24 Hours / 9:00 AM - 10:00 PM" value="<?php echo $rwpinfo['reception_time']; ?>">
 		</div>
 
 		<div class="col-md-3 mb-3">

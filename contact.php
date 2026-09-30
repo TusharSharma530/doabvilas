@@ -34,7 +34,7 @@ require_once 'includes/navbar.php';
                         <i class="bi bi-geo-alt"></i>
                     </div>
                     <h5>Address</h5>
-                    <p>Meerut Bypass Rd, Sector - 3, Ansal's Sushant City, Meerut, Uttar Pradesh 250103, India</p>
+                    <p><?= htmlspecialchars(SITE_ADDRESS); ?></p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -43,8 +43,8 @@ require_once 'includes/navbar.php';
                         <i class="bi bi-telephone"></i>
                     </div>
                     <h5>Phone</h5>
-                    <p><a href="tel:+917078733333">+91-7078733333</a></p>
-                     <p><a href="tel:+91 9761866666">+91 9761866666</a></p>
+                    <p><?php echo htmlspecialchars(SITE_PHONE); ?></p>
+                    <p><?php echo htmlspecialchars(SITE_ALTERNATE_PHONE); ?></p>
                 </div>
             </div>
            
@@ -54,9 +54,10 @@ require_once 'includes/navbar.php';
                         <i class="bi bi-clock"></i>
                     </div>
                     <h5>Hours</h5>
-                    <p>Reception: 24/7<br>Restaurant: 7 AM - 11 PM</p>
+                    <p>Reception: 24/7<br><?= htmlspecialchars(RECEPTION_TIME); ?></p>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
@@ -124,7 +125,7 @@ require_once 'includes/navbar.php';
                         </div>
                         <div class="contact-info-text">
                             <h5>Address</h5>
-                            <p>Meerut Bypass Rd, Sector - 3, Ansal's Sushant City, Meerut, Uttar Pradesh 250103, India</p>
+                            <?php echo SITE_ADDRESS; ?>
                         </div>
                     </div>
                     
@@ -134,8 +135,8 @@ require_once 'includes/navbar.php';
                         </div>
                         <div class="contact-info-text">
                             <h5>Phone</h5>
-                            <p><a href="tel:+91 9761866666,">+91 9761866666,</a></p>
-                            <p><a href="tel:+917078733333">+91-7078733333</a></p>
+                            <p><?php echo htmlspecialchars(SITE_PHONE); ?></p>
+                            <p><?php echo htmlspecialchars(SITE_ALTERNATE_PHONE); ?></p>
                         </div>
                     </div>
                     
@@ -147,7 +148,7 @@ require_once 'includes/navbar.php';
                         </div>
                         <div class="contact-info-text">
                             <h5>Working Hours</h5>
-                            <p>Reception: 24/7<br>Restaurant: 7 AM - 11 PM</p>
+                            <p>Reception: 24/7<br><?= htmlspecialchars(RECEPTION_TIME); ?></p>
                         </div>
                     </div>
                 </div>
@@ -159,9 +160,18 @@ require_once 'includes/navbar.php';
 <!-- Google Map -->
 <section class="map-section no-padding">
     <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.4979999999996!2d77.7089!3d28.9576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a43173357b%3A0x2c42e82de01011e0!2sDoab%20Vilas!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe 
+            src="<?= htmlspecialchars(SITE_MAP_IFRAME); ?>"
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
     </div>
 </section>
+
 
 <?php require_once 'includes/whatsapp-button.php'; ?>
 <?php require_once 'includes/footer.php'; ?>

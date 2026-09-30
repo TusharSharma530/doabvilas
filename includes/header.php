@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="<?php echo SITE_NAME; ?> - <?php echo SITE_TAGline; ?>. Experience unparalleled elegance in rooms, suites, weddings, and fine dining.">
+    <meta name="description" content="<?php echo SITE_NAME; ?> - <?php echo SITE_TAGline; ?>">
     <title><?php echo isset($pageTitle) ? $pageTitle . ' | ' . SITE_NAME : SITE_NAME . ' | ' . SITE_TAGline; ?></title>
     
     <!-- Bootstrap 5 CSS -->

@@ -4,15 +4,14 @@
     <div class="header-main">
         <div class="header-main-container">
             <a class="header-logo" href="index.php">
-                <img src="assets/images/logo/doab-villas-logo.avif" 
-                     alt="Doab Vilas Logo" class="header-logo-img">
+            <img class="header-logo-img" src="<?= !empty(SITE_LOGO) ? $path . SITE_LOGO : '' ?>" alt="<?= SITE_NAME ?> Logo">
             </a>
             
             <nav class="header-nav custom-nav" id="headerNav">
                 <!-- Mobile Sidebar Header (Logo + Close) -->
                 <div class="mobile-sidebar-header">
                     <a class="mobile-sidebar-logo" href="index.php">
-                        <img src="assets/images/logo/doab-villas-logo.avif" alt="Doab Vilas Logo">
+                        <img src="<?= !empty(SITE_LOGO) ? $path.SITE_LOGO : '' ?>" alt="<?= SITE_NAME ?> Logo">
                     </a>
                     <button class="mobile-sidebar-close" id="mobileSidebarClose" aria-label="Close menu">
                         <i class="bi bi-x-lg"></i>

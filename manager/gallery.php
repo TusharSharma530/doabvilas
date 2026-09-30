@@ -55,12 +55,15 @@
 				<tr>
 					<th>#</th>									
 					<th>Image</th>
+					<th>Order</th>
+					<th>Type</th>
 					<th>Status</th>
 					<th class="text-end">Action</th>
 				</tr>
 			</thead>
 			<tbody>
-<?php $sqlgallery  = mysqli_query($con, "SELECT * FROM `gallery_imgs` ORDER BY `id` DESC");
+<?php $categoryoptions = array('rooms'=>'Rooms','venues'=>'Venues','pool'=>'Pool','lobby'=>'Lobby','staff'=>'Staff');
+$sqlgallery  = mysqli_query($con, "SELECT * FROM `gallery_imgs` ORDER BY `id` DESC");
 if(mysqli_num_rows($sqlgallery)){
 $serial = 1;
 while($rwgallery = mysqli_fetch_assoc($sqlgallery )){
@@ -69,6 +72,8 @@ $id = $rwgallery['id'];
 				<tr id='remove<?php echo $id; ?>'>
 					<td><?php echo $serial; ?></td>									
 					<td><img src="<?=$path.$rwgallery['file'];?>" style="width: 100px;"/></td>
+					<td><?=$rwgallery['ordering'];?></td>
+					<td><?= ($rwgallery['category'] != '') ? ($categoryoptions[$rwgallery['category']] ?? $rwgallery['category']) : '-'; ?></td>
 					<td>
 						<div class="form-check form-switch">
 							<?php $checked = $rwgallery['status']==1 ? "checked" : ""; ?>
@@ -76,9 +81,10 @@ $id = $rwgallery['id'];
 						  <label class="form-check-label" for="status"></label>
 						</div>
 					</td>
-					<td class="text-end">
-						<a href="javascript:"  ide="<?=$id;?>" class='delbtn ri-delete-bin-line' ></a>
-					</td>
+				<td class="text-end">
+					<a href="editgalleryimages.php?id=<?=$id;?>" class="ri-edit-line" title="Edit"></a>
+					<a href="javascript:"  ide="<?=$id;?>" class='delbtn ri-delete-bin-line' ></a>
+				</td>
 				</tr>
 		<?php $serial++; }} ?>
 			</tbody>

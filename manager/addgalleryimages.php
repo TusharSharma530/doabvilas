@@ -31,14 +31,21 @@ if(isset($_POST['deletedata'])){
 if(isset($_POST['addRecord'])){
 $sqlins = "";
 $i=0;
+$imgtitle = mysqli_real_escape_string($con, $_POST['title'] ?? "");
+$ordering = intval($_POST['ordering'] ?? 0);
+$targetdir = dirname(__DIR__)."/branch/assets/gallery_img/";
+if(!is_dir($targetdir)){
+    mkdir($targetdir, 0777, true);
+}
 foreach ($_FILES['img']["name"] as $row=>$name){
     $gallery_images = $name;                                
     $images_content = explode(".", $gallery_images);
     $gallery_imagename = round(microtime(true)) .$i. '.' . end($images_content);
     $uploadpath = "branch/assets/gallery_img/".$gallery_imagename;
-    move_uploaded_file($_FILES["img"]["tmp_name"][$i], "../branch/assets/gallery_img/" . $gallery_imagename);
+    if(move_uploaded_file($_FILES["img"]["tmp_name"][$i], $targetdir . $gallery_imagename)){
+        $sqlins = mysqli_query($con,"INSERT INTO `gallery_imgs` (`id`, `file`, `title`, `ordering`) VALUES (NULL, '$uploadpath', '$imgtitle', '$ordering')");
+    }
     $i++;
-    $sqlins = mysqli_query($con,"INSERT INTO `gallery_imgs` (`id`, `file`) VALUES (NULL, '$uploadpath')");
 }  
 
 if($sqlins){
@@ -79,6 +86,16 @@ include 'include/sidebar.php';
 	<div class="msgbox"></div>
 	<form method="POST" id="submitForm" enctype="multipart/form-data">
 		<div class="row">
+
+		<div class="mb-3 col-md-6">
+		  	<label for="title" class="form-label">Title</label>
+		  	<input type="text" name="title" id="title" class="form-control" placeholder="e.g. Weddings">
+		</div>
+
+		<div class="mb-3 col-md-6">
+		  	<label for="ordering" class="form-label">Order</label>
+		  	<input type="number" name="ordering" id="ordering" class="form-control" value="0" min="0">
+		</div>
 
 		<div class="mb-3 col-md-12">
 		  	<label for="formFile" class="form-label">Image</label>
