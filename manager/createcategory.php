@@ -15,41 +15,39 @@ if(isset($_POST['addRecord'])){
 	$mtitle = trim(mysqli_real_escape_string($con,$_POST['meta-title']));
 	$mkeywords = trim(mysqli_real_escape_string($con,$_POST['meta-keywords']));
 	$mdesc = trim(mysqli_real_escape_string($con,$_POST['meta-desc']));
+	$iframe = trim(mysqli_real_escape_string($con,$_POST['iframe'] ?? ""));
 	$order = trim(mysqli_real_escape_string($con,$_POST['order']));
 	$uploadpath = "";			
 
 	if(isset($_FILES['img']['name'])){
 		$uploadpath = createImgWebp("img", "category");
-
-	}else{
 	}
 
-	$sqlcheck = mysqli_query($con,"SELECT * FROM category WHERE c_type = '$ctype' AND (c_name = '$cname' OR `order` = '$order')");
+	$sqlcheck = mysqli_query($con, "SELECT * FROM category WHERE c_type = '$ctype' AND (c_name = '$cname' OR `order` = '$order')");
 	if(mysqli_num_rows($sqlcheck)){
-		echo "<script>swal('Already in Record', 'Same Name or Order already used in this Category Type', 'warning'); $('#submitForm').show();  </script>";
+		echo "<script>swal('Already in Record', 'Same Name or Order already used in this Category Type', 'warning'); $('#submitForm').show();</script>";
 		
 	}else{
-		$sqlins = mysqli_query($con,"INSERT INTO category (id, c_name, c_type, c_url, c_desc, sdesc, featured_img, meta_title, meta_keywords, meta_desc, `order`) VALUES (NULL, '$cname', '$ctype', '$url', '$cdesc', '$sdesc', '$uploadpath', '$mtitle', '$mkeywords', '$mdesc', '$order')");
+		$sqlins = mysqli_query($con,"INSERT INTO category (id, c_name, c_type, c_url, c_desc, sdesc, featured_img, meta_title, meta_keywords, meta_desc, `order`, `iframe`) VALUES (NULL, '$cname', '$ctype', '$url', '$cdesc', '$sdesc', '$uploadpath', '$mtitle', '$mkeywords', '$mdesc', '$order', '$iframe')");
 		
-	if($sqlins){
-		echo "<script>swal('Added Successfully', 'Click `OK` to Close', 'success'); 
-				$('#submitForm').hide();
-			 </script>";
-		echo "<div class='col-md-12 padd0 text-center'><a href='createcategory.php' class=' btn btn-primary'>Create New</a></div>";
-	}else{
-		echo mysqli_error($con);
-		echo "<script>swal('Failed', 'Click `OK` to try Again', 'error'); $('#submitForm').show();</script>";
+		if($sqlins){
+			echo "<script>swal('Added Successfully', 'Click `OK` to Close', 'success'); 
+					$('#submitForm').hide();
+				 </script>";
+			echo "<div class='col-md-12 padd0 text-center'><a href='createcategory.php' class=' btn btn-primary'>Create New</a></div>";
+		}else{
+			echo mysqli_error($con);
+			echo "<script>swal('Failed', 'Click `OK` to try Again', 'error'); $('#submitForm').show();</script>";
 		}
 	}
 	exit();
 } 
 
 
-	include 'include/header.php';
-	include 'include/sidebar.php';
+include 'include/header.php';
+include 'include/sidebar.php';
 
- ?>
-
+?>
 
 <section class="main-dashboard">
 <div class="container-fluid">
@@ -71,6 +69,7 @@ if(isset($_POST['addRecord'])){
 	<div class="page-content">
 	<div class="msgbox"></div>
 	<form method="POST" id="submitForm" class="row">
+
 		<div class="mb-3 col-md-4">
 			<label for="cname" class="form-label">Category Name</label>
 			<input type="text" class="form-control" id="cname" name="cname" required>
@@ -81,16 +80,20 @@ if(isset($_POST['addRecord'])){
 			<select class="form-control" id="type" name="ctype" required>
 				<option value=''>-- Select Category Type --</option>
 				<option value="1" selected>Top</option>
+
 				<?php $sqlctype = mysqli_query($con, "SELECT id, c_name FROM `category` WHERE `c_type` = 1 ORDER BY `order` ASC");
 				if(mysqli_num_rows($sqlctype)){
 					while($rwctype = mysqli_fetch_assoc($sqlctype)){ ?>
 				<option value="<?=$rwctype['id'];?>"><?=$rwctype['c_name'];?></option>
 				<?php } } ?>
+
+				<option value="2">Values</option>
+
 			</select>							
 		</div>
 
 		<div class="mb-3 col-md-4">
-			<label for="cname" class="form-label">Order</label>
+			<label for="order" class="form-label">Order</label>
 			<input type="text" class="form-control" id="order" name="order" required>
 		</div>
 
@@ -106,20 +109,23 @@ if(isset($_POST['addRecord'])){
 
 		<div class="mb-3 col-md-6">
 			<label for="mtitle" class="form-label">Meta Title</label>
-			<input type="text" class="form-control" id="mtitle" name="meta-title" >
+			<input type="text" class="form-control" id="mtitle" name="meta-title">
 		</div>
 
 		<div class="mb-3 col-md-6">
 			<label for="mkeywords" class="form-label">Meta Keywords</label>
-			<input type="text" class="form-control" id="mkeywords" name="meta-keywords" >
+			<input type="text" class="form-control" id="mkeywords" name="meta-keywords">
 		</div>
 
 		<div class="mb-3 col-md-12">
 			<label for="mdesc" class="form-label">Meta Description</label>
 			<textarea class="form-control" rows='3' name="meta-desc" id="mdesc"></textarea>
-			
 		</div>
 
+		<div class="mb-3 col-md-12">
+			<label for="iframe" class="form-label">iFrame</label>
+			<textarea class="form-control" rows="5" name="iframe" id="iframe" placeholder="Paste iframe code here"></textarea>
+		</div>
 
 		<div class="mb-3 col-md-12">
 		  	<label for="formFile" class="form-label">Image</label>
@@ -133,6 +139,7 @@ if(isset($_POST['addRecord'])){
 		<div class="col-md-12">
 			<input type="submit" value="Add Record" name="addRecord" class="submitInput">
 		</div>
+
 	</form>
 	</div>
 </div>

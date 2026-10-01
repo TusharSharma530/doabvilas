@@ -6,9 +6,28 @@ require_once 'includes/navbar.php';
 
 <!-- Page Hero Banner -->
 <div class="banner banner-rooms-suites banner_wedding banner_dining">
-    <div class="bg overlay-top overlay-bottom">
-        <img src="assets/images/rooms/doab villas 1.png" alt="Doab Vilas" title="Doab Vilas" class="hero-bg-img" />
-    </div>
+    <?php
+$categoryQuery = mysqli_query(
+    $con,
+    "SELECT featured_img FROM category WHERE id = 69 LIMIT 1"
+);
+
+$categoryData = mysqli_fetch_assoc($categoryQuery);
+
+$featuredImg = $categoryData['featured_img'] ?? '';
+?>
+
+<div class="bg overlay-top overlay-bottom">
+    <?php if (!empty($featuredImg)) { ?>
+        <img
+            src="<?php echo $path . $featuredImg; ?>"
+            alt="Doab Vilas"
+            title="Doab Vilas"
+            class="hero-bg-img"
+        />
+    <?php } ?>
+</div>
+
     <div class="banner-container">
         <div class="container">
             <div class="content text-center">
@@ -25,29 +44,74 @@ require_once 'includes/navbar.php';
 </div>
 
 <!-- About Content Section -->
+<?php
+
+$aboutQuery = mysqli_query(
+    $con,
+    "SELECT featured_img, c_name, c_desc 
+     FROM category 
+     WHERE id = 76 
+     LIMIT 1"
+);
+
+$aboutData = mysqli_fetch_assoc($aboutQuery);
+
+$aboutImage = $aboutData['featured_img'] ?? '';
+$aboutName = $aboutData['c_name'] ?? '';
+$aboutDesc = $aboutData['c_desc'] ?? '';
+
+?>
+
+<!-- About Content Section -->
 <section id="aboutSection" class="about-us-section bg-white">
     <div class="container">
         <div class="row align-items-center " data-animate="fadeInUp" data-delay="0.2">
+
             <div class="col-lg-6">
                 <div class="about-us-image">
-                    <img src="assets/images/rooms/doab villas.png" alt="Doab Vilas" class="img-fluid">
+                    <img
+                        src="<?php echo $path . $aboutImage; ?>"
+                        alt="Doab Vilas"
+                        class="img-fluid"
+                    >
                 </div>
             </div>
+
             <div class="col-lg-6">
                 <div class="about-us-content">
                     <span class="section-subtitle">Welcome to</span>
-                    <h2 class="section-title">ABOUT US</h2>
+
+                    <h2 class="section-title">
+                        <?php echo htmlspecialchars($aboutName); ?>
+                    </h2>
+
                     <p class="about-us-text">
-                        <strong>Doab Vilas</strong> is an exclusive luxury resort at Meerut, offering a vast range of facilities at one place. Experience the warmth of nature at Doab Vilas. You will be surrounded by the beauty and grace of this resort, which is intelligently designed to revive you. At Doab Vilas, we offer you world-class hospitality services that make your stay truly memorable.
-                    </p>
-                    <p class="about-us-text">
-                        From luxurious rooms to grand banquet halls, lush green lawns to stunning pools — we have everything you need for a perfect celebration or a relaxing getaway.
+                        <?php echo $aboutDesc; ?>
                     </p>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
+
+
+<?php
+
+$legacyQuery = mysqli_query(
+    $con,
+    "SELECT c_desc, featured_img
+     FROM category
+     WHERE id = 81
+     LIMIT 1"
+);
+
+$legacyData = mysqli_fetch_assoc($legacyQuery);
+
+$legacyDesc = $legacyData['c_desc'] ?? '';
+$legacyImage = $legacyData['featured_img'] ?? '';
+
+?>
 
 <!-- Our Legacy Section -->
 <section class=" section-padding bg-ivory">
@@ -56,25 +120,39 @@ require_once 'includes/navbar.php';
             <span class="section-subtitle">Our Heritage</span>
             <h2 class="section-title section-title-responsive">A LEGACY OF HOSPITALITY</h2>
         </div>
+
         <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
+
             <div class="col-lg-6">
                 <div class="discover-content">
+
                     <p class="discover-text">
-                        Nestled in the heart of Meerut, <strong>Doab Vilas</strong> stands as a beacon of luxury and refined taste. Our heritage of warm hospitality spans decades, creating unforgettable experiences for every guest who walks through our doors.
+                        <?php echo $legacyDesc; ?>
                     </p>
+
                     <p class="discover-text">
                         From our meticulously designed rooms to our world-class dining and event spaces, every detail has been thoughtfully curated to offer you an experience beyond compare. We believe in blending traditional Indian warmth with modern sophistication.
                     </p>
+
                 </div>
             </div>
+
             <div class="col-lg-6">
                 <div class="discover-image">
-                    <img src="assets/images/rooms/doab villas 1.png" alt="Doab Vilas Night View" class="img-fluid">
+
+                    <img
+                        src="<?php echo $path . $legacyImage; ?>"
+                        alt="Doab Vilas Night View"
+                        class="img-fluid"
+                    >
+
                 </div>
             </div>
+
         </div>
     </div>
 </section>
+
 
 <!-- Values Section -->
 <section class="section-padding bg-white">
@@ -83,37 +161,57 @@ require_once 'includes/navbar.php';
             <span class="section-subtitle">What We Stand For</span>
             <h2 class="section-title">OUR VALUES</h2>
         </div>
+
         <div class="row g-4" data-animate="fadeInUp" data-delay="0.2">
+
+            <?php
+            $valuesQuery = mysqli_query(
+                $con,
+                "SELECT c_name, c_desc, featured_img
+                 FROM category
+                 WHERE c_type = 2
+                 ORDER BY `order` ASC"
+            );
+
+            if(mysqli_num_rows($valuesQuery)){
+
+                while($value = mysqli_fetch_assoc($valuesQuery)){
+
+                    $valueName = $value['c_name'] ?? '';
+                    $valueDesc = $value['c_desc'] ?? '';
+                    $valueImage = $value['featured_img'] ?? '';
+            ?>
+
             <div class="col-lg-4 col-md-6">
                 <div class="feature-card">
+
                     <div class="feature-icon">
-                        <i class="bi bi-heart"></i>
+                        <img
+                            src="<?php echo $path . $valueImage; ?>"
+                            alt="<?php echo htmlspecialchars($valueName); ?>"
+                        >
                     </div>
-                    <h4>Hospitality</h4>
-                    <p>We treat every guest as family, ensuring a warm and welcoming experience.</p>
+
+                    <h4>
+                        <?php echo htmlspecialchars($valueName); ?>
+                    </h4>
+
+                    <p>
+                        <?php echo $valueDesc; ?>
+                    </p>
+
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="bi bi-gem"></i>
-                    </div>
-                    <h4>Excellence</h4>
-                    <p>We strive for perfection in every detail of our service.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="bi bi-recycle"></i>
-                    </div>
-                    <h4>Sustainability</h4>
-                    <p>We are committed to eco-friendly practices and responsible tourism.</p>
-                </div>
-            </div>
+
+            <?php
+                }
+            }
+            ?>
+
         </div>
     </div>
 </section>
+
 
 <?php require_once 'includes/whatsapp-button.php'; ?>
 <?php require_once 'includes/footer.php'; ?>

@@ -36,6 +36,11 @@
 <!-- sub menu end here -->
 </li>
 <li class="menu-item ">
+	<a href="rooms.php" class="menu-link">							
+	<span class="link-text"><i class="ri-group-line"></i> Rooms</span>
+	</a>
+</li>
+<li class="menu-item ">
 	<a href="advisoryboard.php" class="menu-link">							
 	<span class="link-text"><i class="ri-group-line"></i> Advisory Board</span>
 	</a>
@@ -76,6 +81,12 @@
 <ul class="submenu-list">
 <li class="submenu-item">
 <a href="blogs.php" class="submenu-link">Blogs</a>
+</li>
+<li class="submenu-item">
+<a href="events.php" class="submenu-link">Events</a>
+</li>
+<li class="submenu-item">
+<a href="halls.php" class="submenu-link">Halls</a>
 </li>
 <li class="submenu-item">
 <a href="curriculum.php" class="submenu-link">Curriculum</a>

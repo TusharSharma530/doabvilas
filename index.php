@@ -103,140 +103,151 @@ require_once 'includes/navbar.php';
 </div>
 
 <!-- About Us Section -->
-<section class="about-us-section bg-white">
-    <div class="container">
-        <div class="row align-items-center " data-animate="fadeInUp" data-delay="0.2">
-            <div class="col-lg-6">
-                <div class="about-us-image">
-                    <img src="assets/images/rooms/doab villas.png" alt="Doab Vilas" class="img-fluid">
+    <section class="about-us-section bg-white">
+        <div class="container">
+            <div class="row align-items-center " data-animate="fadeInUp" data-delay="0.2">
+                <div class="col-lg-6">
+                    <div class="about-us-image">
+                        <img src="assets/images/rooms/doab villas.png" alt="Doab Vilas" class="img-fluid">
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="about-us-content">
-                    <span class="section-subtitle">Welcome to</span>
-                    <h2 class="section-title">ABOUT US</h2>
-                    <?php
-                    $abouttext = '';
-                    $sqlabout = mysqli_query($con, "SELECT sdesc FROM category WHERE id = 76");
-                    if(mysqli_num_rows($sqlabout)){
-                        $rwabout = mysqli_fetch_assoc($sqlabout);
-                        $abouttext = trim($rwabout['sdesc']);
-                    }
-                    if($abouttext !== ''){
-                        foreach(preg_split('/\r?\n\s*\r?\n/', $abouttext) as $aboutpara){
-                            if(trim($aboutpara) !== ''){
-                    ?>
-                    <p class="about-us-text"><?= nl2br(trim($aboutpara)) ?></p>
-                    <?php
-                            }
+                <div class="col-lg-6">
+                    <div class="about-us-content">
+                        <span class="section-subtitle">Welcome to</span>
+                        <h2 class="section-title">ABOUT US</h2>
+                        <?php
+                        $abouttext = '';
+                        $sqlabout = mysqli_query($con, "SELECT sdesc FROM category WHERE id = 76");
+                        if(mysqli_num_rows($sqlabout)){
+                            $rwabout = mysqli_fetch_assoc($sqlabout);
+                            $abouttext = trim($rwabout['sdesc']);
                         }
-                    }else ?>
-                    <a href="about.php" class="about-us-btn">
-                        READ MORE <i class="bi bi-arrow-right"></i>
-                    </a>
+                        if($abouttext !== ''){
+                            foreach(preg_split('/\r?\n\s*\r?\n/', $abouttext) as $aboutpara){
+                                if(trim($aboutpara) !== ''){
+                        ?>
+                        <p class="about-us-text"><?= nl2br(trim($aboutpara)) ?></p>
+                        <?php
+                                }
+                            }
+                        }else ?>
+                        <a href="about.php" class="about-us-btn">
+                            READ MORE <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 <!-- Rooms & Suites Section -->
-<section id="features" class="rooms-suites-section">
-    <div class="container">
-        <div class="section-header" data-animate="fadeInUp">
-            <span class="section-subtitle">Exclusive</span>
-            <h2 class="section-title section-title-responsive">ROOMS & SUITES</h2>
-        </div>
-        
-        <div class="row g-4" data-animate="fadeInUp" data-delay="0.2">
-            <!-- Luxury Delux Rooms 1 -->
-            <div class="col-lg-6">
-                <a href="" class="wedding-grid-card">
-                    <div class="wedding-grid-img">
-                        <img src="assets/images/rooms/room1.png" alt="Luxury Delux Rooms" class="img-fluid">
-                    </div>
-                    <div class="wedding-grid-content">
-                        <h3 class="wedding-grid-title">Luxury Delux Rooms</h3>
-                        <p class="wedding-grid-text">Experience luxury and comfort in our elegantly designed Deluxe Rooms with modern amenities, plush interiors, and stunning views for a truly royal stay.</p>
-                    </div>
-                </a>
+    <section id="features" class="rooms-suites-section">
+        <div class="container">
+            <div class="section-header" data-animate="fadeInUp">
+                <span class="section-subtitle">Exclusive</span>
+                <h2 class="section-title section-title-responsive">ROOMS & SUITES</h2>
             </div>
-            <!-- Luxury Delux Rooms 2 -->
-            <div class="col-lg-6">
-                <a href="" class="wedding-grid-card">
-                    <div class="wedding-grid-img">
-                        <img src="assets/images/rooms/room2.png" alt="Luxury Delux Rooms" class="img-fluid">
-                    </div>
-                    <div class="wedding-grid-content">
-                        <h3 class="wedding-grid-title">Luxury Delux Rooms</h3>
-                        <p class="wedding-grid-text">Experience luxury and comfort in our elegantly designed Deluxe Rooms with modern amenities, plush interiors, and stunning views for a truly royal stay.</p>
-                    </div>
-                </a>
+
+            <div class="row g-4" data-animate="fadeInUp" data-delay="0.2">
+
+                <?php
+                $sqlrooms = mysqli_query($con,"SELECT * FROM `rooms` WHERE `status` = 1 ORDER BY `ordering` ASC, `id` DESC"
+                );
+
+                if(mysqli_num_rows($sqlrooms)){
+                    while($room = mysqli_fetch_assoc($sqlrooms)){
+                ?>
+
+                <div class="col-lg-6">
+                    <a href="" class="wedding-grid-card">
+
+                        <div class="wedding-grid-img">
+                            <img
+                                src="<?=$path.$room['file'];?>"
+                                alt="<?=htmlspecialchars($room['title']);?>"
+                                class="img-fluid"
+                            >
+                        </div>
+
+                        <div class="wedding-grid-content">
+
+                            <h3 class="wedding-grid-title">
+                                <?=htmlspecialchars($room['title']);?>
+                            </h3>
+
+                            <p class="wedding-grid-text">
+                                <?=htmlspecialchars($room['description']);?>
+                            </p>
+
+                        </div>
+
+                    </a>
+                </div>
+
+                <?php
+                    }
+                }
+                ?>
+
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
 
 <!-- Weddings & Events Section -->
-<section class="weddings-events-section bg-white">
-    <div class="container">
-        <div class="section-header" data-animate="fadeInUp">
-            <span class="section-subtitle">Events</span>
-            <h2 class="section-title section-title-responsive">START PLANNING</h2>
-        </div>
-        
-        <div class="row g-4" data-animate="fadeInUp" data-delay="0.2">
-            <!-- Corporate Events -->
-            <div class="col-lg-6">
-                <a href="" class="wedding-grid-card">
-                    <div class="wedding-grid-img">
-                        <img src="assets/images/weddings/corporate events.webp" alt="Corporate Events" class="img-fluid">
-                    </div>
-                    <div class="wedding-grid-content">
-                        <h3 class="wedding-grid-title">Corporate Events</h3>
-                        <p class="wedding-grid-text">Professional spaces for your business meetings, conferences and corporate gatherings.</p>
-                    </div>
-                </a>
+    <section class="weddings-events-section bg-white">
+        <div class="container">
+            <div class="section-header" data-animate="fadeInUp">
+                <span class="section-subtitle">Events</span>
+                <h2 class="section-title section-title-responsive">START PLANNING</h2>
             </div>
-            <!-- Festival Events -->
-            <div class="col-lg-6">
-                <a href="" class="wedding-grid-card">
-                    <div class="wedding-grid-img">
-                        <img src="assets/images/rooms/diamond-hall.png" alt="Diamond Hall" class="img-fluid" loading="lazy">
-                    </div>
-                    <div class="wedding-grid-content">
-                        <h3 class="wedding-grid-title">Festival Events</h3>
-                        <p class="wedding-grid-text">Celebrate your special festivals with us in a grand way with our premium event spaces and services.</p>
-                    </div>
-                </a>
-            </div>
-            <!-- Wedding Venues / Lawn -->
-            <div class="col-lg-6">
-                <a href="" class="wedding-grid-card">
-                    <div class="wedding-grid-img">
-                        <img src="assets/images/rooms/diamond-hall.png" alt="Wedding Venues / Lawn" class="img-fluid">
-                    </div>
-                    <div class="wedding-grid-content">
-                        <h3 class="wedding-grid-title">Wedding Venues / Lawn</h3>
-                        <p class="wedding-grid-text">We at Doab Vilas consider each and every event of yours as one of the most important events for us.</p>
-                    </div>
-                </a>
-            </div>
-            <!-- Birthday Celebration -->
-            <div class="col-lg-6">
-                <a href="" class="wedding-grid-card">
-                    <div class="wedding-grid-img">
-                        <img src="assets/images/weddings/corporate events.webp" alt="Birthday Celebration" class="img-fluid">
-                    </div>
-                    <div class="wedding-grid-content">
-                        <h3 class="wedding-grid-title">Birthday Celebration</h3>
-                        <p class="wedding-grid-text">Make your birthday unforgettable with our stunning venues, delicious catering, and personalized event planning services.</p>
-                    </div>
-                </a>
+            
+            <div class="row g-4" data-animate="fadeInUp" data-delay="0.2">
+
+                <?php
+                $sqlevents = mysqli_query( $con, "SELECT * FROM `events` WHERE `status` = 1 ORDER BY `ordering` ASC, `id` DESC"
+                );
+
+                if(mysqli_num_rows($sqlevents)){
+                    while($event = mysqli_fetch_assoc($sqlevents)){
+                ?>
+
+                <div class="col-lg-6">
+                    <a href="" class="wedding-grid-card">
+
+                        <div class="wedding-grid-img">
+                            <img 
+                                src="<?=$path.$event['file'];?>" 
+                                alt="<?=htmlspecialchars($event['title']);?>" 
+                                class="img-fluid"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="wedding-grid-content">
+
+                            <h3 class="wedding-grid-title">
+                                <?=htmlspecialchars($event['title']);?>
+                            </h3>
+
+                            <p class="wedding-grid-text">
+                                <?=htmlspecialchars($event['description']);?>
+                            </p>
+
+                        </div>
+
+                    </a>
+                </div>
+
+                <?php
+                    }
+                }
+                ?>
+
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
 
 <!-- Discover Section with YouTube Video -->
 <section class="discover-section bg-white">
@@ -250,8 +261,19 @@ require_once 'includes/navbar.php';
             
             <div class="col-lg-6">
                 <div class="discover-video">
+                    <?php
+                    $discoveriframe = '';
+
+                    $sqliframe = mysqli_query($con, "SELECT iframe FROM category WHERE id = 76");
+
+                    if(mysqli_num_rows($sqliframe)){
+                        $rwiframe = mysqli_fetch_assoc($sqliframe);
+                        $discoveriframe = trim($rwiframe['iframe']);
+                    }
+                    ?>
+
                     <iframe 
-                        src="https://www.youtube.com/embed/umNVgILZh-0" 
+                        src="<?=htmlspecialchars($discoveriframe);?>" 
                         title="Doab Vilas Resort Video"
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -260,12 +282,27 @@ require_once 'includes/navbar.php';
                 </div>
             </div>
 
+
             <div class="col-lg-6">
                 <div class="discover-content">
                     <h3 class="discover-heading">FACILITIES AT DOAB VILAS</h3>
                     <p class="discover-text">
-                        <strong>DOAB VILAS</strong> is an exclusive luxury hotel at Meerut, offering a vast range of facilities at one place. Experience the warmth of nature at Doab Vilas. You will be surrounded by the beauty &amp; grace of this resort, which is intelligently designed to revive you. At <strong>Doab Vilas</strong>, we offer you our world class hospitality services....
+    
+                        <?php
+                        $discovertext = '';
+                        $sqldiscover = mysqli_query($con, "SELECT sdesc FROM category WHERE id = 76");
+
+                        if(mysqli_num_rows($sqldiscover)){
+                            $rwdiscover = mysqli_fetch_assoc($sqldiscover);
+                            $discovertext = trim($rwdiscover['sdesc']);
+                        }
+
+                        if($discovertext !== ''){
+                            echo nl2br($discovertext);
+                        }
+                        ?>
                     </p>
+
                     <a href="about.php" class="discover-link">
                         EXPLORE MORE <i class="bi bi-arrow-right"></i>
                     </a>
@@ -276,252 +313,514 @@ require_once 'includes/navbar.php';
     </div>
 </section>
 
-<!-- Diamond Hall Section -->
-<section class="discover-section bg-white">
-    <div class="container">
-        <div class="row align-items-center " data-animate="fadeInUp" data-delay="0.2">
-            <div class="col-lg-6">
-                <div class="discover-content">
-                    <span class="section-subtitle">50 - 100 Guests</span>
-                    <h3 class="discover-heading">DIAMOND HALL</h3>
-                    <p class="discover-text">
-                        <strong>DIAMOND HALL</strong> at Doab Vilas is a grand ballroom designed for magnificent celebrations. With stunning interiors, state-of-the-art lighting, and spacious seating, it is the perfect venue for weddings, receptions, and grand events. Our dedicated team ensures every detail is taken care of to make your special day truly unforgettable.
-                    </p>
+    <!-- Diamond Hall Section -->
+        <?php
+        $sqlhall = mysqli_query(
+            $con,
+            "SELECT * FROM `halls` WHERE `status` = 1 ORDER BY `ordering` ASC, `id` DESC LIMIT 1"
+        );
+
+        if(mysqli_num_rows($sqlhall)){
+            $rwhall = mysqli_fetch_assoc($sqlhall);
+
+            $hallTitle = htmlspecialchars($rwhall['title'], ENT_QUOTES, 'UTF-8');
+            $hallSubtitle = htmlspecialchars($rwhall['subtitle'], ENT_QUOTES, 'UTF-8');
+            $hallDescription = nl2br(htmlspecialchars($rwhall['description'], ENT_QUOTES, 'UTF-8'));
+            $hallImage = htmlspecialchars($rwhall['file'], ENT_QUOTES, 'UTF-8');
+        ?>
+
+        <section class="discover-section bg-white">
+            <div class="container">
+                <div class="row align-items-center" data-animate="fadeInUp" data-delay="0.2">
+
+                    <div class="col-lg-6">
+                        <div class="discover-content">
+
+                            <span class="section-subtitle">
+                                <?= $hallSubtitle; ?>
+                            </span>
+
+                            <h3 class="discover-heading">
+                                <?= $hallTitle; ?>
+                            </h3>
+
+                            <p class="discover-text">
+                                <strong><?= $hallTitle; ?></strong>
+                                <?= $hallDescription; ?>
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="discover-image">
+                            <img 
+                                src="<?= $path . $hallImage; ?>" 
+                                alt="<?= $hallTitle; ?>" 
+                                class="img-fluid" 
+                                loading="lazy"
+                            >
+                        </div>
+                    </div>
 
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="discover-image">
-                    <img src="assets/images/rooms/diamond-hall.png" alt="Diamond Hall" class="img-fluid" loading="lazy">
+        </section>
+
+    <?php } ?>
+
+
+            <?php
+            $sqlhalls = mysqli_query(
+                $con,
+                "SELECT * FROM `halls`
+                WHERE `status` = 1
+                ORDER BY `ordering` ASC, `id` DESC"
+            );
+
+            $hallIndex = 0;
+
+            if(mysqli_num_rows($sqlhalls)){
+                while($rwhall = mysqli_fetch_assoc($sqlhalls)){
+
+                    $hallTitle = htmlspecialchars(
+                        $rwhall['title'],
+                        ENT_QUOTES,
+                        'UTF-8'
+                    );
+
+                    $hallSubtitle = htmlspecialchars(
+                        $rwhall['subtitle'],
+                        ENT_QUOTES,
+                        'UTF-8'
+                    );
+
+                    $hallDescription = nl2br(
+                        htmlspecialchars(
+                            $rwhall['description'],
+                            ENT_QUOTES,
+                            'UTF-8'
+                        )
+                    );
+
+                    $hallImage = htmlspecialchars(
+                        $rwhall['file'],
+                        ENT_QUOTES,
+                        'UTF-8'
+                    );
+
+                    /*
+                    * Alternate layout:
+                    * 0 = image left, content right
+                    * 1 = content left, image right
+                    */
+                    $imageLeft = ($hallIndex % 2 == 0);
+
+                    /*
+                    * Alternate background:
+                    * Even = ivory
+                    * Odd = white
+                    */
+                    $background = ($hallIndex % 2 == 0)
+                        ? 'bg-ivory'
+                        : 'bg-white';
+            ?>
+
+            <section class="discover-section <?= $background; ?>">
+                <div class="container">
+                    <div class="row align-items-center"
+                        data-animate="fadeInUp"
+                        data-delay="0.2">
+
+                        <?php if($imageLeft){ ?>
+
+                            <!-- Image Left -->
+                            <div class="col-lg-6">
+                                <div class="discover-image">
+                                    <img
+                                        src="<?= $path . $hallImage; ?>"
+                                        alt="<?= $hallTitle; ?>"
+                                        class="img-fluid"
+                                        loading="lazy"
+                                    >
+                                </div>
+                            </div>
+
+                            <!-- Content Right -->
+                            <div class="col-lg-6">
+                                <div class="discover-content">
+
+                                    <span class="section-subtitle">
+                                        <?= $hallSubtitle; ?>
+                                    </span>
+
+                                    <h3 class="discover-heading">
+                                        <?= $hallTitle; ?>
+                                    </h3>
+
+                                    <p class="discover-text">
+                                        <strong><?= $hallTitle; ?></strong>
+                                        <?= $hallDescription; ?>
+                                    </p>
+
+                                </div>
+                            </div>
+
+                        <?php }else{ ?>
+
+                            <!-- Content Left -->
+                            <div class="col-lg-6">
+                                <div class="discover-content">
+
+                                    <span class="section-subtitle">
+                                        <?= $hallSubtitle; ?>
+                                    </span>
+
+                                    <h3 class="discover-heading">
+                                        <?= $hallTitle; ?>
+                                    </h3>
+
+                                    <p class="discover-text">
+                                        <strong><?= $hallTitle; ?></strong>
+                                        <?= $hallDescription; ?>
+                                    </p>
+
+                                </div>
+                            </div>
+
+                            <!-- Image Right -->
+                            <div class="col-lg-6">
+                                <div class="discover-image">
+                                    <img
+                                        src="<?= $path . $hallImage; ?>"
+                                        alt="<?= $hallTitle; ?>"
+                                        class="img-fluid"
+                                        loading="lazy"
+                                    >
+                                </div>
+                            </div>
+
+                        <?php } ?>
+
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
+            </section>
 
-<!-- Aquarius Pool Section -->
-<section class="discover-section bg-ivory">
-    <div class="container">
-        <div class="row align-items-center " data-animate="fadeInUp" data-delay="0.2">
-            <div class="col-lg-6">
-                <div class="discover-image">
-                    <img src="assets/images/rooms/Auirious pool.JPG" alt="Aquarius Pool" class="img-fluid" loading="lazy">
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="discover-content">
-                    <span class="section-subtitle">100 - 250 Guests</span>
-                    <h3 class="discover-heading">AQUARIUS POOL</h3>
-                    <p class="discover-text">
-                        <strong>AQUARIUS POOL</strong> at Doab Vilas is a stunning poolside venue perfect for cocktail events, pool parties, and intimate celebrations. Surrounded by lush greenery and elegant ambiance, it offers a refreshing escape for your special occasions. Enjoy world-class hospitality by the poolside with your loved ones.
-                    </p>
+            <?php
+                    $hallIndex++;
+                }
+            }
+            ?>
 
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- Sapphire Hall Section -->
-<section class="discover-section bg-white">
-    <div class="container">
-        <div class="row align-items-center " data-animate="fadeInUp" data-delay="0.2">
-            <div class="col-lg-6">
-                <div class="discover-content">
-                    <span class="section-subtitle">100 - 250 Guests</span>
-                    <h3 class="discover-heading">SAPPHIRE HALL</h3>
-                    <p class="discover-text">
-                        <strong>SAPPHIRE HALL</strong> at Doab Vilas is an intimate venue designed for exclusive gatherings. With elegant decor, modern amenities, and a cozy atmosphere, it is perfect for corporate meetings, private parties, and special celebrations. Our team ensures a seamless experience tailored to your needs.
-                    </p>
+<!-- Bars and Restaurant Section -->
+<?php
+$sqlDining = mysqli_query(
+    $con,
+    "SELECT c_name, c_desc, featured_img FROM `category` WHERE `id` = 78 LIMIT 1"
+);
 
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="discover-image">
-                    <img src="assets/images/rooms/Saphhire hall.jpeg" alt="Sapphire Hall" class="img-fluid" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+if(mysqli_num_rows($sqlDining)){
+    $rwDining = mysqli_fetch_assoc($sqlDining);
 
-<!-- Crystal Ball Room Section -->
-<section class="discover-section bg-ivory">
-    <div class="container">
-        <div class="row align-items-center" data-animate="fadeInUp" data-delay="0.2">
-            
-            <div class="col-lg-6">
-                <div class="discover-image">
-                    <img src="assets/images/rooms/crystall bal room.webp" alt="crystall bal room" class="img-fluid" loading="lazy">
-                </div>
-            </div>
+    $diningTitle = htmlspecialchars(
+        $rwDining['c_name'],
+        ENT_QUOTES,
+        'UTF-8'
+    );
 
-            <div class="col-lg-6">
-                <div class="discover-content">
-                    <span class="section-subtitle">300 - 600 Guests</span>
-                    <h3 class="discover-heading">CRYSTAL BALL ROOM</h3>
-                    <p class="discover-text">
-                        <strong>CRYSTAL BALL ROOM</strong> at Doab Vilas is a magnificent venue designed for grand celebrations. With dazzling crystal chandeliers, elegant interiors, and a spacious layout, it is the perfect setting for lavish weddings, receptions, and corporate galas. Experience unmatched luxury and world-class hospitality in this stunning ballroom.
-                    </p>
+    $diningDescription = nl2br(
+        htmlspecialchars(
+            $rwDining['c_desc'],
+            ENT_QUOTES,
+            'UTF-8'
+        )
+    );
 
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- Jashan Lawn Section -->
-<section class="discover-section bg-white">
-    <div class="container">
-        <div class="row align-items-center" data-animate="fadeInUp" data-delay="0.2">
-            <div class="col-lg-6">
-                <div class="discover-content">
-                    <span class="section-subtitle">500 - 1500+ Guests</span>
-                    <h3 class="discover-heading">JASHAN LAWN</h3>
-                    <p class="discover-text">
-                        <strong>JASHAN LAWN</strong> at Doab Vilas is elegantly designed to welcome you with warmth and luxury. As you step in, you are greeted by stunning interiors, plush seating, and a sophisticated ambiance that sets the tone for your stay. Our lobby offers a perfect blend of comfort and style, making it an ideal space to relax and unwind.
-                    </p>
-
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="discover-image">
-                    <img src="assets/images/rooms/rooms lobby.jpeg" alt="Jashan Lawn" class="img-fluid" loading="lazy">
-                </div>
-            </div>
-            
-        </div>
-    </div>
-</section>
+    $diningImage = htmlspecialchars(
+        $rwDining['featured_img'],
+        ENT_QUOTES,
+        'UTF-8'
+    );
+?>
 
 <!-- Bars and Restaurant Section -->
 <section class="discover-section bg-ivory">
     <div class="container">
+
         <div class="section-header" data-animate="fadeInUp">
             <span class="section-subtitle">Dining</span>
-            <h2 class="section-title" class="section-title-responsive">HIGHWAY RESTAURANT</h2>
+
+            <h2 class="section-title section-title-responsive">
+                <?= $diningTitle; ?>
+            </h2>
         </div>
-        <div class="row align-items-center g-5" data-animate="fadeInUp" data-delay="0.2">
+
+        <div class="row align-items-center g-5"
+             data-animate="fadeInUp"
+             data-delay="0.2">
+
             <div class="col-lg-6">
                 <div class="discover-content">
-                  
+
                     <p class="discover-text">
-                         Doab Vilas is a premium dining destination offering an exquisite culinary experience. Enjoy a wide range of delicacies prepared by our expert chefs using the freshest ingredients. Whether you are looking for a family meal, a romantic dinner, or a casual outing with friends, our Highway Restaurant promises an unforgettable dining experience with a warm and inviting ambiance.
+                        <?= $diningDescription; ?>
                     </p>
+
                     <a href="dining.php" class="discover-link">
-                        EXPLORE MORE <i class="bi bi-arrow-right"></i>
+                        EXPLORE MORE
+                        <i class="bi bi-arrow-right"></i>
                     </a>
+
                 </div>
             </div>
+
             <div class="col-lg-6">
                 <div class="discover-image">
-                    <img src="assets/images/dining/highwayrestaurant.webp" alt="Highway Restaurant" class="img-fluid" loading="lazy">
+                    <img
+                        src="<?= $path . $diningImage; ?>"
+                        alt="<?= $diningTitle; ?>"
+                        class="img-fluid"
+                        loading="lazy"
+                    >
                 </div>
             </div>
+
         </div>
     </div>
 </section>
+
+<?php } ?>
+
+
+<!-- Our Staff Section -->
+<?php
+$sqlStaff = mysqli_query(
+    $con,
+    "SELECT c_name, c_desc, featured_img
+     FROM `category`
+     WHERE `id` = 79
+     LIMIT 1"
+);
+
+if(mysqli_num_rows($sqlStaff)){
+    $rwStaff = mysqli_fetch_assoc($sqlStaff);
+
+    $staffTitle = htmlspecialchars(
+        $rwStaff['c_name'],
+        ENT_QUOTES,
+        'UTF-8'
+    );
+
+    $staffDescription = nl2br(
+        htmlspecialchars(
+            $rwStaff['c_desc'],
+            ENT_QUOTES,
+            'UTF-8'
+        )
+    );
+
+    $staffImage = htmlspecialchars(
+        $rwStaff['featured_img'],
+        ENT_QUOTES,
+        'UTF-8'
+    );
+?>
 
 <!-- Our Staff Section -->
 <section class="staff-section bg-ivory">
     <div class="container-fluid px-0">
-        <div class="section-header text-center pt-5 pb-4" data-animate="fadeInUp">
-            <span class="section-subtitle">Dedicated Team</span>
-            <h2 class="section-title">OUR STAFF</h2>
-            <p class="section-desc mx-auto section-desc-center">At Doab Vilas, our dedicated team works tirelessly to ensure every guest experiences unparalleled hospitality. From warm welcomes to flawless service, our staff is committed to making your stay truly memorable.</p>
+
+        <div class="section-header text-center pt-5 pb-4"
+             data-animate="fadeInUp">
+
+            <span class="section-subtitle">
+                Dedicated Team
+            </span>
+
+            <h2 class="section-title">
+                <?= $staffTitle; ?>
+            </h2>
+
+            <p class="section-desc mx-auto section-desc-center">
+                <?= $staffDescription; ?>
+            </p>
+
         </div>
-        <div class="staff-image-wrapper" data-animate="fadeInUp" data-delay="0.2">
-            <img src="assets/images/rooms/our staff.JPG" alt="Our Staff" class="img-fluid w-100">
+
+        <div class="staff-image-wrapper"
+             data-animate="fadeInUp"
+             data-delay="0.2">
+
+            <img
+                src="<?= $path . $staffImage; ?>"
+                alt="<?= $staffTitle; ?>"
+                class="img-fluid w-100"
+                loading="lazy"
+            >
+
         </div>
+
     </div>
 </section>
+
+<?php } ?>
+
+
+<!-- Night View Banner Section -->
+<?php
+$sqlNight = mysqli_query(
+    $con,
+    "SELECT c_name, c_desc, featured_img
+     FROM `category`
+     WHERE `id` = 80
+     LIMIT 1"
+);
+
+if(mysqli_num_rows($sqlNight)){
+    $rwNight = mysqli_fetch_assoc($sqlNight);
+
+    $nightTitle = htmlspecialchars(
+        $rwNight['c_name'],
+        ENT_QUOTES,
+        'UTF-8'
+    );
+
+    $nightDescription = nl2br(
+        htmlspecialchars(
+            $rwNight['c_desc'],
+            ENT_QUOTES,
+            'UTF-8'
+        )
+    );
+
+    $nightImage = htmlspecialchars(
+        $rwNight['featured_img'],
+        ENT_QUOTES,
+        'UTF-8'
+    );
+?>
 
 <!-- Night View Banner Section -->
 <section class="night-banner-section pt-100">
     <div class="container">
+
         <div class="section-header" data-animate="fadeInUp">
-            <span class="section-subtitle">Resort Life</span>
-            <h2 class="section-title">DOAB VILAS AT NIGHT</h2>
-            <p class="section-desc">Witness the enchanting beauty of Doab Vilas as it transforms under the night sky. The magical lighting and serene ambiance make it a truly unforgettable experience.</p>
+
+            <span class="section-subtitle">
+                Resort Life
+            </span>
+
+            <h2 class="section-title">
+                <?= $nightTitle; ?>
+            </h2>
+
+            <p class="section-desc">
+                <?= $nightDescription; ?>
+            </p>
+
         </div>
+
     </div>
-    <div class="night-banner-image" data-animate="fadeInUp" data-delay="0.2">
-        <img src="assets/images/rooms/doab villas 1.png" alt="Doab Vilas Night View" class="img-fluid">
+
+    <div class="night-banner-image"
+         data-animate="fadeInUp"
+         data-delay="0.2">
+
+        <img
+            src="<?= $path . $nightImage; ?>"
+            alt="<?= $nightTitle; ?>"
+            class="img-fluid"
+            loading="lazy"
+        >
+
     </div>
 </section>
 
+<?php } ?>
+
+
 <!-- Testimonial Section -->
+<?php
+$testimonialQuery = mysqli_query(
+    $con,
+    "SELECT * FROM testimonials ORDER BY `order` ASC, id DESC"
+);
+?>
+
 <section class="testimonial-section bg-white">
     <div class="container">
+
         <div class="section-header" data-animate="fadeInUp">
             <span class="section-subtitle">Testimonials</span>
             <h2 class="section-title">WHAT OUR GUESTS SAY</h2>
         </div>
+
         <div class="row g-4" data-animate="fadeInUp" data-delay="0.2">
-            <!-- Testimonial 1 -->
-            <div class="col-lg-4">
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <p class="testimonial-text">"Doab Vilas is truly a paradise in Meerut! The Diamond Hall where we hosted our reception was stunning. The food, the service, and the attention to detail was remarkable. Will definitely come back again!"</p>
-                    <div class="testimonial-author">
-                        <img src="assets/images/experiences/Khayali-Guest.jpg" alt="Khayali">
-                        <div class="testimonial-author-info">
-                            <h4>Khayali</h4>
-                            <span>Comedian</span>
+
+            <?php if ($testimonialQuery && mysqli_num_rows($testimonialQuery) > 0) { ?>
+
+                <?php while ($testimonial = mysqli_fetch_assoc($testimonialQuery)) { ?>
+
+                    <div class="col-lg-4">
+
+                        <div class="testimonial-card">
+
+                            <!-- Rating -->
+                            <div class="testimonial-rating">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+
+                            <!-- Description -->
+                            <p class="testimonial-text">
+                                "<?php echo strip_tags($testimonial['desc']); ?>"
+                            </p>
+
+                            <!-- Author -->
+                            <div class="testimonial-author">
+
+                                <?php if (!empty($testimonial['file'])) { ?>
+
+                                    <img
+                                        src="<?php echo $path . $testimonial['file']; ?>"
+                                        alt="<?php echo htmlspecialchars($testimonial['title']); ?>"
+                                    >
+
+                                <?php } ?>
+
+                                <div class="testimonial-author-info">
+
+                                    <!-- Title -->
+                                    <h4>
+                                        <?php echo htmlspecialchars($testimonial['title']); ?>
+                                    </h4>
+
+                                    <!-- Subtitle -->
+                                    <span>
+                                        <?php echo htmlspecialchars($testimonial['subtitle']); ?>
+                                    </span>
+
+                                </div>
+
+                            </div>
+
                         </div>
+
                     </div>
-                </div>
-            </div>
-            <!-- Testimonial 2 -->
-            <div class="col-lg-4">
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <p class="testimonial-text">"We celebrated our anniversary at Jashan Lawn and it was magical! The decor, the arrangements, and the staff coordination were flawless. Doab Vilas made our special day truly unforgettable."</p>
-                    <div class="testimonial-author">
-                        <img src="assets/images/experiences/Rajeev Shukla-Guest.jpg" alt="Rajeev Shukla">
-                        <div class="testimonial-author-info">
-                            <h4>Rajeev Shukla</h4>
-                            <span>Businessman</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Testimonial 3 -->
-            <div class="col-lg-4">
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <p class="testimonial-text">"The rooms at Doab Vilas are luxurious and comfortable. We loved the Aquarius Pool area and the dining at Frigo's Gourmet was exceptional. A perfect weekend getaway from Delhi!"</p>
-                    <div class="testimonial-author">
-                        <img src="assets/images/experiences/Mahima Chaudhary-Guest.jpg" alt="Mahima Chaudhary">
-                        <div class="testimonial-author-info">
-                            <h4>Mahima Chaudhary</h4>
-                            <span>Actress</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+                <?php } ?>
+
+            <?php } ?>
+
         </div>
+
     </div>
 </section>
+
 
 <!-- Membership Plans Section -->
 <section class="membership-section bg-light-gray">
