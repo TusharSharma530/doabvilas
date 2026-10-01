@@ -153,65 +153,75 @@ include 'include/sidebar.php';
 
 
                         <!-- Category Type -->
-                        <div class="mb-3 col-md-4">
+                       <!-- Category Type -->
+						<div class="mb-3 col-md-4">
 
-                            <label for="type" class="form-label">
-                                Category Type
-                            </label>
+							<label for="type" class="form-label">
+								Category Type
+							</label>
 
-                            <select
-                                class="form-control"
-                                id="type"
-                                name="ctype"
-                                required
-                            >
+							<select
+								class="form-control"
+								id="type"
+								name="ctype"
+								required
+							>
 
-                                <option value="">
-                                    -- Select Category Type --
-                                </option>
+								<option value="">
+									-- Select Category Type --
+								</option>
 
-                                <?php
+								<!-- Static Top Category -->
+								<option
+									value="1"
+									<?php echo ($rwcat['c_type'] == 1) ? 'selected' : ''; ?>
+								>
+									Top
+								</option>
 
-                                $sqlctype = mysqli_query(
-                                    $con,
-                                    "SELECT id, c_name
-                                     FROM category
-                                     WHERE c_type = 1
-                                     ORDER BY `order` ASC"
-                                );
+								<?php
 
-                                if (mysqli_num_rows($sqlctype)) {
+								$sqlctype = mysqli_query(
+									$con,
+									"SELECT id, c_name
+									FROM category
+									WHERE c_type = 1
+									ORDER BY `order` ASC"
+								);
 
-                                    while ($rwctype = mysqli_fetch_assoc($sqlctype)) {
+								if (mysqli_num_rows($sqlctype)) {
 
-                                ?>
+									while ($rwctype = mysqli_fetch_assoc($sqlctype)) {
 
-                                    <option
-                                        value="<?php echo $rwctype['id']; ?>"
-                                        <?php echo ($rwcat['c_type'] == $rwctype['id']) ? 'selected' : ''; ?>
-                                    >
-                                        <?php echo htmlspecialchars($rwctype['c_name']); ?>
-                                    </option>
+								?>
 
-                                <?php
+									<option
+										value="<?php echo $rwctype['id']; ?>"
+										<?php echo ($rwcat['c_type'] == $rwctype['id']) ? 'selected' : ''; ?>
+									>
+										<?php echo htmlspecialchars($rwctype['c_name']); ?>
+									</option>
 
-                                    }
+								<?php
 
-                                }
+									}
 
-                                ?>
+								}
 
-                                <!-- Static Category -->
-                                <option
-                                    value="2"
-                                    <?php echo ($rwcat['c_type'] == 2) ? 'selected' : ''; ?>
-                                >
-                                    Bottom
-                                </option>
+								?>
 
-                            </select>
+								<!-- Static Bottom Category -->
+								<option
+									value="2"
+									<?php echo ($rwcat['c_type'] == 2) ? 'selected' : ''; ?>
+								>
+									Bottom
+								</option>
 
-                        </div>
+							</select>
+
+						</div>
+
 
 
                         <!-- Order -->

@@ -43,26 +43,26 @@ require_once 'includes/navbar.php';
         </div>
         
         <!-- Gallery Grid -->
-        <div class="row g-3 gallery-grid">
-<?php
-$sqlfrontgallery = mysqli_query($con, "SELECT * FROM `gallery_imgs` WHERE `status` = 1 ORDER BY `ordering` ASC, `id` ASC");
-if(mysqli_num_rows($sqlfrontgallery)){
-	while($rwfront = mysqli_fetch_assoc($sqlfrontgallery)){
-		$frontimg = $path.$rwfront['file'];
-		$frontcat = $rwfront['category'];
-		$fronttitle = ($rwfront['title'] != '') ? $rwfront['title'] : (($frontcat != '') ? ucfirst($frontcat) : 'Gallery Image');
-?>
-            <div class="col-md-4 col-lg-3 gallery-item" data-category="<?=$frontcat;?>">
-                <div class="gallery-card" onclick="openLightbox('<?=$frontimg;?>', '<?=htmlspecialchars($fronttitle, ENT_QUOTES);?>')">
-                    <img src="<?=$frontimg;?>" alt="<?=htmlspecialchars($fronttitle, ENT_QUOTES);?>" class="img-fluid" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span><?=htmlspecialchars($fronttitle, ENT_QUOTES);?></span>
-                    </div>
-                </div>
+      <div class="row g-3 gallery-grid">
+                <?php
+                $sqlfrontgallery = mysqli_query($con, "SELECT * FROM `gallery_imgs` WHERE `status` = 1 ORDER BY `ordering` ASC, `id` ASC");
+                if(mysqli_num_rows($sqlfrontgallery)){
+                    while($rwfront = mysqli_fetch_assoc($sqlfrontgallery)){
+                        $frontimg = $path.$rwfront['file'];
+                        $frontcat = $rwfront['category'];
+                        $fronttitle = ($rwfront['title'] != '') ? $rwfront['title'] : (($frontcat != '') ? ucfirst($frontcat) : 'Gallery Image');
+                ?>
+                            <div class="col-md-4 col-lg-3 gallery-item" data-category="<?=$frontcat;?>">
+                                <div class="gallery-card" onclick="openLightbox('<?=$frontimg;?>', '<?=htmlspecialchars($fronttitle, ENT_QUOTES);?>')">
+                                    <img src="<?=$frontimg;?>" alt="<?=htmlspecialchars($fronttitle, ENT_QUOTES);?>" class="img-fluid" loading="lazy">
+                                    <div class="gallery-overlay">
+                                        <span><?=htmlspecialchars($fronttitle, ENT_QUOTES);?></span>
+                                    </div>
+                                </div>
+                            </div>
+                <?php } } ?>
             </div>
-<?php } } ?>
         </div>
-    </div>
 </section>
 
 <!-- Lightbox Modal -->

@@ -371,13 +371,7 @@ require_once 'includes/navbar.php';
 
 
             <?php
-            $sqlhalls = mysqli_query(
-                $con,
-                "SELECT * FROM `halls`
-                WHERE `status` = 1
-                ORDER BY `ordering` ASC, `id` DESC"
-            );
-
+            $sqlhalls = mysqli_query( $con, "SELECT * FROM `halls` WHERE `status` = 1 ORDER BY `ordering` ASC, `id` DESC");
             $hallIndex = 0;
 
             if(mysqli_num_rows($sqlhalls)){
@@ -597,10 +591,7 @@ if(mysqli_num_rows($sqlDining)){
 <?php
 $sqlStaff = mysqli_query(
     $con,
-    "SELECT c_name, c_desc, featured_img
-     FROM `category`
-     WHERE `id` = 79
-     LIMIT 1"
+    "SELECT c_name, c_desc, featured_img FROM `category` WHERE `id` = 79 LIMIT 1"
 );
 
 if(mysqli_num_rows($sqlStaff)){
