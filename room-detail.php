@@ -285,7 +285,7 @@ require_once 'includes/navbar.php';
     <div class="banner-container">
         <div class="container-fluid px-3 px-lg-5">
             <div class="hero-bar-row">
-                <!-- 1. Room Title (Luxia Font) -->
+                <!-- 1. Room Title (Cinzel Font) -->
                 <div class="hero-bar-title-col">
                     <h1 class="hero-room-heading"><?php echo $room['name']; ?></h1>
                 </div>

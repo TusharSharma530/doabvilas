@@ -4,51 +4,6 @@
  */
 
 /* ===================================
-   Custom Fonts (Bravura Resort Typography)
-   =================================== */
-@font-face {
-    font-family: 'Luxia';
-    src: url('../fonts/Luxia-Regular.woff2') format('woff2'),
-         url('../fonts/Luxia-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Antiqua Roman';
-    src: url('../fonts/AntiquaRoman.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Antiga';
-    src: url('../fonts/Antiga-Regular.woff2') format('woff2'),
-         url('../fonts/Antiga-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Poppins';
-    src: url('../fonts/Poppins-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Poppins';
-    src: url('../fonts/Poppins-Medium.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* ===================================
    CSS Variables (Design Tokens)
    =================================== */
 :root {
@@ -485,7 +440,7 @@ img {
 }
 
 .subnav_list .title {
-    font-family: 'Luxia', serif;
+    font-family: 'Cinzel', serif;
     font-size: 22px;
     font-weight: 500;
     color: #17352D;
@@ -778,7 +733,7 @@ img {
     font-size: 22px;
     color: #ffffff;
     text-align: center;
-    font-family: "Antiqua Roman", 'Playfair Display', serif;
+    font-family: 'Playfair Display', serif;
     letter-spacing: 2px;
     line-height: normal;
     font-weight: normal;
@@ -789,7 +744,7 @@ img {
     font-size: 40px;
     line-height: 1.02;
     display: block;
-    font-family: 'Luxia', 'Antiga', serif;
+    font-family: 'Cinzel', serif;
     letter-spacing: 2px;
     margin-top: 10px;
     color: #ffffff;
@@ -1145,7 +1100,7 @@ img {
 .banner_360 a p {
     color: #ffffff;
     text-align: center;
-    font-family: 'Luxia', 'Antiga', serif;
+    font-family: 'Cinzel', serif;
     font-size: 25px;
     line-height: 16px;
     margin: 0;
@@ -3049,7 +3004,7 @@ img {
 }
 
 .banner-rooms-suites .content .title {
-    font-family: 'Antiga', 'Playfair Display', serif;
+    font-family: 'Cinzel', serif;
     font-size: 24px;
     color: #ffffff;
     letter-spacing: 2px;
@@ -3058,7 +3013,7 @@ img {
 }
 
 .banner-rooms-suites .content h1 {
-    font-family: 'Luxia', serif;
+    font-family: 'Cinzel', serif;
     font-size: clamp(2.4rem, 5.5vw, 4.5rem);
     font-weight: 400;
     color: #ffffff;
@@ -3250,7 +3205,7 @@ img {
    Dine & Wine Page (Exact Bravura Resort Match)
    =================================== */
 .banner_dining .content h1 {
-    font-family: 'Luxia', serif;
+    font-family: 'Cinzel', serif;
     font-size: clamp(2.5rem, 5.5vw, 4.5rem);
     font-weight: 400;
     color: #ffffff;
@@ -3315,7 +3270,7 @@ img {
 }
 
 .venue-info-content p {
-    font-family: 'Poppins', 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 0.96rem;
     line-height: 1.9;
     color: #555555;
@@ -3459,7 +3414,7 @@ img {
 }
 
 .venue-hero-title {
-    font-family: 'Luxia', serif;
+    font-family: 'Cinzel', serif;
     font-size: clamp(2.6rem, 5.2vw, 4.2rem);
     font-weight: 400;
     color: #ffffff;
@@ -3584,7 +3539,7 @@ img {
 }
 
 .OffDetailsSe .content p {
-    font-family: 'Poppins', 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     line-height: 1.9;
     color: #4A4A4A;
@@ -3868,7 +3823,7 @@ img {
 }
 
 .hero-room-heading {
-    font-family: 'Luxia', serif;
+    font-family: 'Cinzel', serif;
     font-size: clamp(2.4rem, 4.8vw, 3.8rem);
     font-weight: 400;
     color: #ffffff;
@@ -4641,7 +4596,7 @@ img {
 .event-card figure img { width: 100%; height: 280px; object-fit: cover; transition: transform 0.5s ease; }
 .event-card:hover figure img { transform: scale(1.08); }
 .event-card .content { padding: 20px; }
-.event-card .catName { font-family: 'Luxia', serif; font-size: 18px; color: var(--dv-dark); font-weight: 500; }
+.event-card .catName { font-family: 'Cinzel', serif; font-size: 18px; color: var(--dv-dark); font-weight: 500; }
 @media (max-width: 767px) { .event-card figure img { height: 220px; } }
 
 /* ===================================
