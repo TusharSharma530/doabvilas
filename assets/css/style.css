@@ -1647,7 +1647,6 @@ img {
     color: var(--dv-gold);
 }
 
-/* Wedding Grid Card */
 .wedding-grid-card {
     display: block;
     text-decoration: none;
@@ -1662,13 +1661,14 @@ img {
 
 .wedding-grid-img {
     width: 100%;
-    height: auto;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
 }
 
 .wedding-grid-img img {
+    display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     transition: transform 0.6s ease;
 }

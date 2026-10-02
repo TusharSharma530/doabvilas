@@ -103,7 +103,7 @@ require_once 'includes/navbar.php';
 </div>
 
 <!-- About Us Section -->
-    <section class="about-us-section bg-white">
+    <section class="about-us-section bg-white ">
         <div class="container">
             <div class="row align-items-center " data-animate="fadeInUp" data-delay="0.2">
                 <div class="col-lg-6">
@@ -195,58 +195,63 @@ require_once 'includes/navbar.php';
 
 
 <!-- Weddings & Events Section -->
-    <section class="weddings-events-section bg-white">
-        <div class="container">
-            <div class="section-header" data-animate="fadeInUp">
-                <span class="section-subtitle">Events</span>
-                <h2 class="section-title section-title-responsive">START PLANNING</h2>
-            </div>
-            
-            <div class="row g-4" data-animate="fadeInUp" data-delay="0.2">
+<section class="weddings-events-section bg-white">
+    <div class="container">
 
-                <?php
-                $sqlevents = mysqli_query( $con, "SELECT * FROM `events` WHERE `status` = 1 ORDER BY `ordering` ASC, `id` DESC"
-                );
+        <div class="section-header" data-animate="fadeInUp">
+            <span class="section-subtitle">Events</span>
+            <h2 class="section-title section-title-responsive">START PLANNING</h2>
+        </div>
 
-                if(mysqli_num_rows($sqlevents)){
-                    while($event = mysqli_fetch_assoc($sqlevents)){
-                ?>
+        <div class="row g-4" data-animate="fadeInUp" data-delay="0.2">
+
+            <?php
+            $sqlevents = mysqli_query(
+                $con,
+                "SELECT *
+                 FROM `events`
+                 WHERE `status` = 1
+                 AND `id` IN (1, 2, 3, 4)
+                 ORDER BY `ordering` ASC, `id` DESC"
+            );
+
+            if ($sqlevents && mysqli_num_rows($sqlevents) > 0) {
+                while ($event = mysqli_fetch_assoc($sqlevents)) {
+            ?>
 
                 <div class="col-lg-6">
                     <a href="" class="wedding-grid-card">
 
                         <div class="wedding-grid-img">
-                            <img 
-                                src="<?=$path.$event['file'];?>" 
-                                alt="<?=htmlspecialchars($event['title']);?>" 
+                            <img
+                                src="<?= htmlspecialchars($path . $event['file']); ?>"
+                                alt="<?= htmlspecialchars($event['title']); ?>"
                                 class="img-fluid"
                                 loading="lazy"
                             >
                         </div>
 
                         <div class="wedding-grid-content">
-
                             <h3 class="wedding-grid-title">
-                                <?=htmlspecialchars($event['title']);?>
+                                <?= htmlspecialchars($event['title']); ?>
                             </h3>
 
                             <p class="wedding-grid-text">
-                                <?=htmlspecialchars($event['description']);?>
+                                <?= htmlspecialchars($event['description']); ?>
                             </p>
-
                         </div>
 
                     </a>
                 </div>
 
-                <?php
-                    }
+            <?php
                 }
-                ?>
+            }
+            ?>
 
-            </div>
         </div>
-    </section>
+    </div>
+</section>
 
 
 <!-- Discover Section with YouTube Video -->

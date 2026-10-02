@@ -63,7 +63,7 @@ $aboutDesc = $aboutData['c_desc'] ?? '';
 ?>
 
 <!-- About Content Section -->
-<section id="aboutSection" class="about-us-section bg-white">
+<section id="aboutSection " class="about-us-section bg-white">
     <div class="container">
         <div class="row align-items-center " data-animate="fadeInUp" data-delay="0.2">
 
