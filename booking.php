@@ -14,23 +14,41 @@ $selectedRoom = isset($roomMap[$room]) ? $roomMap[$room] : '';
 ?>
 
 <!-- Hero Banner -->
-<div class="banner banner-rooms-suites banner_wedding banner_dining">
-    <div class="bg overlay-top overlay-bottom">
-        <img src="assets/images/rooms/room1.png" alt="Book Your Stay" title="Book Your Stay" class="hero-bg-img" />
-    </div>
-    <div class="banner-container">
-        <div class="container">
-            <div class="content text-center">
-                <div class="title">Reservations</div>
-                <h1>BOOK YOUR STAY</h1>
-                <div class="scrdown">
-                    <a href="#bookingSection" aria-label="Scroll Down">
-                        <i class="bi bi-chevron-down"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+<?php
+$query = "SELECT featured_img FROM category WHERE id = 91 LIMIT 1";
+$result = mysqli_query($con, $query);
+
+$featured_img = 'assets/images/default-banner.jpg';
+if ($result && mysqli_num_rows($result)) {
+    $category = mysqli_fetch_assoc($result);
+    if (!empty($category['featured_img'])) {
+        $featured_img = $category['featured_img'];
+    }
+}
+?>
+
+<div class="banner banner-rooms-suites banner_wedding banner_dining"> 
+    <div class="bg overlay-top overlay-bottom"> 
+        <img src="<?= htmlspecialchars($featured_img, ENT_QUOTES, 'UTF-8') ?>" 
+             alt="Book Your Stay" 
+             title="Book Your Stay" 
+             class="hero-bg-img" /> 
+    </div> 
+
+    <div class="banner-container"> 
+        <div class="container"> 
+            <div class="content text-center"> 
+                <div class="title">Reservations</div> 
+                <h1>BOOK YOUR STAY</h1> 
+
+                <div class="scrdown"> 
+                    <a href="#bookingSection" aria-label="Scroll Down"> 
+                        <i class="bi bi-chevron-down"></i> 
+                    </a> 
+                </div> 
+            </div> 
+        </div> 
+    </div> 
 </div>
 
 <!-- Booking Form -->
