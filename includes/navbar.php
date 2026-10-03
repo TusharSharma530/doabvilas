@@ -31,7 +31,7 @@
                     </li>
                     
                     <!-- 3. ROOMS & SUITES -->
-                    <li class="nav-item <?php echo (in_array(getCurrentPage(), ['rooms', 'suites', 'room-detail'])) ? 'active' : ''; ?>">
+                    <li class="nav-item <?php echo (in_array(getCurrentPage(), ['rooms', 'suites'])) ? 'active' : ''; ?>">
                         <a href="rooms.php" class="nav-link">Rooms & Suites</a>
                     </li>
                     
@@ -41,7 +41,7 @@
                     </li>
                     
                     <!-- 5. HALLS -->
-                    <li class="nav-item <?php echo (in_array(getCurrentPage(), ['weddings', 'wedding-venues', 'festival-events', 'corporate-events-and-meetings', 'celebrations', 'diamond', 'sapphire', 'jashan-party-lawn', 'aquarius-pool'])) ? 'active' : ''; ?>">
+                    <li class="nav-item <?php echo (in_array(getCurrentPage(), ['weddings', 'wedding-venues', 'festival-events', 'corporate-events-and-meetings', 'diamond', 'sapphire', 'jashan-party-lawn', 'aquarius-pool'])) ? 'active' : ''; ?>">
                         <a href="weddings.php" class="nav-link">Halls</a>
                     </li>
                     

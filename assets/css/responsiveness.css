@@ -840,189 +840,8 @@
         height: auto;
     }
 }
-
 /* ============================================================
-   8. ROOM DETAIL PAGE (room-detail.php)
-   ============================================================ */
-
-/* --- Hero Bar with Rates --- */
-@media (max-width: 1199.98px) {
-    .hero-bar-row {
-        flex-wrap: wrap;
-        gap: 15px;
-        align-items: flex-start;
-    }
-    .hero-bar-right-group {
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-    .hero-bar-divider {
-        display: none;
-    }
-    .hero-bar-arrow-col {
-        display: none;
-    }
-}
-
-@media (max-width: 991.98px) {
-    .bannerRoomDetails {
-        height: auto;
-        min-height: auto;
-        padding: 60px 0 30px;
-    }
-    .hero-bar-row {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .hero-bar-title-col {
-        width: 100%;
-    }
-    .hero-room-heading {
-        font-size: clamp(1.5rem, 5vw, 2rem);
-    }
-    .hero-bar-right-group {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-    }
-    .hero-bar-gallery-col,
-    .hero-bar-rates-col,
-    .hero-bar-occupancy-col {
-        width: 100%;
-    }
-    .hero-gallery-btn {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 10px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 8px;
-        text-decoration: none;
-    }
-    .gallery-btn-text {
-        font-size: 0.85rem;
-    }
-    .occ-price-val {
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 575.98px) {
-    .hero-bar-right-group {
-        grid-template-columns: 1fr;
-    }
-    .hero-room-heading {
-        font-size: clamp(1.3rem, 5vw, 1.6rem);
-    }
-    .rates-heading,
-    .occ-label {
-        font-size: 0.75rem;
-    }
-    .occ-price-val {
-        font-size: 1rem;
-    }
-}
-
-/* --- Suite Details Section --- */
-@media (max-width: 991.98px) {
-    .SuiteDetails-Section .row {
-        gap: 30px !important;
-    }
-    .SuiteDetailsInn {
-        padding: 25px 20px;
-    }
-    .asideRight {
-        position: static;
-    }
-}
-
-@media (max-width: 767.98px) {
-    .SuiteDetailsInn {
-        padding: 20px 15px;
-    }
-    .facilities-heading {
-        font-size: 1.2rem;
-    }
-    .facilities-tab-nav {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-    }
-    .facilities-tab-nav::-webkit-scrollbar {
-        display: none;
-    }
-    .facilities-tab-nav .nav-link {
-        white-space: nowrap;
-        font-size: 0.8rem;
-        padding: 8px 12px;
-    }
-    .banner_360 {
-        display: none;
-    }
-    .facilities-bullet-list {
-        columns: 1;
-    }
-    .DetailBook-Form {
-        padding: 20px 15px;
-    }
-}
-
-@media (max-width: 575.98px) {
-    .SuiteDetailsInn {
-        padding: 15px 12px;
-    }
-    .room-intro-text p {
-        font-size: 0.9rem;
-    }
-    .DetailBook-Form .form-label-top {
-        font-size: 0.75rem;
-    }
-}
-
-/* --- More Rooms Section (Room Detail) --- */
-@media (max-width: 767.98px) {
-    .moreroomS .heading h2 {
-        font-size: 1.4rem;
-    }
-    .related-room-card figure img {
-        height: 200px;
-    }
-    .room-card-content {
-        padding: 12px;
-    }
-    .room-card-content .catName a {
-        font-size: 0.95rem;
-    }
-    .room-card-content .price {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 575.98px) {
-    .related-room-card figure img {
-        height: 170px;
-    }
-}
-
-/* --- Room Gallery Modal --- */
-@media (max-width: 767.98px) {
-    .gallery-lightbox-modal .modal-dialog {
-        margin: 10px;
-    }
-    .lightbox-stage img {
-        max-height: 300px;
-        object-fit: contain;
-    }
-    .lightbox-thumb {
-        width: 50px;
-        height: 40px;
-    }
-}
-
-/* ============================================================
-   9. DINING PAGE (dining.php)
+   8. DINING PAGE (dining.php)
    ============================================================ */
 
 @media (max-width: 991.98px) {
@@ -1083,7 +902,7 @@
 }
 
 /* ============================================================
-   10. WEDDINGS / HALLS PAGE (weddings.php)
+   9. WEDDINGS / HALLS PAGE (weddings.php)
    ============================================================ */
 
 @media (max-width: 991.98px) {
@@ -1123,125 +942,7 @@
 }
 
 /* ============================================================
-   11. CELEBRATIONS PAGE (celebrations.php)
-   ============================================================ */
-
-/* --- Hero Banner (Celebrations Style) --- */
-@media (max-width: 991.98px) {
-    .banner-banquetSpace {
-        height: 60vh;
-        min-height: 380px;
-    }
-    .venue-hero-title {
-        font-size: clamp(2rem, 5vw, 3rem);
-    }
-    .venue-hero-subtitle {
-        font-size: clamp(0.85rem, 2vw, 1rem);
-    }
-}
-
-@media (max-width: 767.98px) {
-    .banner-banquetSpace {
-        height: 50vh;
-        min-height: 300px;
-    }
-    .venue-hero-title {
-        font-size: clamp(1.6rem, 6vw, 2.2rem);
-    }
-    .venue-hero-subtitle {
-        font-size: 0.85rem;
-        padding: 0 10px;
-    }
-}
-
-/* --- Content + Enquiry Section --- */
-@media (max-width: 991.98px) {
-    .banquetSpaceDetail .row {
-        gap: 30px !important;
-    }
-    .form-EnqueryInnPAge {
-        position: static;
-    }
-    .OffDetailsSe .content h2 {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 767.98px) {
-    .OffDetailsSe {
-        padding: 20px 15px;
-    }
-    .OffDetailsSe .content h2 {
-        font-size: 1.3rem;
-    }
-    .OffDetailsSe .content p {
-        font-size: 0.9rem;
-        line-height: 1.7;
-    }
-    .facilities-bullet-list {
-        columns: 1;
-    }
-    .form-EnqueryInnPAge {
-        padding: 20px 15px;
-    }
-    .form-EnqueryInnPAge .form-header h2 {
-        font-size: 1.2rem;
-    }
-}
-
-/* --- Banquet Spaces Grid --- */
-@media (max-width: 991.98px) {
-    .banquet-space-card .banquet-figure img {
-        height: 220px;
-    }
-}
-
-@media (max-width: 767.98px) {
-    .banquet-space-card .banquet-figure img {
-        height: 200px;
-    }
-    .banquet-card-content {
-        padding: 12px;
-    }
-    .banquet-card-content .catName a {
-        font-size: 0.95rem;
-    }
-    .hall-spec {
-        font-size: 0.8rem;
-    }
-    .btn-banquet-link {
-        font-size: 0.8rem;
-        padding: 6px 12px;
-    }
-}
-
-@media (max-width: 575.98px) {
-    .banquet-space-card .banquet-figure img {
-        height: 180px;
-    }
-}
-
-/* --- More Celebrations Grid --- */
-@media (max-width: 767.98px) {
-    .more-dine-card figure img {
-        height: 200px;
-    }
-    .more-dine-content h4 {
-        font-size: 1rem;
-    }
-    .more-dine-content p {
-        font-size: 0.85rem;
-    }
-}
-
-@media (max-width: 575.98px) {
-    .more-dine-card figure img {
-        height: 170px;
-    }
-}
-
-/* ============================================================
-   12. UPCOMING EVENTS PAGE (upcoming-events.php)
+   10. UPCOMING EVENTS PAGE (upcoming-events.php)
    ============================================================ */
 
 @media (max-width: 767.98px) {
@@ -1276,7 +977,7 @@
 }
 
 /* ============================================================
-   13. GALLERY PAGE (gallery.php)
+   11. GALLERY PAGE (gallery.php)
    ============================================================ */
 
 @media (max-width: 991.98px) {
@@ -1354,7 +1055,7 @@
 }
 
 /* ============================================================
-   14. BOOKING PAGE (booking.php)
+   12. BOOKING PAGE (booking.php)
    ============================================================ */
 
 @media (max-width: 767.98px) {
@@ -1381,7 +1082,7 @@
 }
 
 /* ============================================================
-   15. CONTACT PAGE (contact.php)
+   13. CONTACT PAGE (contact.php)
    ============================================================ */
 
 /* --- Contact Info Cards --- */
@@ -1521,7 +1222,7 @@
 }
 
 /* ============================================================
-   16. MODALS (Quick Enquiry, Login, Booking Summary, etc.)
+   14. MODALS (Quick Enquiry, Login, Booking Summary, etc.)
    ============================================================ */
 
 @media (max-width: 767.98px) {
@@ -1607,7 +1308,7 @@
 }
 
 /* ============================================================
-   17. UTILITY & MISC RESPONSIVE
+   15. UTILITY & MISC RESPONSIVE
    ============================================================ */
 
 /* --- Buttons --- */
@@ -1655,7 +1356,7 @@
 }
 
 /* ============================================================
-   18. LANDSCAPE MOBILE FIX
+   16. LANDSCAPE MOBILE FIX
    ============================================================ */
 @media (max-height: 500px) and (orientation: landscape) {
     .banner {
@@ -1679,7 +1380,7 @@
 }
 
 /* ============================================================
-   19. PRINT STYLES
+   17. PRINT STYLES
    ============================================================ */
 @media print {
     .site-header,
