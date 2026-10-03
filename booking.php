@@ -1,7 +1,6 @@
 <?php 
 $pageTitle = 'Book Now';
 require_once 'includes/header.php'; 
-require_once 'includes/navbar.php';
 
 $room = isset($_GET['room']) ? $_GET['room'] : '';
 $check_in = isset($_GET['check_in']) ? $_GET['check_in'] : '';

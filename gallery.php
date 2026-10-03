@@ -1,16 +1,20 @@
 <?php 
 $pageTitle = 'Gallery - Doab Vilas Luxury Resort, Meerut';
 require_once 'includes/header.php'; 
-require_once 'includes/navbar.php'; 
 ?>
 
 <!-- Hero Banner -->
 <?php
 $query = "SELECT featured_img FROM category WHERE id = 72 LIMIT 1";
-$result = mysqli_query($conn, $query);
-$category = mysqli_fetch_assoc($result);
+$result = mysqli_query($con, $query);
 
-$featured_img = $category['featured_img'] ?? 'assets/images/default-banner.jpg';
+$featured_img = '';
+if ($result && mysqli_num_rows($result)) {
+    $category = mysqli_fetch_assoc($result);
+    if (!empty($category['featured_img'])) {
+        $featured_img = $category['featured_img'];
+    }
+}
 ?>
 
 <div class="banner banner-rooms-suites banner_wedding banner_dining"> 

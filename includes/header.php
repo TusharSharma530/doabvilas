@@ -23,3 +23,4 @@
     <link rel="stylesheet" href="<?php echo CSS_URL; ?>responsiveness.css">
 </head>
 <body>
+<?php require_once __DIR__ . '/navbar.php'; ?>
