@@ -5,23 +5,36 @@ require_once 'includes/navbar.php';
 ?>
 
 <!-- Hero Banner -->
-<div class="banner banner-rooms-suites banner_wedding banner_dining">
-    <div class="bg overlay-top overlay-bottom">
-        <img src="assets/images/rooms/doab villas 1.png" alt="Gallery" title="Gallery" class="hero-bg-img" />
-    </div>
-    <div class="banner-container">
-        <div class="container">
-            <div class="content text-center">
-                <div class="title">Visual Journey</div>
-                <h1>GALLERY</h1>
-                <div class="scrdown">
-                    <a href="#gallerySection" aria-label="Scroll Down">
-                        <i class="bi bi-chevron-down"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+<?php
+$query = "SELECT featured_img FROM category WHERE id = 72 LIMIT 1";
+$result = mysqli_query($conn, $query);
+$category = mysqli_fetch_assoc($result);
+
+$featured_img = $category['featured_img'] ?? 'assets/images/default-banner.jpg';
+?>
+
+<div class="banner banner-rooms-suites banner_wedding banner_dining"> 
+    <div class="bg overlay-top overlay-bottom"> 
+        <img src="<?= htmlspecialchars($featured_img) ?>" 
+             alt="Halls & Venues" 
+             title="Halls & Venues" 
+             class="hero-bg-img" /> 
+    </div> 
+
+    <div class="banner-container"> 
+        <div class="container"> 
+            <div class="content text-center"> 
+                <div class="title">Our Venues</div> 
+                <h1>HALLS & SPACES</h1> 
+
+                <div class="scrdown"> 
+                    <a href="#venuesSection" aria-label="Scroll Down"> 
+                        <i class="bi bi-chevron-down"></i> 
+                    </a> 
+                </div> 
+            </div> 
+        </div> 
+    </div> 
 </div>
 
 <!-- Gallery Section -->
