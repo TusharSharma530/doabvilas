@@ -24,3 +24,10 @@
 </head>
 <body>
 <?php require_once __DIR__ . '/navbar.php'; ?>
+
+<!-- Image Lightbox (shared by every page) -->
+<div id="galleryLightbox" class="gallery-lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img id="lightboxImg" src="" alt="">
+    <div id="lightboxCaption" class="lightbox-caption"></div>
+</div>

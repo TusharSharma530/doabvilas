@@ -212,5 +212,4 @@ $legacyImage = $legacyData['featured_img'] ?? '';
 </section>
 
 
-<?php require_once 'includes/whatsapp-button.php'; ?>
 <?php require_once 'includes/footer.php'; ?>

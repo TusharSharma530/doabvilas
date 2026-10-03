@@ -174,5 +174,4 @@ $hallIndex = 0;
 
 <?php endwhile; ?>
 
-<?php require_once 'includes/whatsapp-button.php'; ?>
 <?php require_once 'includes/footer.php'; ?>

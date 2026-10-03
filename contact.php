@@ -191,5 +191,4 @@ if ($result && mysqli_num_rows($result)) {
 </section>
 
 
-<?php require_once 'includes/whatsapp-button.php'; ?>
 <?php require_once 'includes/footer.php'; ?>

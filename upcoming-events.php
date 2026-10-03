@@ -128,11 +128,5 @@ require_once 'includes/header.php';
 
 
 <!-- Image Lightbox. The open/close + Escape logic lives in assets/js/main.js -->
-<div id="galleryLightbox" class="gallery-lightbox" onclick="closeLightbox()">
-    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-    <img id="lightboxImg" src="" alt="">
-    <div id="lightboxCaption" class="lightbox-caption"></div>
-</div>
 
-<?php require_once 'includes/whatsapp-button.php'; ?>
 <?php require_once 'includes/footer.php'; ?>

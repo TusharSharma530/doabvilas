@@ -1,4 +1,7 @@
 </div><!-- .page-content-wrap -->
+
+<?php require_once __DIR__ . '/whatsapp-button.php'; ?>
+
 <!-- Footer -->
 <footer class="site-footer">
     <div class="container">
