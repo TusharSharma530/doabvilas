@@ -68,7 +68,10 @@ require_once 'includes/navbar.php';
                             <!-- Check In (Column 2) -->
                             <div class="col col2">
                                 <div class="form-group line-date-group">
-                                    <input type="text" name="check_in" id="txtCheckIn" class="form-control checin" value="Check In" readonly>
+                                    <input type="date" name="check_in" id="txtCheckIn" class="form-control checin"
+                                           min="<?php echo date('Y-m-d'); ?>"
+                                           data-placeholder="Check In"
+                                           aria-label="Check In date">
                                     <div class="icon icondoro">
                                         <i class="bi bi-calendar4-event"></i>
                                     </div>
@@ -78,7 +81,10 @@ require_once 'includes/navbar.php';
                             <!-- Check Out (Column 3) -->
                             <div class="col col3">
                                 <div class="form-group line-date-group">
-                                    <input type="text" name="check_out" id="txtCheckOut" class="form-control checout" value="Check Out" readonly>
+                                    <input type="date" name="check_out" id="txtCheckOut" class="form-control checout"
+                                           min="<?php echo date('Y-m-d', strtotime('+1 day')); ?>"
+                                           data-placeholder="Check Out"
+                                           aria-label="Check Out date">
                                     <div class="icon icondoro">
                                         <i class="bi bi-calendar-check"></i>
                                     </div>

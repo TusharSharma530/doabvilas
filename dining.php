@@ -107,4 +107,3 @@ $highwayDesc  = $highwayData['c_desc'] ?? '';
 <?php require_once 'includes/whatsapp-button.php'; ?>
 
 <?php require_once 'includes/footer.php'; ?>
-```

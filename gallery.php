@@ -65,7 +65,7 @@ require_once 'includes/navbar.php';
         </div>
 </section>
 
-<!-- Lightbox Modal -->
+<!-- Image Lightbox. The open/close + Escape logic lives in assets/js/main.js -->
 <div id="galleryLightbox" class="gallery-lightbox" onclick="closeLightbox()">
     <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
     <img id="lightboxImg" src="" alt="">
@@ -73,22 +73,6 @@ require_once 'includes/navbar.php';
 </div>
 
 <script>
-function openLightbox(src, caption) {
-    document.getElementById('lightboxImg').src = src;
-    document.getElementById('lightboxCaption').textContent = caption;
-    document.getElementById('galleryLightbox').classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeLightbox() {
-    document.getElementById('galleryLightbox').classList.remove('active');
-    document.body.style.overflow = '';
-}
-
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeLightbox();
-});
-
 document.addEventListener('DOMContentLoaded', function() {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');

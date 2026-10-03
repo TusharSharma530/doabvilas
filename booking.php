@@ -7,24 +7,8 @@ $room = isset($_GET['room']) ? $_GET['room'] : '';
 $check_in = isset($_GET['check_in']) ? $_GET['check_in'] : '';
 $check_out = isset($_GET['check_out']) ? $_GET['check_out'] : '';
 
-function convertDate($date) {
-    if (empty($date)) return '';
-    $parts = explode('/', $date);
-    if (count($parts) === 3) {
-        return $parts[2] . '-' . $parts[1] . '-' . $parts[0];
-    }
-    return $date;
-}
-
-$check_in = convertDate($check_in);
-$check_out = convertDate($check_out);
-
 $roomMap = [
-    'luxury-delux-rooms' => 'deluxe',
-    'premium-rooms' => 'premium-room',
-    'premium-suite' => 'premium-suite',
-    'executive-suite' => 'executive-suite',
-    'presidential-suite' => 'presidential-suite'
+    'luxury-delux-rooms' => 'deluxe'
 ];
 $selectedRoom = isset($roomMap[$room]) ? $roomMap[$room] : '';
 ?>

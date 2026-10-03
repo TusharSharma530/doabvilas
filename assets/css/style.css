@@ -1037,7 +1037,84 @@ img {
     color: #fff;
 }
 
-/* Book Now Button (Golden Text Link) */
+/* ===================================
+   Booking Bar Date Inputs (Native type=date, Bravura styling)
+   =================================== */
+.line-date-group .checin,
+.line-date-group .checout {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    border-radius: 0;
+    padding: 0 38px 0 0;
+    height: 44px;
+    line-height: 44px;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    box-shadow: none;
+    cursor: pointer;
+    /* native date inputs have no placeholder; force the browser's internal
+       dd-mm-yyyy / value text to inherit the white colour above */
+    -webkit-text-fill-color: #ffffff;
+    color-scheme: dark;
+}
+
+/* keep the small field icons gold, like the Select Room chevron */
+.line-date-group .icondoro {
+    pointer-events: none;
+    color: #c3a95b;
+}
+
+/* the "Check In" / "Check Out" label shown until a date is chosen */
+.line-date-group {
+    position: relative;
+}
+
+.line-date-group .date-field-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 44px;
+    line-height: 44px;
+    padding-right: 38px;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* native inputs always render their own dd-mm-yyyy hint; hide just that part
+   while our label is showing so the two never overlap */
+.line-date-group:not(.has-value) .checin::-webkit-datetime-edit,
+.line-date-group:not(.has-value) .checout::-webkit-datetime-edit {
+    opacity: 0;
+}
+
+.line-date-group.has-value .date-field-label {
+    display: none;
+}
+
+/* hide the browser's native calendar icon; we render our own via .icondoro */
+.line-date-group .checin::-webkit-calendar-picker-indicator,
+.line-date-group .checout::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+/* ===================================
+   Book Now Button (Golden Text Link)
+   =================================== */
 .btn-book-now-gold {
     background: none;
     border: none;
@@ -2221,12 +2298,20 @@ img {
     box-shadow: var(--shadow-lg);
     z-index: 999;
     transition: var(--transition);
+    animation: whatsappPulse 5s ease-in-out infinite;
 }
 
 .whatsapp-float:hover {
     background-color: #20BA5A;
     color: var(--dv-white);
+    animation: none;
     transform: scale(1.1);
+}
+
+@keyframes whatsappPulse {
+    0%, 88%, 100% { transform: scale(1); }
+    92% { transform: scale(1.1); }
+    96% { transform: scale(1); }
 }
 
 .back-to-top {
