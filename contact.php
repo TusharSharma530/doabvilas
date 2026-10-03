@@ -5,15 +5,29 @@ require_once 'includes/navbar.php';
 ?>
 
 <!-- Hero Banner -->
+<?php
+$query = "SELECT featured_img FROM category WHERE id = 75 LIMIT 1";
+$result = mysqli_query($conn, $query);
+$category = mysqli_fetch_assoc($result);
+
+$featured_img = $category['featured_img'] ?? 'assets/images/default-banner.jpg';
+?>
+
+<!-- Hero Banner -->
 <div class="banner banner-rooms-suites banner_wedding banner_dining">
     <div class="bg overlay-top overlay-bottom">
-        <img src="assets/images/rooms/doab villas.png" alt="Contact Us" title="Contact Us" class="hero-bg-img" />
+        <img src="<?= htmlspecialchars($featured_img) ?>"
+             alt="Contact Us"
+             title="Contact Us"
+             class="hero-bg-img" />
     </div>
+
     <div class="banner-container">
         <div class="container">
             <div class="content text-center">
                 <div class="title">Get in Touch</div>
                 <h1>CONTACT US</h1>
+
                 <div class="scrdown">
                     <a href="#contactSection" aria-label="Scroll Down">
                         <i class="bi bi-chevron-down"></i>
