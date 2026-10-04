@@ -4,8 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="<?php echo SITE_NAME; ?> - <?php echo SITE_TAGline; ?>">
-    <title><?php echo isset($pageTitle) ? $pageTitle . ' | ' . SITE_NAME : SITE_NAME . ' | ' . SITE_TAGline; ?></title>
+    <?php
+
+    $pageMetaTitle = !empty($metaTitle)
+        ? $metaTitle
+        : (isset($pageTitle) && $pageTitle !== '' && strtolower($pageTitle) !== 'home'
+            ? $pageTitle . ' | ' . SITE_NAME
+            : SITE_NAME . ' | ' . SITE_TAGline);
+    $pageMetaDesc = !empty($metaDesc)
+        ? $metaDesc
+        : SITE_NAME . ' - ' . SITE_TAGline;
+    ?>
+    <meta name="description" content="<?php echo htmlspecialchars($pageMetaDesc); ?>">
+    <?php if(!empty($metaKeywords)){ ?>
+    <meta name="keywords" content="<?php echo htmlspecialchars($metaKeywords); ?>">
+    <?php } ?>
+    <title><?php echo htmlspecialchars($pageMetaTitle); ?></title>
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">

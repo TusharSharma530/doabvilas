@@ -120,6 +120,16 @@ body {
     overflow-x: hidden;
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-content-wrap {
+    flex: 1 0 auto;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-weight: 500;
@@ -822,6 +832,19 @@ img {
     padding: 30px 0;
 }
 
+/* Pages rendered straight from category content by the front
+   controller have no banner image, and the header is fixed, so they
+   need their own offset to clear it. */
+.routed-content {
+    padding: 120px 0 60px;
+}
+
+@media (max-width: 991px) {
+    .routed-content {
+        padding: 100px 0 50px;
+    }
+}
+
 .section-header {
     text-align: center;
     max-width: 700px;
@@ -1123,6 +1146,15 @@ img {
     border-radius: 50%;
     color: var(--dv-gold);
     font-size: 2rem;
+}
+
+/* Inlined icons carry their own width/height attributes, so size them
+   here to match the icon-font size (.feature-icon is 2rem). They take
+   their colour from .feature-icon via fill="currentColor". */
+.feature-icon svg {
+    width: 2rem;
+    height: 2rem;
+    display: block;
 }
 
 .feature-card h4 {

@@ -17,7 +17,7 @@
         <i class="bi bi-telephone-fill"></i>
         <span>Call</span>
     </a>
-    <a href="booking.php" class="cta-btn cta-book" aria-label="Book Now">
+    <a href="<?php echo pageUrl('booking'); ?>" class="cta-btn cta-book" aria-label="Book Now">
         <i class="bi bi-calendar-check-fill"></i>
         <span>Book Now</span>
     </a>

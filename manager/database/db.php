@@ -217,10 +217,183 @@ if(!defined('SITE_CONFIG_LOADED')){
 	define('FONTS_URL', ASSETS_URL . 'fonts/');
 }
 
+// DYNAMIC ROUTING HELPERS
+
+$GLOBALS['ROUTE_MAP'] = array(
+	'home'         => 'index',
+	'about-us'     => 'about',
+	'rooms-suites' => 'rooms',
+	'dining'       => 'dining',
+	'halls'        => 'weddings',
+	'events'       => 'upcoming-events',
+	'gallery'      => 'gallery',
+	'contact-us'   => 'contact',
+	'booking'      => 'booking',
+);
+
+// Slug -> view file name (no .php). Unknown slugs pass through
+// untouched so a page can also be reached by its file name.
+if(!function_exists('routeSlugToFile')){
+	function routeSlugToFile($slug) {
+		$slug = strtolower(trim((string)$slug));
+		$map  = $GLOBALS['ROUTE_MAP'];
+		return isset($map[$slug]) ? $map[$slug] : $slug;
+	}
+}
+
+// View file name -> canonical slug, used for the active nav state
+// so that both /about-us and the legacy about.php highlight the
+// same menu item.
+if(!function_exists('routeFileToSlug')){
+	function routeFileToSlug($file) {
+		$file = basename((string)$file, '.php');
+		if($file === 'index'){ return 'home'; }
+		$slug = array_search($file, $GLOBALS['ROUTE_MAP'], true);
+		return $slug === false ? $file : $slug;
+	}
+}
+
+// Builds a clean URL. Echo this instead of hardcoding hrefs.
+if(!function_exists('pageUrl')){
+	function pageUrl($slug = '') {
+		return BASE_PATH . ltrim((string)$slug, '/');
+	}
+}
+
+// The slug of whatever is being rendered right now. The front
+// controller sets $currentSlug; otherwise fall back to the file
+// being requested, which keeps legacy .php links working.
+if(!function_exists('getCurrentSlug')){
+	function getCurrentSlug() {
+		if(!empty($GLOBALS['currentSlug'])){ return $GLOBALS['currentSlug']; }
+		return routeFileToSlug(basename($_SERVER['PHP_SELF'], '.php'));
+	}
+}
+
 if(!function_exists('getCurrentPage')){
 	function getCurrentPage() {
-		$page = basename($_SERVER['PHP_SELF'], '.php');
-		return $page === 'index' ? 'home' : $page;
+		return getCurrentSlug();
+	}
+}
+
+
+if(!function_exists('handleRoute')){
+	function handleRoute() {
+		global $con;
+		$root = dirname(dirname(__DIR__));
+
+		$routeType = isset($_GET['type']) ? trim((string)$_GET['type'], '/') : '';
+		if($routeType === 'home'){
+			$routeType = '';
+		}
+
+		if($routeType === ''){
+			return false;
+		}
+
+		$segments = array_values(array_filter(explode('/', $routeType), 'strlen'));
+
+		$slug    = preg_replace('/[^a-z0-9_-]/i', '', $segments[0]);
+		$subSlug = isset($segments[1]) ? preg_replace('/[^a-z0-9_-]/i', '', $segments[1]) : '';
+		$chdSlug = isset($segments[2]) ? preg_replace('/[^a-z0-9_-]/i', '', $segments[2]) : '';
+
+		$GLOBALS['currentSlug'] = $slug;
+
+		$metaTitle       = '';
+		$metaDesc        = '';
+		$pageData        = '';
+		$breadcrumbTitle = '';
+		$matchedInDB     = false;
+		$catId = 0; $catSlug = ''; $catName = '';
+
+		$esc = function($value) use ($con) {
+			return mysqli_real_escape_string($con, (string)$value);
+		};
+
+		// ---- Level 1: category ----
+		if($slug !== ''){
+			$sqlCat = mysqli_query($con, "SELECT * FROM `category` WHERE `c_url` = '".$esc($slug)."' AND `status` = 1 LIMIT 1");
+			if($sqlCat && mysqli_num_rows($sqlCat)){
+				$rwCat = mysqli_fetch_assoc($sqlCat);
+				$matchedInDB     = true;
+				$catId           = (int)$rwCat['id'];
+				$catSlug         = $rwCat['c_url'];
+				$catName         = $rwCat['c_name'];
+				$breadcrumbTitle = $rwCat['c_name'];
+				$pageData        = $rwCat['c_desc'];
+				$metaTitle       = $rwCat['meta_title'];
+				$metaDesc        = $rwCat['meta_desc'];
+			}
+		}
+
+		// ---- Level 2: sub_cat ----
+		$subId = 0;
+		if($subSlug !== '' && $matchedInDB){
+			$sqlSub = mysqli_query($con, "SELECT * FROM `sub_cat` WHERE `sc_url` = '".$esc($subSlug)."' AND `status` = 1 LIMIT 1");
+			if($sqlSub && mysqli_num_rows($sqlSub)){
+				$rwSub = mysqli_fetch_assoc($sqlSub);
+				$matchedInDB     = true;
+				$subId           = (int)$rwSub['id'];
+				$breadcrumbTitle = $rwSub['sc_name'];
+				$pageData        = !empty($rwSub['sc_desc']) ? $rwSub['sc_desc'] : $pageData;
+				$metaTitle       = !empty($rwSub['meta_title']) ? $rwSub['meta_title'] : $metaTitle;
+				$metaDesc        = !empty($rwSub['meta_desc']) ? $rwSub['meta_desc'] : $metaDesc;
+			}
+		}
+
+		// ---- Level 3: childcategory ----
+		if($chdSlug !== '' && $matchedInDB){
+			$sqlChd = mysqli_query($con, "SELECT * FROM `childcategory` WHERE `url` = '".$esc($chdSlug)."' AND `status` = 1".($subId ? " AND `subcat_id` = ".$subId : "")." LIMIT 1");
+			if($sqlChd && mysqli_num_rows($sqlChd)){
+				$rwChd = mysqli_fetch_assoc($sqlChd);
+				$matchedInDB     = true;
+				$breadcrumbTitle = $rwChd['childcat'];
+				$pageData        = !empty($rwChd['cdesc']) ? $rwChd['cdesc'] : $pageData;
+				$metaTitle       = !empty($rwChd['meta_title']) ? $rwChd['meta_title'] : $metaTitle;
+				$metaDesc        = !empty($rwChd['meta_desc']) ? $rwChd['meta_desc'] : $metaDesc;
+			}
+		}
+
+		$viewFile = routeSlugToFile($slug);
+		$viewPath = $root.'/'.$viewFile.'.php';
+		$isSelf = (realpath($viewPath) !== false
+			&& isset($_SERVER['SCRIPT_FILENAME'])
+			&& realpath($viewPath) === realpath($_SERVER['SCRIPT_FILENAME']));
+		if($viewFile !== '' && !$isSelf && file_exists($viewPath)){
+			require_once $viewPath;
+			exit();
+		}
+
+		if($matchedInDB && trim($pageData) !== ''){
+			$pageTitle = !empty($metaTitle) ? $metaTitle : $breadcrumbTitle;
+			require_once $root.'/includes/header.php';
+			?>
+			<section class="routed-content">
+				<div class="container">
+					<h1 class="heading-playfair text-center mb-4"><?php echo htmlspecialchars($breadcrumbTitle); ?></h1>
+					<div class="cms-content"><?php echo $pageData; ?></div>
+				</div>
+			</section>
+			<?php
+			require_once $root.'/includes/footer.php';
+			exit();
+		}
+
+		// ---- Not found ----
+		http_response_code(404);
+		$pageTitle = 'Page Not Found';
+		require_once $root.'/includes/header.php';
+		?>
+		<section class="routed-content">
+			<div class="container text-center">
+				<h1 class="heading-playfair">404</h1>
+				<p class="text-lato mb-4">Sorry, the page you are looking for could not be found.</p>
+				<a href="<?php echo pageUrl(); ?>" class="btn btn-gold">Back to Home</a>
+			</div>
+		</section>
+		<?php
+		require_once $root.'/includes/footer.php';
+		exit();
 	}
 }
 

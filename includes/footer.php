@@ -9,7 +9,7 @@
             <div class="row">
                 <!-- Logo -->
                 <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
-                    <a href="index.php" class="footer-logo">
+                    <a href="<?php echo pageUrl(); ?>" class="footer-logo">
                         <img src="<?= !empty(SITE_LOGO) ? $path.SITE_LOGO : '' ?>" alt="<?= SITE_NAME ?> Logo">
                     </a>
                 </div>
@@ -18,10 +18,10 @@
                 <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
                     <h5 class="footer-title">SERVICES</h5>
                     <ul class="footer-links">
-                        <li><a href="rooms.php">Rooms & Suites</a></li>
-                        <li><a href="dining.php">Dining</a></li>
-                        <li><a href="weddings.php">Celebrations</a></li>
-                        <li><a href="upcoming-events.php">Events</a></li>
+                        <li><a href="<?php echo pageUrl('rooms-suites'); ?>">Rooms & Suites</a></li>
+                        <li><a href="<?php echo pageUrl('dining'); ?>">Dining</a></li>
+                        <li><a href="<?php echo pageUrl('halls'); ?>">Celebrations</a></li>
+                        <li><a href="<?php echo pageUrl('events'); ?>">Events</a></li>
                     </ul>
                 </div>
                 
@@ -29,9 +29,9 @@
                 <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
                     <h5 class="footer-title">QUICK LINKS</h5>
                     <ul class="footer-links">
-                        <li><a href="about.php">About us</a></li>
-                        <li><a href="gallery.php">Gallery</a></li>
-                        <li><a href="contact.php">Contact Us</a></li>
+                        <li><a href="<?php echo pageUrl('about-us'); ?>">About us</a></li>
+                        <li><a href="<?php echo pageUrl('gallery'); ?>">Gallery</a></li>
+                        <li><a href="<?php echo pageUrl('contact-us'); ?>">Contact Us</a></li>
                     </ul>
                 </div>
                 
@@ -90,7 +90,7 @@
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body pt-3">
-                <form action="contact.php" method="POST" id="quickEnquiryForm">
+                <form action="<?php echo pageUrl('contact-us'); ?>" method="POST" id="quickEnquiryForm">
                     <div class="mb-3">
                         <label class="form-label text-gold small">Full Name *</label>
                         <div class="input-group">

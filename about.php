@@ -179,16 +179,31 @@ $legacyImage = $legacyData['featured_img'] ?? '';
                     $valueName = $value['c_name'] ?? '';
                     $valueDesc = $value['c_desc'] ?? '';
                     $valueImage = $value['featured_img'] ?? '';
+
+                    $valueSvg = '';
+                    if($valueImage !== '' && stripos($valueImage, '.svg') !== false){
+                        $iconReal = realpath(__DIR__ . '/' . ltrim($valueImage, '/'));
+                        $rootReal = realpath(__DIR__);
+                        // Keep the read inside the project even if the DB path is tampered with.
+                        if($iconReal !== false && $rootReal !== false && strpos($iconReal, $rootReal) === 0 && is_file($iconReal)){
+                            $valueSvg = (string)@file_get_contents($iconReal);
+                            $valueSvg = preg_replace('/<svg\b/', '<svg role="img" aria-label="'.htmlspecialchars($valueName, ENT_QUOTES).'"', $valueSvg, 1);
+                        }
+                    }
             ?>
 
             <div class="col-lg-4 col-md-6">
                 <div class="feature-card">
 
                     <div class="feature-icon">
+                        <?php if($valueSvg !== ''){
+                            echo $valueSvg;
+                        } elseif($valueImage !== ''){ ?>
                         <img
-                            src="<?php echo $path . $valueImage; ?>"
+                            src="<?php echo htmlspecialchars($path . $valueImage); ?>"
                             alt="<?php echo htmlspecialchars($valueName); ?>"
                         >
+                        <?php } ?>
                     </div>
 
                     <h4>

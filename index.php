@@ -1,6 +1,8 @@
-<?php 
+<?php
+require_once __DIR__ . '/manager/database/db.php';
+handleRoute();
 $pageTitle = 'Home';
-require_once 'includes/header.php'; 
+require_once 'includes/header.php';
 ?>
 
 <!-- Hero Video Banner Section -->
@@ -38,7 +40,7 @@ require_once 'includes/header.php';
                 <!-- Mobile Only Book Button -->
                 <div class="only_mob">
                     <div class="banner_btn">
-                        <a href="booking.php">Book Now</a>
+                        <a href="<?php echo pageUrl('booking'); ?>">Book Now</a>
                     </div>
                 </div>
 
@@ -136,7 +138,7 @@ require_once 'includes/header.php';
                                 }
                             }
                         }else ?>
-                        <a href="about.php" class="about-us-btn">
+                        <a href="<?php echo pageUrl('about-us'); ?>" class="about-us-btn">
                             READ MORE <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
@@ -313,7 +315,7 @@ require_once 'includes/header.php';
                         ?>
                     </p>
 
-                    <a href="about.php" class="discover-link">
+                    <a href="<?php echo pageUrl('about-us'); ?>" class="discover-link">
                         EXPLORE MORE <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
@@ -571,7 +573,7 @@ if(mysqli_num_rows($sqlDining)){
                         <?= $diningDescription; ?>
                     </p>
 
-                    <a href="dining.php" class="discover-link">
+                    <a href="<?php echo pageUrl('dining'); ?>" class="discover-link">
                         EXPLORE MORE
                         <i class="bi bi-arrow-right"></i>
                     </a>
@@ -832,7 +834,7 @@ $testimonialQuery = mysqli_query(
                 <p class="membership-note note-text">Note: 24/7 Service Available</p>
             </div>
             <div class="membership-buttons">
-                <a href="booking.php" class="btn btn-gold membership-btn">EQUIRY NOW</a>
+                <a href="<?php echo pageUrl('booking'); ?>" class="btn btn-gold membership-btn">EQUIRY NOW</a>
             </div>
         </div>
     </div>
