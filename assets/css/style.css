@@ -1010,7 +1010,6 @@ img {
     height: auto;
     object-fit: cover;
     transition: transform 0.6s ease;
-    margin:40px;
 }
 
 .about-us-image:hover img {
@@ -1019,6 +1018,22 @@ img {
 
 .about-us-content {
     padding: 10px 0;
+}
+
+
+@media (min-width: 992px){
+    .banner.Home_banner + .about-us-section,
+    .banner.banner-rooms-suites + .about-us-section {
+        padding-top: 50px;
+    }
+
+    .banner.banner-rooms-suites + .about-us-section {
+        padding-bottom: 50px;
+    }
+
+    .about-us-content {
+        padding: 10px 30px;
+    }
 }
 
 .about-us-text {
