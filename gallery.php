@@ -1,18 +1,20 @@
 <?php 
-$pageTitle = 'Gallery - Doab Vilas Luxury Resort, Meerut';
 require_once 'includes/header.php'; 
 ?>
 
 <!-- Hero Banner -->
 <?php
-$query = "SELECT featured_img FROM category WHERE id = 72 LIMIT 1";
+// Looked up by c_url rather than a hardcoded id, so the banner follows
+// the GALLERY row in the admin panel. This used to read id 72 (HALLS)
+// and print "HALLS & SPACES" on this page.
+$query = "SELECT featured_img FROM category WHERE c_url = 'gallery' AND status = 1 LIMIT 1";
 $result = mysqli_query($con, $query);
 
 $featured_img = '';
 if ($result && mysqli_num_rows($result)) {
     $category = mysqli_fetch_assoc($result);
     if (!empty($category['featured_img'])) {
-        $featured_img = $category['featured_img'];
+        $featured_img = $path . $category['featured_img'];
     }
 }
 ?>
@@ -20,19 +22,19 @@ if ($result && mysqli_num_rows($result)) {
 <div class="banner banner-rooms-suites banner_wedding banner_dining"> 
     <div class="bg overlay-top overlay-bottom"> 
         <img src="<?= htmlspecialchars($featured_img) ?>" 
-             alt="Halls & Venues" 
-             title="Halls & Venues" 
+             alt="Gallery" 
+             title="Gallery" 
              class="hero-bg-img" /> 
     </div> 
 
     <div class="banner-container"> 
         <div class="container"> 
             <div class="content text-center"> 
-                <div class="title">Our Venues</div> 
-                <h1>HALLS & SPACES</h1> 
+                <div class="title">Visual Journey</div> 
+                <h1>GALLERY</h1> 
 
                 <div class="scrdown"> 
-                    <a href="#venuesSection" aria-label="Scroll Down"> 
+                    <a href="#gallerySection" aria-label="Scroll Down"> 
                         <i class="bi bi-chevron-down"></i> 
                     </a> 
                 </div> 

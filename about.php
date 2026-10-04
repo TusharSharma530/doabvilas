@@ -1,5 +1,4 @@
 <?php 
-$pageTitle = 'About Us - Doab Vilas Luxury Resort, Meerut';
 require_once 'includes/header.php'; 
 ?>
 

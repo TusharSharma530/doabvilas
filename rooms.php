@@ -1,5 +1,4 @@
 <?php 
-$pageTitle = 'Rooms & Suites, Luxury Hotels and Resorts, Accommodation in Meerut';
 require_once 'includes/header.php'; 
 ?>
 

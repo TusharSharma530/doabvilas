@@ -1,7 +1,6 @@
 
 <?php
 
-$pageTitle = 'Dine & Wine, Bar and Restaurants in Meerut, Uttar Pradesh, India';
 
 require_once 'includes/header.php';
 

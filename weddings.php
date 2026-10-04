@@ -1,5 +1,4 @@
 <?php 
-$pageTitle = 'Halls - Doab Vilas Luxury Resort, Meerut';
 require_once 'includes/header.php'; 
 ?>
 

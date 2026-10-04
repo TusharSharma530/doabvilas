@@ -6,14 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
 
+    // Most specific first: the router already resolved a sub-category or
+    // child page into $metaTitle, then the category row from the admin
+    // panel, and only then whatever the page file set by hand.
+    $dbMeta = pageMeta();
+
     $pageMetaTitle = !empty($metaTitle)
         ? $metaTitle
-        : (isset($pageTitle) && $pageTitle !== '' && strtolower($pageTitle) !== 'home'
-            ? $pageTitle . ' | ' . SITE_NAME
-            : SITE_NAME . ' | ' . SITE_TAGline);
+        : ($dbMeta['title'] !== ''
+            ? $dbMeta['title'] . ' | ' . SITE_NAME
+            : (isset($pageTitle) && $pageTitle !== '' && strtolower($pageTitle) !== 'home'
+                ? $pageTitle . ' | ' . SITE_NAME
+                : SITE_NAME . ' | ' . SITE_TAGline));
     $pageMetaDesc = !empty($metaDesc)
         ? $metaDesc
-        : SITE_NAME . ' - ' . SITE_TAGline;
+        : ($dbMeta['desc'] !== ''
+            ? $dbMeta['desc']
+            : SITE_NAME . ' - ' . SITE_TAGline);
     ?>
     <meta name="description" content="<?php echo htmlspecialchars($pageMetaDesc); ?>">
     <?php if(!empty($metaKeywords)){ ?>
