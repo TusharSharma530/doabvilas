@@ -3,14 +3,14 @@
     <!-- Main Navigation -->
     <div class="header-main">
         <div class="header-main-container">
-            <a class="header-logo" href="<?php echo pageUrl(); ?>">
+            <a class="header-logo" href="<?php echo BASE_PATH; ?>">
             <img class="header-logo-img" src="<?= !empty(SITE_LOGO) ? $path . SITE_LOGO : '' ?>" alt="<?= SITE_NAME ?> Logo">
             </a>
             
             <nav class="header-nav custom-nav" id="headerNav">
                 <!-- Mobile Sidebar Header (Logo + Close) -->
                 <div class="mobile-sidebar-header">
-                    <a class="mobile-sidebar-logo" href="<?php echo pageUrl(); ?>">
+                    <a class="mobile-sidebar-logo" href="<?php echo BASE_PATH; ?>">
                         <img src="<?= !empty(SITE_LOGO) ? $path.SITE_LOGO : '' ?>" alt="<?= SITE_NAME ?> Logo">
                     </a>
                     <button class="mobile-sidebar-close" id="mobileSidebarClose" aria-label="Close menu">
@@ -23,7 +23,7 @@
                     <?php
 
                     $sqlNav = mysqli_query($con, "SELECT c_name, c_url FROM `category` WHERE `c_type` = 1 AND `status` = 1 ORDER BY `order` ASC");
-                    $activeSlug = getCurrentSlug();
+                    $activeSlug = !empty($GLOBALS['currentSlug']) ? (string)$GLOBALS['currentSlug'] : '';
                     if($sqlNav && mysqli_num_rows($sqlNav)){
                         while($rwNav = mysqli_fetch_assoc($sqlNav)){
 
@@ -34,12 +34,12 @@
                             if($navName === strtoupper($navName)){
                                 $navName = ucwords(strtolower($navName));
                             }
-                            $navName = htmlspecialchars($navName);
+                            $navName = htmlspecialchars($navName, ENT_QUOTES, 'UTF-8');
                             $navActive = (strcasecmp($navSlug, $activeSlug) === 0) ? 'active' : '';
 
-                            $navHref = pageUrl($navSlug === 'home' ? '' : $navSlug);
+                            $navHref = BASE_PATH . ltrim($navSlug === 'home' ? '' : $navSlug, '/');
 
-                            echo '<li class="nav-item '.$navActive.'"><a href="'.$navHref.'" class="nav-link">'.$navName.'</a></li>';
+                            echo '<li class="nav-item '.$navActive.'"><a href="'.htmlspecialchars($navHref, ENT_QUOTES, 'UTF-8').'" class="nav-link">'.$navName.'</a></li>';
 
                         }
                     }

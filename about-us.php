@@ -48,7 +48,7 @@ $aboutQuery = mysqli_query(
     $con,
     "SELECT featured_img, c_name, c_desc 
      FROM category 
-     WHERE id = 76 
+     WHERE id = 90
      LIMIT 1"
 );
 

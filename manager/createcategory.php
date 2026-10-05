@@ -99,12 +99,12 @@ include 'include/sidebar.php';
 
 		<div class="mb-3 col-md-12">
 			<label for="sdesc" class="form-label">Short Description</label>
-			<textarea class="tiny" name="sdesc" id="sdesc"></textarea>
+			<textarea class="tinyMCE" name="sdesc" id="sdesc"></textarea>
 		</div>
 
 		<div class="mb-3 col-md-12">
 			<label for="cdesc" class="form-label">Description</label>
-			<textarea class="tiny" name="cdesc" id="cdesc"></textarea>
+			<textarea class="tinyMCE" name="cdesc" id="cdesc"></textarea>
 		</div>
 
 		<div class="mb-3 col-md-6">

@@ -44,6 +44,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?php echo CSS_URL; ?>style.css">
     <link rel="stylesheet" href="<?php echo CSS_URL; ?>responsiveness.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </head>
 <body>
 <?php require_once __DIR__ . '/navbar.php'; ?>

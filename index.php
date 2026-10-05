@@ -1,6 +1,86 @@
 <?php
 require_once __DIR__ . '/manager/database/db.php';
-handleRoute();
+
+$routeSlug = isset($_GET['type']) ? trim((string)$_GET['type'], '/') : '';
+$routeSlug = preg_replace('/[^a-z0-9_-]/i', '', $routeSlug);
+
+if ($routeSlug !== '' && $routeSlug !== 'home') {
+
+    $GLOBALS['currentSlug'] = $routeSlug;
+
+    // 1. Page file named after the slug (about-us -> about-us.php)
+    $viewPath = __DIR__ . '/' . $routeSlug . '.php';
+    $isSelf = isset($_SERVER['SCRIPT_FILENAME'])
+        && realpath($viewPath) !== false
+        && realpath($viewPath) === realpath($_SERVER['SCRIPT_FILENAME']);
+
+    if (!$isSelf && is_file($viewPath)) {
+        require_once $viewPath;
+        exit();
+    }
+
+    // 2. The category row for this slug
+    $routeSlugEscaped = mysqli_real_escape_string($con, $routeSlug);
+
+    $sqlCategory = mysqli_query(
+        $con,
+        "SELECT * FROM `category`
+         WHERE `c_url` = '".$routeSlugEscaped."'
+         AND `c_type` = 1
+         AND `status` = 1
+         LIMIT 1"
+    );
+
+    $category = ($sqlCategory && mysqli_num_rows($sqlCategory))
+        ? mysqli_fetch_assoc($sqlCategory)
+        : null;
+
+    // 3. Render the category content
+    if ($category !== null && trim((string)$category['c_desc']) !== '') {
+
+        $pageTitle = !empty($category['meta_title'])
+            ? $category['meta_title']
+            : $category['c_name'];
+
+        require_once __DIR__ . '/includes/header.php';
+        ?>
+
+        <section class="routed-content">
+            <div class="container">
+                <h1 class="heading-playfair text-center mb-4">
+                    <?= htmlspecialchars($category['c_name'], ENT_QUOTES, 'UTF-8'); ?>
+                </h1>
+                <div class="cms-content">
+                    <?= $category['c_desc']; ?>
+                </div>
+            </div>
+        </section>
+
+        <?php
+        require_once __DIR__ . '/includes/footer.php';
+        exit();
+    }
+
+    // 4. Not found
+    http_response_code(404);
+    $pageTitle = 'Page Not Found';
+    require_once __DIR__ . '/includes/header.php';
+    ?>
+
+    <section class="routed-content">
+        <div class="container text-center">
+            <h1 class="heading-playfair">404</h1>
+            <p class="text-lato mb-4">Sorry, the page you are looking for could not be found.</p>
+            <a href="<?= BASE_PATH; ?>" class="btn btn-gold">Back to Home</a>
+        </div>
+    </section>
+
+    <?php
+    require_once __DIR__ . '/includes/footer.php';
+    exit();
+}
+
+$GLOBALS['currentSlug'] = 'home';
 $pageTitle = 'Home';
 require_once 'includes/header.php';
 ?>
@@ -40,7 +120,7 @@ require_once 'includes/header.php';
                 <!-- Mobile Only Book Button -->
                 <div class="only_mob">
                     <div class="banner_btn">
-                        <a href="<?php echo pageUrl('booking'); ?>">Book Now</a>
+                        <a href="<?php echo BASE_PATH . 'booking'; ?>">Book Now</a>
                     </div>
                 </div>
 
@@ -48,6 +128,26 @@ require_once 'includes/header.php';
                 <div class="banner-form Chcek_Now" data-animate="fadeInUp">
                     <form action="booking.php" method="GET" class="form" id="bravuraBookingForm">
                         <div class="flex form-line-row">
+                            <!-- Name  -->
+                            <div class="col col-name">
+                                <div class="form-group">
+                                    <input type="text" name="name" id="txtBookName"
+                                           class="form-control line-text"
+                                           placeholder="Name"
+                                           aria-label="Name">
+                                </div>
+                            </div>
+
+                            <!-- Mobile  -->
+                            <div class="col col-mobile">
+                                <div class="form-group">
+                                    <input type="tel" name="mobile" id="txtBookMobile"
+                                           class="form-control line-text"
+                                           placeholder="Mobile"
+                                           inputmode="numeric" aria-label="Mobile number">
+                                </div>
+                            </div>
+
                             <!-- Select Room  -->
                             <div class="col col1">
                                 <div class="form-group">
@@ -124,7 +224,7 @@ require_once 'includes/header.php';
                         <h2 class="section-title">ABOUT US</h2>
                         <?php
                         $abouttext = '';
-                        $sqlabout = mysqli_query($con, "SELECT sdesc FROM category WHERE id = 76");
+                        $sqlabout = mysqli_query($con, "SELECT sdesc FROM category WHERE id = 90");
                         if(mysqli_num_rows($sqlabout)){
                             $rwabout = mysqli_fetch_assoc($sqlabout);
                             $abouttext = trim($rwabout['sdesc']);
@@ -138,7 +238,7 @@ require_once 'includes/header.php';
                                 }
                             }
                         }else ?>
-                        <a href="<?php echo pageUrl('about-us'); ?>" class="about-us-btn">
+                        <a href="<?php echo BASE_PATH . 'about-us'; ?>" class="about-us-btn">
                             READ MORE <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
@@ -315,7 +415,7 @@ require_once 'includes/header.php';
                         ?>
                     </p>
 
-                    <a href="<?php echo pageUrl('about-us'); ?>" class="discover-link">
+                    <a href="<?php echo BASE_PATH . 'about-us'; ?>" class="discover-link">
                         EXPLORE MORE <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
@@ -573,7 +673,7 @@ if(mysqli_num_rows($sqlDining)){
                         <?= $diningDescription; ?>
                     </p>
 
-                    <a href="<?php echo pageUrl('dining'); ?>" class="discover-link">
+                    <a href="<?php echo BASE_PATH . 'dining'; ?>" class="discover-link">
                         EXPLORE MORE
                         <i class="bi bi-arrow-right"></i>
                     </a>
@@ -834,7 +934,7 @@ $testimonialQuery = mysqli_query(
                 <p class="membership-note note-text">Note: 24/7 Service Available</p>
             </div>
             <div class="membership-buttons">
-                <a href="<?php echo pageUrl('booking'); ?>" class="btn btn-gold membership-btn">EQUIRY NOW</a>
+                <a href="<?php echo BASE_PATH . 'booking'; ?>" class="btn btn-gold membership-btn">EQUIRY NOW</a>
             </div>
         </div>
     </div>
