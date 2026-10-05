@@ -1297,6 +1297,10 @@ section.main-dashboard .main-dashboard-section .view-orders .order-detail-conten
 	}
 }
 
+/* This project's bootstrap.min.css omits the shown-modal rules */
+.modal.show{display:block}
+body.modal-open{overflow:hidden}
+
 .msgbox .loading-wrapper p{
 	color: green;
 	font-size: 13px;

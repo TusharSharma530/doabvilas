@@ -123,11 +123,6 @@ $legacyImage = $legacyData['featured_img'] ?? '';
                     <p class="discover-text">
                         <?php echo $legacyDesc; ?>
                     </p>
-
-                    <p class="discover-text">
-                        From our meticulously designed rooms to our world-class dining and event spaces, every detail has been thoughtfully curated to offer you an experience beyond compare. We believe in blending traditional Indian warmth with modern sophistication.
-                    </p>
-
                 </div>
             </div>
 

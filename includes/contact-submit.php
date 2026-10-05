@@ -122,6 +122,44 @@ if ($formSource === 'booking') {
     $emailSubject = 'New Enquiry From Contact Us';
 }
 
+// -------------------------------------------------------------
+// Save the enquiry -> shows up on manager/contact.php
+// -------------------------------------------------------------
+$sourceLabel = 'General Enquiry';
+
+if ($formSource === 'contact_us') {
+    $sourceLabel = 'Contact Us';
+} elseif ($formSource === 'quick_enquiry') {
+    $sourceLabel = 'Quick Enquiry';
+} elseif ($formSource === 'booking') {
+    $sourceLabel = 'Room Booking';
+}
+
+$enquiryType = ($subjectName !== '' && $subjectName !== $sourceLabel)
+    ? $sourceLabel . ' - ' . $subjectName
+    : $sourceLabel;
+
+$esc = function ($value) use ($con) {
+    return mysqli_real_escape_string($con, (string)$value);
+};
+
+$sqlSaveEnquiry = "INSERT INTO `contact`
+    (`enquiry_type`, `name`, `email`, `state`, `phone`, `message`, `status`)
+    VALUES (
+        '" . $esc($enquiryType) . "',
+        '" . $esc($name) . "',
+        '" . $esc($email) . "',
+        '',
+        '" . $esc($phone) . "',
+        '" . $esc($message) . "',
+        0
+    )";
+
+if (!@mysqli_query($con, $sqlSaveEnquiry)) {
+    error_log('Enquiry could not be saved to `contact`: ' . mysqli_error($con));
+}
+// -------------------------------------------------------------
+
 // Email body
 $emailBody = '
 <!DOCTYPE html>
