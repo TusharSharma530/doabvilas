@@ -600,3 +600,53 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 });
+
+// Single row sliders - Rooms & Suites and Testimonials (swipe + arrow buttons)
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    const initRowSlider = function (trackId, prevId, nextId) {
+
+        const slider = document.getElementById(trackId);
+
+        if (!slider) return;
+
+        const prev = document.getElementById(prevId);
+        const next = document.getElementById(nextId);
+
+        const getStep = function () {
+            const slide = slider.firstElementChild;
+            if (!slide) return slider.clientWidth;
+
+            const gap = parseFloat(window.getComputedStyle(slider).columnGap) || 0;
+            return slide.getBoundingClientRect().width + gap;
+        };
+
+        const updateButtons = function () {
+            const maxScroll = slider.scrollWidth - slider.clientWidth;
+
+            if (prev) prev.disabled = slider.scrollLeft <= 1;
+            if (next) next.disabled = slider.scrollLeft >= maxScroll - 1;
+        };
+
+        if (prev) {
+            prev.addEventListener('click', function () {
+                slider.scrollBy({ left: -getStep(), behavior: 'smooth' });
+            });
+        }
+
+        if (next) {
+            next.addEventListener('click', function () {
+                slider.scrollBy({ left: getStep(), behavior: 'smooth' });
+            });
+        }
+
+        slider.addEventListener('scroll', updateButtons, { passive: true });
+        window.addEventListener('resize', updateButtons);
+
+        updateButtons();
+    };
+
+    initRowSlider('roomsSlider', 'roomsSliderPrev', 'roomsSliderNext');
+    initRowSlider('testimonialSlider', 'testimonialSliderPrev', 'testimonialSliderNext');
+});

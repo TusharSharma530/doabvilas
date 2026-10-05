@@ -37,11 +37,7 @@ require_once 'includes/header.php';
 
                 <h1>Dine & Wine</h1>
 
-                <div class="scrdown">
-                    <a href="#dineWineSection" aria-label="Scroll Down">
-                        <i class="bi bi-chevron-down"></i>
-                    </a>
-                </div>
+                <?php scrdownLink('dineWineSection'); ?>
 
             </div>
         </div>

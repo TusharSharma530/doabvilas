@@ -1,4 +1,17 @@
 <?php require_once __DIR__ . '/../manager/database/db.php'; ?>
+
+<?php
+function scrdownLink($target = 'aboutSection')
+{
+    $target = htmlspecialchars($target, ENT_QUOTES, 'UTF-8');
+
+    echo '<div class="scrdown">
+            <a href="#' . $target . '" aria-label="Scroll Down">
+                <i class="bi bi-chevron-down"></i>
+            </a>
+          </div>';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

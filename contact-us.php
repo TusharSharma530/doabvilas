@@ -36,11 +36,7 @@ if ($result && mysqli_num_rows($result)) {
                 <div class="title">Get in Touch</div>
                 <h1>CONTACT US</h1>
 
-                <div class="scrdown">
-                    <a href="#contactSection" aria-label="Scroll Down">
-                        <i class="bi bi-chevron-down"></i>
-                    </a>
-                </div>
+                <?php scrdownLink('contactSection'); ?>
             </div>
         </div>
     </div>

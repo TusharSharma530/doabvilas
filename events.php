@@ -32,11 +32,7 @@ require_once 'includes/header.php';
 
                 <h1>EVENTS PACKAGES</h1>
 
-                <div class="scrdown">
-                    <a href="#eventsSection" aria-label="Scroll Down">
-                        <i class="bi bi-chevron-down"></i>
-                    </a>
-                </div>
+                <?php scrdownLink('eventsSection'); ?>
             </div>
         </div>
     </div>

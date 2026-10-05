@@ -28,11 +28,7 @@ require_once 'includes/header.php';
             <div class="content text-center">
                 <div class="title">Exclusive</div>
                 <h1>ROOMS & SUITES</h1>
-                <div class="scrdown">
-                    <a href="#roomsListingSection" aria-label="Scroll Down">
-                        <i class="bi bi-chevron-down"></i>
-                    </a>
-                </div>
+                <?php scrdownLink('roomsListingSection'); ?>
             </div>
         </div>
     </div>

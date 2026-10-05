@@ -31,11 +31,7 @@ if ($result && mysqli_num_rows($result)) {
                 <div class="title">Visual Journey</div> 
                 <h1>GALLERY</h1> 
 
-                <div class="scrdown"> 
-                    <a href="#gallerySection" aria-label="Scroll Down"> 
-                        <i class="bi bi-chevron-down"></i> 
-                    </a> 
-                </div> 
+                <?php scrdownLink('gallerySection'); ?>
             </div> 
         </div> 
     </div> 

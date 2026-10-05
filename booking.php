@@ -40,11 +40,7 @@ if ($result && mysqli_num_rows($result)) {
                 <div class="title">Reservations</div> 
                 <h1>BOOK YOUR STAY</h1> 
 
-                <div class="scrdown"> 
-                    <a href="#bookingSection" aria-label="Scroll Down"> 
-                        <i class="bi bi-chevron-down"></i> 
-                    </a> 
-                </div> 
+                <?php scrdownLink('bookingSection'); ?>
             </div> 
         </div> 
     </div> 

@@ -287,46 +287,64 @@ require_once 'includes/header.php';
                 <h2 class="section-title section-title-responsive">ROOMS & SUITES</h2>
             </div>
 
-            <div class="row g-4" data-animate="fadeInUp" data-delay="0.2">
+            <div class="rooms-slider-wrap" data-animate="fadeInUp" data-delay="0.2">
 
-                <?php
-                $sqlrooms = mysqli_query($con,"SELECT * FROM `rooms` WHERE `status` = 1 ORDER BY `ordering` ASC, `id` DESC"
-                );
+                <button type="button"
+                        class="rooms-slider-btn rooms-slider-prev"
+                        id="roomsSliderPrev"
+                        aria-label="Previous rooms">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
 
-                if(mysqli_num_rows($sqlrooms)){
-                    while($room = mysqli_fetch_assoc($sqlrooms)){
-                ?>
+                <div class="rooms-slider" id="roomsSlider">
 
-                <div class="col-lg-6">
-                    <a href="" class="wedding-grid-card">
+                    <?php
+                    $sqlrooms = mysqli_query($con,"SELECT * FROM `rooms` WHERE `status` = 1 ORDER BY `ordering` ASC, `id` DESC"
+                    );
 
-                        <div class="wedding-grid-img">
-                            <img
-                                src="<?=$path.$room['file'];?>"
-                                alt="<?=htmlspecialchars($room['title']);?>"
-                                class="img-fluid"
-                            >
-                        </div>
+                    if(mysqli_num_rows($sqlrooms)){
+                        while($room = mysqli_fetch_assoc($sqlrooms)){
+                    ?>
 
-                        <div class="wedding-grid-content">
+                    <div class="room-slide">
+                        <a href="" class="wedding-grid-card">
 
-                            <h3 class="wedding-grid-title">
-                                <?=htmlspecialchars($room['title']);?>
-                            </h3>
+                            <div class="wedding-grid-img">
+                                <img
+                                    src="<?=$path.$room['file'];?>"
+                                    alt="<?=htmlspecialchars($room['title']);?>"
+                                    class="img-fluid"
+                                >
+                            </div>
 
-                            <p class="wedding-grid-text">
-                                <?=htmlspecialchars($room['description']);?>
-                            </p>
+                            <div class="wedding-grid-content">
 
-                        </div>
+                                <h3 class="wedding-grid-title">
+                                    <?=htmlspecialchars($room['title']);?>
+                                </h3>
 
-                    </a>
+                                <p class="wedding-grid-text">
+                                    <?=htmlspecialchars($room['description']);?>
+                                </p>
+
+                            </div>
+
+                        </a>
+                    </div>
+
+                    <?php
+                        }
+                    }
+                    ?>
+
                 </div>
 
-                <?php
-                    }
-                }
-                ?>
+                <button type="button"
+                        class="rooms-slider-btn rooms-slider-next"
+                        id="roomsSliderNext"
+                        aria-label="Next rooms">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
 
             </div>
         </div>
@@ -904,13 +922,22 @@ $testimonialQuery = mysqli_query(
             <h2 class="section-title">WHAT OUR GUESTS SAY</h2>
         </div>
 
-        <div class="row g-4" data-animate="fadeInUp" data-delay="0.2">
+        <div class="testimonial-slider-wrap" data-animate="fadeInUp" data-delay="0.2">
+
+            <button type="button"
+                    class="testimonial-slider-btn testimonial-slider-prev"
+                    id="testimonialSliderPrev"
+                    aria-label="Previous testimonials">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+
+            <div class="testimonial-slider" id="testimonialSlider">
 
             <?php if ($testimonialQuery && mysqli_num_rows($testimonialQuery) > 0) { ?>
 
                 <?php while ($testimonial = mysqli_fetch_assoc($testimonialQuery)) { ?>
 
-                    <div class="col-lg-4">
+                    <div class="testimonial-slide">
 
                         <div class="testimonial-card">
 
@@ -963,6 +990,15 @@ $testimonialQuery = mysqli_query(
                 <?php } ?>
 
             <?php } ?>
+
+            </div>
+
+            <button type="button"
+                    class="testimonial-slider-btn testimonial-slider-next"
+                    id="testimonialSliderNext"
+                    aria-label="Next testimonials">
+                <i class="bi bi-chevron-right"></i>
+            </button>
 
         </div>
 

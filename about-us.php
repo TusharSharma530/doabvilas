@@ -31,11 +31,7 @@ $featuredImg = $categoryData['featured_img'] ?? '';
             <div class="content text-center">
                 <div class="title">Welcome to</div>
                 <h1>ABOUT US</h1>
-                <div class="scrdown">
-                    <a href="#aboutSection" aria-label="Scroll Down">
-                        <i class="bi bi-chevron-down"></i>
-                    </a>
-                </div>
+                <?php scrdownLink('aboutSection'); ?>
             </div>
         </div>
     </div>

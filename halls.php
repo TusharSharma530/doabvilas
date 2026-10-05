@@ -30,11 +30,7 @@ if ($result && mysqli_num_rows($result)) {
                 <div class="title">Our Venues</div> 
                 <h1>HALLS & SPACES</h1> 
 
-                <div class="scrdown"> 
-                    <a href="#venuesSection" aria-label="Scroll Down"> 
-                        <i class="bi bi-chevron-down"></i> 
-                    </a> 
-                </div> 
+                <?php scrdownLink('venuesSection'); ?>
             </div> 
         </div> 
     </div> 

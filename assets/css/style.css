@@ -876,6 +876,10 @@ img {
     margin-bottom: 20px;
 }
 
+.testimonial-section .section-header {
+    margin-bottom: 20px;
+}
+
 .section-subtitle {
     font-family: var(--font-body);
     font-size: 0.85rem;
@@ -924,6 +928,206 @@ img {
     font-weight: 400;
     color: var(--dv-dark);
     letter-spacing: 2px;
+}
+
+/* Single row, swipeable rooms slider */
+.rooms-slider-wrap {
+    position: relative;
+}
+
+.rooms-slider {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 4px 0 6px;
+}
+
+.rooms-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.rooms-slider .room-slide {
+    flex: 0 0 calc((100% - 24px) / 2);
+    max-width: calc((100% - 24px) / 2);
+    min-width: 0;
+    scroll-snap-align: start;
+}
+
+.rooms-slider-btn {
+    position: absolute;
+    top: 30%;
+    z-index: 6;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid var(--dv-gold);
+    background: var(--dv-gold);
+    color: #ffffff;
+    font-size: 1.2rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    transition: background 0.3s ease, border-color 0.3s ease,
+                opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.rooms-slider-btn:hover {
+    background: var(--dv-dark);
+    border-color: var(--dv-dark);
+}
+
+.rooms-slider-btn:disabled {
+    opacity: 0;
+    visibility: hidden;
+    cursor: default;
+    pointer-events: none;
+}
+
+.rooms-slider-prev {
+    left: 4px;
+}
+
+.rooms-slider-next {
+    right: 4px;
+}
+
+@media (min-width: 992px) {
+    .rooms-slider-prev {
+        left: -20px;
+    }
+
+    .rooms-slider-next {
+        right: -20px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .rooms-slider .room-slide {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .rooms-slider-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+}
+
+/* ===================================
+   Testimonials - single row swipeable slider
+   =================================== */
+.testimonial-slider-wrap {
+    position: relative;
+}
+
+.testimonial-slider {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 4px 0 6px;
+}
+
+.testimonial-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.testimonial-slider .testimonial-slide {
+    flex: 0 0 calc((100% - 48px) / 3);
+    max-width: calc((100% - 48px) / 3);
+    min-width: 0;
+    scroll-snap-align: start;
+    display: flex;
+}
+
+/* card fills the slide, its own margin (20px) is kept as the spacing */
+.testimonial-slider .testimonial-card {
+    width: 100%;
+}
+
+.testimonial-slider-btn {
+    position: absolute;
+    top: 50%;
+    z-index: 6;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid var(--dv-gold);
+    background: var(--dv-gold);
+    color: #ffffff;
+    font-size: 1.2rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    transition: background 0.3s ease, border-color 0.3s ease,
+                opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.testimonial-slider-btn:hover {
+    background: var(--dv-dark);
+    border-color: var(--dv-dark);
+}
+
+.testimonial-slider-btn:disabled {
+    opacity: 0;
+    visibility: hidden;
+    cursor: default;
+    pointer-events: none;
+}
+
+.testimonial-slider-prev {
+    left: 4px;
+}
+
+.testimonial-slider-next {
+    right: 4px;
+}
+
+@media (min-width: 992px) {
+    .testimonial-slider-prev {
+        left: -20px;
+    }
+
+    .testimonial-slider-next {
+        right: -20px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .testimonial-slider .testimonial-slide {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .testimonial-slider-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
 }
 
 /* ===================================
@@ -1106,7 +1310,7 @@ img {
     border-radius: 8px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
     transition: all 0.4s ease;
-    margin-bottom: 20px;
+    margin: 20px;
 }
 
 .testimonial-card:hover {
