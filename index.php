@@ -127,6 +127,7 @@ require_once 'includes/header.php';
                 <!-- Sleek Minimal Line-Based Booking Form  -->
                 <div class="banner-form Chcek_Now" data-animate="fadeInUp">
                     <form action="booking.php" method="GET" class="form" id="bravuraBookingForm">
+                        <input type="hidden" name="form_source" value="booking">
                         <div class="flex form-line-row">
                             <!-- Name  -->
                             <div class="col col-name">
@@ -134,6 +135,7 @@ require_once 'includes/header.php';
                                     <input type="text" name="name" id="txtBookName"
                                            class="form-control line-text"
                                            placeholder="Name"
+                                           required
                                            aria-label="Name">
                                 </div>
                             </div>
@@ -144,7 +146,9 @@ require_once 'includes/header.php';
                                     <input type="tel" name="mobile" id="txtBookMobile"
                                            class="form-control line-text"
                                            placeholder="Mobile"
-                                           inputmode="numeric" aria-label="Mobile number">
+                                           inputmode="numeric"
+                                           required
+                                           aria-label="Mobile number">
                                 </div>
                             </div>
 
@@ -202,6 +206,34 @@ require_once 'includes/header.php';
                             </div>
                         </div>
                     </form>
+
+                    <!-- Success Message -->
+                    <div class="contact-success-box"
+                         id="bookingSuccess"
+                         role="status"
+                         aria-live="polite">
+
+                        <div class="contact-success-icon">
+                            <i class="bi bi-check-lg"></i>
+                        </div>
+
+                        <h3>Thank You!</h3>
+
+                        <p>
+                            Your booking enquiry has been sent successfully.<br>
+                            Our team will get back to you shortly.
+                        </p>
+
+                        <button type="button"
+                                class="btn-gold-submit"
+                                id="bookingSendAnother">
+
+                            MAKE ANOTHER ENQUIRY
+                            <i class="bi bi-arrow-right"></i>
+
+                        </button>
+
+                    </div>
                 </div>
 
             </div>
@@ -395,22 +427,33 @@ require_once 'includes/header.php';
             </div>
 
 
-            <div class="col-lg-6">
+             <div class="col-lg-6">
                 <div class="discover-content">
-                    <h3 class="discover-heading">FACILITIES AT DOAB VILAS</h3>
+                    <?php
+                    $discovertext = '';
+                    $discovertitle = '';
+
+                    $sqldiscover = mysqli_query(
+                        $con,
+                        "SELECT c_name, sdesc FROM category WHERE id = 76"
+                    );
+
+                    if(mysqli_num_rows($sqldiscover)){
+                        $rwdiscover = mysqli_fetch_assoc($sqldiscover);
+
+                        $discovertitle = trim($rwdiscover['c_name']);
+                        $discovertext = trim($rwdiscover['sdesc']);
+                    }
+                    ?>
+
+                    <h3 class="discover-heading">
+                        <?= htmlspecialchars($discovertitle, ENT_QUOTES, 'UTF-8'); ?>
+                    </h3>
+
                     <p class="discover-text">
-    
                         <?php
-                        $discovertext = '';
-                        $sqldiscover = mysqli_query($con, "SELECT sdesc FROM category WHERE id = 76");
-
-                        if(mysqli_num_rows($sqldiscover)){
-                            $rwdiscover = mysqli_fetch_assoc($sqldiscover);
-                            $discovertext = trim($rwdiscover['sdesc']);
-                        }
-
                         if($discovertext !== ''){
-                            echo nl2br($discovertext);
+                            echo $discovertext;
                         }
                         ?>
                     </p>
@@ -420,6 +463,8 @@ require_once 'includes/header.php';
                     </a>
                 </div>
             </div>
+
+
 
         </div>
     </div>

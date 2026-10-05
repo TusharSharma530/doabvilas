@@ -35,6 +35,23 @@ $service    = trim($_POST['service'] ?? '');
 $message    = trim($_POST['message'] ?? '');
 $formSource = trim($_POST['form_source'] ?? '');
 
+// Home page booking bar sends its number as "mobile"
+if ($phone === '') {
+    $phone = trim($_POST['mobile'] ?? '');
+}
+
+// Home page booking bar fields
+$room     = trim($_POST['room'] ?? '');
+$checkIn  = trim($_POST['check_in'] ?? '');
+$checkOut = trim($_POST['check_out'] ?? '');
+
+// Build the message for a booking enquiry (that form has no message box)
+if ($formSource === 'booking' && $message === '') {
+    $message = 'Room: '        . ($room     !== '' ? $room     : 'Not selected')
+             . "\nCheck In: "  . ($checkIn  !== '' ? $checkIn  : 'Not selected')
+             . "\nCheck Out: " . ($checkOut !== '' ? $checkOut : 'Not selected');
+}
+
 // Validation
 if ($name === '') {
     contactResponse(false, 'Please enter your name.');
@@ -78,7 +95,9 @@ $services = [
     'corporate' => 'Corporate Event / Conference'
 ];
 
-if (isset($subjects[$subject])) {
+if ($formSource === 'booking') {
+    $subjectName = 'Room Booking';
+} elseif (isset($subjects[$subject])) {
     $subjectName = $subjects[$subject];
 } elseif (isset($services[$service])) {
     $subjectName = $services[$service];
@@ -95,7 +114,9 @@ $messageHtml = nl2br(htmlspecialchars($message, ENT_QUOTES, 'UTF-8'));
 $siteNameHtml = htmlspecialchars(SITE_NAME, ENT_QUOTES, 'UTF-8');
 
 // Email subject
-if ($formSource === 'quick_enquiry') {
+if ($formSource === 'booking') {
+    $emailSubject = 'New Room Booking Enquiry';
+} elseif ($formSource === 'quick_enquiry') {
     $emailSubject = 'New Quick Enquiry';
 } else {
     $emailSubject = 'New Enquiry From Contact Us';

@@ -463,3 +463,94 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 });
+
+// Home Banner Booking Bar (BOOK NOW sends an email - no redirect)
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    const form = document.getElementById('bravuraBookingForm');
+
+    if (!form) return;
+
+    const successBox   = document.getElementById('bookingSuccess');
+    const againBtn     = document.getElementById('bookingSendAnother');
+    const button       = form.querySelector('button[type="submit"]');
+    const originalText = button ? button.innerHTML : '';
+
+    const showForm = function () {
+        form.style.display = '';
+        if (successBox) successBox.classList.remove('is-visible');
+    };
+
+    form.addEventListener('submit', function (e) {
+
+        e.preventDefault();
+
+        if (typeof form.checkValidity === 'function' && !form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        if (button) {
+            button.disabled = true;
+            button.innerHTML = 'SENDING...';
+        }
+
+        fetch('includes/contact-submit.php', {
+            method: 'POST',
+            body: new FormData(form)
+        })
+        .then(response => response.json())
+        .then(data => {
+
+            if (data.success) {
+
+                // Replace the booking bar with the thank you message
+                form.style.display = 'none';
+
+                if (successBox) {
+                    successBox.classList.add('is-visible');
+                    successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+
+            } else {
+                alert(data.message);
+            }
+
+        })
+        .catch(error => {
+
+            console.error(error);
+            alert('Something went wrong. Please try again.');
+
+        })
+        .finally(() => {
+
+            if (button) {
+                button.disabled = false;
+                button.innerHTML = originalText;
+            }
+
+        });
+
+    });
+
+    // Bring the booking bar back for another enquiry
+    if (againBtn) {
+        againBtn.addEventListener('click', function () {
+
+            form.reset();
+            showForm();
+
+            const roomText = document.getElementById('roomSelectedText');
+            if (roomText) roomText.textContent = 'Select Room';
+
+            form.querySelectorAll('.line-date-group input[type="date"]').forEach(function (input) {
+                input.value = '';
+                input.dispatchEvent(new Event('change'));
+            });
+
+        });
+    }
+
+});

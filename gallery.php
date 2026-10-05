@@ -4,9 +4,7 @@ require_once 'includes/header.php';
 
 <!-- Hero Banner -->
 <?php
-// Looked up by c_url rather than a hardcoded id, so the banner follows
-// the GALLERY row in the admin panel. This used to read id 72 (HALLS)
-// and print "HALLS & SPACES" on this page.
+
 $query = "SELECT featured_img FROM category WHERE c_url = 'gallery' AND status = 1 LIMIT 1";
 $result = mysqli_query($con, $query);
 
