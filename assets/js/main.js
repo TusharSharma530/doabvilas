@@ -387,6 +387,40 @@ document.addEventListener('DOMContentLoaded', function () {
     const button      = form.querySelector('button[type="submit"]');
     const originalText = button ? button.innerHTML : '';
 
+    // ===================================
+    // reCAPTCHA - the widget is created when the modal opens, because it
+    // cannot be painted while its container is still display:none.
+    // ===================================
+    const captchaWrap    = document.getElementById('quickEnquiryCaptcha');
+    const captchaSiteKey = captchaWrap ? captchaWrap.getAttribute('data-sitekey') : '';
+    let captchaWidgetId  = null;
+
+    const renderCaptcha = function (tries) {
+
+        if (!captchaWrap || !captchaSiteKey || captchaWidgetId !== null) return;
+
+        if (typeof grecaptcha === 'undefined') {
+            if (tries > 0) setTimeout(function () { renderCaptcha(tries - 1); }, 300);
+            return;
+        }
+
+        try {
+            captchaWidgetId = grecaptcha.render(captchaWrap, { sitekey: captchaSiteKey });
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    const captchaPassed = function () {
+        if (typeof grecaptcha === 'undefined' || captchaWidgetId === null) return true;
+        return grecaptcha.getResponse(captchaWidgetId) !== '';
+    };
+
+    const resetCaptcha = function () {
+        if (typeof grecaptcha === 'undefined' || captchaWidgetId === null) return;
+        try { grecaptcha.reset(captchaWidgetId); } catch (error) {}
+    };
+
     const showForm = function () {
         form.style.display = '';
         if (successBox) successBox.classList.remove('is-visible');
@@ -398,6 +432,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (typeof form.checkValidity === 'function' && !form.checkValidity()) {
             form.reportValidity();
+            return;
+        }
+
+        if (!captchaPassed()) {
+            alert('Please complete the captcha.');
             return;
         }
 
@@ -447,6 +486,7 @@ document.addEventListener('DOMContentLoaded', function () {
         doneBtn.addEventListener('click', function () {
             form.reset();
             showForm();
+            resetCaptcha();
 
             if (modalEl && window.bootstrap) {
                 const modalInstance = bootstrap.Modal.getInstance(modalEl);
@@ -456,9 +496,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (modalEl) {
+
+        modalEl.addEventListener('shown.bs.modal', function () {
+            renderCaptcha(10);
+        });
+
         modalEl.addEventListener('hidden.bs.modal', function () {
             form.reset();
             showForm();
+            resetCaptcha();
         });
     }
 

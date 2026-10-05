@@ -143,6 +143,14 @@
                         <label class="form-label text-gold small">Message / Requirements</label>
                         <textarea name="message" rows="3" class="form-control" placeholder="Tell us how we can help make your stay exceptional..."></textarea>
                     </div>
+
+                    <!-- Google reCAPTCHA v2 (rendered when the modal opens) -->
+                    <div class="mb-3">
+                        <div id="quickEnquiryCaptcha"
+                             data-sitekey="<?= htmlspecialchars(defined('RECAPTCHA_SITE_KEY') ? RECAPTCHA_SITE_KEY : ''); ?>">
+                        </div>
+                    </div>
+
                     <button type="submit" class="btn btn-gold w-100 py-2 fw-bold text-uppercase">
                         <i class="bi bi-send-fill me-2"></i>Submit Enquiry Now
                     </button>

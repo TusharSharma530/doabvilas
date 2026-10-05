@@ -40,16 +40,6 @@
 	<span class="link-text"><i class="ri-group-line"></i> Rooms</span>
 	</a>
 </li>
-<li class="menu-item ">
-	<a href="advisoryboard.php" class="menu-link">							
-	<span class="link-text"><i class="ri-group-line"></i> Advisory Board</span>
-	</a>
-</li>
-<li class="menu-item ">
-	<a href="jobs.php" class="menu-link">							
-	<span class="link-text"><i class="ri-group-line"></i> Jobs</span>
-	</a>
-</li>
 <li class="menu-item has-submenu">
 <a href="javascript:" class="menu-link orders" id="parent-menu">
 							
@@ -80,49 +70,13 @@
 <div class="submenu" id="child-menu">
 <ul class="submenu-list">
 <li class="submenu-item">
-<a href="blogs.php" class="submenu-link">Blogs</a>
-</li>
-<li class="submenu-item">
 <a href="events.php" class="submenu-link">Events</a>
 </li>
 <li class="submenu-item">
 <a href="halls.php" class="submenu-link">Halls</a>
 </li>
 <li class="submenu-item">
-<a href="curriculum.php" class="submenu-link">Curriculum</a>
-</li>
-<li class="submenu-item">
-<a href="courses.php" class="submenu-link">Courses</a>
-</li>
-<li class="submenu-item">
-<a href="news-events.php" class="submenu-link">News & Events</a>
-</li>
-<li class="submenu-item">
 <a href="gallery.php" class="submenu-link">Gallery</a>
-</li>
-<li class="submenu-item">
-<a href="addmedia.php" class="submenu-link">Media</a>
-</li>
-<li class="submenu-item">
-<a href="syllabus.php" class="submenu-link">Syllabus</a>
-</li>
-<li class="submenu-item">
-<a href="addactivities.php" class="submenu-link">Activities</a>
-</li>
-<li class="submenu-item">
-<a href="youtube.php" class="submenu-link">Youtube Video</a>
-</li>
-<li class="submenu-item">
-<a href="associations.php" class="submenu-link">Associations</a>
-</li>
-<li class="submenu-item">
-<a href="notice.php" class="submenu-link">Notice</a>
-</li>
-<li class="submenu-item">
-<a href="announce.php" class="submenu-link">Announce</a>
-</li>
-<li class="submenu-item">
-<a href="quickaccess.php" class="submenu-link">Quick Access</a>
 </li>
 <!--
 <li class="submenu-item">
@@ -137,9 +91,6 @@
 <li class="submenu-item">
 <a href="testimonials.php" class="submenu-link">Testimonials</a>
 </li> 
-<li class="submenu-item">
-<a href="toppers.php" class="submenu-link">Toppers</a>
-</li>
 </ul>
 </div>
 </li>
@@ -159,9 +110,6 @@
 </li>
 <li class="submenu-item">
 <a href="enquiry.php" class="submenu-link">Enquiry</a>
-</li>
-<li class="submenu-item">
-<a href="enquiryforvacancies.php" class="submenu-link">Enquiry 4 Vacancy</a>
 </li>
 </ul>
 </div>
