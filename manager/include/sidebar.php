@@ -108,9 +108,9 @@
 <li class="submenu-item">
 <a href="contact.php" class="submenu-link">Contact</a>
 </li>
-<li class="submenu-item">
+<!-- <li class="submenu-item">
 <a href="enquiry.php" class="submenu-link">Enquiry</a>
-</li>
+</li> -->
 </ul>
 </div>
 <!-- sub menu end here -->
