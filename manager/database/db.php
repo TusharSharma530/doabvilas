@@ -18,49 +18,49 @@ use PHPMailer\PHPMailer\Exception;
 require dirname(__DIR__) . '/PHPMailer/vendor/autoload.php';
 
 
-function SendEmailer($senderemail,$subject,$bodydata, $filePath=null){
+function SendEmailer($senderemail, $subject, $bodydata, $filePath = null)
+{
+    $mail = new PHPMailer(true);
 
-$mail = new PHPMailer(true);
-try {
-    //Server settings
-    $mail->SMTPDebug = false;                      //Enable verbose debug output
-    // $mail->isSMTP();                               //Send using SMTP
-    $mail->Host       = 'mail.kgimeerut.com';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'noreply@kgimeerut.com';                     //SMTP username
-    $mail->Password   = '!Pb!CX&!+K?J';                               //SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS
+    try {
 
-    //Recipients
-    $mail->setFrom('noreply@kgimeerut.com', 'Krishna Institute of Management');
-    $mail->addAddress("$senderemail", '');     //Add a recipient
-    // $mail->addAddress('ellen@example.com');               //Name is optional
-   // $mail->addReplyTo('info@example.com', 'Information');
-   // $mail->addCC('cc@example.com');
-    // $mail->addBCC('bcc@example.com');
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.gmail.com';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'tusharsharma6868@gmail.com';
+        $mail->Password   = 'kouf rxzp oxxi rnte';
 
-    //Attachments
-    if($filePath!= null){
-    $mail->addAttachment($filePath);         //Add attachments
-        
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port       = 587;
+
+        $mail->setFrom(
+            'tusharsharma6868@gmail.com',
+            SITE_NAME
+        );
+
+        $mail->addAddress($senderemail);
+
+        if ($filePath !== null && file_exists($filePath)) {
+            $mail->addAttachment($filePath);
+        }
+
+        $mail->isHTML(true);
+        $mail->Subject = $subject;
+        $mail->Body    = $bodydata;
+        $mail->AltBody = strip_tags($bodydata);
+
+        $mail->send();
+
+        return true;
+
+    } catch (Exception $e) {
+
+        error_log('PHPMailer Error: ' . $mail->ErrorInfo);
+
+        return false;
     }
-    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
-
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = "$subject";
-   
-    $mail->Body    = "$bodydata";
-    $mail->AltBody = '';
-
-    $mail->send();
-    // echo 'Message has been sent';
-} catch (Exception $e) {
-    // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 
-}
 
 
 
@@ -179,6 +179,7 @@ if(!defined('SITE_CONFIG_LOADED')){
 	define('SITE_NAME', __cfg($websitename));
 	define('SITE_TAGline', __cfg($headercenterline));
 	define('SITE_EMAIL', __cfg($emailid));
+	define('SITE_ALTERNATE_EMAIL', __cfg($alternateemailid));
     define('RECEPTION_TIME', __cfg($time));
 	define('SITE_PHONE', __cfg($contactno));
     define('SITE_ALTERNATE_PHONE', __cfg($alternateno));

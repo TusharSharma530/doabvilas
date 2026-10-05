@@ -49,6 +49,18 @@
                                 <span><?php echo htmlspecialchars(SITE_PHONE); ?></span>
                                 <span><?php echo htmlspecialchars(SITE_ALTERNATE_PHONE); ?></span>
                             </li>
+                            <?php if(SITE_EMAIL !== ''){ ?>
+                            <li>
+                                <i class="bi bi-envelope"></i>
+                                <a href="mailto:<?php echo htmlspecialchars(SITE_EMAIL); ?>"><?php echo htmlspecialchars(SITE_EMAIL); ?></a>
+                            </li>
+                            <?php } ?>
+                            <?php if(SITE_ALTERNATE_EMAIL !== ''){ ?>
+                            <li>
+                                <i class="bi bi-envelope-check"></i>
+                                <a href="mailto:<?php echo htmlspecialchars(SITE_ALTERNATE_EMAIL); ?>"><?php echo htmlspecialchars(SITE_ALTERNATE_EMAIL); ?></a>
+                            </li>
+                            <?php } ?>
                         </ul>
                     </div>
                 </div>
@@ -91,6 +103,8 @@
             </div>
             <div class="modal-body pt-3">
                 <form action="<?php echo pageUrl('contact-us'); ?>" method="POST" id="quickEnquiryForm">
+                    <input type="hidden" name="form_source" value="quick_enquiry">
+
                     <div class="mb-3">
                         <label class="form-label text-gold small">Full Name *</label>
                         <div class="input-group">
@@ -113,6 +127,7 @@
                                 <input type="tel" name="phone" class="form-control" placeholder="+91 XXXXX XXXXX" required>
                             </div>
                         </div>
+                        
                     </div>
                     <div class="mb-3">
                         <label class="form-label text-gold small">Interested In</label>
@@ -132,11 +147,18 @@
                         <i class="bi bi-send-fill me-2"></i>Submit Enquiry Now
                     </button>
                 </form>
+
+                <!-- Shown in place of the form once the email is sent -->
+                <div class="contact-success-box" id="quickEnquirySuccess" role="status" aria-live="polite">
+                    <div class="contact-success-icon"><i class="bi bi-check-lg"></i></div>
+                    <h3>Thank You!</h3>
+                    <p>Your message has been sent successfully.<br>Our team will get back to you shortly.</p>
+                    <button type="button" class="btn-gold-submit w-100" id="quickEnquiryDone">DONE</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

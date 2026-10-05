@@ -299,3 +299,167 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.key === 'Escape') window.closeLightbox();
     });
 });
+
+// Contact Us Page Form
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    const form = document.getElementById('contactForm');
+    const button = document.getElementById('contactSubmitBtn');
+    const successBox = document.getElementById('contactSuccess');
+    const sendAnother = document.getElementById('contactSendAnother');
+
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+
+        e.preventDefault();
+
+        const originalText = button.innerHTML;
+
+        button.disabled = true;
+        button.innerHTML = 'SENDING...';
+
+        fetch('includes/contact-submit.php', {
+            method: 'POST',
+            body: new FormData(form)
+        })
+        .then(response => response.json())
+        .then(data => {
+
+            if (data.success) {
+
+                // Replace the form with the thank you message
+                form.style.display = 'none';
+
+                if (successBox) {
+                    successBox.classList.add('is-visible');
+                    successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+
+            } else {
+                alert(data.message);
+            }
+
+        })
+        .catch(error => {
+
+            console.error(error);
+            alert('Something went wrong. Please try again.');
+
+        })
+        .finally(() => {
+
+            button.disabled = false;
+            button.innerHTML = originalText;
+
+        });
+
+    });
+
+    // Bring the form back for a new message
+    if (sendAnother) {
+        sendAnother.addEventListener('click', function () {
+
+            form.reset();
+            form.style.display = '';
+
+            if (successBox) {
+                successBox.classList.remove('is-visible');
+                form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+        });
+    }
+
+});
+
+// Quick Enquiry Modal (footer)
+document.addEventListener('DOMContentLoaded', function () {
+
+    const form = document.getElementById('quickEnquiryForm');
+
+    if (!form) return;
+
+    const modalEl     = document.getElementById('quickEnquiryModal');
+    const successBox  = document.getElementById('quickEnquirySuccess');
+    const doneBtn     = document.getElementById('quickEnquiryDone');
+    const button      = form.querySelector('button[type="submit"]');
+    const originalText = button ? button.innerHTML : '';
+
+    const showForm = function () {
+        form.style.display = '';
+        if (successBox) successBox.classList.remove('is-visible');
+    };
+
+    form.addEventListener('submit', function (e) {
+
+        e.preventDefault();
+
+        if (typeof form.checkValidity === 'function' && !form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        if (button) {
+            button.disabled = true;
+            button.innerHTML = 'SENDING...';
+        }
+
+        fetch('includes/contact-submit.php', {
+            method: 'POST',
+            body: new FormData(form)
+        })
+        .then(response => response.json())
+        .then(data => {
+
+            if (data.success) {
+
+                // Replace the form with the thank you message
+                form.style.display = 'none';
+
+                if (successBox) successBox.classList.add('is-visible');
+
+            } else {
+                alert(data.message);
+            }
+
+        })
+        .catch(error => {
+
+            console.error(error);
+            alert('Something went wrong. Please try again.');
+
+        })
+        .finally(() => {
+
+            if (button) {
+                button.disabled = false;
+                button.innerHTML = originalText;
+            }
+
+        });
+
+    });
+
+    // Close the modal and restore the form for the next enquiry
+    if (doneBtn) {
+        doneBtn.addEventListener('click', function () {
+            form.reset();
+            showForm();
+
+            if (modalEl && window.bootstrap) {
+                const modalInstance = bootstrap.Modal.getInstance(modalEl);
+                if (modalInstance) modalInstance.hide();
+            }
+        });
+    }
+
+    if (modalEl) {
+        modalEl.addEventListener('hidden.bs.modal', function () {
+            form.reset();
+            showForm();
+        });
+    }
+
+});

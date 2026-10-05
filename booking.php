@@ -17,7 +17,7 @@ $selectedRoom = isset($roomMap[$room]) ? $roomMap[$room] : '';
 $query = "SELECT featured_img FROM category WHERE id = 91 LIMIT 1";
 $result = mysqli_query($con, $query);
 
-$featured_img = 'assets/images/default-banner.jpg';
+$featured_img = 'assets/images/rooms/room1.pngdb'; // Default image
 if ($result && mysqli_num_rows($result)) {
     $category = mysqli_fetch_assoc($result);
     if (!empty($category['featured_img'])) {

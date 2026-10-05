@@ -2287,6 +2287,51 @@ img {
     gap: 15px;
 }
 
+/* Success message shown in place of a form after it is sent */
+.contact-success-box {
+    display: none;
+    text-align: center;
+    padding: 45px 30px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contact-success-box.is-visible {
+    display: block;
+}
+
+.contact-success-icon {
+    width: 76px;
+    height: 76px;
+    background: var(--dv-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.contact-success-icon i {
+    font-size: 34px;
+    color: #fff;
+}
+
+.contact-success-box h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--dv-dark);
+    margin-bottom: 10px;
+}
+
+.contact-success-box p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
 /* Contact Info List */
 .contact-info-list {
     display: flex;

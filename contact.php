@@ -89,7 +89,10 @@ if ($result && mysqli_num_rows($result)) {
                     <span class="section-subtitle">Write to Us</span>
                     <h2 class="section-title">SEND US A MESSAGE</h2>
                 </div>
-                <form data-validate class="contact-form">
+                <form data-validate class="contact-form" id="contactForm">
+
+                    <input type="hidden" name="form_source" value="contact_us">
+
                     <div class="row g-3">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -120,12 +123,23 @@ if ($result && mysqli_num_rows($result)) {
                             </div>
                         </div>
                         <div class="col-12">
-                            <button type="submit" class="btn-gold-submit">
+                            <button type="submit" class="btn-gold-submit" id="contactSubmitBtn">
                                 SEND MESSAGE <i class="bi bi-arrow-right"></i>
                             </button>
+
                         </div>
                     </div>
                 </form>
+
+                <!-- Shown in place of the form once the email is sent -->
+                <div class="contact-success-box" id="contactSuccess" role="status" aria-live="polite">
+                    <div class="contact-success-icon"><i class="bi bi-check-lg"></i></div>
+                    <h3>Thank You!</h3>
+                    <p>Your message has been sent successfully.<br>Our team will get back to you shortly.</p>
+                    <button type="button" class="btn-gold-submit" id="contactSendAnother">
+                        SEND ANOTHER MESSAGE <i class="bi bi-arrow-right"></i>
+                    </button>
+                </div>
             </div>
             
             <!-- Contact Info -->
@@ -188,6 +202,7 @@ if ($result && mysqli_num_rows($result)) {
         </iframe>
     </div>
 </section>
+
 
 
 <?php require_once 'includes/footer.php'; ?>
