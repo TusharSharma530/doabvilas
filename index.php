@@ -488,63 +488,6 @@ require_once 'includes/header.php';
     </div>
 </section>
 
-    <!-- Diamond Hall Section -->
-        <?php
-        $sqlhall = mysqli_query(
-            $con,
-            "SELECT * FROM `halls` WHERE `status` = 1 ORDER BY `ordering` ASC, `id` DESC LIMIT 1"
-        );
-
-        if(mysqli_num_rows($sqlhall)){
-            $rwhall = mysqli_fetch_assoc($sqlhall);
-
-            $hallTitle = htmlspecialchars($rwhall['title'], ENT_QUOTES, 'UTF-8');
-            $hallSubtitle = htmlspecialchars($rwhall['subtitle'], ENT_QUOTES, 'UTF-8');
-            $hallDescription = nl2br(htmlspecialchars($rwhall['description'], ENT_QUOTES, 'UTF-8'));
-            $hallImage = htmlspecialchars($rwhall['file'], ENT_QUOTES, 'UTF-8');
-        ?>
-
-        <section class="discover-section bg-white">
-            <div class="container">
-                <div class="row align-items-center" data-animate="fadeInUp" data-delay="0.2">
-
-                    <div class="col-lg-6">
-                        <div class="discover-content">
-
-                            <span class="section-subtitle">
-                                <?= $hallSubtitle; ?>
-                            </span>
-
-                            <h3 class="discover-heading">
-                                <?= $hallTitle; ?>
-                            </h3>
-
-                            <p class="discover-text">
-                                <strong><?= $hallTitle; ?></strong>
-                                <?= $hallDescription; ?>
-                            </p>
-
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="discover-image">
-                            <img 
-                                src="<?= $path . $hallImage; ?>" 
-                                alt="<?= $hallTitle; ?>" 
-                                class="img-fluid" 
-                                loading="lazy"
-                            >
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-    <?php } ?>
-
-
             <?php
             $sqlhalls = mysqli_query( $con, "SELECT * FROM `halls` WHERE `status` = 1 ORDER BY `ordering` ASC, `id` DESC");
             $hallIndex = 0;
@@ -580,10 +523,10 @@ require_once 'includes/header.php';
 
                     /*
                     * Alternate layout:
-                    * 0 = image left, content right
-                    * 1 = content left, image right
+                    * 0 = content left, image right
+                    * 1 = image left, content right
                     */
-                    $imageLeft = ($hallIndex % 2 == 0);
+                    $imageLeft = ($hallIndex % 2 == 1);
 
                     /*
                     * Alternate background:
